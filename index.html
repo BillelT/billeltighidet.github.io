@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Billel Tighidet</title>
     <link rel="stylesheet" href="./assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/media-queries.css" />
     <meta
       name="description"
       content="Étudiant de première année en BUT Métiers du Multimédia et de l'Internet (MMI) à l'IUT Bordeaux Montaigne."
@@ -21,18 +22,19 @@
           width="60"
         />
       </a>
-      <nav>
+      <nav id="mobileNavClicked">
         <a href="#projects">Projets</a>
         <a href="#contact">Contact</a>
         <a href="./medias/billel tighidet.pdf" target="_blank">Mon CV</a>
       </nav>
-      <div class="date-container">
-        <span id="currentDate" class="time" style="display: block"></span>
-        <span id="currentHour1" class="time"></span>
-        <span class="hour-separation time">:</span>
-        <span id="currentHour2" class="time"></span>
-      </div>
+      <span id="mobileNav">Menu</span>
     </header>
+    <div class="date-container">
+      <span id="currentDate" class="time" style="display: block"></span>
+      <span id="currentHour1" class="time"></span>
+      <span class="hour-separation time">:</span>
+      <span id="currentHour2" class="time"></span>
+    </div>
     <main>
       <section class="hero">
         <h1>Billel Tighidet</h1>
@@ -43,7 +45,7 @@
       </section>
       <section class="projects">
         <h2 id="projects">Mes projets</h2>
-        <div>
+        <div class="projects-1">
           <article>
             <a href="https://musee-daquitaine.netlify.app/">
               <div>
@@ -94,6 +96,8 @@
               </div>
             </a>
           </article>
+        </div>
+        <div class="projects-2">
           <article>
             <a href="https://actifs-services-net.netlify.app/">
               <div>

@@ -26,12 +26,12 @@ a {
 h1 {
   margin-top: 354px;
   margin-bottom: 16px;
-  font-size: 70px;
+  font-size: calc(16px + 3.75vw);
   font-weight: 400;
 }
 
 p {
-  font-size: 18px;
+  font-size: calc(10.5px + 0.55vw);
   font-weight: 200;
 }
 
@@ -42,7 +42,7 @@ h2 {
 }
 
 h3 {
-  font-size: 30px;
+  font-size: calc(18px + 0.9vw);
   font-weight: 300;
 }
 
@@ -51,7 +51,6 @@ h3 {
 header {
   position: fixed;
   background: #f9fafb;
-  height: 96px;
   width: 100%;
   top: 0;
   padding: 16px 12.4% 16px 10.7%;
@@ -91,9 +90,16 @@ nav a:hover::after {
   transform-origin: right;
 }
 
+header span {
+  display: none;
+  font-size: 18px;
+  font-weight: 200;
+  text-decoration: none;
+  text-underline-offset: 0.3rem;
+}
 .date-container {
   position: absolute;
-  top: 104px;
+  top: 106px;
   right: 12.35%;
 }
 
@@ -139,11 +145,15 @@ nav a:hover::after {
   margin-top: 256px;
 }
 
+.projects article {
+  width: 86.75%;
+}
+
 .projects article a {
   display: flex;
   margin-bottom: 64px;
   column-gap: 38px;
-  width: 86.75%;
+  width: 100%;
 }
 
 .head-project {
@@ -162,7 +172,7 @@ nav a:hover::after {
 
 .info-project-1,
 .info-project-2 {
-  transform: translateY(34px);
+  transform: translateY(38px);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -211,7 +221,7 @@ footer {
   width: 62.6%;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 16px;
   justify-content: space-between;
   align-items: center;
 }
@@ -242,6 +252,7 @@ footer {
   font-weight: 400;
   font-size: 32px;
   text-decoration-thickness: 1px;
+  transform: translateY(-8.5px);
 }
 
 .legal {
@@ -253,6 +264,7 @@ footer {
 
 .legal a {
   text-decoration-line: underline;
+  font-size: calc(10.5px + 0.55vw);
 }
 
 .legal a:hover {
