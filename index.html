@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Billel Tighidet</title>
-    <link rel="stylesheet" href="./assets/css/reset.css" />
     <link rel="stylesheet" href="./assets/css/index.css" />
     <meta
       name="description"
@@ -27,6 +26,12 @@
         <a href="#contact">Contact</a>
         <a href="./medias/billel tighidet.pdf" target="_blank">Mon CV</a>
       </nav>
+      <div class="date-container">
+        <span id="currentDate" class="time" style="display: block"></span>
+        <span id="currentHour1" class="time"></span>
+        <span class="hour-separation time">:</span>
+        <span id="currentHour2" class="time"></span>
+      </div>
     </header>
     <main>
       <section class="hero">
@@ -40,99 +45,108 @@
         <h2 id="projects">Mes projets</h2>
         <div>
           <article>
-            <div>
-              <p class="head-project">
-                Projet MMI, refonte du musée d'Aquitaine.
-              </p>
-              <img
-                src="./medias/screen-refonte-musée-d_aquitaine-2-1.webp"
-                alt="refonte musée d'Aquitaine"
-              />
-            </div>
-            <div class="info-project-1">
-              <p>
-                Projet réalisé à 6 en 2 semaines. La première semaine accès sur
-                le design m'a permis de découvrir Figma et ses bonnes pratiques.
-                Notamment établir un design système, d'un wireframe etc. Durant
-                la 2ème semaine je me suis amélioré en HTML, CSS et JavaScript.
-                Bien que ce n'étais pas mon premier site web, la découverte de
-                ces process et de l'intégration en groupe ont étaient de vrais
-                défis.
-              </p>
-              <span>&#8594;</span>
-            </div>
+            <a href="https://musee-daquitaine.netlify.app/">
+              <div>
+                <p class="head-project">
+                  Projet MMI, refonte du musée d'Aquitaine.
+                </p>
+                <img
+                  src="./medias/screen-refonte-musée-d_aquitaine-2-1.webp"
+                  alt="refonte musée d'Aquitaine"
+                />
+              </div>
+              <div class="info-project-1">
+                <p>
+                  Projet réalisé à 6 en 2 semaines. La première semaine accès
+                  sur le design m'a permis de découvrir Figma et ses bonnes
+                  pratiques. Notamment établir un design système, d'un wireframe
+                  etc. Durant la 2ème semaine je me suis amélioré en HTML, CSS
+                  et JavaScript. Bien que ce n'étais pas mon premier site web,
+                  la découverte de ces process et de l'intégration en groupe ont
+                  étaient de vrais défis.
+                </p>
+                <span>&#8594;</span>
+              </div>
+            </a>
           </article>
           <article>
-            <div>
-              <p class="head-project">
-                Projet personnel, calculatrice en JavaScript.
-              </p>
-              <img
-                src="./medias/screen-calculatrice-en-js-2.webp"
-                alt="calculatrice en JavaScript"
-              />
-            </div>
-            <div class="info-project-1">
-              <p>
-                Malheureusement, comme je l’ai réalisé sans aucune aide
-                extérieure que ce soit un tuto, une IA ou autre la calculatrice
-                est incomplète. Ce projet était très ambitieux car je découvrais
-                à peine JavaScript à ce moment là. Mais grâce à mes expériences
-                passées, comme mon année en fac de chimie avec une option info
-                (Python), j’ai réussi à développer les fonctionnalités de base
-                d’une calculatrice en JavaScript.
-              </p>
-              <span>&#8594;</span>
-            </div>
+            <a href="https://my-js-website.netlify.app/">
+              <div>
+                <p class="head-project">
+                  Projet personnel, calculatrice en JavaScript.
+                </p>
+                <img
+                  src="./medias/screen-calculatrice-en-js-2.webp"
+                  alt="calculatrice en JavaScript"
+                />
+              </div>
+              <div class="info-project-1">
+                <p>
+                  Malheureusement, comme je l’ai réalisé sans aucune aide
+                  extérieure que ce soit un tuto, une IA ou autre la
+                  calculatrice est incomplète. Ce projet était très ambitieux
+                  car je découvrais à peine JavaScript à ce moment là. Mais
+                  grâce à mes expériences passées, comme mon année en fac de
+                  chimie avec une option info (Python), j’ai réussi à développer
+                  les fonctionnalités de base d’une calculatrice en JavaScript.
+                </p>
+                <span>&#8594;</span>
+              </div>
+            </a>
           </article>
           <article>
-            <div>
-              <p class="head-project">
-                Projet personnel, site vitrine avec une page formulaire pour une
-                entreprise fictive
-              </p>
-              <img
-                src="./medias/screen-mini-site-entreprise-d_entretien-industriel-1.webp"
-                alt="site vitrine + page de formulaire d'une entreprise fictive"
-              />
-            </div>
-            <div class="info-project-2">
-              <p>
-                Il s’agit de mon 2ème site et de mon 1er site développé seul et
-                sans librairie. Étant donné que l’ancien design de mon portfolio
-                avais étais réalisé à l’aide d’une vidéo et en utilisant
-                Bootstrap. C’est donc le projet qui m’a le plus permis de
-                découvrir les langages du web bien que le design soit assez
-                novice. Afin d’améliorer l’UX, j’ai appris ici à préremplir une
-                page formulaire selon le CTA choisi par l’utilisateur.
-              </p>
-              <span>&#8594;</span>
-            </div>
+            <a href="https://actifs-services-net.netlify.app/">
+              <div>
+                <p class="head-project" style="line-height: 1.2">
+                  Projet personnel, site vitrine avec une page formulaire pour
+                  une entreprise fictive
+                </p>
+                <img
+                  src="./medias/screen-mini-site-entreprise-d_entretien-industriel-1.webp"
+                  alt="site vitrine + page de formulaire d'une entreprise fictive"
+                />
+              </div>
+              <div class="info-project-2">
+                <p>
+                  Il s’agit de mon 2ème site et de mon 1er site développé seul
+                  et sans librairie. Étant donné que l’ancien design de mon
+                  portfolio avais étais réalisé à l’aide d’une vidéo et en
+                  utilisant Bootstrap. C’est donc le projet qui m’a le plus
+                  permis de découvrir les langages du web bien que le design
+                  soit assez novice. Afin d’améliorer l’UX, j’ai appris ici à
+                  préremplir une page formulaire en fonction du chemin choisi
+                  par l’utilisateur.
+                </p>
+                <span>&#8594;</span>
+              </div>
+            </a>
           </article>
           <article>
-            <div>
-              <p class="head-project">
-                Projet MMI, initiation à la photographie et à la colorimétrie
-              </p>
-              <img
-                src="./medias/screen-refonte-musée-d_aquitaine-2-1.webp"
-                alt="refonte musée d'Aquitaine"
-              />
-            </div>
-            <div class="info-project-2">
-              <p>
-                Au cours de l’été 2023, un ami m’avais expliqué quelques bases
-                en photographie à l’occasion d’une vidéo format court que je
-                l’ai aidé à réaliser. Courant septembre 2023, j’ai pu
-                redécouvrir en profondeur ces bases et les appliquées. J’ai
-                réalisé un book portait seul ainsi qu’un packshot d’une
-                bouteille de whisky Moon Harbour en groupe. J’ai facilement
-                réussi à les démarcher et ils nous ont même gentiment offert la
-                bouteille ! Toutes les photos ont étaient retouchées sur Adobe
-                Lightroom et Adobe Photoshop.
-              </p>
-              <span>&#8594;</span>
-            </div>
+            <a href="#">
+              <div>
+                <p class="head-project" style="line-height: 1.2">
+                  Projet MMI, initiation à la photographie et à la colorimétrie
+                </p>
+                <img
+                  src="./medias/screen-refonte-musée-d_aquitaine-2-1.webp"
+                  alt="refonte musée d'Aquitaine"
+                />
+              </div>
+              <div class="info-project-2">
+                <p>
+                  Au cours de l’été 2023, un ami m’avais expliqué quelques bases
+                  en photographie à l’occasion d’une vidéo format court que je
+                  l’ai aidé à réaliser. Courant septembre 2023, j’ai pu
+                  redécouvrir en profondeur ces bases et les appliquées. J’ai
+                  réalisé un book portait seul ainsi qu’un packshot d’une
+                  bouteille de whisky Moon Harbour en groupe. J’ai facilement
+                  réussi à les démarcher et ils nous ont même gentiment offert
+                  la bouteille ! Toutes les photos ont étaient retouchées sur
+                  Adobe Lightroom et Adobe Photoshop.
+                </p>
+                <span>&#8594;</span>
+              </div>
+            </a>
           </article>
         </div>
       </section>
@@ -153,8 +167,12 @@
       </div>
       <div class="legal">
         <p>Billel Tighidet © 2023 - Tous droits réservés</p>
-        <p>Hosted on <a href="https://www.netlify.com/">Netlify</a></p>
+        <p>
+          Hosted on
+          <a href="https://www.netlify.com/" target="_blank">Netlify</a>
+        </p>
       </div>
     </footer>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
