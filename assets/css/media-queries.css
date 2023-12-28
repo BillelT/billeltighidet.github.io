@@ -20,6 +20,10 @@
   .contact a::after {
     border-bottom: 0.5px solid #f9fafb;
   }
+  nav.mobile-nav-clicked {
+    right: 0;
+    background: #01010a;
+  }
 }
 
 @media screen and (max-width: 1200px) {
