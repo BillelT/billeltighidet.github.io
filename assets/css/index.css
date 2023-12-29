@@ -98,35 +98,6 @@ header span {
   text-decoration: none;
   text-underline-offset: 0.3rem;
 }
-.date-container {
-  position: absolute;
-  top: 106px;
-  right: 12.35%;
-}
-
-.time {
-  text-align: right;
-  font-weight: 200;
-}
-
-@keyframes hourSeparator {
-  75% {
-    opacity: 1;
-  }
-  76% {
-    opacity: 0;
-  }
-  99% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.hour-separation {
-  animation: hourSeparator 3s ease-in-out infinite;
-}
 
 /* ************************************HERO*********************************************** */
 
@@ -160,6 +131,8 @@ header span {
 .head-project {
   margin-bottom: 16px;
   max-width: 422px;
+  font-size: 18px;
+  height: 43.2px;
 }
 
 .projects article a:hover .head-project {
@@ -173,14 +146,10 @@ header span {
 
 .info-project-1,
 .info-project-2 {
-  transform: translateY(38px);
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
-}
-
-.info-project-2 {
   transform: translateY(59px);
 }
 

@@ -25,6 +25,11 @@
   }
 }
 
+@media screen and (min-width: 1600px) {
+  p {
+    font-size: 18px;
+  }
+}
 @media screen and (max-width: 1200px) {
   .hero,
   .projects,
@@ -53,9 +58,6 @@
   header {
     padding: 8px 12.4% 8px 10.7%;
   }
-  .date-container {
-    top: 90px;
-  }
   .projects-1,
   .projects-2 {
     display: flex;
@@ -71,6 +73,7 @@
   }
   .head-project {
     max-width: 321px;
+    height: 64.75px;
   }
   .projects img {
     width: 321px;
