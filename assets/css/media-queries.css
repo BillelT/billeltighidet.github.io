@@ -66,15 +66,20 @@
   .projects article {
     width: 50%;
   }
-  .projects article a {
+  .project {
     flex-direction: column;
     column-gap: unset;
     margin-bottom: unset;
+    width: 321px;
   }
   .head-project {
     max-width: 321px;
     height: 64.75px;
     font-size: 18px;
+  }
+  .img-container {
+    width: 321px;
+    height: 186px;
   }
   .projects img {
     width: 321px;
@@ -159,6 +164,10 @@
 @media screen and (max-width: 600px) {
   .hero p {
     font-size: 18px;
+  }
+  .img-container {
+    width: 220px;
+    height: 127px;
   }
   .projects img {
     width: 220px;

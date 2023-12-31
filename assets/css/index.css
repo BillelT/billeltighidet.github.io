@@ -121,7 +121,7 @@ header span {
   width: 86.75%;
 }
 
-.projects article a {
+.project {
   display: flex;
   margin-bottom: 64px;
   column-gap: 38px;
@@ -139,9 +139,21 @@ header span {
   text-decoration: underline;
 }
 
+.img-container {
+  overflow: hidden;
+  height: 245px;
+}
+
 .projects img {
   width: 422px;
   height: 245px;
+  transition: 0.3s ease-in;
+  object-position: center;
+  object-fit: contain;
+}
+
+.projects img:hover {
+  scale: 1.04;
 }
 
 .info-project-1,
