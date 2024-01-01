@@ -163,6 +163,7 @@ header span {
   align-items: flex-end;
   justify-content: flex-start;
   transform: translateY(59px);
+  height: 100%;
 }
 
 .info-project-1 p,
