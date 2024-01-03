@@ -141,12 +141,13 @@ header span {
 
 .img-container {
   overflow: hidden;
-  height: 245px;
+  height: 223px;
+  border-radius: 2px;
 }
 
 .projects img {
   width: 422px;
-  height: 245px;
+  height: 223px;
   transition: 0.3s ease-in;
   object-position: center;
   object-fit: contain;
