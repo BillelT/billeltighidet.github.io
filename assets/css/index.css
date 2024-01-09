@@ -91,6 +91,8 @@ nav a:hover::after {
   transform-origin: right;
 }
 
+
+
 header span {
   display: none;
   font-size: 18px;
@@ -117,15 +119,11 @@ header span {
   margin-top: 256px;
 }
 
-.projects article {
-  width: 86.75%;
-}
-
 .project {
+  width: 86.75%;
   display: flex;
   margin-bottom: 64px;
   column-gap: 38px;
-  width: 100%;
 }
 
 .head-project {
@@ -135,7 +133,7 @@ header span {
   height: 43.2px;
 }
 
-.projects article a:hover .head-project {
+.head-project:hover {
   text-decoration: underline;
 }
 
@@ -159,12 +157,12 @@ header span {
 
 .info-project-1,
 .info-project-2 {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
   transform: translateY(59px);
-  height: 100%;
 }
 
 .info-project-1 p,

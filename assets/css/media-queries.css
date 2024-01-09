@@ -61,12 +61,12 @@
   .projects-1,
   .projects-2 {
     display: flex;
+    column-gap: 38px;
     padding-bottom: 38px;
   }
-  .projects article {
-    width: 50%;
-  }
+
   .project {
+    width: 50%;
     flex-direction: column;
     column-gap: unset;
     margin-bottom: unset;
@@ -87,17 +87,16 @@
   }
   .info-project-1,
   .info-project-2 {
-    align-items: flex-start;
     transform: translateY(0);
     padding-top: 16px;
   }
   .info-project-1 p,
   .info-project-2 p {
-    max-width: 33.3vw;
+    max-width: 100%;
   }
   .info-project-1 span,
   .info-project-2 span {
-    padding-left: 65%;
+    padding-left: 0;
   }
   footer {
     margin-top: 128px;
@@ -122,9 +121,30 @@
     flex-direction: column;
     align-items: flex-start;
   }
-  header span {
+
+  .mobile-menu {
     display: block;
     transition: 0.4s ease-in-out;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .mobile-menu::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    border-bottom: 1px solid #01010a;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: left;
+  }
+  
+  .mobile-menu:hover::after {
+    transform: scaleX(1);
+    transform-origin: right;
   }
   nav.mobile-nav-clicked {
     right: 0;
@@ -140,10 +160,6 @@
   .info-project-1 p,
   .info-project-2 p {
     max-width: unset;
-  }
-  .info-project-1 span,
-  .info-project-2 span {
-    padding-left: 85%;
   }
   .contact {
     padding: 16px 0 0;
