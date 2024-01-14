@@ -121,7 +121,20 @@
     flex-direction: column;
     align-items: flex-start;
   }
-
+  #test2 {
+    left: 50%;
+    transition: all .6s ease-in-out;
+  }
+  #test3 {
+    left: 100%;
+    transition: all .6s ease-in-out;
+  }
+  #test2.mobile-nav-clicked {
+    left: 0%;
+  }
+  #test3.mobile-nav-clicked {
+    left: 0%;
+  }
   .mobile-menu {
     display: block;
     transition: 0.4s ease-in-out;
