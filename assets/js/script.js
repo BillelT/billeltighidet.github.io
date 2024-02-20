@@ -1,7 +1,7 @@
 // Declare global variables used in this script
 const navLinks = ["Projets", "Contact", "Mon CV"];
 const Dates = new Date();
-const year = Dates.getFullYear(); 
+const year = Dates.getFullYear();
 
 // mobile menu class adding and CTA's innerText adaptation
 document.addEventListener("click", (e) => {
@@ -24,6 +24,14 @@ document.addEventListener("click", (e) => {
   }
 })
 
-
+// document.addEventListener('DOMContentLoaded', () => {
+//   setTimeout(() => {
+//     loader.innerText = "Welcome !"
+//   }, 600)
+//   setTimeout(() => {
+//     loader.style.opacity = 0
+//     loader.style.zIndex = -1
+//   }, 1100)
+// })
 
 credits.innerText = "Billel Tighidet © " + year + " - Tous droits réservés"
