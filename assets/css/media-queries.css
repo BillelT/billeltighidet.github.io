@@ -35,17 +35,21 @@
   header nav {
     position: relative;
     visibility: visible;
-    flex-direction: row;
-    justify-content: space-between;
     padding: 0;
     top: 0;
     left: 0;
     width: 50.7vw;
   }
-
-  header nav a {
+  header nav ul {
+    justify-content: space-between;
+    display: flex;
+  }
+  header nav li {
     width: unset;
     padding: 0;
+    margin: 0;
+  }
+  header nav a {
     margin: 0;
   }
 
@@ -72,14 +76,13 @@
     max-width: 691px;
   }
 
-  footer nav {
+  footer nav ul {
     display: flex;
     justify-content: space-between;
   }
 
   footer nav a {
-    padding: 0;
-    margin-left: 0;
+    margin: 0;
     width: auto;
   }
 
