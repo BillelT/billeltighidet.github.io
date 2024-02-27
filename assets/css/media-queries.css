@@ -1,4 +1,4 @@
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body {
     background-color: #01010a;
     color: #f9fafb;
@@ -29,222 +29,127 @@
   header nav {
     background: #01010a;
   }
+} */
+
+@media screen and (min-width: 600px) {
+  p {
+    font-size: 16px;
+  }
 }
 
-@media screen and (min-width: 1600px) {
+@media screen and (min-width: 760px) {
+  header nav {
+    position: relative;
+    visibility: visible;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    top: 0;
+    left: 0;
+    width: 50.7vw;
+  }
+
+  header nav a {
+    width: unset;
+    padding: 0;
+    margin: 0;
+  }
+
+  .offbeat1,
+  .offbeat2,
+  .offbeat3 {
+    left: 0;
+  }
+
+  .first-nav-link {
+    padding: 0;
+  }
+
+  header nav img {
+    display: none;
+  }
+
+  header span {
+    display: none;
+  }
+  .about p {
+    margin-left: 34.6%;
+    max-width: 691px;
+  }
+
+  footer nav {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  footer nav a {
+    padding: 0;
+    margin-left: 0;
+    width: auto;
+  }
+  .go-top {
+    position: relative;
+    right: 0;
+    bottom: 8px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .container {
+    padding-left: 15.4%;
+  }
+  header.container,
+  footer.container {
+    padding-left: 6.25%;
+  }
+  h1 {
+    margin-top: 345px;
+  }
   p {
     font-size: 18px;
   }
-}
-
-@media screen and (max-width: 1200px) {
-
-  .hero,
-  .projects,
-  .contact {
-    margin-left: 10%;
+  .hero {
+    margin-bottom: 256px;
   }
-
-  .contact {
-    width: 72.5%;
-  }
-}
-
-@media screen and (max-width: 1065px) {
-  .contact a {
-    font-size: 14px;
-  }
-
-  .contact .go-top {
-    font-size: 24px;
-    transform: translateY(-5px);
-  }
-}
-
-@media screen and (max-width: 968px) {
-
-  .hero,
-  .projects,
-  .contact {
-    margin-left: 6.25%;
-  }
-
-  header {
-    padding: 8px 12.4% 8px 10.7%;
-  }
-
-  .projects-1,
-  .projects-2 {
-    display: flex;
-    column-gap: 38px;
-    padding-bottom: 96px;
-  }
-
-  .project {
-    width: 50%;
-    flex-direction: column;
-    column-gap: unset;
-    margin-bottom: unset;
-    width: 321px;
-  }
-
-  .head-project {
-    max-width: 321px;
-    height: 64.75px;
-    font-size: 18px;
-  }
-
-  .img-container {
-    width: 321px;
-    height: 169px;
-  }
-
-  .projects img {
-    width: 321px;
-    height: 169px;
-  }
-
-  .info-project-1,
-  .info-project-2 {
-    transform: translateY(0);
-    padding-top: 16px;
-  }
-
-  .info-project-1 p,
-  .info-project-2 p {
-    max-width: 100%;
-  }
-
-  .info-project-1 span,
-  .info-project-2 span {
-    padding-left: 0;
-  }
-
-  footer {
-    margin-top: 128px;
-  }
-
-  .contact {
-    width: 80%;
-  }
-}
-
-@media screen and (max-width: 770px) {
-  header {
-    padding: 8px 12.4% 8px 6.25%;
-  }
-
-  header nav {
-    position: fixed;
-    justify-content: space-around;
-    right: -100%;
-    top: 82px;
-    z-index: 2;
-    width: 96%;
-    height: 128px;
-    transition: 0.4s ease-in-out;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  #test2 {
-    left: 50%;
-    transition: all .6s ease-in-out;
-  }
-
-  #test3 {
-    left: 100%;
-    transition: all .6s ease-in-out;
-  }
-
-  #test2.mobile-nav-clicked {
-    left: 0%;
-  }
-
-  #test3.mobile-nav-clicked {
-    left: 0%;
-  }
-
-  .mobile-menu {
-    display: block;
-    transition: 0.4s ease-in-out;
-    position: relative;
-    cursor: pointer;
-  }
-
-  .mobile-menu::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 0;
-    height: 1px;
-    width: 100%;
-    transform: scaleX(0);
-    border-bottom: 1px solid #01010a;
-    transition: transform 0.3s ease-in-out;
-    transform-origin: left;
-  }
-
-  .mobile-menu:hover::after {
-    transform: scaleX(1);
-    transform-origin: right;
-  }
-
-  nav.mobile-nav-clicked {
-    right: 0;
-  }
-
-  .projects-1,
-  .projects-2 {
-    flex-direction: column;
-    row-gap: 64px;
-  }
-
   .projects article {
-    width: 90%;
-  }
-
-  .info-project-1 p,
-  .info-project-2 p {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 42px;
+    grid-template-rows: auto auto auto;
     max-width: unset;
+    grid-template-areas:
+      "vi he"
+      "vi bo"
+      "vi ar";
   }
-
-  .contact {
-    padding: 16px 0 0;
+  .projects h3 {
+    grid-area: he;
   }
-
-  .contact,
-  .contact nav {
-    flex-direction: column;
-    align-items: flex-start;
+  .video-container {
+    grid-area: vi;
+    height: 100%;
+    width: 100%;
+    padding: 0;
   }
-
-  .contact nav {
-    padding-top: 32px;
+  .projects p {
+    grid-area: bo;
   }
-
-  .contact .go-top {
-    transform: translateY(-45px);
-    margin-left: 80vw;
+  .projects .arrow {
+    display: block;
+    grid-area: ar;
+    justify-self: end;
+    align-self: end;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .hero p {
+@media screen and (min-width: 1440px) {
+  h1 {
+    font-size: 60px;
+  }
+  h2 {
+    font-size: 45px;
+  }
+  p {
     font-size: 18px;
-  }
-
-  .img-container {
-    width: 220px;
-    height: 116px;
-  }
-
-  .projects img {
-    width: 220px;
-    height: 116px;
-  }
-
-  footer {
-    margin-top: 32px;
   }
 }
