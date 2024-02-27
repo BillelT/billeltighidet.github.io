@@ -2,6 +2,7 @@
 const navLinks = ["Projets", "À propos", "Contact", "Mon CV"];
 const smallArrows = document.querySelectorAll(".small-arrow");
 const arrows = document.querySelectorAll(".arrow");
+const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 const mockUps = document.querySelectorAll(".mockUp");
 const Dates = new Date();
 const year = Dates.getFullYear();
@@ -31,8 +32,6 @@ document.addEventListener("click", (e) => {
 });
 
 
-
-const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 
 function handleSmallArrowThemeChange(event) {
   smallArrows.forEach(function handleImg(arrow) {
