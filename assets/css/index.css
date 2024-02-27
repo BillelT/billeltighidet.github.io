@@ -195,12 +195,12 @@ header span {
 /* ************************************FOOTER*********************************************** */
 
 footer.container {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   border-top: #01010a 1px solid;
 }
 
 footer nav {
-  padding-top: 32px;
+  padding-top: 24px;
   position: relative;
 }
 
@@ -218,7 +218,13 @@ footer nav a {
 }
 
 .legal {
-  padding-top: 32px;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.legal p {
+  font-size: 14px;
 }
 
 .legal a {
