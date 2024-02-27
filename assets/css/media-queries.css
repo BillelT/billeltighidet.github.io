@@ -15,8 +15,13 @@
   nav a {
     background-color: #01010a;
   }
+
   nav a p::after {
     border-bottom: 1px solid #f9fafb;
+  }
+
+  footer.container {
+    border-top: #f9fafb 1px solid;
   }
 }
 
@@ -61,6 +66,7 @@
   header span {
     display: none;
   }
+
   .about p {
     margin-left: 34.6%;
     max-width: 691px;
@@ -76,6 +82,7 @@
     margin-left: 0;
     width: auto;
   }
+
   .go-top {
     position: relative;
     right: 0;
@@ -87,19 +94,24 @@
   .container {
     padding-left: 15.4%;
   }
+
   header.container,
   footer.container {
     padding-left: 6.25%;
   }
+
   h1 {
     margin-top: 345px;
   }
+
   p {
     font-size: 18px;
   }
+
   .hero {
     margin-bottom: 256px;
   }
+
   .projects article {
     display: grid;
     grid-template-columns: auto auto;
@@ -111,18 +123,22 @@
       "vi bo"
       "vi ar";
   }
+
   .projects h3 {
     grid-area: he;
   }
+
   .video-container {
     grid-area: vi;
     height: 100%;
     width: 100%;
     padding: 0;
   }
+
   .projects p {
     grid-area: bo;
   }
+
   .projects .arrow {
     display: block;
     grid-area: ar;
@@ -135,9 +151,11 @@
   h1 {
     font-size: 60px;
   }
+
   h2 {
     font-size: 45px;
   }
+
   p {
     font-size: 18px;
   }

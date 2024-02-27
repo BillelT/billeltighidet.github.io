@@ -39,6 +39,7 @@ document.addEventListener("click", (e) => {
 // })
 
 mockUps.forEach(function hoverPlay(mockUp) {
+  mockUp.play();
   mockUp.addEventListener("mouseenter", () => {
     mockUp.play();
   });
