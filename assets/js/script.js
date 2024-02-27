@@ -30,21 +30,35 @@ document.addEventListener("click", (e) => {
   }
 });
 
-smallArrows.forEach(function darkTheme(arrow) {
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    arrow.src = "./medias/arrow burger menu white.svg"
-  } else {
-    arrow.src = "./medias/arrow burger menu.svg"
-  }
-})
-arrows.forEach(function darkTheme(arrow) {
-  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    arrow.src = "./medias/arrow projects white.svg"
-  } else {
-    arrow.src = "./medias/arrow projects.svg"
 
-  }
-});
+
+const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+function handleSmallArrowThemeChange(event) {
+  smallArrows.forEach(function handleImg(arrow) {
+    if (event.matches) {
+      arrow.src = "./medias/arrow burger menu white.svg"
+    } else {
+      arrow.src = "./medias/arrow burger menu.svg"
+    }
+  })
+}
+handleSmallArrowThemeChange(darkTheme);
+darkTheme.addEventListener("change", handleSmallArrowThemeChange);
+
+
+function handleArrowThemeChange(event) {
+  arrows.forEach(function handleImg(arrow) {
+    if (event.matches) {
+      arrow.src = "./medias/arrow projects white.svg"
+    } else {
+      arrow.src = "./medias/arrow projects.svg"
+    }
+  });
+}
+handleArrowThemeChange(darkTheme);
+darkTheme.addEventListener("change", handleArrowThemeChange);
+
 
 // document.addEventListener('DOMContentLoaded', () => {
 //   setTimeout(() => {
