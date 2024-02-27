@@ -31,45 +31,44 @@ document.addEventListener("click", (e) => {
   }
 });
 
-
-
 function handleSmallArrowThemeChange(event) {
   smallArrows.forEach(function handleImg(arrow) {
     if (event.matches) {
-      arrow.src = "./medias/arrow burger menu white.svg"
+      arrow.src = "./medias/arrow burger menu white.svg";
     } else {
-      arrow.src = "./medias/arrow burger menu.svg"
+      arrow.src = "./medias/arrow burger menu.svg";
     }
-  })
+  });
 }
 handleSmallArrowThemeChange(darkTheme);
 darkTheme.addEventListener("change", handleSmallArrowThemeChange);
 
-
 function handleArrowThemeChange(event) {
   arrows.forEach(function handleImg(arrow) {
     if (event.matches) {
-      arrow.src = "./medias/arrow projects white.svg"
+      arrow.src = "./medias/arrow projects white.svg";
     } else {
-      arrow.src = "./medias/arrow projects.svg"
+      arrow.src = "./medias/arrow projects.svg";
     }
   });
 }
 handleArrowThemeChange(darkTheme);
 darkTheme.addEventListener("change", handleArrowThemeChange);
 
-
-// document.addEventListener('DOMContentLoaded', () => {
+// document.addEventListener("DOMContentLoaded", () => {
 //   setTimeout(() => {
-//     loader.innerText = "Welcome !"
-//   }, 600)
+//     loader.innerText = "Welcome !";
+//   }, 600);
 //   setTimeout(() => {
-//     loader.style.opacity = 0
-//     loader.style.zIndex = -1
-//   }, 1100)
-// })
+//     loader.style.opacity = 0;
+//     loader.style.zIndex = -1;
+//   }, 1100);
+// });
 
 mockUps.forEach(function hoverPlay(mockUp) {
+  document.addEventListener("DOMContentLoaded", () => {
+    mockUp.pause();
+  });
   mockUp.addEventListener("mouseenter", () => {
     mockUp.play();
   });
