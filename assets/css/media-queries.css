@@ -10,24 +10,13 @@
 
   header {
     background: #01010a;
-    border-bottom: 1px solid #f9fafb;
   }
 
-  nav a::after {
-    border-bottom: 1px solid #f9fafb;
+  nav a {
+    background-color: #01010a;
   }
-
-  .contact-border {
-    border-top: 1px solid #f9fafb;
+  nav a p::after {
     border-bottom: 1px solid #f9fafb;
-  }
-
-  .contact a::after {
-    border-bottom: 1px solid #f9fafb;
-  }
-
-  header nav {
-    background: #01010a;
   }
 }
 
