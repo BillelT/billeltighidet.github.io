@@ -83,6 +83,10 @@
     width: auto;
   }
 
+  .legal {
+    display: flex;
+    justify-content: space-between;
+  }
   .go-top {
     position: relative;
     right: 0;

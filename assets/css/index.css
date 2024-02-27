@@ -207,6 +207,9 @@ footer nav {
 footer nav a {
   padding-bottom: 32px;
 }
+.last-nav-link {
+  padding-bottom: 0;
+}
 
 .go-top {
   position: absolute;
@@ -219,8 +222,6 @@ footer nav a {
 
 .legal {
   padding-top: 16px;
-  display: flex;
-  justify-content: space-between;
 }
 
 .legal p {
