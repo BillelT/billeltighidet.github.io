@@ -29,7 +29,6 @@ a {
 }
 
 h1 {
-  margin-top: 217px;
   margin-bottom: 16px;
   font-size: calc(22px + 2.5vw);
   font-weight: 400;
@@ -47,9 +46,9 @@ h2 {
 }
 
 h3 {
-  font-size: 22px;
+  font-size: calc(20.2px + 0.55vw);
   font-weight: 400;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .container {
@@ -101,8 +100,6 @@ header nav {
   left: 100%;
   padding-left: 6.25%;
   visibility: hidden;
-  display: flex;
-  flex-direction: column;
   transition: all 0.6s ease-in-out;
 }
 
@@ -111,15 +108,21 @@ header nav.mobile-nav-clicked {
   visibility: visible;
 }
 
-nav a {
+header nav li {
+  width: 100vw;
+  margin-left: -6.25%;
+  padding-bottom: 24px;
+  background-color: #f9fafb;
+}
+
+header nav a {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: -6.25%;
-  padding: 0 6.25% 24px 6.25%;
-  width: 100vw;
-  background-color: #f9fafb;
+  width: auto;
+  margin-right: 6.25%;
+  margin-left: 6.25%;
 }
 
 .first-nav-link {
@@ -159,7 +162,8 @@ header span {
 
 /* ************************************HERO*********************************************** */
 .hero {
-  margin-bottom: 128px;
+  margin-top: 345px;
+  margin-bottom: 256px;
 }
 .hero p {
   max-width: 551px;
@@ -172,12 +176,11 @@ header span {
 }
 
 .projects article {
-  padding-bottom: 128px;
+  margin-bottom: 128px;
   max-width: 488px;
 }
 
-.projects a {
-  height: 100%;
+.head-project {
   width: 100%;
   display: block;
 }
@@ -185,7 +188,14 @@ header span {
 .video-container {
   padding-bottom: 16px;
   max-width: 488px;
+  filter: grayscale(100%);
+  transition: all 0.4s ease-in-out;
 }
+
+.video-container:hover {
+  filter: grayscale(0%);
+}
+
 .video-container video {
   width: 100%;
 }
@@ -195,30 +205,39 @@ header span {
 /* ************************************FOOTER*********************************************** */
 
 footer.container {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   border-top: #01010a 1px solid;
 }
 
 footer nav {
-  padding-top: 32px;
+  padding-top: 24px;
   position: relative;
 }
 
 footer nav a {
-  padding-bottom: 32px;
+  display: flex;
+  margin-bottom: 32px;
+}
+
+.last-nav-link {
+  margin-bottom: 0;
 }
 
 .go-top {
   position: absolute;
   right: 6.25%;
-  bottom: 32px;
+  bottom: 8px;
   rotate: 225deg;
   width: 33px;
-  padding: 0;
+  margin: 0;
 }
 
 .legal {
-  padding-top: 32px;
+  padding-top: 16px;
+}
+
+.legal p {
+  font-size: 14px;
 }
 
 .legal a {
