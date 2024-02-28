@@ -29,7 +29,6 @@ a {
 }
 
 h1 {
-  margin-top: 217px;
   margin-bottom: 16px;
   font-size: calc(22px + 2.5vw);
   font-weight: 400;
@@ -47,9 +46,9 @@ h2 {
 }
 
 h3 {
-  font-size: 22px;
+  font-size: calc(20.2px + 0.55vw);
   font-weight: 400;
-  padding-bottom: 16px;
+  margin-bottom: 16px;
 }
 
 .container {
@@ -163,7 +162,8 @@ header span {
 
 /* ************************************HERO*********************************************** */
 .hero {
-  margin-bottom: 128px;
+  margin-top: 345px;
+  margin-bottom: 256px;
 }
 .hero p {
   max-width: 551px;
@@ -176,12 +176,11 @@ header span {
 }
 
 .projects article {
-  padding-bottom: 128px;
+  margin-bottom: 128px;
   max-width: 488px;
 }
 
-.projects a {
-  height: 100%;
+.head-project {
   width: 100%;
   display: block;
 }
