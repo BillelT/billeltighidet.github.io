@@ -75,10 +75,12 @@ mockUps.forEach(function hoverPlay(mockUp) {
   mockUp.addEventListener("mouseleave", () => {
     mockUp.pause();
   });
-  mockUp.addEventListener("touchstart", () => {
+  mockUp.addEventListener("touchstart", (e) => {
+    e.preventDefault();
     mockUp.play();
   });
-  mockUp.addEventListener("touchend", () => {
+  mockUp.addEventListener("touchend", (e) => {
+    e.preventDefault();
     mockUp.pause();
   });
 });
