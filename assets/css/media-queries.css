@@ -40,6 +40,7 @@
   footer.container {
     padding-left: 6.25%;
   }
+
   header nav {
     position: relative;
     visibility: visible;
@@ -48,15 +49,18 @@
     left: 0;
     width: 50.7vw;
   }
+
   header nav ul {
     justify-content: space-between;
     display: flex;
   }
+
   header nav li {
     width: unset;
     padding: 0;
     margin: 0;
   }
+
   header nav a {
     margin: 0;
   }
@@ -98,6 +102,7 @@
     display: flex;
     justify-content: space-between;
   }
+
   .go-top {
     position: relative;
     right: 0;
@@ -109,7 +114,7 @@
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 42px;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto 1fr;
     max-width: unset;
     grid-template-areas:
       "vi he"
@@ -153,9 +158,11 @@
   h2 {
     font-size: 45px;
   }
+
   h3 {
     font-size: 28px;
   }
+
   p {
     font-size: 18px;
   }
