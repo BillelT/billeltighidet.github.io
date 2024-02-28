@@ -76,6 +76,12 @@ mockUps.forEach(function hoverPlay(mockUp) {
   mockUp.addEventListener("mouseleave", () => {
     mockUp.pause();
   });
+  mockUp.addEventListener("touchstart", () => {
+    mockUp.play();
+  });
+  mockUp.addEventListener("touchend", () => {
+    mockUp.pause();
+  });
 });
 
 credits.innerText = "© " + year + " Billel Tighidet Tous droits réservés";
