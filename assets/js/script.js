@@ -2,6 +2,7 @@
 const navLinks = ["Projets", "À propos", "Contact", "Mon CV"];
 const smallArrows = document.querySelectorAll(".small-arrow");
 const arrows = document.querySelectorAll(".arrow");
+const h1 = document.querySelector("h1");
 const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 const mockUps = document.querySelectorAll(".mockUp");
 const Dates = new Date();
@@ -55,15 +56,27 @@ function handleArrowThemeChange(event) {
 handleArrowThemeChange(darkTheme);
 darkTheme.addEventListener("change", handleArrowThemeChange);
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   setTimeout(() => {
-//     loader.innerText = "Welcome !";
-//   }, 600);
-//   setTimeout(() => {
-//     loader.style.opacity = 0;
-//     loader.style.zIndex = -1;
-//   }, 1100);
-// });
+document.addEventListener("DOMContentLoaded", () => {
+  window.scrollTo(0, 0);
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+  setTimeout(() => {
+    loaderText.style.opacity = "0.05";
+  }, 1500);
+  setTimeout(() => {
+    loaderText.innerText = "Billel Tighidet";
+  }, 2100);
+  setTimeout(() => {
+    loaderText.style.opacity = "1";
+  }, 2100);
+  setTimeout(() => {
+    loaderText.style.display = "none";
+    loader.remove();
+    h1.style.opacity = "1";
+    document.body.style.overflow = "visible";
+  }, 4150);
+});
 
 mockUps.forEach(function hoverPlay(mockUp) {
   document.addEventListener("DOMContentLoaded", () => {

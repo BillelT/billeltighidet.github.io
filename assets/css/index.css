@@ -18,6 +18,7 @@ body {
   color: #01010a;
   background-color: #f9fafb;
   overflow-x: hidden;
+  overflow: hidden;
 }
 
 a {
@@ -30,8 +31,9 @@ a {
 
 h1 {
   margin-bottom: 16px;
-  font-size: calc(22px + 2.5vw);
+  font-size: 40px;
   font-weight: 400;
+  opacity: 0;
 }
 
 p {
@@ -78,6 +80,74 @@ nav a p::after {
 nav a p:hover::after {
   transform: scaleX(1);
   transform-origin: right;
+}
+
+/* ************************************LOADER*********************************************** */
+.loader {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background-color: #f9fafb;
+  z-index: 100;
+  font-size: 40px;
+  animation: loader 1.3s ease-in-out 1 forwards 2.6s;
+}
+
+.loader-text {
+  position: absolute;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: translate 2.6s ease-in-out 1 forwards 1.3s;
+}
+
+.loader-text span {
+  position: relative;
+  transition: opacity 0.6s ease-in-out;
+  animation: reveal 1.3s ease-in-out 1 forwards;
+}
+
+@keyframes loader {
+  0% {
+    top: 0;
+    height: 100vh;
+  }
+
+  100% {
+    top: -1px;
+    height: 1px;
+  }
+}
+
+@keyframes translate {
+  0% {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  50% {
+    left: 6.25%;
+    top: 50%;
+    transform: translate(0%, -50%);
+  }
+
+  100% {
+    left: 6.25%;
+    top: 345px;
+    transform: translate(0%, 0%);
+  }
+}
+
+@keyframes reveal {
+  0% {
+    top: 122px;
+  }
+
+  100% {
+    top: 0;
+  }
 }
 
 /* ************************************HEADER*********************************************** */
@@ -164,7 +234,9 @@ header span {
 .hero {
   margin-top: 345px;
   margin-bottom: 256px;
+  padding-right: 0;
 }
+
 .hero p {
   max-width: 551px;
 }
