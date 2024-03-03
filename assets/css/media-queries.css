@@ -44,7 +44,6 @@
 }
 
 @media screen and (min-width: 760px) {
-
   header.container,
   footer.container {
     padding-left: 6.25%;
@@ -131,16 +130,18 @@
 
     50% {
       left: 15.4%;
+      top: 50%;
       transform: translate(0, -50%);
     }
 
     100% {
       left: 15.4%;
+      top: 345px;
       transform: translate(0, 100vh);
     }
   }
 
-  */ .projects article {
+  .projects article {
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 42px;

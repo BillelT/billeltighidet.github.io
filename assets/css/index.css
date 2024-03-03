@@ -31,6 +31,7 @@ a {
   font-weight: 300;
   text-decoration: none;
   text-underline-offset: 0.3rem;
+  overflow: hidden;
 }
 
 h1 {
@@ -65,27 +66,22 @@ h3 {
   animation: showContent 1.3s ease-in-out 1 forwards 2.6s;
 }
 
-nav p {
+nav a p {
   position: relative;
   font-size: 18px;
+  transition: transform 0.3s ease-in-out;
 }
 
 nav a p::after {
-  content: "";
+  content: attr(data-link);
   position: absolute;
   top: 100%;
   left: 0;
-  height: 1px;
   width: 100%;
-  transform: scaleX(0);
-  border-bottom: 1px solid #01010a;
-  transition: transform 0.3s ease-in-out;
-  transform-origin: left;
 }
 
-nav a p:hover::after {
-  transform: scaleX(1);
-  transform-origin: right;
+nav a p:hover {
+  transform: translateY(-100%);
 }
 
 /* ************************************LOADER*********************************************** */
@@ -250,11 +246,17 @@ header span {
 /* ************************************HERO*********************************************** */
 .hero {
   margin-top: 345px;
-  margin-bottom: 256px;
+  margin-bottom: 128px;
 }
 
 .hero p {
   max-width: 551px;
+}
+
+/* ************************************ABOUT*********************************************** */
+
+.about {
+  padding-top: 128px;
 }
 
 /* ************************************PROJECTS*********************************************** */
