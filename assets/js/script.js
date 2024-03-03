@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 1500);
   setTimeout(() => {
     loaderText.innerText = "Billel Tighidet";
-  }, 2100);
+  }, 2050);
   setTimeout(() => {
     loaderText.style.opacity = "1";
   }, 2100);
@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     loaderText.style.display = "none";
     loader.remove();
     h1.style.opacity = "1";
-    document.body.style.overflow = "visible";
+    document.body.classList.add("scroll");
   }, 4150);
 });
 
