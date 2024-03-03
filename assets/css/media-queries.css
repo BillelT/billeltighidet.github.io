@@ -7,6 +7,7 @@
   a {
     color: #f9fafb;
   }
+
   .loader {
     background-color: #01010a;
   }
@@ -32,15 +33,18 @@
   h1 {
     font-size: calc(10px + 6.25vw);
   }
+
   p {
     font-size: 16px;
   }
+
   .loader {
     font-size: calc(10px + 6.25vw);
   }
 }
 
 @media screen and (min-width: 760px) {
+
   header.container,
   footer.container {
     padding-left: 6.25%;
@@ -118,6 +122,7 @@
   .container {
     padding-left: 15.4%;
   }
+
   @keyframes translate {
     0% {
       left: 50%;
@@ -126,17 +131,16 @@
 
     50% {
       left: 15.4%;
-      top: 50%;
-      transform: translate(0%, -50%);
+      transform: translate(0, -50%);
     }
 
     100% {
       left: 15.4%;
-      top: 347px;
-      transform: translate(0%, 0%);
+      transform: translate(0, 100vh);
     }
   }
-  .projects article {
+
+  */ .projects article {
     display: grid;
     grid-template-columns: auto auto;
     column-gap: 42px;
@@ -192,6 +196,7 @@
   p {
     font-size: 18px;
   }
+
   .loader {
     font-size: 100px;
   }
