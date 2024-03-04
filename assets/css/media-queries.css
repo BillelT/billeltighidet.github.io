@@ -44,6 +44,7 @@
 }
 
 @media screen and (min-width: 760px) {
+
   header.container,
   footer.container {
     padding-left: 6.25%;
@@ -168,7 +169,7 @@
     grid-area: bo;
   }
 
-  .projects .arrow {
+  .projects .link-arrow {
     display: block;
     grid-area: ar;
     justify-self: end;
