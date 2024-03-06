@@ -86,6 +86,22 @@ nav a p:hover {
 }
 
 /* ************************************LOADER*********************************************** */
+
+.cursor {
+  position: absolute;
+  pointer-events: none;
+  top: -5px;
+  left: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #f9fafb;
+  z-index: 1000;
+  mix-blend-mode: difference !important;
+  transition: .1s;
+}
+
+/* ************************************LOADER*********************************************** */
 .loader {
   position: absolute;
   width: 100%;

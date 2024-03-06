@@ -8,6 +8,13 @@ const mockUps = document.querySelectorAll(".mockUp");
 const Dates = new Date();
 const year = Dates.getFullYear();
 
+
+// give cursor position 
+document.addEventListener('mousemove', (e) => {
+  cursor.style.transform = "translate(" + e.pageX + "px," + e.pageY + "px)";
+})
+
+
 // mobile menu class adding and CTA's innerText adaptation
 document.addEventListener("click", (e) => {
   if (e.target.innerText === "Menu") {
@@ -56,7 +63,9 @@ function handleArrowThemeChange(event) {
 handleArrowThemeChange(darkTheme);
 darkTheme.addEventListener("change", handleArrowThemeChange);
 
+// loader animation
 document.addEventListener("DOMContentLoaded", () => {
+  // force go back top when page refresh
   window.scrollTo(0, 0);
   if ("scrollRestoration" in history) {
     history.scrollRestoration = "manual";
@@ -78,7 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 4150);
 });
 
+
+// playing projects videos on mouse enter and paused when mouse leave
 mockUps.forEach(function hoverPlay(mockUp) {
+  // video on autoplay and on start to fix bug on phone
   document.addEventListener("DOMContentLoaded", () => {
     mockUp.pause();
   });
@@ -90,4 +102,6 @@ mockUps.forEach(function hoverPlay(mockUp) {
   });
 });
 
+
+// credits year autorefresh
 credits.innerText = "© " + year + " Billel Tighidet Tous droits réservés";
