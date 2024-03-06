@@ -18,12 +18,12 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #01010a;
   background-color: #f9fafb;
-  overflow-x: scroll;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 body.scroll {
-  overflow: visible;
+  overflow-y: visible;
 }
 
 a {
