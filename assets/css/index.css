@@ -11,13 +11,14 @@
 
 html {
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
   font-family: "Montserrat", sans-serif;
   color: #01010a;
   background-color: #f9fafb;
-  overflow-x: hidden;
+  overflow-x: scroll;
   overflow: hidden;
 }
 
