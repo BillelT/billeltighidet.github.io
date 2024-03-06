@@ -12,6 +12,10 @@ const year = Dates.getFullYear();
 // give cursor position 
 document.addEventListener('mousemove', (e) => {
   cursor.style.transform = "translate(" + e.pageX + "px," + e.pageY + "px)";
+  cursorText.innerText = " ";
+  if (e.target.attributes["data-text"]) {
+    cursorText.innerText = e.target.attributes["data-text"].textContent;
+  }
 })
 
 

@@ -13,7 +13,9 @@
 </head>
 
 <body>
-  <div class="cursor" id="cursor"></div>
+  <div class="cursor" id="cursor">
+    <span id="cursorText"></span>
+  </div>
   <div class="loader" id="loader">
     <span class="loader-text">
       <span id="loaderText">Bienvenue</span>
@@ -27,19 +29,19 @@
       <ul>
         <li class="first-nav-link">
           <a href="#about">
-            <p data-link="À propos">À propos</p>
+            <p data-link="À propos" data-text="A litlle about me">À propos</p>
             <img src="" alt="flèche" class="small-arrow" width="23" height="23" />
           </a>
         </li>
         <li id="offbeat1" class="offbeat1">
           <a href="#projects">
-            <p data-link="Projets">Projets</p>
+            <p data-link="Projets" data-text="Il y en a d'autres">Projets</p>
             <img src="" alt="flèche" class="small-arrow" width="23" height="23" />
           </a>
         </li>
         <li id="offbeat2" class="offbeat2">
           <a href="#contact">
-            <p data-link="Contact">Contact</p>
+            <p data-link="Contact" data-text="On discute ?">Contact</p>
             <img src="" alt="flèche" class="small-arrow" width="23" height="23" />
           </a>
         </li>
@@ -55,7 +57,7 @@
   </header>
   <main>
     <section class="container hero">
-      <h1>Billel Tighidet</h1>
+      <h1 data-text="Moi">Billel Tighidet</h1>
       <p>
         Étudiant de première année en BUT Métiers du Multimédia et de
         l'Internet (MMI) à l'IUT Bordeaux Montaigne.
@@ -83,7 +85,8 @@
         <div class="video-container">
           <a href="https://musee-daquitaine.netlify.app/" aria-label="Refonte du musée d'Aquitaine (2 pages)."
             target="_blank">
-            <video muted loop class="mockUp" loading="lazy" preload="auto" autoplay="autoplay">
+            <video muted loop class="mockUp" loading="lazy" preload="auto" autoplay="autoplay"
+              data-text="Visitez le site">
               <source src="./medias/mock up musée d'aquitaine.mp4" type="video/mp4" />
             </video>
           </a>
@@ -109,7 +112,8 @@
         </a>
         <div class="video-container">
           <a href="https://my-lil-calc.netlify.app/" aria-label="Calculatrice en Javascript" target="_blank">
-            <video muted loop class="mockUp" loading="lazy" preload="auto" autoplay="autoplay">
+            <video muted loop class="mockUp" loading="lazy" preload="auto" autoplay="autoplay"
+              data-text="Visitez le site">
               <source src="./medias/mock up calculatrice.mp4" type="video/mp4" />
             </video>
           </a>
@@ -136,7 +140,8 @@
         <div class="video-container">
           <a href="https://actifservicesnettoyage.netlify.app/" aria-label="Site pour une entreprise fictive (2 pages)."
             target="_blank">
-            <video muted loop class="mockUp" loading="lazy" preload="auto" autoplay="autoplay">
+            <video muted loop class="mockUp" loading="lazy" preload="auto" autoplay="autoplay"
+              data-text="Visitez le site">
               <source src="./medias/mock up ASN.mp4" type="video/mp4" />
             </video>
           </a>
@@ -177,7 +182,8 @@
           </a>
         </li>
         <li>
-          <a href="#" class="go-top"><img src="" class="small-arrow" alt="flèche" width="23" height="23" /></a>
+          <a href="#" class="go-top" data-text="Retournez en haut"><img src="" class="small-arrow" alt="flèche"
+              width="23" height="23" /></a>
         </li>
       </ul>
     </nav>

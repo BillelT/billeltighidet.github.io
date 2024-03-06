@@ -101,6 +101,16 @@ nav a p:hover {
   transition: .1s;
 }
 
+.cursor span {
+  color: #f9fafb;
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translate(8px, -50%);
+  font-size: 14px;
+  white-space: nowrap;
+}
+
 /* ************************************LOADER*********************************************** */
 .loader {
   position: absolute;
