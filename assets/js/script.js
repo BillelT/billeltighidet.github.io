@@ -1,12 +1,28 @@
 // Declare global variables used in this script
-const navLinks = ["Projets", "À propos", "Contact", "Mon CV"];
+const navLinks = ["À propos", "Projets", "Contact", "Mon CV"];
 const smallArrows = document.querySelectorAll(".small-arrow");
 const arrows = document.querySelectorAll(".arrow");
+const magneticElements = document.querySelectorAll(".has-attraction");
 const h1 = document.querySelector("h1");
 const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 const mockUps = document.querySelectorAll(".mockUp");
 const Dates = new Date();
 const year = Dates.getFullYear();
+const arrowCursor = document.createElement('img')
+
+
+function hasAttraction(e) {
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+  const elementX = e.target.offsetLeft;
+  const elementY = e.target.offsetTop;
+  const dx = mouseX - elementX;
+  const dy = mouseY - elementY;
+  const attractionSpeed = 0.1;
+  const translateX = elementX + dx * attractionSpeed + 'px'
+  const translateY = elementY + dy * attractionSpeed + 'px'
+  e.target.style.transform = "translate(" + translateX + "," + translateY + ")";
+}
 
 
 // give cursor position 
@@ -16,11 +32,23 @@ document.addEventListener('mousemove', (e) => {
   if (e.target.attributes["data-text"]) {
     cursorText.innerText = e.target.attributes["data-text"].textContent;
   }
+  if (e.target.localName !== "video") {
+    cursorText.classList.remove("animated")
+    cursor.classList.remove("arrow-cursor")
+    arrowCursor.remove()
+  } else if (!cursor.contains(arrowCursor)) {
+    cursorText.classList.add("animated")
+    arrowCursor.id = "arrowCursor"
+    arrowCursor.src = "./medias/arrow burger menu white.svg"
+    cursor.classList.add("arrow-cursor")
+    cursor.appendChild(arrowCursor)
+  }
 })
 
 
 // mobile menu class adding and CTA's innerText adaptation
 document.addEventListener("click", (e) => {
+  console.log(e.offsetX, e.clientX);
   if (e.target.innerText === "Menu") {
     mobileNavClicked.classList.toggle("mobile-nav-clicked");
     offbeat1.classList.toggle("mobile-nav-clicked");

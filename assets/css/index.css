@@ -32,6 +32,9 @@ a {
   font-weight: 300;
   text-decoration: none;
   text-underline-offset: 0.3rem;
+}
+
+nav a {
   overflow: hidden;
 }
 
@@ -85,7 +88,7 @@ nav a p:hover {
   transform: translateY(-100%);
 }
 
-/* ************************************LOADER*********************************************** */
+/* ************************************CURSOR*********************************************** */
 
 .cursor {
   position: absolute;
@@ -110,6 +113,41 @@ nav a p:hover {
   font-size: 14px;
   white-space: nowrap;
 }
+
+.cursor span.animated {
+  animation: textTranslate .6s ease-in-out 1;
+}
+
+@keyframes textTranslate {
+  0% {
+    transform: translate(20px, 20px);
+  }
+
+  100% {
+    transform: translate(8px, -50%);
+  }
+}
+
+.cursor.arrow-cursor {
+  background: transparent;
+}
+
+.cursor.arrow-cursor img {
+  transform-origin: bottom left;
+  transform: rotate(-90deg) translate(33%, 33%);
+  animation: arrowTranslate .6s ease-in-out 1;
+}
+
+@keyframes arrowTranslate {
+  0% {
+    transform: rotate(-90deg) translate(-20px, -20px);
+  }
+
+  100% {
+    transform: rotate(-90deg) translate(33%, 33%);
+  }
+}
+
 
 /* ************************************LOADER*********************************************** */
 .loader {
@@ -270,6 +308,15 @@ header span {
   cursor: pointer;
 }
 
+
+header .has-attraction {
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  vertical-align: middle;
+  transition: all .1s;
+}
+
 /* ************************************HERO*********************************************** */
 .hero {
   margin-top: 345px;
@@ -295,6 +342,7 @@ header span {
 .projects article {
   margin-bottom: 128px;
   max-width: 488px;
+  overflow: visible;
 }
 
 .head-project {
@@ -307,6 +355,20 @@ header span {
   max-width: 488px;
   filter: grayscale(100%);
   transition: all 0.4s ease-in-out;
+  position: relative;
+}
+
+.video-container::after {
+  content: "vidéo";
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  color: #f9fafb;
+  border: 1px solid #f9fafb;
+  padding: 4px 8px;
+  mix-blend-mode: difference;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .video-container:hover {

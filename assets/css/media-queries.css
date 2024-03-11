@@ -154,6 +154,8 @@
       "vi ar";
   }
 
+
+
   .head-project {
     grid-area: he;
   }
@@ -175,6 +177,15 @@
     justify-self: end;
     align-self: end;
   }
+
+  .projects-arrow {
+    transition: all .3s ease-in-out;
+  }
+
+  .projects-arrow:hover {
+    transform: rotate(-90deg);
+  }
+
 }
 
 @media screen and (min-width: 1440px) {
