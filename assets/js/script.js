@@ -27,6 +27,7 @@ function hasAttraction(e) {
 
 // give cursor position 
 document.addEventListener('mousemove', (e) => {
+  cursor.classList.add("visible")
   cursor.style.transform = "translate(" + e.pageX + "px," + e.pageY + "px)";
   cursorText.innerText = " ";
   if (e.target.attributes["data-text"]) {
@@ -43,6 +44,10 @@ document.addEventListener('mousemove', (e) => {
     cursor.classList.add("arrow-cursor")
     cursor.appendChild(arrowCursor)
   }
+})
+
+document.addEventListener('mouseleave', (e) => {
+  cursor.classList.remove("visible")
 })
 
 

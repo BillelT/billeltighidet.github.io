@@ -102,6 +102,13 @@ nav a p:hover {
   z-index: 1000;
   mix-blend-mode: difference !important;
   transition: .1s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.cursor.visible {
+  visibility: visible;
+  opacity: 1;
 }
 
 .cursor span {
@@ -361,7 +368,7 @@ header .has-attraction {
 .video-container::after {
   content: "vidéo";
   position: absolute;
-  top: 8px;
+  top: 16px;
   right: 16px;
   color: #f9fafb;
   border: 1px solid #f9fafb;
