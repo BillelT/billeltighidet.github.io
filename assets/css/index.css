@@ -405,6 +405,7 @@ footer nav {
 footer nav a {
   display: flex;
   margin-bottom: 32px;
+  width: fit-content;
 }
 
 .last-nav-link {
