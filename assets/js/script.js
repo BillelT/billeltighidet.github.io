@@ -123,13 +123,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   setTimeout(() => {
     loaderText.style.opacity = "0.05";
-  }, 1600);
+  }, 1400);
   setTimeout(() => {
     loaderText.innerText = "Billel Tighidet";
-  }, 2000);
+  }, 1950);
   setTimeout(() => {
     loaderText.style.opacity = "1";
-  }, 2000);
+  }, 1950);
   setTimeout(() => {
     loaderText.style.display = "none";
     loader.remove();
