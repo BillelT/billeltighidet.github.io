@@ -9,6 +9,20 @@ const mockUps = document.querySelectorAll(".mockUp");
 const Dates = new Date();
 const year = Dates.getFullYear();
 const arrowCursor = document.createElement('img')
+const animationPath = './motion/logo linkedin b&w.json';
+const animationOptions = {
+  container: document.getElementById('linkedInAnimation'),
+  path: "./motion/logo linkedin b&w long.json",
+  render: 'svg',
+  loop: false,
+  autoplay: false,
+};
+const anim = bodymovin.loadAnimation(animationOptions);
+
+
+
+
+
 
 
 function hasAttraction(e) {
@@ -109,20 +123,33 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   setTimeout(() => {
     loaderText.style.opacity = "0.05";
-  }, 1300);
+  }, 1100);
   setTimeout(() => {
     loaderText.innerText = "Billel Tighidet";
-  }, 1900);
+  }, 1600);
   setTimeout(() => {
     loaderText.style.opacity = "1";
-  }, 1900);
+  }, 1600);
   setTimeout(() => {
     loaderText.style.display = "none";
     loader.remove();
     h1.style.opacity = "1";
     document.body.classList.add("scroll");
-  }, 4150);
+    linkedInAnimation.classList.add("reveal")
+    anim.play();
+  }, 3250);
+  setTimeout(() => {
+    linkedInAnimation.classList.remove("reveal")
+  }, 6830);
 });
+
+me.addEventListener("mouseenter", () => {
+  linkedInAnimation.classList.add("reveal")
+  anim.goToAndPlay(0);
+})
+me.addEventListener("mouseleave", () => {
+  linkedInAnimation.classList.remove("reveal")
+})
 
 
 // playing projects videos on mouse enter and paused when mouse leave
