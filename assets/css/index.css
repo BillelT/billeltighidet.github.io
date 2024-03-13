@@ -64,7 +64,6 @@ h3 {
 
 .container {
   padding-left: 6.25%;
-  padding-right: 6.25%;
   margin-bottom: 96px;
   transform: translateY(80vh);
   animation: showContent 1s ease-in-out 1 forwards 2.150s;
