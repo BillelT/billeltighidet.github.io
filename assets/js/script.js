@@ -12,7 +12,7 @@ const arrowCursor = document.createElement('img')
 const animationPath = './motion/logo linkedin b&w.json';
 const animationOptions = {
   container: document.getElementById('linkedInAnimation'),
-  path: "./motion/logo linkedin b&w long.json",
+  path: "./motion/logo linkedin b&w.json",
   render: 'svg',
   loop: false,
   autoplay: false,
