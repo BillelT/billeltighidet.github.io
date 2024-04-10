@@ -165,6 +165,7 @@ h1 span {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, auto);
   column-gap: 4px;
+  max-width: 488px;
 }
 
 .card-container {
@@ -183,6 +184,7 @@ h1 span {
   /* position: absolute; */
   width: 100%;
   height: 100%;
+  max-width: 120px;
   backface-visibility: hidden;
 }
 
@@ -211,6 +213,7 @@ h1 span {
 
 .img-container img {
   width: 100%;
+  max-width: 488px;
 }
 
 .software-list {
@@ -220,6 +223,29 @@ h1 span {
 
 .software img {
   height: 40px;
+}
+
+.hover-pop:hover img {
+  animation: pop 0.6s ease-in-out;
+}
+
+
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.2);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .blend-difference {
@@ -296,7 +322,7 @@ h1 span {
 
 .hover-bullet-scale {
   position: relative;
-  max-width: 305px;
+  max-width: 280px;
   padding: 16px 0 16px 24px;
   border-bottom: 1px solid var(--white);
 }
@@ -326,12 +352,15 @@ h1 span {
 .hover-bullet-scale.art-direction::before {
   background-color: var(--ad-green);
 }
+
 .hover-bullet-scale.development::before {
   background-color: var(--dev-orange);
 }
+
 .hover-bullet-scale.adobe::before {
   background-color: var(--adobe-purple);
 }
+
 .hover-bullet-scale.ux-ui::before {
   background-color: var(--ux-ui-blue);
 }
@@ -339,6 +368,7 @@ h1 span {
 .mockup {
   margin-bottom: 16px;
 }
+
 .layout {
   margin-bottom: 32px;
 }
@@ -346,6 +376,7 @@ h1 span {
 .mockup img,
 .layout img {
   width: 100%;
+  max-width: 590px;
 }
 
 .project-more {
@@ -368,6 +399,30 @@ h1 span {
   width: fit-content;
   padding: 5px 10px;
   border: 1px solid var(--white);
+  overflow: hidden;
+}
+
+.see-site:hover img {
+  animation: arrow-fly .4s ease-in-out;
+}
+
+@keyframes arrow-fly {
+  0% {
+    transform: translate(0%, 0%);
+  }
+
+  44% {
+    transform: translate(100%, -100%);
+  }
+
+  45% {
+    transform: translate(-100%, 100%);
+  }
+
+  100% {
+    transform: translate(0%, 0%);
+  }
+
 }
 
 .white-bg .see-site {
@@ -376,4 +431,82 @@ h1 span {
 
 .see-site img {
   height: 14px;
+}
+
+.see-more {
+  justify-self: end;
+}
+
+/* ************************************FOOTER*********************************************** */
+
+.idea {
+  margin-bottom: 64px;
+  white-space: wrap;
+}
+
+
+.footer-social {
+  margin-bottom: 64px;
+}
+
+.hover-black-bg {
+  border-bottom: 1px solid var(--black);
+  position: relative;
+}
+
+
+.hover-black-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleY(0);
+  transform-origin: bottom center;
+  z-index: -1;
+  background-color: var(--black);
+  transition: all .3s ease-in-out;
+}
+
+.hover-black-bg:hover::before {
+  transform: scaleY(1);
+}
+
+.hover-black-bg a {
+  display: block;
+  padding: 8px 8px;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all .3s ease-in-out;
+}
+
+.hover-black-bg:hover a {
+  color: var(--white);
+}
+
+.footer-nav {
+  margin-bottom: 32px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+
+.legal {
+  font-weight: 700;
+  margin-bottom: 64px;
+  font-size: 12px;
+}
+
+.flex {
+  display: flex;
+}
+
+footer h3 {
+  font-size: 35px;
+  font-weight: 500;
+}
+
+.go-top {
+  width: 80px;
 }
