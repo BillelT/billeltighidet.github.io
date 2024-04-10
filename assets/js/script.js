@@ -1,7 +1,5 @@
 // Declare global variables used in this script
 const navLinks = ["À propos", "Projets", "Contact", "Mon CV"];
-const smallArrows = document.querySelectorAll(".small-arrow");
-const arrows = document.querySelectorAll(".arrow");
 const magneticElements = document.querySelectorAll(".has-attraction");
 const h1 = document.querySelector("h1");
 const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -114,34 +112,34 @@ function handleArrowThemeChange(event) {
 handleArrowThemeChange(darkTheme);
 darkTheme.addEventListener("change", handleArrowThemeChange);
 
-// loader animation
-document.addEventListener("DOMContentLoaded", () => {
-  // force go back top when page refresh
-  window.scrollTo(0, 0);
-  if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-  }
-  setTimeout(() => {
-    loaderText.style.opacity = "0.05";
-  }, 1400);
-  setTimeout(() => {
-    loaderText.innerText = "Billel Tighidet";
-  }, 1950);
-  setTimeout(() => {
-    loaderText.style.opacity = "1";
-  }, 1950);
-  setTimeout(() => {
-    loaderText.style.display = "none";
-    loader.remove();
-    h1.style.opacity = "1";
-    document.body.classList.add("scroll");
-    linkedInAnimation.classList.add("reveal")
-    anim.play();
-  }, 3250);
-  setTimeout(() => {
-    linkedInAnimation.classList.remove("reveal")
-  }, 6830);
-});
+// // loader animation
+// document.addEventListener("DOMContentLoaded", () => {
+//   // force go back top when page refresh
+//   window.scrollTo(0, 0);
+//   if ("scrollRestoration" in history) {
+//     history.scrollRestoration = "manual";
+//   }
+//   setTimeout(() => {
+//     loaderText.style.opacity = "0.05";
+//   }, 1400);
+//   setTimeout(() => {
+//     loaderText.innerText = "Billel Tighidet";
+//   }, 1950);
+//   setTimeout(() => {
+//     loaderText.style.opacity = "1";
+//   }, 1950);
+//   setTimeout(() => {
+//     loaderText.style.display = "none";
+//     loader.remove();
+//     h1.style.opacity = "1";
+//     document.body.classList.add("scroll");
+//     linkedInAnimation.classList.add("reveal")
+//     anim.play();
+//   }, 3250);
+//   setTimeout(() => {
+//     linkedInAnimation.classList.remove("reveal")
+//   }, 6830);
+// });
 
 me.addEventListener("mouseenter", () => {
   linkedInAnimation.classList.add("reveal")
