@@ -6,22 +6,15 @@ const darkTheme = window.matchMedia("(prefers-color-scheme: dark)");
 const mockUps = document.querySelectorAll(".mockUp");
 const Dates = new Date();
 const year = Dates.getFullYear();
-const arrowCursor = document.createElement('img')
-const animationPath = './motion/logo linkedin b&w.json';
+const animationPath = "./motion/logo linkedin b&w.json";
 const animationOptions = {
-  container: document.getElementById('linkedInAnimation'),
+  container: document.getElementById("linkedInAnimation"),
   path: "./motion/logo linkedin b&w.json",
-  render: 'svg',
+  render: "svg",
   loop: false,
   autoplay: false,
 };
 const anim = bodymovin.loadAnimation(animationOptions);
-
-
-
-
-
-
 
 function hasAttraction(e) {
   const mouseX = e.clientX;
@@ -31,86 +24,20 @@ function hasAttraction(e) {
   const dx = mouseX - elementX;
   const dy = mouseY - elementY;
   const attractionSpeed = 0.1;
-  const translateX = elementX + dx * attractionSpeed + 'px'
-  const translateY = elementY + dy * attractionSpeed + 'px'
+  const translateX = elementX + dx * attractionSpeed + "px";
+  const translateY = elementY + dy * attractionSpeed + "px";
   e.target.style.transform = "translate(" + translateX + "," + translateY + ")";
 }
 
-
-// give cursor position 
-document.addEventListener('mousemove', (e) => {
-  cursor.classList.add("visible")
+// give cursor position
+document.addEventListener("mousemove", (e) => {
+  cursor.classList.add("visible");
   cursor.style.transform = "translate(" + e.pageX + "px," + e.pageY + "px)";
-  cursorText.innerText = " ";
-  if (e.target.attributes["data-text"]) {
-    cursorText.innerText = e.target.attributes["data-text"].textContent;
-  }
-  if (e.target.localName !== "video") {
-    cursorText.classList.remove("animated")
-    cursor.classList.remove("arrow-cursor")
-    arrowCursor.remove()
-  } else if (!cursor.contains(arrowCursor)) {
-    cursorText.classList.add("animated")
-    arrowCursor.id = "arrowCursor"
-    arrowCursor.src = "./medias/arrow burger menu white.svg"
-    cursor.classList.add("arrow-cursor")
-    cursor.appendChild(arrowCursor)
-  }
-})
-
-document.addEventListener('mouseleave', (e) => {
-  cursor.classList.remove("visible")
-})
-
-
-// mobile menu class adding and CTA's innerText adaptation
-document.addEventListener("click", (e) => {
-  console.log(e.offsetX, e.clientX);
-  if (e.target.innerText === "Menu") {
-    mobileNavClicked.classList.toggle("mobile-nav-clicked");
-    offbeat1.classList.toggle("mobile-nav-clicked");
-    offbeat2.classList.toggle("mobile-nav-clicked");
-    offbeat3.classList.toggle("mobile-nav-clicked");
-    mobileNav.innerText = "X";
-  } else if (e.target.innerText === "X") {
-    mobileNavClicked.classList.toggle("mobile-nav-clicked");
-    offbeat1.classList.toggle("mobile-nav-clicked");
-    offbeat2.classList.toggle("mobile-nav-clicked");
-    offbeat3.classList.toggle("mobile-nav-clicked");
-    mobileNav.innerText = "Menu";
-  }
-  if (navLinks.includes(e.target.innerText)) {
-    mobileNavClicked.classList.toggle("mobile-nav-clicked");
-    offbeat1.classList.toggle("mobile-nav-clicked");
-    offbeat2.classList.toggle("mobile-nav-clicked");
-    offbeat3.classList.toggle("mobile-nav-clicked");
-    mobileNav.innerText = "Menu";
-  }
 });
 
-function handleSmallArrowThemeChange(event) {
-  smallArrows.forEach(function handleImg(arrow) {
-    if (event.matches) {
-      arrow.src = "./medias/arrow burger menu white.svg";
-    } else {
-      arrow.src = "./medias/arrow burger menu.svg";
-    }
-  });
-}
-handleSmallArrowThemeChange(darkTheme);
-darkTheme.addEventListener("change", handleSmallArrowThemeChange);
-
-function handleArrowThemeChange(event) {
-  arrows.forEach(function handleImg(arrow) {
-    if (event.matches) {
-      arrow.src = "./medias/arrow projects white.svg";
-    } else {
-      arrow.src = "./medias/arrow projects.svg";
-    }
-  });
-}
-handleArrowThemeChange(darkTheme);
-darkTheme.addEventListener("change", handleArrowThemeChange);
+document.addEventListener("mouseleave", (e) => {
+  cursor.classList.remove("visible");
+});
 
 // // loader animation
 // document.addEventListener("DOMContentLoaded", () => {
@@ -141,14 +68,13 @@ darkTheme.addEventListener("change", handleArrowThemeChange);
 //   }, 6830);
 // });
 
-me.addEventListener("mouseenter", () => {
-  linkedInAnimation.classList.add("reveal")
-  anim.goToAndPlay(0);
-})
-me.addEventListener("mouseleave", () => {
-  linkedInAnimation.classList.remove("reveal")
-})
-
+// me.addEventListener("mouseenter", () => {
+//   linkedInAnimation.classList.add("reveal");
+//   anim.goToAndPlay(0);
+// });
+// me.addEventListener("mouseleave", () => {
+//   linkedInAnimation.classList.remove("reveal");
+// });
 
 // playing projects videos on mouse enter and paused when mouse leave
 mockUps.forEach(function hoverPlay(mockUp) {
@@ -163,7 +89,6 @@ mockUps.forEach(function hoverPlay(mockUp) {
     mockUp.pause();
   });
 });
-
 
 // credits year autorefresh
 credits.innerText = "© " + year + " Billel Tighidet Tous droits réservés";
