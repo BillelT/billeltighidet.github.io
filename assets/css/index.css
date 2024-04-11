@@ -71,6 +71,7 @@ h2 {
   position: relative;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: var(--black);
+  overflow: hidden;
 }
 
 .head-translate-container {
@@ -275,7 +276,9 @@ header.visible span {
   font-weight: 600;
   margin-bottom: 64px;
   white-space: wrap;
-  width: 60%;
+  word-wrap: break-word;
+  word-break: break-word;
+  width: 120%;
 }
 
 .hero .arrow {
