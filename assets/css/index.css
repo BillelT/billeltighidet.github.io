@@ -76,9 +76,8 @@ h2 {
 
 .head-translate-container {
   position: relative;
-  left: -10%;
-  width: 100%;
   overflow: hidden;
+  width: 100%;
 }
 
 .projects .head-translate-container {
@@ -290,6 +289,11 @@ header.visible span {
 }
 
 /* ************************************ABOUT*********************************************** */
+
+.about {
+  padding: 0;
+}
+
 .about .stroke-head::after {
   content: "À PROPOS";
   position: absolute;
@@ -303,6 +307,7 @@ header.visible span {
 .explore,
 .passionate {
   margin-bottom: 128px;
+  padding: 0 6.25%;
 }
 
 .about p {
