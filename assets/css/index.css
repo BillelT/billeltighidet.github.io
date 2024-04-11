@@ -27,7 +27,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #01010a;
   background-color: #f9fafb;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 body.no-scroll {
@@ -67,12 +67,6 @@ h2 {
   font-weight: 600;
 }
 
-.stroke-head {
-  position: relative;
-  -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: var(--black);
-  overflow: hidden;
-}
 
 .head-translate-container {
   position: relative;
@@ -80,20 +74,31 @@ h2 {
   width: 100%;
 }
 
+.head-translate-inner {
+  display: flex;
+}
+
+.stroke-head {
+  position: relative;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--black);
+  overflow: hidden;
+}
+
 .projects .head-translate-container {
   left: 0;
 }
 
-.from-left {
+/* .from-left {
   position: relative;
   top: 0;
-  /* left: calc(-100% - 100vw); */
+  left: calc(-100% - 100vw);
 }
 
 .from-right {
   position: relative;
-  /* left: 110%; */
-}
+  left: 110%;
+} */
 
 .hover-wheel {
   position: relative;
