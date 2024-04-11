@@ -20,28 +20,31 @@
       <span id="loaderText">Bienvenue</span>
     </span>
   </div> -->
-  <header>
-    <img src="./medias/logo BT.svg" alt="logo billel tighidet" class="logo">
-    <span>Menu</span>
-    <nav class="header-nav">
-      <ul class="menu">
+  <header id="header">
+    <a href="#" class="logo">
+      <img src="./medias/logo BT.svg" alt="logo billel tighidet" class="logo">
+    </a>
+    <span id="menuButton">Menu</span>
+    <nav id="menu" class="menu">
+      <ul class="nav">
         <li>
-          <a href="#about">À propos<img src="./medias/arrow burger menu.png" alt="icône de flèche"></a>
+          <a href="#about">À propos<img src="./medias/arrow burger menu.png" alt="icône de flèche"
+              class="menu-arrow"></a>
         </li>
         <li>
-          <a href="#projects">Projets<img src="./medias/arrow burger menu.png" alt="icône de flèche"></a>
+          <a href="#projects">Projets<img src="./medias/arrow burger menu.png" alt="icône de flèche"
+              class="menu-arrow"></a>
         </li>
         <li>
-          <a href="#contact">Contact<img src="./medias/arrow burger menu.png" alt="icône de flèche"></a>
+          <a href="#contact">Contact<img src="./medias/arrow burger menu.png" alt="icône de flèche"
+              class="menu-arrow"></a>
         </li>
         <li>
-          <a href="./medias/CV Billel Tighidet.pdf">Mon CV<img src="./medias/arrow burger menu.png"
+          <a href="./medias/CV Billel Tighidet.pdf">Mon CV<img src="./medias/arrow burger menu.png" class="menu-arrow"
               alt="icône de flèche"></a>
         </li>
       </ul>
-    </nav>
-    <nav class="social">
-      <ul>
+      <ul class="social">
         <li>
           <a href="https://www.behance.net/billeltighidet">BEHANCE</a>
         </li>
@@ -64,11 +67,9 @@
     <img src="./medias/billel tighidet.png" alt="photo de billel tighidet" class="me">
   </section>
   <section class="about container">
-    <h2 class="scroll-translate from-left">À PROPOS <span class="stroke-head">À PROPOS</span> À PROPOS <span
-        class="stroke-head">À
+    <h2 class="from-left">À PROPOS <span class="stroke-head">À PROPOS</span> À PROPOS <span class="stroke-head">À
         PROPOS</span></h2>
-    <h2 class="scroll-translate from-right"><span class="stroke-head">À PROPOS</span> À PROPOS <span
-        class="stroke-head">À
+    <h2 class="from-right"><span class="stroke-head">À PROPOS</span> À PROPOS <span class="stroke-head">À
         PROPOS</span> À PROPOS</h2>
 
     <article class="explore">
@@ -404,8 +405,12 @@
       </ul>
     </nav>
     <ul class="legal">
-      <p id="credits"></p>
-      <p>Hosted on <a href="https://www.netlify.com/" class="underline">Netlify</a></p>
+      <li>
+        <p id="credits"></p>
+      </li>
+      <li>
+        <p>Hosted on <a href="https://www.netlify.com/" class="underline">Netlify</a></p>
+      </li>
     </ul>
     <div class="flex">
       <h3>BILLEL TIGHIDET</h3>
@@ -414,7 +419,6 @@
       </a>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 

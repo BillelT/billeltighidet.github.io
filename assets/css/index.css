@@ -44,6 +44,8 @@ footer {
 a {
   text-decoration: none;
   color: var(--black);
+  display: block;
+  width: fit-content;
 }
 
 h2 {
@@ -58,20 +60,24 @@ h2 {
   -webkit-text-stroke-color: var(--black);
 }
 
-/* .from-left {
-  transform: translateX(-310%);
-} */
+.from-left {
+  position: relative;
+  top: 0;
+  left: -200%;
+}
 
-/* .from-right {
-  transform: translateX(110%);
-} */
+.from-right {
+  position: relative;
+  left: 110%;
+}
 
 /* ************************************HEADER*********************************************** */
 
 header {
   position: fixed;
-  top: 16px;
+  top: 0;
   left: 0;
+  padding-top: 16px;
   width: 100%;
   display: grid;
   grid-template-rows: 1fr;
@@ -79,22 +85,76 @@ header {
   justify-content: center;
   align-items: center;
   mix-blend-mode: difference;
+}
+
+header.visible {
+  mix-blend-mode: normal;
+  background-color: var(--white);
+  grid-template-rows: auto 1fr;
+  row-gap: 22vh;
   z-index: 100;
 }
 
-header .logo {
+.logo img {
+  z-index: 100;
   height: 40px;
 }
 
-header nav {
-  display: none;
+header.visible .logo img {
+  mix-blend-mode: difference;
 }
 
 header span {
+  z-index: 100;
   width: fit-content;
   justify-self: end;
   color: var(--white);
 }
+
+header.visible span {
+  font-weight: 600;
+  color: var(--black);
+}
+
+.menu {
+  width: 100%;
+  height: 100vh;
+  transform: translateY(100vh);
+  transition: all .4s ease-in-out;
+}
+
+.menu.visible {
+  display: block;
+  grid-column: 1/3;
+  transform: translateY(0vh);
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: 4.2vh;
+  margin-bottom: 14vh;
+}
+
+
+.nav a {
+  width: 100%;
+  font-size: 30px;
+  display: flex;
+  align-items: baseline;
+  column-gap: 16px;
+}
+
+.social a {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.menu-arrow {
+  height: 37px;
+}
+
+
 
 /* ************************************HERO*********************************************** */
 .hero {
@@ -437,6 +497,10 @@ h1 span {
   justify-self: end;
 }
 
+.see-more img {
+  width: 80px;
+}
+
 /* ************************************FOOTER*********************************************** */
 
 .idea {
@@ -474,7 +538,6 @@ h1 span {
 }
 
 .hover-black-bg a {
-  display: block;
   padding: 8px 8px;
   font-size: 14px;
   font-weight: 700;
