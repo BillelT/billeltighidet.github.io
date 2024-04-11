@@ -6,198 +6,423 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Billel Tighidet</title>
   <link rel="stylesheet" href="./assets/css/index.css" />
-  <link rel="stylesheet" href="./assets/css/animation.css" />
+  <link rel="stylesheet" href="./assets/css/loader-cursor.css" />
   <link rel="stylesheet" href="./assets/css/media-queries.css" />
   <meta name="description"
     content="Exposition non exhaustive des projets de Billel Tighidet, designer et développeur créatif junior." />
-  <link rel="icon" href="./medias/Photo-Billel-Tighidet.webp" />
+  <link rel="icon" href="./medias/logo BT.png" />
 </head>
 
-<body>
+<body id="body">
   <div class="cursor" id="cursor">
-    <span id="cursorText"></span>
   </div>
-  <div class="loader" id="loader">
+  <!-- <div class="loader" id="loader">
     <span class="loader-text">
       <span id="loaderText">Bienvenue</span>
     </span>
-  </div>
-  <header class="container">
-    <a href="https://www.linkedin.com/in/billel-tighidet-76b292234/" target="_blank">
-      <div class="has-attraction lottie-container" id="me">
-        <img src="./medias/Photo-Billel-Tighidet.webp" alt="Billel Tighidet" height="60" width="60" />
-        <div id="linkedInAnimation" class="linkedin-animation"></div>
-      </div>
+  </div> -->
+  <header id="header">
+    <a href="#" class="logo">
+      <img src="./medias/logo BT.svg" alt="logo billel tighidet" class="logo">
     </a>
-    <nav id="mobileNavClicked">
-      <ul>
-        <li class="first-nav-link">
-          <a href="#about">
-            <p data-link="À propos">À propos</p>
-            <img src="" alt="flèche" class="small-arrow" width="23" height="23" />
-          </a>
+    <span id="menuButton">Menu</span>
+    <nav id="menu" class="menu">
+      <ul class="nav">
+        <li>
+          <a href="#about">À propos<img src="./medias/arrow burger menu.png" alt="icône de flèche"
+              class="menu-arrow"></a>
         </li>
-        <li id="offbeat1" class="offbeat1">
-          <a href="#projects">
-            <p data-link="Projets">Projets</p>
-            <img src="" alt="flèche" class="small-arrow" width="23" height="23" />
-          </a>
+        <li>
+          <a href="#projects">Projets<img src="./medias/arrow burger menu.png" alt="icône de flèche"
+              class="menu-arrow"></a>
         </li>
-        <li id="offbeat2" class="offbeat2">
-          <a href="#contact">
-            <p data-link="Contact">Contact</p>
-            <img src="" alt="flèche" class="small-arrow" width="23" height="23" />
-          </a>
+        <li>
+          <a href="#contact">Contact<img src="./medias/arrow burger menu.png" alt="icône de flèche"
+              class="menu-arrow"></a>
         </li>
-        <li id="offbeat3" class="offbeat3">
-          <a href="./medias/CV Billel Tighidet.pdf" target="_blank">
-            <p data-link="Mon CV">Mon CV</p>
-            <img src="" alt="flèche" class="small-arrow" width="23" height="23" />
-          </a>
+        <li>
+          <a href="./medias/CV Billel Tighidet.pdf">Mon CV<img src="./medias/arrow burger menu.png" class="menu-arrow"
+              alt="icône de flèche"></a>
+        </li>
+      </ul>
+      <ul class="social">
+        <li>
+          <a href="https://www.behance.net/billeltighidet">BEHANCE</a>
+        </li>
+        <li>
+          <a href="https://github.com/BillelT">GITHUB</a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/billel-tighidet-76b292234/">LINKEDIN</a>
+        </li>
+        <li>
+          <a href="mailto:b.tighidet0@gmail.com">E-MAIL</a>
         </li>
       </ul>
     </nav>
-    <span class="mobile-menu" id="mobileNav">Menu</span>
   </header>
-  <main>
-    <section class="container hero">
-      <h1>Billel Tighidet</h1>
-      <p>
-        Étudiant de première année en BUT Métiers du Multimédia et de
-        l'Internet (MMI) à l'IUT Bordeaux Montaigne.
-      </p>
-    </section>
-    <section class="container about" id="about">
-      <h2>À propos</h2>
-      <p>
-        Armé de ma créativité et de mes compétences en développement,
-        j'explore le monde du digital. Le BUT MMI m'offre l'opportunité de
-        travailler sur différents projets, qui aborde de nombreux domaines du
-        multimédia. Passionné par le design et le développement web, je me
-        forme en autodidacte à travers mes propres projets. J'imagine, je
-        conçois et je développe des interfaces web.
-      </p>
-    </section>
+  <section class="hero container">
+    <h1><span class="designer">DESIGNER</span> <span class="and">&</span> DÉVELOPPEUR CRÉATIF <span
+        class="junior">JUNIOR</span></h1>
+    <h2 class="name">BILLEL TIGHIDET</h2>
+    <a href="#projects" class="arrow">
+      <img src="./medias/arrow scroll.png" alt="icône de flèche">
+    </a>
+    <img src="./medias/billel tighidet.png" alt="photo de billel tighidet" class="me">
+  </section>
+  <section class="about container" id="about">
+    <h2 class="from-left">À PROPOS <span class="stroke-head">À PROPOS</span> À PROPOS <span class="stroke-head">À
+        PROPOS</span></h2>
+    <h2 class="from-right"><span class="stroke-head">À PROPOS</span> À PROPOS <span class="stroke-head">À
+        PROPOS</span> À PROPOS</h2>
 
-    <section class="container projects" id="projects">
-      <h2>Mes projets</h2>
-
-      <article class="project">
-        <a href="https://musee-daquitaine.netlify.app/" target="_blank" class="head-project">
-          <h3>Refonte du musée d'Aquitaine (2 pages).</h3>
+    <article class="explore">
+      <p class="sticky">Le <span class="underline">BUT MMI</span> m'offre l'opportunité d'explorer tous les domaines du
+        multimédia.</p>
+      <div class="img-grid">
+        <article class="card-container">
+          <div class="card" data-text="AUD">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card" data-text="IOV">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card" data-text="ISU">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card" data-text="EL">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+        <article class="card-container">
+          <div class="card">
+            <img src="./test.webp" alt="test">
+          </div>
+        </article>
+      </div>
+    </article>
+    <article class="passionate">
+      <p class="sticky">Passionné par le <span class="bold">design</span> et le <span class="bold">développement</span>
+        web,
+        j'imagine, je
+        conçois, et je développe des
+        interfaces web.</p>
+      <div class="img-container">
+        <img src="test.webp" alt="test">
+      </div>
+    </article>
+    <div class="software">
+      <p>Pour réaliser mes projets j'utilise</p>
+      <ul class="software-list">
+        <li class="hover-pop">
+          <img src="./medias/logo figma b&w.png" alt="logo figma noir & blanc">
+        </li>
+        <li class="hover-pop">
+          <img src="./medias/logo blender b&w.png" alt="logo blender noir & blanc">
+        </li>
+        <li class="hover-pop">
+          <img src="./medias/logo illustrator b&w.png" alt="logo illustrator noir & blanc">
+        </li>
+        <li class="hover-pop">
+          <img src="./medias/logo ae b&w.png" alt="logo after effects noir & blanc">
+        </li>
+        <li class="hover-pop">
+          <img src="./medias/logo js b&w.png" alt="logo javascript noir & blanc" class="blend-difference">
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="projects container" id="projects">
+    <h2 class="scroll-translate from-left">PROJETS <span class="stroke-head">PROJETS</span> PROJETS <span
+        class="stroke-head">PROJETS</span></h2>
+    <h2 class="scroll-translate from-right"><span class="stroke-head">PROJETS</span> PROJETS <span
+        class="stroke-head">PROJETS</span> PROJETS </h2>
+    <article class="project scroll-stack">
+      <div class="project-main">
+        <p class="index">/01</p>
+        <h3 class="project-head" data-year="2023">Site vitrine, idendité visuelle</h3>
+        <p class="type-duration">Projet personnel, 2 semaines</p>
+        <ul class="skills">
+          <li class="skill hover-bullet-scale art-direction">
+            Direction artistique
+          </li>
+          <li class="skill hover-bullet-scale development">
+            </span>Développement
+          </li>
+          <li class="skill hover-bullet-scale adobe">
+            Suite Adobe
+          </li>
+          <li class="skill hover-bullet-scale ux-ui">
+            UX/UI design
+          </li>
+        </ul>
+      </div>
+      <a href="https://actifservicesnettoyage.netlify.app/" class="mockup">
+        <img src="./medias/mock up asn.png" alt="mock up projet site vitrine">
+      </a>
+      <a href="https://actifservicesnettoyage.netlify.app/" class="layout">
+        <img src="./medias/layout asn.png" alt="layout projet site vitrine">
+      </a>
+      <div class="project-more">
+        <p class="description">Il s'agit de mon 2ème site et de mon 1er site développé seul et sans librairie. Étant
+          donné que l'ancien design de mon portfolio avais étais réalisé à l'aide d'une vidéo et en utilisant Bootstrap.
+          C'est donc le projet qui m'a le plus permis de découvrir les langages du web bien que le design soit assez
+          novice. Afin d'améliorer l'UX, j'ai appris ici à préremplir une page formulaire selon le CTA choisi par
+          l'utilisateur.</p>
+        <a href="https://actifservicesnettoyage.netlify.app/" class="see-site"> Visiter le site
+          <img src="./medias/small arrow projects white.png" alt="icône de flèche">
         </a>
-        <div class="video-container">
-          <a href="https://musee-daquitaine.netlify.app/" aria-label="Refonte du musée d'Aquitaine (2 pages)."
-            target="_blank">
-            <video muted loop class="mockUp" loading="lazy" preload="auto" autoplay="autoplay"
-              data-text="Visitez le site">
-              <source src="./medias/mock up musée d'aquitaine.mp4" type="video/mp4" />
-            </video>
-          </a>
-        </div>
-        <a href="https://musee-daquitaine.netlify.app/" target="_blank">
-          <p>
-            Premier projet de design web, j'ai découvert ici toutes ses bonnes pratiques. Notamment, établir un design
-            system, un wireframe, etc. Ensuite, pour l'intégration, je me suis amélioré en HTML, CSS et JavaScript. Bien
-            que ce n'était pas mon premier site web, la découverte de ces process et du développement en groupe ont
-            étaient de vrais défis.
-          </p>
+        <a href="https://actifservicesnettoyage.netlify.app/" class="see-more" class="see-more">
+          <img src="./medias/big arrow projects white.png" alt="icône de flèche">
         </a>
-        <a href="https://musee-daquitaine.netlify.app/" class="link-arrow">
-          <img src="" class="arrow projects-arrow" alt="flèche" width="40" height="37" />
+      </div>
+    </article>
+    <article class="project scroll-stack white-bg">
+      <div class="project-main">
+        <p class="index">/02</p>
+        <h3 class="project-head" data-year="2023">Site vitrine, idendité visuelle</h3>
+        <p class="type-duration">Projet MMI, 2 semaines</p>
+        <ul class="skills">
+          <li class="skill hover-bullet-scale ux-ui">
+            UX/UI design
+          </li>
+          <li class="skill hover-bullet-scale art-direction">
+            Direction artistique
+          </li>
+          <li class="skill hover-bullet-scale development">
+            </span>Développement
+          </li>
+        </ul>
+      </div>
+      <a href="https://musee-daquitaine.netlify.app/" class="mockup">
+        <img src="./medias/mock up musee.png" alt="mock up projet refonte musée">
+      </a>
+      <a href="https://musee-daquitaine.netlify.app/" class="layout">
+        <img src="./medias/layout musee.png" alt="layout projet refonte musée">
+      </a>
+      <div class="project-more">
+        <p class="description">Ce projet m'a permis de découvrir Figma et les bons procédés du design web. Définir une
+          direction artistique avec une veille et un design system, les règles d'UX et d'accessibilité, les bonnes
+          pratiques d'UI (zoning, wireframe, maquettes). C'était la première fois que j'intégrais une maquette selon ces
+          procédés et en groupe, j'ai appris à développer de manière propre, responsable et éco-conçue.</p>
+        <a href="https://musee-daquitaine.netlify.app/" class="see-site"> Visiter le site
+          <img src="./medias/small arrow projects black.png" alt="icône de flèche">
         </a>
-      </article>
-
-      <article class="project">
-        <a href="https://my-lil-calc.netlify.app/" target="_blank" class="head-project">
-          <h3>Calculatrice en JavaScript.</h3>
+        <a href="https://musee-daquitaine.netlify.app/" class="see-more">
+          <img src="./medias/big arrow projects black.png" alt="icône de flèche">
         </a>
-        <div class="video-container">
-          <a href="https://my-lil-calc.netlify.app/" aria-label="Calculatrice en Javascript" target="_blank">
-            <video muted loop class="mockUp" loading="lazy" preload="auto" autoplay="autoplay"
-              data-text="Visitez le site">
-              <source src="./medias/mock up calculatrice.mp4" type="video/mp4" />
-            </video>
-          </a>
-        </div>
-        <a href="https://my-lil-calc.netlify.app/">
-          <p>
-            Bien qu'elle ne soit pas complexe, ce projet m'a permis
-            d'apprendre à manipuler le DOM. J'ai mis l'accent sur des détails
-            d'UX comme la possibilité d'utiliser à la fois les boutons et le
-            clavier. Les effets visuels de hover et de sélection de la
-            calculatrice viennent indiquer à l'utilisateur quand il peut
-            intéragir.
-          </p>
+      </div>
+    </article>
+    <article class="project scroll-stack">
+      <div class="project-main">
+        <p class="index">/03</p>
+        <h3 class="project-head" data-year="2023">Calculatrice</h3>
+        <p class="type-duration">Projet personnel, 1 semaine</p>
+        <ul class="skills">
+          <li class="skill hover-bullet-scale development">
+            </span>Développement
+          </li>
+          <li class="skill hover-bullet-scale ux-ui">
+            UX/UI design
+          </li>
+        </ul>
+      </div>
+      <a href="https://my-lil-calc.netlify.app/" class="mockup">
+        <img src="./medias/mock up calculatrice.png" alt="mock up projet calculatrice">
+      </a>
+      <a href="https://my-lil-calc.netlify.app/" class="layout">
+        <img src="./medias/layout calculatrice.png" alt="layout projet calculatrice">
+      </a>
+      <div class="project-more">
+        <p class="description">Malheureusement, comme je l'ai réalisé sans aucune aide extérieure que ce soit un tuto,
+          une IA ou autre la calculatrice est incomplète. Ce projet était très ambitieux car je découvrais à peine
+          JavaScript à ce moment là. Mais grâce à mes expériences passées, comme mon année en fac de chimie avec une
+          option info (Python), j'ai réussi à développer les fonctionnalités de base d'une calculatrice en JavaScript.
+        </p>
+        <a href="https://my-lil-calc.netlify.app/" class="see-site"> Visiter le site
+          <img src="./medias/small arrow projects white.png" alt="icône de flèche">
         </a>
-        <a href="https://my-lil-calc.netlify.app/" class="link-arrow">
-          <img src="" class="arrow projects-arrow" alt="flèche" width="40" height="37" />
+        <a href="https://my-lil-calc.netlify.app/" class="see-more">
+          <img src="./medias/big arrow projects white.png" alt="icône de flèche">
         </a>
-      </article>
-
-      <article class="project">
-        <a href="https://actifservicesnettoyage.netlify.app/" target="_blank" class="head-project">
-          <h3>Site pour une entreprise fictive (2 pages).</h3>
+      </div>
+    </article>
+    <article class="project scroll-stack white-bg">
+      <div class="project-main">
+        <p class="index">/04</p>
+        <h3 class="project-head" data-year="2023">Création d'un blog engagé</h3>
+        <p class="type-duration">Projet MMI, 2 semaines</p>
+        <ul class="skills">
+          <li class="skill hover-bullet-scale art-direction">
+            Direction artistique
+          </li>
+          <li class="skill hover-bullet-scale ux-ui">
+            UX/UI design
+          </li>
+          <li class="skill hover-bullet-scale development">
+            </span>Développement
+          </li>
+        </ul>
+      </div>
+      <a href="https://mmig6.gwendaljudic.com/" class="mockup">
+        <img src="./medias/mock up blog'art.png" alt="mock up projet blog engagé">
+      </a>
+      <a href="https://mmig6.gwendaljudic.com/" class="layout">
+        <img src="./medias/layout blog'art.png" alt="layout projet blog engagé">
+      </a>
+      <div class="project-more">
+        <p class="description">Il s'agit de mon 2ème site et de mon 1er site développé seul et sans librairie. Étant
+          donné que l'ancien design de mon portfolio avais étais réalisé à l'aide d'une vidéo et en utilisant Bootstrap.
+          C'est donc le projet qui m'a le plus permis de découvrir les langages du web bien que le design soit assez
+          novice. Afin d'améliorer l'UX, j'ai appris ici à préremplir une page formulaire selon le CTA choisi par
+          l'utilisateur.</p>
+        <a href="https://mmig6.gwendaljudic.com/" class="see-site"> Visiter le site
+          <img src="./medias/small arrow projects black.png" alt="icône de flèche">
         </a>
-        <div class="video-container">
-          <a href="https://actifservicesnettoyage.netlify.app/" aria-label="Site pour une entreprise fictive (2 pages)."
-            target="_blank">
-            <video muted loop class="mockUp" loading="lazy" preload="auto" autoplay="autoplay"
-              data-text="Visitez le site">
-              <source src="./medias/mock up ASN.mp4" type="video/mp4" />
-            </video>
-          </a>
-        </div>
-        <a href="https://actifservicesnettoyage.netlify.app/">
-          <p>
-            Il s'agit de mon 2e projet, il m'a permis d'approfondir mes
-            connaissances en développement web (HTML, CSS, JS). Après avoir
-            découvert les bons process du design web, j'ai réalisé une refonte
-            complète de l'identité de cette marque fictive. J'ai réalisé une
-            veille complète, retravaillé le logo, redéfini les couleurs.
-            Toutes les animations ont étaient réalisés en amont sur Figma, ce
-            qui m'a permis de découvrir le prototypage.
-          </p>
+        <a href="https://mmig6.gwendaljudic.com/" class="see-more">
+          <img src="./medias/big arrow projects black.png" alt="icône de flèche">
         </a>
-        <a href="https://actifservicesnettoyage.netlify.app/" class="link-arrow">
-          <img src="" class="arrow projects-arrow" alt="flèche" width="40" height="37" />
+      </div>
+    </article>
+    <article class="project scroll-stack">
+      <div class="project-main">
+        <p class="index">/05</p>
+        <h3 class="project-head" data-year="2023">Portfolio</h3>
+        <p class="type-duration">Projet personnel, 3 jours</p>
+        <ul class="skills">
+          <li class="skill hover-bullet-scale development">
+            </span>Développement
+          </li>
+          <li class="skill hover-bullet-scale ux-ui">
+            UX/UI design
+          </li>
+        </ul>
+      </div>
+      <a href="https://main--nguyenphuc.netlify.app/" class="mockup">
+        <img src="./medias/mock up folio phuc.png" alt="mock up projet portfolio">
+      </a>
+      <a href="https://main--nguyenphuc.netlify.app/" class="layout">
+        <img src="./medias/layout folio phuc.png" alt="layout projet portfolio">
+      </a>
+      <div class="project-more">
+        <p class="description">Il s'agit de mon 2ème site et de mon 1er site développé seul et sans librairie. Étant
+          donné que l'ancien design de mon portfolio avais étais réalisé à l'aide d'une vidéo et en utilisant Bootstrap.
+          C'est donc le projet qui m'a le plus permis de découvrir les langages du web bien que le design soit assez
+          novice. Afin d'améliorer l'UX, j'ai appris ici à préremplir une page formulaire selon le CTA choisi par
+          l'utilisateur.</p>
+        <a href="https://main--nguyenphuc.netlify.app/" class="see-site"> Visiter le site
+          <img src="./medias/small arrow projects white.png" alt="icône de flèche">
         </a>
-      </article>
-    </section>
-  </main>
-  <footer class="container">
-    <nav>
+        <a href="https://main--nguyenphuc.netlify.app/" class="see-more">
+          <img src="./medias/big arrow projects white.png" alt="icône de flèche">
+        </a>
+      </div>
+    </article>
+  </section>
+  <footer id="contact">
+    <h2 class="idea">UN PROJET EN TÊTE ?</h2>
+    <nav class="footer-social">
       <ul>
-        <li>
-          <a href="mailto:b.tighidet0@gmail.com">
-            <p data-link="b.tighidet0@gmail.com">b.tighidet0@gmail.com</p>
-          </a>
+        <li class="hover-black-bg border-bottom">
+          <a href="https://www.behance.net/billeltighidet">BEHANCE</a>
         </li>
-        <li>
-          <a href="https://www.linkedin.com/in/billel-tighidet-76b292234/" target="_blank">
-            <p data-link="Behance">Bechance</p>
-          </a>
+        <li class="hover-black-bg border-bottom">
+          <a href="https://github.com/BillelT">GITHUB</a>
         </li>
-        <li>
-          <a href="https://github.com/BillelT" target="_blank" class="last-nav-link">
-            <p data-link="Github">Github</p>
-          </a>
+        <li class="hover-black-bg border-bottom">
+          <a href="https://www.linkedin.com/in/billel-tighidet-76b292234/">LINKEDIN</a>
         </li>
-        <li>
-          <a href="#" class="go-top">
-            <img src="" class="small-arrow" alt="flèche" width="16" height="16" /></a>
+        <li class="hover-black-bg border-bottom">
+          <a href="mailto:b.tighidet0@gmail.com">E-MAIL</a>
         </li>
       </ul>
     </nav>
-    <div class="legal">
-      <p id="credits">© 2024 Billel Tighidet Tous droits réservés</p>
-      <p>
-        Hébergé par
-        <a href="https://www.netlify.com/" target="_blank">Netlify</a>
-      </p>
+    <nav class="footer-nav">
+      <ul>
+        <li>
+          <a href="#projects">MES PROJETS</a>
+        </li>
+        <li>
+          <a href="./medias/CV Billel Tighidet.pdf">MON CV</a>
+        </li>
+      </ul>
+    </nav>
+    <ul class="legal">
+      <li>
+        <p id="credits"></p>
+      </li>
+      <li>
+        <p>Hosted on <a href="https://www.netlify.com/" class="underline">Netlify</a></p>
+      </li>
+    </ul>
+    <div class="flex">
+      <h3>BILLEL TIGHIDET</h3>
+      <a href="#">
+        <img src="./medias/arrow footer.png" alt="icône de flèche" class="go-top">
+      </a>
     </div>
   </footer>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 
