@@ -271,11 +271,11 @@ header.visible span {
   font-size: calc(16px + (40 - 16) * ((100vw - 320px) / (1440 - 320)));
 }
 
-.name {
+h2.name {
   font-weight: 600;
   margin-bottom: 64px;
   white-space: wrap;
-  width: min-content;
+  width: 100%;
 }
 
 .hero .arrow {
