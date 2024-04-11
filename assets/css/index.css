@@ -75,11 +75,10 @@ h2 {
 }
 
 .head-translate-inner {
-  display: flex;
+  overflow: hidden;
 }
 
 .stroke-head {
-  position: relative;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: var(--black);
   overflow: hidden;
