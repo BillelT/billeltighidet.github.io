@@ -276,9 +276,7 @@ header.visible span {
   font-weight: 600;
   margin-bottom: 64px;
   white-space: wrap;
-  word-wrap: break-word;
-  word-break: break-word;
-  width: 120%;
+  width: min-content;
 }
 
 .hero .arrow {
