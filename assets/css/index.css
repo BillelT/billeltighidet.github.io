@@ -77,7 +77,7 @@ h2 {
 .head-translate-container {
   position: relative;
   left: -10%;
-  width: 100vw;
+  width: 98.93822vw;
   overflow: hidden;
 }
 
@@ -602,6 +602,7 @@ footer {
 .idea {
   margin-bottom: 64px;
   white-space: wrap;
+  width: 100%;
 }
 
 .footer-social {
