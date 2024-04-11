@@ -43,6 +43,7 @@ header,
 footer {
   padding-left: 6.25%;
   padding-right: 6.25%;
+  overflow-x: hidden;
 }
 
 a {
@@ -50,6 +51,15 @@ a {
   color: var(--black);
   display: block;
   width: fit-content;
+}
+
+h1 {
+  position: relative;
+  font-size: calc(35px + (100 - 35) * ((100vw - 320px) / (1440 - 320)));
+  font-weight: 600;
+  margin-bottom: 26.5vh;
+  grid-column: 1/3;
+  width: min-content;
 }
 
 h2 {
@@ -97,7 +107,7 @@ header.visible {
   grid-template-rows: auto 1fr;
   row-gap: 22vh;
   z-index: 0;
-  animation: aboveAll .4s ease-in-out forwards;
+  animation: aboveAll 0.4s ease-in-out forwards;
 }
 
 @keyframes aboveAll {
@@ -147,7 +157,7 @@ header.visible span {
   display: block;
   grid-column: 1/3;
   transform: translateY(0vh);
-  animation: fadeUp .4s ease-in-out;
+  animation: fadeUp 0.4s ease-in-out;
 }
 
 @keyframes fadeUp {
@@ -157,7 +167,6 @@ header.visible span {
 
   100% {
     transform: translateY(0);
-
   }
 }
 
@@ -167,7 +176,6 @@ header.visible span {
   row-gap: 4.2vh;
   margin-bottom: 14vh;
 }
-
 
 .nav a {
   width: 100%;
@@ -186,23 +194,12 @@ header.visible span {
   height: 37px;
 }
 
-
-
 /* ************************************HERO*********************************************** */
 .hero {
   margin-top: 26.5vh;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: auto auto 1fr;
-}
-
-h1 {
-  position: relative;
-  font-size: calc(35px + (100 - 35) * ((100vw - 320px) / (1440 - 320)));
-  font-weight: 600;
-  margin-bottom: 26.5vh;
-  grid-column: 1/3;
-  width: min-content;
 }
 
 .designer {
@@ -351,7 +348,6 @@ h1 {
 .hover-pop:hover img {
   animation: pop 0.4s ease-in-out;
 }
-
 
 @keyframes pop {
   0% {
@@ -526,7 +522,7 @@ h1 {
 }
 
 .see-site:hover img {
-  animation: arrow-fly .4s ease-in-out;
+  animation: arrow-fly 0.4s ease-in-out;
 }
 
 @keyframes arrow-fly {
@@ -545,7 +541,6 @@ h1 {
   100% {
     transform: translate(0%, 0%);
   }
-
 }
 
 .white-bg .see-site {
@@ -575,7 +570,6 @@ footer {
   white-space: wrap;
 }
 
-
 .footer-social {
   margin-bottom: 64px;
 }
@@ -585,7 +579,6 @@ footer {
   position: relative;
   max-width: 305px;
 }
-
 
 .hover-black-bg::before {
   content: "";
@@ -598,7 +591,7 @@ footer {
   transform-origin: bottom center;
   z-index: -1;
   background-color: var(--black);
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .hover-black-bg:hover::before {
@@ -609,7 +602,7 @@ footer {
   padding: 8px 8px;
   font-size: 14px;
   font-weight: 700;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .hover-black-bg:hover a {
@@ -621,7 +614,6 @@ footer {
   font-weight: 700;
   font-size: 12px;
 }
-
 
 .legal {
   font-weight: 700;
