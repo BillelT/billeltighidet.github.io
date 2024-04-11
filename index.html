@@ -7,12 +7,13 @@
   <title>Billel Tighidet</title>
   <link rel="stylesheet" href="./assets/css/index.css" />
   <link rel="stylesheet" href="./assets/css/loader-cursor.css" />
+  <link rel="stylesheet" href="./assets/css/media-queries.css" />
   <meta name="description"
     content="Exposition non exhaustive des projets de Billel Tighidet, designer et développeur créatif junior." />
   <link rel="icon" href="./medias/logo BT.png" />
 </head>
 
-<body>
+<body id="body">
   <div class="cursor" id="cursor">
   </div>
   <!-- <div class="loader" id="loader">
@@ -61,12 +62,15 @@
     </nav>
   </header>
   <section class="hero container">
-    <h1>DESIGNER & DÉVELOPPEUR CRÉATIF <span>JUNIOR</span></h1>
+    <h1><span class="designer">DESIGNER</span> <span class="and">&</span> DÉVELOPPEUR CRÉATIF <span
+        class="junior">JUNIOR</span></h1>
     <h2 class="name">BILLEL TIGHIDET</h2>
-    <img src="./medias/arrow scroll.png" alt="icône de flèche" class="arrow">
+    <a href="#projects" class="arrow">
+      <img src="./medias/arrow scroll.png" alt="icône de flèche">
+    </a>
     <img src="./medias/billel tighidet.png" alt="photo de billel tighidet" class="me">
   </section>
-  <section class="about container">
+  <section class="about container" id="about">
     <h2 class="from-left">À PROPOS <span class="stroke-head">À PROPOS</span> À PROPOS <span class="stroke-head">À
         PROPOS</span></h2>
     <h2 class="from-right"><span class="stroke-head">À PROPOS</span> À PROPOS <span class="stroke-head">À
@@ -189,7 +193,7 @@
       </ul>
     </div>
   </section>
-  <section class="projects container">
+  <section class="projects container" id="projects">
     <h2 class="scroll-translate from-left">PROJETS <span class="stroke-head">PROJETS</span> PROJETS <span
         class="stroke-head">PROJETS</span></h2>
     <h2 class="scroll-translate from-right"><span class="stroke-head">PROJETS</span> PROJETS <span
@@ -376,7 +380,7 @@
       </div>
     </article>
   </section>
-  <footer>
+  <footer id="contact">
     <h2 class="idea">UN PROJET EN TÊTE ?</h2>
     <nav class="footer-social">
       <ul>

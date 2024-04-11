@@ -20,9 +20,21 @@ window.addEventListener("scroll", () => {
   });
 })
 
-menuButton.addEventListener("click", () => {
-  menu.classList.toggle("visible")
-  header.classList.toggle("visible")
+header.addEventListener("click", (e) => {
+  const targetText = e.target.innerText
+  console.log(e);
+  if (targetText === "Menu") {
+    menu.classList.toggle("visible")
+    header.classList.toggle("visible")
+    body.classList.toggle("no-scroll")
+    menuButton.innerText = "Close"
+  }
+  if (targetText === "Close" || navLinks.includes(targetText)) {
+    menu.classList.toggle("visible")
+    header.classList.toggle("visible")
+    body.classList.toggle("no-scroll")
+    menuButton.innerText = "Menu"
+  }
 })
 
 // give cursor position
