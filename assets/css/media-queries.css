@@ -14,9 +14,6 @@
 }
 
 @media screen and (min-width: 920px) {
-  .container {
-    overflow: visible;
-  }
 
   .container,
   header,
@@ -209,6 +206,7 @@
   .flex {
     grid-column: 1/13;
   }
+
   .go-top {
     width: 180px;
   }

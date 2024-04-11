@@ -36,7 +36,6 @@ body.no-scroll {
 
 .container {
   margin-bottom: 128px;
-  overflow: hidden;
 }
 
 .container,
@@ -78,7 +77,7 @@ h2 {
 .head-translate-container {
   position: relative;
   left: -10%;
-  width: 100vw;
+  width: 102%;
   overflow: hidden;
 }
 
@@ -657,6 +656,7 @@ footer {
   margin-bottom: 64px;
   font-size: 12px;
 }
+
 .legal a {
   display: inline;
 }
