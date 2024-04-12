@@ -65,6 +65,8 @@ h2 {
   white-space: nowrap;
   font-size: calc(35px + (80 - 35) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 600;
+  width: 100%;
+  overflow: hidden;
 }
 
 
@@ -82,6 +84,7 @@ h2 {
 .stroke-head {
   position: relative;
   overflow: hidden;
+  max-width: 100%;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: var(--black);
 }
@@ -377,6 +380,10 @@ header.visible span {
 
 .img-container img {
   width: 100%;
+}
+
+.software {
+  padding: 0 6.25%;
 }
 
 .software-list {
