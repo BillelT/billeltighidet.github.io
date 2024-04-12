@@ -54,6 +54,7 @@
 
   .about {
     margin-bottom: 256px;
+    padding: 0;
   }
 
   .explore,
@@ -64,7 +65,9 @@
     grid-template-columns: repeat(12, 1fr);
     height: 100%;
     margin-top: 256px;
+    padding: 0 8.33%;
   }
+
 
   .sticky {
     position: sticky;
@@ -137,16 +140,25 @@
   .layout {
     display: grid;
     align-items: end;
+    height: 100%;
+    display: block;
   }
 
   .mockup {
     grid-column: 7/13;
     justify-self: center;
+    margin-bottom: 0;
+  }
+
+  .mockup img,
+  .layout img {
+    max-width: unset;
   }
 
   .project-more {
     grid-column: 7/13;
     justify-self: end;
+    row-gap: 0;
   }
 
   .project-more {
@@ -155,7 +167,7 @@
   }
 
   .description {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .see-site {

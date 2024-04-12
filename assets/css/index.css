@@ -75,6 +75,7 @@ h2 {
 }
 
 .head-translate-inner {
+  position: relative;
   overflow: hidden;
   width: 100%;
 }
@@ -92,18 +93,15 @@ h2 {
 }
 
 .from-left {
-  /* position: relative; */
-  /* top: 0; */
-  /* left: calc(-100% - 100vw); */
+  position: relative;
+  left: -200%;
   width: 100%;
-  overflow: hidden;
 }
 
 .from-right {
-  /* position: relative; */
-  /* left: 110%; */
+  position: relative;
+  left: 100%;
   width: 100%;
-  overflow: hidden;
 }
 
 .hover-wheel {
@@ -474,18 +472,18 @@ header.visible span {
 .index {
   z-index: 100;
   font-size: 22px;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .project-head {
   font-size: 20px;
   font-weight: 500;
-  margin-bottom: 58px;
+  margin-bottom: 16px;
   max-width: 240px;
 }
 
 .type-duration {
-  margin-bottom: 56px;
+  margin-bottom: 40px;
 }
 
 .skills {
@@ -544,12 +542,16 @@ header.visible span {
 
 .layout {
   margin-bottom: 32px;
+  display: block;
+  height: 100%;
 }
 
 .mockup img,
 .layout img {
   width: 100%;
-  max-width: 590px;
+  height: 100%;
+  object-fit: cover;
+  max-width: 320px;
 }
 
 .project-more {
