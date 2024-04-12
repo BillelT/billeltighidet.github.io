@@ -367,6 +367,8 @@ header.visible span {
   top: 0;
   left: 0;
   backface-visibility: hidden;
+  background-color: var(--white);
+  color: var(--black);
   transform: rotateY(180deg);
   border: 1px solid var(--black);
 }
