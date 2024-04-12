@@ -541,7 +541,6 @@ header.visible span {
 }
 
 .layout {
-  margin-bottom: 32px;
   display: block;
   height: 100%;
 }
@@ -564,6 +563,7 @@ header.visible span {
 }
 
 .description {
+  margin-top: 32px;
   grid-column: 1/3;
   align-self: start;
 }
