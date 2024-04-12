@@ -51,9 +51,6 @@ if ('ontouchstart' in window || navigator.maxTouchPoints) {
     cursor.classList.add("visible");
     cursor.style.transform = "translate(" + e.pageX + "px," + e.pageY + "px)";
   });
-  imgGrid.addEventListener("mouseover", () => {
-    cardContainer.classList.add("rotate")
-  })
   cardContainers.forEach(cardContainer => {
     cardContainer.addEventListener("mouseenter", () => {
       cardContainer.classList.add("rotate")
