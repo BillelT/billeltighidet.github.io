@@ -65,8 +65,6 @@ h2 {
   white-space: nowrap;
   font-size: calc(35px + (80 - 35) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 600;
-  width: 100%;
-  overflow: hidden;
 }
 
 
@@ -93,16 +91,20 @@ h2 {
   left: 0;
 }
 
-/* .from-left {
-  position: relative;
-  top: 0;
-  left: calc(-100% - 100vw);
+.from-left {
+  /* position: relative; */
+  /* top: 0; */
+  /* left: calc(-100% - 100vw); */
+  width: 100%;
+  overflow: hidden;
 }
 
 .from-right {
-  position: relative;
-  left: 110%;
-} */
+  /* position: relative; */
+  /* left: 110%; */
+  width: 100%;
+  overflow: hidden;
+}
 
 .hover-wheel {
   position: relative;
@@ -621,7 +623,7 @@ footer {
 .idea {
   margin-bottom: 64px;
   white-space: wrap;
-  width: 80%;
+  /* width: 80%; */
 }
 
 .footer-social {
