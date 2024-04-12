@@ -370,7 +370,7 @@ header.visible span {
   border: 1px solid var(--black);
 }
 
-.card-container:hover .card {
+.card-container.rotate .card {
   transform: rotateY(180deg);
 }
 
