@@ -10,17 +10,17 @@ const menuButton = document.getElementById("menuButton");
 const menu = document.getElementById("menu");
 // const magneticElements = document.querySelectorAll(".has-attraction");
 
-// window.addEventListener("scroll", () => {
-//   console.log(window.scrollY);
-//   const leftTranslate = window.scrollY;
-//   const rightTranslate = -window.scrollY;
-//   headTranslateLeft.forEach((head) => {
-//     head.style.transform = "translateX(" + leftTranslate + "px)";
-//   });
-//   headTranslateRight.forEach((head) => {
-//     head.style.transform = "translateX(" + rightTranslate + "px)";
-//   });
-// });
+window.addEventListener("scroll", () => {
+  console.log(window.scrollY);
+  const leftTranslate = window.scrollY / 2;
+  const rightTranslate = -window.scrollY;
+  headTranslateLeft.forEach((head) => {
+    head.style.transform = "translateX(" + leftTranslate + "px)";
+  });
+  headTranslateRight.forEach((head) => {
+    head.style.transform = "translateX(" + rightTranslate + "px)";
+  });
+});
 
 header.addEventListener("click", (e) => {
   const targetText = e.target.innerText;
