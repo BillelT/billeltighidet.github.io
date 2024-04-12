@@ -371,6 +371,7 @@ header.visible span {
   color: var(--black);
   transform: rotateY(180deg);
   border: 1px solid var(--black);
+  z-index: 1;
 }
 
 .card-container.rotate .card {
