@@ -27,7 +27,7 @@ body {
   font-family: "Montserrat", sans-serif;
   color: #01010a;
   background-color: #f9fafb;
-  /* overflow-x: hidden; */
+  overflow-x: hidden;
 }
 
 body.no-scroll {
@@ -76,12 +76,14 @@ h2 {
 
 .head-translate-inner {
   overflow: hidden;
+  width: 100%;
 }
 
 .stroke-head {
+  position: relative;
+  overflow: hidden;
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: var(--black);
-  overflow: hidden;
 }
 
 .projects .head-translate-container {
@@ -296,6 +298,7 @@ header.visible span {
 
 .about {
   padding: 0;
+  width: 100%;
 }
 
 .about .stroke-head::after {
