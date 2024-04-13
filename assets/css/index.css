@@ -28,6 +28,7 @@ body {
   color: #01010a;
   background-color: #f9fafb;
   overflow-x: hidden;
+  cursor: none;
 }
 
 body.no-scroll {
@@ -52,6 +53,10 @@ a {
   width: fit-content;
 }
 
+.inline {
+  display: inline;
+}
+
 h1 {
   position: relative;
   font-size: calc(35px + (100 - 35) * ((100vw - 320px) / (1440 - 320)));
@@ -66,7 +71,6 @@ h2 {
   font-size: calc(35px + (80 - 35) * ((100vw - 320px) / (1440 - 320)));
   font-weight: 600;
 }
-
 
 .head-translate-container {
   position: relative;
@@ -223,9 +227,9 @@ header.visible span {
 
 .nav a {
   width: 100%;
-  font-size: 30px;
+  font-size: calc(30px + (60 - 30) * ((100vw - 320px) / (1440 - 320)));
   display: flex;
-  align-items: baseline;
+  align-items: center;
   column-gap: 16px;
 }
 
@@ -235,7 +239,8 @@ header.visible span {
 }
 
 .menu-arrow {
-  height: 37px;
+  /* width: 5.35vw; */
+  height: 100%;
 }
 
 /* ************************************HERO*********************************************** */
@@ -316,14 +321,15 @@ header.visible span {
 
 .explore,
 .passionate {
+  margin-top: 128px;
   margin-bottom: 128px;
   padding: 0 6.25%;
 }
 
-.about p {
-  margin-top: 128px;
-  margin-bottom: 32px;
-  font-size: 18px;
+.mb64 {
+  margin-bottom: 64px;
+  font-size: calc(24px + (30 - 24) * ((100vw - 320px) / (1440 - 320)));
+  font-weight: 500;
 }
 
 .underline {
@@ -333,9 +339,9 @@ header.visible span {
 
 .img-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, auto);
-  column-gap: 4px;
+  grid-template-rows: repeat(3, auto);
+  max-width: 387px;
+  row-gap: 64px;
 }
 
 .card-container {
@@ -374,17 +380,6 @@ header.visible span {
   border: 1px solid var(--black);
 }
 
-/* .about .return {
-  font-size: 1cqmax;
-  margin: 0;
-}
-
-.return .click-icon {
-  width: 24px;
-  height: 24px;
-}
-*/
-
 .domain {
   font-size: 0.5rem;
   max-width: 100%;
@@ -392,26 +387,14 @@ header.visible span {
   justify-self: center;
 }
 
-.about .visit {
-  font-size: 0.5rem;
-  margin: 0;
-  white-space: nowrap;
-  padding-bottom: 8px;
-  padding-right: 2px;
-  align-self: end;
-  justify-self: flex-end;
-}
-
 .card-container.rotate .card {
   transform: rotateY(180deg);
 }
 
-.bold {
-  font-weight: 700;
-}
-
-.img-container img {
-  width: 100%;
+.medium {
+  font-weight: 500;
+  font-size: calc(30px + (50 - 30) * ((100vw - 320px) / (1440 - 320)));
+  text-align: center;
 }
 
 .software {
@@ -419,8 +402,27 @@ header.visible span {
 }
 
 .software-list {
+  display: grid;
+  row-gap: 32px;
+}
+
+.software-list li {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  row-gap: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--black);
+  max-width: 305px;
+}
+
+.software-list h4 {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+p.software-usage {
+  margin: 0;
+  font-size: 18px;
 }
 
 .software img {

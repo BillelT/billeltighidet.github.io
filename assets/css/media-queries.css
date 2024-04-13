@@ -14,7 +14,6 @@
 }
 
 @media screen and (min-width: 920px) {
-
   .container,
   header,
   footer {
@@ -24,6 +23,18 @@
 
   header span {
     font-size: 18px;
+  }
+
+  header.visible {
+    row-gap: 128px;
+  }
+
+  .nav {
+    margin-bottom: 64px;
+  }
+
+  .nav a {
+    column-gap: 32px;
   }
 
   .hero {
@@ -57,17 +68,25 @@
     padding: 0;
   }
 
+  .explore {
+    grid-template-columns: repeat(12, 1fr);
+  }
+
   .explore,
   .passionate,
   .software {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(12, 1fr);
     height: 100%;
     margin-top: 256px;
+    margin-bottom: 256px;
     padding: 0 8.33%;
   }
 
+  .passionate {
+    margin-top: 512px;
+    margin-bottom: 512px;
+  }
 
   .sticky {
     position: sticky;
@@ -75,28 +94,33 @@
     height: min-content;
   }
 
-  .about p {
+  .mb64 {
     margin-top: 0;
     margin-bottom: 0;
-    font-size: 24px;
-    grid-column: 1/6;
+    grid-column: 1/8;
   }
 
   .img-grid,
   .img-container,
   .software-list {
-    grid-column: 7/13;
+    grid-column: 8/13;
     justify-self: end;
     width: 100%;
-  }
-
-  .software p {
-    font-size: 30px;
   }
 
   .software-list {
     width: 100%;
     justify-content: space-between;
+    max-width: 488px;
+    margin-top: 64px;
+  }
+
+  .software-list li {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 140%;
+    max-width: 488px;
   }
 
   .software img {
