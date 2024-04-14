@@ -99,7 +99,7 @@ h2 {
 .from-left {
   position: relative;
   width: 100%;
-  left: -100%;
+  left: -50%;
 }
 
 .from-right {
