@@ -11,14 +11,21 @@ const menu = document.getElementById("menu");
 // const magneticElements = document.querySelectorAll(".has-attraction");
 
 window.addEventListener("scroll", () => {
-  console.log(window.scrollY);
-  const leftTranslate = window.scrollY / 5;
-  const rightTranslate = -window.scrollY / 5;
   headTranslateLeft.forEach((head) => {
-    head.style.transform = "translateX(" + leftTranslate + "px)";
+    const rect = head.getBoundingClientRect();
+    console.log(rect.top);
+    if (rect.top < window.innerHeight) {
+      const leftTranslate = rect.top / 3;
+      head.style.transform = "translateX(" + leftTranslate + "px)";
+    }
   });
   headTranslateRight.forEach((head) => {
-    head.style.transform = "translateX(" + rightTranslate + "px)";
+    const rect = head.getBoundingClientRect();
+    console.log(rect.top);
+    if (rect.top < window.innerHeight) {
+      const rightTranslate = -rect.top / 3;
+      head.style.transform = "translateX(" + rightTranslate + "px)";
+    }
   });
 });
 
@@ -67,53 +74,3 @@ document.addEventListener("mouseleave", (e) => {
 
 // credits year autorefresh
 credits.innerText = "© " + year + " Billel Tighidet Tous droits réservés";
-
-// function hasAttraction(e) {
-//   const mouseX = e.clientX;
-//   const mouseY = e.clientY;
-//   const elementX = e.target.offsetLeft;
-//   const elementY = e.target.offsetTop;
-//   const dx = mouseX - elementX;
-//   const dy = mouseY - elementY;
-//   const attractionSpeed = 0.1;
-//   const translateX = elementX + dx * attractionSpeed + "px";
-//   const translateY = elementY + dy * attractionSpeed + "px";
-//   e.target.style.transform = "translate(" + translateX + "," + translateY + ")";
-// }
-
-// // loader animation
-// document.addEventListener("DOMContentLoaded", () => {
-//   // force go back top when page refresh
-//   window.scrollTo(0, 0);
-//   if ("scrollRestoration" in history) {
-//     history.scrollRestoration = "manual";
-//   }
-//   setTimeout(() => {
-//     loaderText.style.opacity = "0.05";
-//   }, 1400);
-//   setTimeout(() => {
-//     loaderText.innerText = "Billel Tighidet";
-//   }, 1950);
-//   setTimeout(() => {
-//     loaderText.style.opacity = "1";
-//   }, 1950);
-//   setTimeout(() => {
-//     loaderText.style.display = "none";
-//     loader.remove();
-//     h1.style.opacity = "1";
-//     document.body.classList.add("scroll");
-//     linkedInAnimation.classList.add("reveal")
-//     anim.play();
-//   }, 3250);
-//   setTimeout(() => {
-//     linkedInAnimation.classList.remove("reveal")
-//   }, 6830);
-// });
-
-// me.addEventListener("mouseenter", () => {
-//   linkedInAnimation.classList.add("reveal");
-//   anim.goToAndPlay(0);
-// });
-// me.addEventListener("mouseleave", () => {
-//   linkedInAnimation.classList.remove("reveal");
-// });

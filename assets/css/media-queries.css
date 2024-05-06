@@ -105,7 +105,6 @@
     grid-column: 1/13;
   }
 
-  .img-grid,
   .img-container,
   .software-list {
     grid-column: 6/13;
