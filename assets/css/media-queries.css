@@ -68,31 +68,78 @@
     padding: 0;
   }
 
-  .explore {
-    grid-template-columns: repeat(12, 1fr);
-  }
-
   .explore,
   .passionate,
   .software {
     position: relative;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(3, auto);
     height: 100%;
     margin-top: 256px;
     margin-bottom: 256px;
     padding: 0 8.33%;
   }
 
-  .passionate {
-    margin-top: 512px;
-    margin-bottom: 512px;
+  .mb256 {
+    grid-column: 7/13;
+    margin-bottom: 256px;
+    grid-row: 1;
   }
 
-  .sticky {
-    position: sticky;
-    top: 128px;
-    height: min-content;
+  .mb128 {
+    grid-column: 1/6;
+    grid-row: 2;
+  }
+
+  .gallery {
+    grid-column: 1/13;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(4, auto);
+    row-gap: 64px;
+  }
+
+  .tall {
+    max-height: 687px;
+  }
+
+  .gc3 {
+    grid-column: 3/6;
+  }
+
+  .gc3-7 {
+    grid-column: 3/7;
+  }
+
+  .gc6-13 {
+    grid-column: 6/13;
+  }
+
+  .gc6 {
+    grid-column: 6;
+  }
+
+  .gc1-4 {
+    grid-column: 1/6;
+  }
+
+  .gc9-13 {
+    grid-column: 9/13;
+  }
+
+  .gc6-12 {
+    grid-column: 6/12;
+  }
+
+  .mt287 {
+    margin-top: 287px;
+  }
+
+  .teasing {
+    margin-bottom: 0;
+    align-self: center;
   }
 
   .mb64 {
@@ -101,11 +148,14 @@
     grid-column: 1/6;
   }
 
+  .mb16 {
+    margin-bottom: 0;
+  }
+
   .medium {
     grid-column: 1/13;
   }
 
-  .img-container,
   .software-list {
     grid-column: 6/13;
     justify-self: end;

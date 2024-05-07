@@ -8,12 +8,10 @@ const Dates = new Date();
 const year = Dates.getFullYear();
 const menuButton = document.getElementById("menuButton");
 const menu = document.getElementById("menu");
-// const magneticElements = document.querySelectorAll(".has-attraction");
 
 window.addEventListener("scroll", () => {
   headTranslateLeft.forEach((head) => {
     const rect = head.getBoundingClientRect();
-    console.log(rect.top);
     if (rect.top < window.innerHeight) {
       const leftTranslate = rect.top / 3;
       head.style.transform = "translateX(" + leftTranslate + "px)";
@@ -21,7 +19,6 @@ window.addEventListener("scroll", () => {
   });
   headTranslateRight.forEach((head) => {
     const rect = head.getBoundingClientRect();
-    console.log(rect.top);
     if (rect.top < window.innerHeight) {
       const rightTranslate = -rect.top / 3;
       head.style.transform = "translateX(" + rightTranslate + "px)";
@@ -30,9 +27,9 @@ window.addEventListener("scroll", () => {
 });
 
 header.addEventListener("click", (e) => {
+  const childElementCount = e.target.childElementCount;
   const targetText = e.target.innerText;
-  console.log(e);
-  if (targetText === "Menu") {
+  if (targetText === "Menu" && childElementCount === 0) {
     menu.classList.toggle("visible");
     header.classList.toggle("visible");
     body.classList.toggle("no-scroll");
