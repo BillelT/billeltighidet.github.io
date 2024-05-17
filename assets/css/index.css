@@ -7,6 +7,7 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+  cursor: none;
 }
 
 :root {
@@ -28,7 +29,6 @@ body {
   color: #01010a;
   background-color: #f9fafb;
   overflow-x: hidden;
-  cursor: none;
 }
 
 body.no-scroll {
@@ -184,7 +184,6 @@ header span {
   width: fit-content;
   justify-self: end;
   color: var(--white);
-  cursor: pointer;
   font-size: 14px;
 }
 

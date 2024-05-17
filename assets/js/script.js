@@ -44,26 +44,9 @@ header.addEventListener("click", (e) => {
 });
 
 // give cursor position
-if ("ontouchstart" in window || navigator.maxTouchPoints) {
-  cardContainers.forEach((cardContainer) => {
-    cardContainer.addEventListener("touchend", () => {
-      cardContainer.classList.toggle("rotate");
-    });
-  });
-} else {
-  document.addEventListener("mousemove", (e) => {
-    cursor.classList.add("visible");
-    cursor.style.transform = "translate(" + e.pageX + "px," + e.pageY + "px)";
-  });
-  cardContainers.forEach((cardContainer) => {
-    cardContainer.addEventListener("mouseenter", () => {
-      cardContainer.classList.add("rotate");
-    });
-    cardContainer.addEventListener("mouseleave", () => {
-      cardContainer.classList.remove("rotate");
-    });
-  });
-}
+document.addEventListener("mousemove", (e) => {
+  cursor.style.transform = "translate(" + e.pageX + "px," + e.pageY + "px)";
+});
 
 document.addEventListener("mouseleave", (e) => {
   cursor.classList.remove("visible");
