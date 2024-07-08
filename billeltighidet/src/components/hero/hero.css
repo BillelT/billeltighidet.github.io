@@ -1,0 +1,21 @@
+.hero {
+  padding-top: 14rem;
+  row-gap: 10rem;
+}
+
+.animated-scroll-line {
+  width: 1px;
+  height: 100px;
+  background-color: var(--black);
+  transform-origin: top;
+  transform: scaleY(0%);
+  will-change: transform;
+}
+
+@media screen and (min-width: 960px) {
+  .me {
+    position: absolute;
+    bottom: 0;
+    right: -100px;
+  }
+}

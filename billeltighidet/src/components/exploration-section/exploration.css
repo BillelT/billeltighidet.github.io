@@ -1,0 +1,17 @@
+.open {
+  max-height: 0; /* Cache le contenu */
+  opacity: 0; /* Rend le contenu invisible */
+  padding: 0; /* Réduit le padding */
+  margin: 0; /* Réduit la marge */
+  overflow: hidden; /* Assure que le contenu débordant est caché */
+  /* transition: max-height 0.8s ease, opacity 0.8s ease, padding 0.8s ease,
+    margin 0.8s ease; */
+}
+
+.open[data-index] {
+  display: flex;
+}
+
+.jic {
+  justify-items: center;
+}

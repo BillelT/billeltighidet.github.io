@@ -1,0 +1,33 @@
+.p-10 {
+  padding: 10px;
+  margin-left: -10px;
+}
+
+.r-g-12 {
+  row-gap: 12px;
+}
+
+.r-g-54 {
+  row-gap: 54px;
+}
+
+.p-l-8 {
+  padding-left: 8px;
+}
+
+.p-b-16 {
+  padding-bottom: 16px;
+}
+
+.ma-w-305 {
+  max-width: 305px;
+}
+
+.ma-w-500 {
+  max-width: 500px;
+}
+
+.year {
+  width: fit-content;
+  padding: 4px 8px;
+}

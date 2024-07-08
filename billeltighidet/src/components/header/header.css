@@ -1,0 +1,32 @@
+header {
+  color: var(--white);
+  z-index: 1;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.navigation {
+  position: fixed;
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  clip-path: inset(100% 0 0 0);
+  will-change: clip-path, opacity, z-index, visibility;
+}
+
+.navigation.visible {
+  pointer-events: all;
+}
+
+.flex-end {
+  align-items: flex-end;
+  height: min-content;
+}
+
+.m-t-14-rem {
+  margin-top: calc(14rem - 60px);
+}
