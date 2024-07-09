@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import "./header.css";
 
-export default function Header() {
+export default function Header({ lenis }) {
   const { t } = useTranslation("header");
   const headerRef = useRef(null);
   const navigationRef = useRef(null);
@@ -27,7 +27,14 @@ export default function Header() {
       gsap.fromTo(
         navigationRef.current,
         { clipPath: "inset(100% 0% 0% 0%)" },
-        { clipPath: "inset(0% 0% 0% 0%)", duration: 1.1, ease: "power1.inOut" }
+        {
+          clipPath: "inset(0% 0% 0% 0%)",
+          duration: 1.1,
+          ease: "power1.inOut",
+          onComplete: () => {
+            if (lenis) lenis.stop(); // Stop Lenis when navigation is visible
+          },
+        }
       );
     } else {
       gsap.fromTo(
@@ -41,24 +48,26 @@ export default function Header() {
             navigationRef.current.style.opacity = "0";
             navigationRef.current.style.visibility = "hidden";
             navigationRef.current.style.zIndex = "-1";
+            if (lenis) lenis.start(); // Restart Lenis when navigation is hidden
           },
         }
       );
     }
-  }, [isNavigationVisible]);
+  }, [isNavigationVisible, lenis]);
 
   return (
     <>
       <header
         ref={headerRef}
-        className="padding-container p-t-20 container flex sb fixed mix-blend-diff aic">
-          <span className="font-family-lb index gc-1">BT</span>
-          <span
-            className="nav-link p-8-4 pointer"
-            onClick={toggleNavigation}
-          >
-            Menu
-          </span>
+        className="padding-container p-t-20 container flex sb fixed mix-blend-diff aic"
+      >
+        <span className="font-family-lb index gc-1">BT</span>
+        <span
+          className="nav-link p-8-4 pointer light"
+          onClick={toggleNavigation}
+        >
+          Menu
+        </span>
       </header>
 
       <div
@@ -72,17 +81,20 @@ export default function Header() {
           <div className="flex col-g-32-16 gc-13">
             <ul className="flex sb">
               <li className="p-8-4" onClick={toggleNavigation}>
-                <a href="#" className=" p-8-4 actual-lang body">
+                <a href="#" className=" p-8-4 actual-lang body light">
                   FR
                 </a>
               </li>
-              <li className="p-8-4 " onClick={toggleNavigation}>
-                <a href="#" className="p-8-4">
+              <li className="p-8-4" onClick={toggleNavigation}>
+                <a href="#" className="p-8-4 body light">
                   EN
                 </a>
               </li>
             </ul>
-            <span className="nav-link p-8-4 pointer" onClick={toggleNavigation}>
+            <span
+              className="nav-link p-8-4 pointer light"
+              onClick={toggleNavigation}
+            >
               Menu
             </span>
           </div>
@@ -107,7 +119,7 @@ export default function Header() {
               </li>
             </ul>
           </nav>
-          <div className="grid r-g-32">
+          <div className="grid r-g-32-64">
             <div>
               <p className="h5 m-b-16">
                 En recherche d'une alternance de 2 ans, à partir de septembre
@@ -121,10 +133,14 @@ export default function Header() {
               </a>
             </div>
             <nav>
-              <ul className="grid r-g-8">
+              <ul className="grid r-g-8 ms-f-c-g-16">
                 <li className="underline-hover-left-right infinite">
-                  <a href="#" className="nav-link flex aic col-g-8 ">
-                    Téléchargez mon CV{" "}
+                  <a
+                    href="/resume-billel-tighidet.pdf"
+                    className="nav-link flex aic col-g-8 "
+                    download={true}
+                  >
+                    Téléchargez mon CV
                     <img
                       src="/img/thin-arrow-white-down.svg"
                       alt="icône flèche vers le bas"

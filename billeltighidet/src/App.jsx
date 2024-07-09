@@ -7,30 +7,32 @@ import Hero from "./components/hero/hero";
 import Quote from "./components/quote-section/quote";
 import Exploration from "./components/exploration-section/exploration";
 import Projects from "./components/projects/projects";
+import Gallery from "./components/gallery/gallery";
 import "./App.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-
 export default function App() {
+  const [lenis, setLenis] = useState(null);
 
- useEffect(() => {
-    const lenis = new Lenis();
+  useEffect(() => {
+    const lenisInstance = new Lenis();
 
-    lenis.on('scroll', ScrollTrigger.update);
+    lenisInstance.on("scroll", ScrollTrigger.update);
 
     gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
+      lenisInstance.raf(time * 1000);
     });
 
     gsap.ticker.lagSmoothing(0);
 
+    setLenis(lenisInstance);
+
     return () => {
-      lenis.destroy();
-      gsap.ticker.remove(lenis.raf);
+      lenisInstance.destroy();
+      gsap.ticker.remove(lenisInstance.raf);
     };
   }, []);
-
 
   // useEffect(() => {
   //   const tl = gsap.timeline({
@@ -39,7 +41,7 @@ export default function App() {
   //       start: "top top",
   //       end: "bottom top",
   //       scrub: true,
-  //       pin: true, 
+  //       pin: true,
   //       toggleActions: "play reverse play reverse",
   //     }
   //   });
@@ -47,12 +49,12 @@ export default function App() {
 
   return (
     <>
-      <Header></Header>
+      <Header lenis={lenis}></Header>
       <Hero></Hero>
       <Quote></Quote>
       <Exploration></Exploration>
       <Projects count={2} />
-
+      <Gallery></Gallery>
     </>
   );
 }

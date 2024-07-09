@@ -28,5 +28,18 @@ header {
 }
 
 .m-t-14-rem {
-  margin-top: calc(14rem - 60px);
+  margin-top: calc(8rem - 60px);
+}
+
+@media screen and (min-width:960px) {
+  .m-t-14-rem {
+    margin-top: calc(14rem - 60px);
+  }
+}
+
+@media screen and (min-width:540px) {
+  ul.ms-f-c-g-16 {
+    display: flex;
+    column-gap: 16px;
+  }
 }

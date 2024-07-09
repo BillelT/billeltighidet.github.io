@@ -15,10 +15,10 @@ export default function Projects({ count }) {
             <div className="grid r-g-54 ma-w-500">
               <div className="grid r-g-32">
                 <h4 className="h4">{`/0${index + 1}`}</h4>
-                <div>
-                  <div className="flex sb">
-                    <h3 className="h3">Low Poly style Kame House</h3>
-                    <p className="year bg-white body">2024</p>
+                <div className="grid r-g-8">
+                  <div className="flex sb col-g-8">
+                    <h3 className="h3 medium">Low Poly style Kame House</h3>
+                    <p className="year bg-white body light">2024</p>
                   </div>
                   <p>Projet personnel, 3jours</p>
                 </div>
@@ -33,7 +33,7 @@ export default function Projects({ count }) {
                     Three.js
                   </li>
                 </ul>
-                <p className="body">
+                <p className="body light">
                   Ce projet m'a permis d'approfondir mes connaissances en
                   JavaScript, notamment en ce qui concerne le DOM et les
                   interactions qu'il permet de créer. En essayant différentes
@@ -48,6 +48,7 @@ export default function Projects({ count }) {
                     <img
                       src="/img/thin-arrow-white-down.svg"
                       alt="icône flèche diagnole"
+                      className="rotate--135"
                     />
                   </a>
                 </button>

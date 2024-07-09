@@ -1,0 +1,15 @@
+.video-container {
+    width: 100%;
+}
+
+.video {
+    width: 100%;
+}
+
+.as-9-16 {
+    max-width: 426px;
+}
+
+.as-16-9 {
+    max-width: 873px;
+}

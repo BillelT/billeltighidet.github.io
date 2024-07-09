@@ -4,27 +4,25 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import "./quote.css";
 
-
 export default function Quote() {
   const { t } = useTranslation("quote");
   const quotesRef = useRef([]);
 
-
   useEffect(() => {
-    const quote = quotesRef.current.querySelectorAll("article")
+    const quote = quotesRef.current.querySelectorAll("article");
 
     quote.forEach((element) => {
       if (element) {
         gsap.fromTo(
           element,
-          { opacity: 0, y: 50 },
+          { opacity: 0, y: 100 },
           {
             opacity: 1,
             y: 0,
             scrollTrigger: {
               trigger: element,
-              start: "top 80%",
-              end: "top 20%",
+              start: "top 95%",
+              end: "top 50%",
               scrub: true,
               toggleActions: "play reverse play reverse",
             },
@@ -36,25 +34,35 @@ export default function Quote() {
 
   return (
     <>
-    <section ref={quotesRef} className="m-t-256-512 container padding-container .r-g-256-512 flex f-d-c " id="quote">
-        <article className="flex f-d-c m-b-256-512 ase fade-in">
-            <p className="quote font-family-lb" >“ La créativité, <br />
-            c'est l'intelligence qui s'amuse ”</p>
-            <p className="ase meta">Albert Einstein</p>
+      <section
+        ref={quotesRef}
+        className="m-t-256-512 container padding-container .r-g-256-512 flex f-d-c "
+        id="quote"
+      >
+        <article className="flex f-d-c m-b-256-512  quote-container ase fade-in">
+          <p className="quote font-family-lb">
+            “ La créativité, <br />
+            c'est l'intelligence qui s'amuse ”
+          </p>
+          <p className="ase meta">Albert Einstein</p>
         </article>
-        <article className="flex f-d-c m-b-256-512 fade-in">
-            <p className="quote font-family-lb" >“ La créativité demande du courage ”</p>
-            <p className="ase meta">Henri Matisse</p>
+        <article className="flex f-d-c m-b-256-512 quote-container  fade-in">
+          <p className="quote font-family-lb">
+            “ La créativité demande du courage ”
+          </p>
+          <p className="ase meta">Henri Matisse</p>
         </article>
-        <article className="flex f-d-c m-b-256-512 ase fade-in">
-            <p className="quote font-family-lb" >Créer me rend heureux. Littéralement, <br />
+        <article className="flex f-d-c m-b-256-512  quote-container ase fade-in">
+          <p className="quote font-family-lb">
+            Créer me rend heureux. Littéralement, <br />
             3D art, design, développement, <br />
             Je partage ma vision avec passion, <br />
             En veillant à chaque détail avec discrétion. <br /> <br />
-            Rendre chaque expérience mémorable.</p>
-            <p className="ase meta">Billel Tighidet</p>
+            Rendre chaque expérience mémorable.
+          </p>
+          <p className="ase meta">Billel Tighidet</p>
         </article>
-    </section>
+      </section>
     </>
   );
 }

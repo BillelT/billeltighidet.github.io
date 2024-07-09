@@ -1,5 +1,5 @@
 .hero {
-  padding-top: 14rem;
+  padding-top: 8rem;
   row-gap: 10rem;
 }
 
@@ -17,5 +17,10 @@
     position: absolute;
     bottom: 0;
     right: -100px;
+  }
+
+  .hero {
+    padding-top: 14rem;
+    row-gap: 10rem;
   }
 }

@@ -48,7 +48,7 @@ export default function Exploration() {
         {[0, 1, 2, 3, 4].map((index) => (
           <article key={index} className="p-b-32 border-bottom">
             <div className="flex sb aic">
-              <h3 className="h3">Three.js Journey {index + 1}</h3>
+              <h3 className="h3 medium">Three.js Journey {index + 1}</h3>
               <p className="body">5 chapitres complétés sur 7</p>
               <img
                 src="/img/chevrons-dropdown-menu.svg"
@@ -72,7 +72,7 @@ export default function Exploration() {
                 >
                   site Three.js Journey {index + 1}
                   <img
-                    className="rotate-45"
+                    className="rotate--135"
                     src="/img/thin-arrow-white-down.svg"
                     alt="icône fléche diagonale"
                   />
