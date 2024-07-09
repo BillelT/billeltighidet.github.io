@@ -42,14 +42,14 @@ export default function Exploration() {
   };
 
   return (
-    <section className="container padding-container grid r-g-128-256 bg-black">
-      <h2 className="h2 font-family-lb">Explorations du moment</h2>
-      <div className="grid r-g-48 jic">
+    <section className="container padding-container grid r-g-128-256">
+      <h2 className="h2 font-family-lb gc-1-13">Explorations du moment</h2>
+      <div className="container r-g-48 jic gc-1-13">
         {[0, 1, 2, 3, 4].map((index) => (
-          <article key={index} className="p-b-32 border-bottom">
+          <article key={index} className="p-b-32 border-bottom gc-f-3-11 w-100">
             <div className="flex sb aic">
-              <h3 className="h3 medium">Three.js Journey {index + 1}</h3>
-              <p className="body">5 chapitres complétés sur 7</p>
+              <h4 className="h4 medium">Three.js Journey {index + 1}</h4>
+              <p className="body light sm-dn">5 chapitres complétés sur 7</p>
               <img
                 src="/img/chevrons-dropdown-menu.svg"
                 alt="icône de chevrons"
@@ -57,19 +57,16 @@ export default function Exploration() {
                 style={{ cursor: "pointer" }}
               />
             </div>
-            <div className="open f-d-c aife" data-index={index}>
-              <p className="m-b-32">
+            <div className="open" data-index={index}>
+              <p className="m-b-32 gc-2-9">
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                 itecto!
               </p>
-              <p className="m-b-48 meta light">
+              <p className="m-b-48 meta light gc-1-9 js-e">
                 Date de fin prévue : 20 juillet 2024
               </p>
-              <button className="bg-black">
-                <a
-                  href="#"
-                  className="medium flex col-g-16 p-16-8 border-bottom"
-                >
+              <button className=" gc-1-9 js-e underline-hover-left-right">
+                <a href="#" className="semi-bold flex col-g-16 p-8-16">
                   site Three.js Journey {index + 1}
                   <img
                     className="rotate--135"

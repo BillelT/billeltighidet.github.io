@@ -7,12 +7,16 @@ export default function Projects({ count }) {
   const { t } = useTranslation("projects");
 
   return (
-    <section className="container padding-container grid bg-black m-t-256 r-g-128-256">
-      <h2 className="h2 font-family-lb">Projets</h2>
-      <div className="grid r-g-128-256">
+    <section className="container padding-container grid m-t-128-256 r-g-128-256">
+      <h2 className="h2 font-family-lb gc-1-13">Projets</h2>
+      <div className="grid r-g-128-256 gc-1-13">
         {Array.from({ length: count }).map((_, index) => (
-          <article key={index} className="project grid r-g-64">
-            <div className="grid r-g-54 ma-w-500">
+          <article key={index} className="project container r-g-64">
+            <div
+              className={`grid r-g-54 ma-w-500  magnet-container m-p--10 ${
+                index % 2 === 0 ? "gc-f-1-6" : "gc-f-9-13"
+              }`}
+            >
               <div className="grid r-g-32">
                 <h4 className="h4">{`/0${index + 1}`}</h4>
                 <div className="grid r-g-8">
@@ -42,8 +46,8 @@ export default function Projects({ count }) {
                 </p>
               </div>
               <div className="p-10">
-                <button className="border button bg-black">
-                  <a href="#" className="medium flex col-g-16 p-16-8">
+                <button className="border semi-bold button">
+                  <a href="#" className="medium flex col-g-16 p-8-16 aic">
                     Découvrir le projet{" "}
                     <img
                       src="/img/thin-arrow-white-down.svg"
@@ -54,8 +58,12 @@ export default function Projects({ count }) {
                 </button>
               </div>
             </div>
-            <div className="img-container">
-              <img src="" alt="mock up" />
+            <div
+              className={`img-container ${
+                index % 2 === 0 ? "gc-f-6-13" : "gc-f-1-8 gr-1"
+              }`}
+            >
+              <img src={`/img/mockups/${index + 1}.png`} alt="mock up" />
             </div>
           </article>
         ))}

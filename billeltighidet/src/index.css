@@ -6,13 +6,15 @@
 
 @font-face {
   font-family: "Nunito";
-  src: url("/fonts/nunito/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/nunito/Nunito-Italic-VariableFont_wght.ttf")
+    format("truetype");
   font-style: italic;
 }
 
 @font-face {
   font-family: "Libre Baskerville";
-  src: url("/fonts/libre-baskerville/LibreBaskerville-Regular.ttf") format("truetype");
+  src: url("/fonts/libre-baskerville/LibreBaskerville-Regular.ttf")
+    format("truetype");
   font-weight: 400;
 }
 
@@ -20,6 +22,8 @@
 :root {
   --white: #f9fafb;
   --black: #01010a;
+  --bg-color: #f9fafb;
+  --text-color: #01010a;
   --ad-green: #83b47e;
   --ux-ui-blue: #8fb1bd;
   --adobe-purple: #c59fc6;
@@ -41,7 +45,6 @@
 html.lenis,
 html.lenis body {
   height: auto;
-
 }
 
 .lenis.lenis-smooth {
@@ -67,23 +70,33 @@ html {
 
 body {
   font-family: "Nunito", sans-serif;
-  color: var(--black);
-  background-color: var(--white);
+  color: var(--text-color);
+  background-color: var(--bg-color);
   overflow-x: hidden;
   width: 100%;
+  transition: all 0.8s ease-in-out;
 }
 
 button {
   border: none;
   font-size: 16px;
+  background: transparent;
 }
 
 .border {
-  border: 1px solid var(--white);
+  border: 1px solid var(--text-color);
 }
 
 .border-bottom {
-  border-bottom: 1px solid var(--white);
+  border-bottom: 1px solid var(--text-color);
+}
+
+.border-top {
+  border-top: 1px solid var(--text-color);
+}
+
+.rotate--45 {
+  transform: rotate(-45deg);
 }
 
 .rotate--135 {
@@ -91,8 +104,9 @@ button {
 }
 
 a {
-  color: var(--white);
+  color: var(--text-color);
   text-decoration: none;
+  font-family: "Nunito", sans-serif;
 }
 
 .underline {
@@ -115,6 +129,7 @@ a {
   width: fit-content;
   overflow: hidden;
   display: block;
+  padding: 4px 0;
 }
 
 .underline-hover-left-right::before,
@@ -125,9 +140,19 @@ a {
   height: 1px;
   right: 0;
   bottom: 0px;
-  background-color: var(--white);
+  background-color: var(--text-color);
   transform-origin: right;
   will-change: transform;
+}
+
+.black.underline-hover-left-right::before,
+.black.underline-hover-left-right::after {
+  background-color: var(--white);
+}
+
+.stable.underline-hover-left-right::before,
+.stable.underline-hover-left-right::after {
+  background-color: var(--black);
 }
 
 .underline-hover-left-right::after {
@@ -222,6 +247,14 @@ a {
   justify-content: space-between;
 }
 
+.js-c {
+  justify-self: center;
+}
+
+.js-e {
+  justify-self: flex-end;
+}
+
 .aic {
   align-items: center;
 }
@@ -238,14 +271,17 @@ a {
   align-self: flex-end;
 }
 
-.bg-black {
-  background-color: var(--black);
-  color: var(--white);
+.bg-white {
+  background-color: var(--text-color);
+  color: var(--bg-color);
 }
 
-.bg-white {
-  background-color: var(--white);
-  color: var(--black);
+.bg-white .black {
+  color: var(--text-color);
+}
+
+.white {
+  color: var(--bg-color);
 }
 
 /* Fonts */
@@ -265,11 +301,15 @@ a {
 }
 
 .me {
-  font-size: 26px;
   font-weight: 300;
-  width: min-content;
+  font-size: calc(18px + (26 - 18) * ((100vw - 320px) / (1440 - 320)));
   display: block;
   font-family: "Nunito";
+}
+
+.me.name {
+  font-size: 26px;
+  width: min-content;
 }
 
 .h2 {
@@ -311,7 +351,6 @@ a {
   }
 }
 
-
 .nav-link {
   font-size: 18px;
 }
@@ -343,6 +382,21 @@ a {
 }
 
 /* Margin */
+.m-t-128-256 {
+  margin-top: 128px;
+}
+
+.m-t-256 {
+  margin-top: 256px;
+}
+
+.m-t-256-512 {
+  margin-top: 256px;
+}
+
+.m-b-4 {
+  margin-bottom: 4px;
+}
 
 .m-b-16 {
   margin-bottom: 16px;
@@ -356,19 +410,15 @@ a {
   margin-bottom: 48px;
 }
 
-.m-t-256 {
-  margin-top: 256px;
-}
-
-.m-t-256-512 {
-  margin-top: 256px;
-}
-
 .m-b-256-512 {
   margin-bottom: 256px;
 }
 
 @media screen and (min-width: 960px) {
+  .m-t-128-256 {
+    margin-top: 256px;
+  }
+
   .m-t-256-512 {
     margin-top: 512px;
   }
@@ -376,6 +426,11 @@ a {
   .m-b-256-512 {
     margin-bottom: 512px;
   }
+}
+
+.m-p--10 {
+  margin: -10px;
+  padding: 10px;
 }
 
 /* Padding */
@@ -387,16 +442,30 @@ a {
   padding-top: 256px;
 }
 
+.p-t-b-16 {
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
 .p-b-32 {
   padding-bottom: 32px;
 }
 
-.p-8-4 {
-  padding: 8px 4px;
+.p-4-8 {
+  padding: 4px 8px;
 }
 
-.p-16-8 {
-  padding: 16px 8px;
+.p-t-b-4 {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+.p-8-16 {
+  padding: 8px 16px;
+}
+
+.p-12-24 {
+  padding: 12px 24px;
 }
 
 /* Grid column placement */
@@ -404,21 +473,60 @@ a {
   grid-column: 1;
 }
 
+.gc-f-1-6 {
+  grid-column: 1/13;
+}
 
 .gc-1-5 {
   grid-column: 1/5;
 }
 
-.gc-6 {
-  grid-column: 6;
+.gc-1-9 {
+  grid-column: 1/9;
+}
+
+.gc-2-9 {
+  grid-column: 2/9;
+}
+
+.gc-f-2-13 {
+  grid-column: 1/13;
+}
+
+.gc-f-3-11 {
+  grid-column: 1/13;
+}
+
+.gc-f-6-10 {
+  grid-column: 1/13;
+}
+
+.gc-f-6-13 {
+  grid-column: 1/13;
 }
 
 .gc-7 {
   grid-column: 7;
 }
 
-.gc-1-8 {
-  grid-column: 1/8;
+.gc-f-7-11 {
+  grid-column: 1/13;
+}
+
+.gc-f-7-13 {
+  grid-column: 1/13;
+}
+
+.gc-f-1-8 {
+  grid-column: 1/13;
+}
+
+.gc-f-8-13 {
+  grid-column: 1/13;
+}
+
+.gc-f-9-13 {
+  grid-column: 1/13;
 }
 
 .gc-1-13 {
@@ -427,6 +535,52 @@ a {
 
 .gc-13 {
   grid-column: 13;
+}
+
+@media screen and (min-width: 960px) {
+  .gc-f-1-6 {
+    grid-column: 1/6;
+  }
+
+  .gc-f-2-13 {
+    grid-column: 2/13;
+  }
+
+  .gc-f-3-11 {
+    grid-column: 3/11;
+  }
+
+  .gc-f-6-10 {
+    grid-column: 6/10;
+  }
+  .gc-f-6-13 {
+    grid-column: 6/13;
+  }
+
+  .gc-f-7-11 {
+    grid-column: 7/11;
+  }
+
+  .gc-f-7-13 {
+    grid-column: 7/13;
+  }
+
+  .gc-f-1-8 {
+    grid-column: 1/8;
+  }
+
+  .gc-f-8-13 {
+    grid-column: 8/13;
+  }
+
+  .gc-f-9-13 {
+    grid-column: 9/13;
+  }
+}
+
+/* Grid row */
+.gr-1 {
+  grid-row: 1;
 }
 
 /* Column gap */
@@ -470,7 +624,6 @@ a {
   row-gap: 32px;
 }
 
-
 .r-g-48 {
   row-gap: 48px;
 }
@@ -485,6 +638,10 @@ a {
 
 .r-g-192 {
   row-gap: 192px;
+}
+
+.r-g-128-192 {
+  row-gap: 128px;
 }
 
 .r-g-128-256 {
@@ -509,4 +666,22 @@ a {
   .r-g-128-256 {
     row-gap: 256px;
   }
+
+  .r-g-128-192 {
+    row-gap: 192px;
+  }
+}
+
+.ws-no-w {
+  white-space: nowrap;
+}
+
+/* Img-container */
+
+.img-container {
+  width: 100%;
+}
+
+.img-container img {
+  width: 100%;
 }

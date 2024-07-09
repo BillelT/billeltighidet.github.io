@@ -9,9 +9,20 @@
 }
 
 .open[data-index] {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .jic {
   justify-items: center;
+}
+
+@media screen and (max-width: 540px) {
+  .sm-dn {
+    display: none;
+  }
+}
+
+.w-100 {
+  width: 100%;
 }

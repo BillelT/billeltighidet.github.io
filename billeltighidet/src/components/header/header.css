@@ -8,6 +8,7 @@ header {
 }
 
 .navigation {
+  grid-template-rows: auto 1fr;
   position: fixed;
   pointer-events: none;
   width: 100vw;
@@ -16,6 +17,11 @@ header {
   left: 0;
   clip-path: inset(100% 0 0 0);
   will-change: clip-path, opacity, z-index, visibility;
+  background-color: var(--black);
+}
+
+.navigation * {
+  color: var(--white);
 }
 
 .navigation.visible {
@@ -31,13 +37,13 @@ header {
   margin-top: calc(8rem - 60px);
 }
 
-@media screen and (min-width:960px) {
+@media screen and (min-width: 960px) {
   .m-t-14-rem {
     margin-top: calc(14rem - 60px);
   }
 }
 
-@media screen and (min-width:540px) {
+@media screen and (min-width: 540px) {
   ul.ms-f-c-g-16 {
     display: flex;
     column-gap: 16px;

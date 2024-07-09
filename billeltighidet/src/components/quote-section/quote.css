@@ -7,3 +7,13 @@
   opacity: 0;
   transform: translateY(100px);
 }
+
+.js-e-s {
+  justify-self: end;
+}
+
+@media screen and (min-width: 960px) {
+  .js-e-s {
+    justify-self: start;
+  }
+}

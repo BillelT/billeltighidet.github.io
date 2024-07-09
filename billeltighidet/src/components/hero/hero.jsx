@@ -5,10 +5,7 @@ import "./hero.css";
 
 export default function Hero() {
   const { t } = useTranslation("hero");
-  const scrollLineRef = useRef(null)
-
-
-
+  const scrollLineRef = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({ repeat: -1 });
@@ -18,32 +15,29 @@ export default function Hero() {
       duration: 1.4,
       ease: "power2.inOut",
       onComplete: () => {
-        scrollLineRef.current.style.transformOrigin = "bottom"
-      }
-    })
-    .to(scrollLineRef.current, {
+        scrollLineRef.current.style.transformOrigin = "bottom";
+      },
+    }).to(scrollLineRef.current, {
       scaleY: 0,
       duration: 1.4,
       ease: "power2.inOut",
       onComplete: () => {
-        scrollLineRef.current.style.transformOrigin = "top"
-      }
-    })
+        scrollLineRef.current.style.transformOrigin = "top";
+      },
+    });
   }, []);
 
   return (
     <>
-    <section className="hero flex f-d-c padding-container ">
-
+      <section className="hero flex f-d-c padding-container ">
         <h1 className="h1 font-family-lb">
-            <span>Designer </span>
-            <span className="space">& </span>
-            Développeur Créatif
-            <span className="me">Billel Tighidet</span>
+          <span>Designer </span>
+          <span className="space">& </span>
+          Développeur Créatif
+          <span className="me name">Billel Tighidet</span>
         </h1>
-      <div className=" animated-scroll-line  asc" ref={scrollLineRef}></div>
-
-    </section>
+        <div className=" animated-scroll-line  asc" ref={scrollLineRef}></div>
+      </section>
     </>
   );
 }

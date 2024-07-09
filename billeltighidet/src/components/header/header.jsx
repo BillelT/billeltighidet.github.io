@@ -63,7 +63,7 @@ export default function Header({ lenis }) {
       >
         <span className="font-family-lb index gc-1">BT</span>
         <span
-          className="nav-link p-8-4 pointer light"
+          className="nav-link light p-4-8 pointer light"
           onClick={toggleNavigation}
         >
           Menu
@@ -71,55 +71,67 @@ export default function Header({ lenis }) {
       </header>
 
       <div
-        className={`container bg-black padding-container navigation  ${
+        className={`container padding-container navigation  ${
           isNavigationVisible ? "visible" : ""
         }`}
         ref={navigationRef}
       >
-        <div className=" p-t-20 container gc-1-13 flex sb aic">
+        <div className=" p-t-20  gc-1-13 flex sb aic">
           <span className="font-family-lb index gc-1">BT</span>
           <div className="flex col-g-32-16 gc-13">
             <ul className="flex sb">
-              <li className="p-8-4" onClick={toggleNavigation}>
-                <a href="#" className=" p-8-4 actual-lang body light">
+              <li className="p-t-b-4" onClick={toggleNavigation}>
+                <a href="#" className=" p-4-8 actual-lang body light">
                   FR
                 </a>
               </li>
-              <li className="p-8-4" onClick={toggleNavigation}>
-                <a href="#" className="p-8-4 body light">
+              <li className="p-t-b-4" onClick={toggleNavigation}>
+                <a href="#" className="p-4-8 body light">
                   EN
                 </a>
               </li>
             </ul>
             <span
-              className="nav-link p-8-4 pointer light"
+              className="nav-link light p-4-8 pointer light"
               onClick={toggleNavigation}
             >
               Menu
             </span>
           </div>
         </div>
-        <div className=" grid gc-1-13 r-g-64 m-t-14-rem">
-          <nav className="gc-1-5 ">
+        <div className=" container gc-1-13 r-g-64 m-t-14-rem aife">
+          <nav className="gc-f-1-6">
             <ul className="r-g-32 grid">
-              <li className="h2 font-family-lb">
-                <a href="#" className="no-underline" onClick={toggleNavigation}>
+              <li className="h2 ">
+                <a
+                  href="#"
+                  className="no-underline font-family-lb"
+                  onClick={toggleNavigation}
+                >
                   Projets
                 </a>
               </li>
-              <li className="h2 font-family-lb">
-                <a href="#" className="no-underline" onClick={toggleNavigation}>
+              <li className="h2 ">
+                <a
+                  href="#"
+                  className="no-underline font-family-lb"
+                  onClick={toggleNavigation}
+                >
                   Galerie
                 </a>
               </li>
-              <li className="h2 font-family-lb">
-                <a href="#" className="no-underline" onClick={toggleNavigation}>
+              <li className="h2 ">
+                <a
+                  href="#"
+                  className="no-underline font-family-lb"
+                  onClick={toggleNavigation}
+                >
                   À propos
                 </a>
               </li>
             </ul>
           </nav>
-          <div className="grid r-g-32-64">
+          <div className="grid r-g-32-64 gc-f-7-13 js-e">
             <div>
               <p className="h5 m-b-16">
                 En recherche d'une alternance de 2 ans, à partir de septembre
@@ -127,17 +139,17 @@ export default function Header({ lenis }) {
               </p>
               <a
                 href="mailto:billel.tighidet@mmibordeaux.com"
-                className="h4 underline-hover-left-right"
+                className="h4 underline-hover-left-right black "
               >
                 <p>billel.tighidet@mmibordeaux.com</p>
               </a>
             </div>
             <nav>
-              <ul className="grid r-g-8 ms-f-c-g-16">
-                <li className="underline-hover-left-right infinite">
+              <ul className="grid r-g-8 ms-f-c-g-16 aic">
+                <li className="underline-hover-left-right infinite black">
                   <a
                     href="/resume-billel-tighidet.pdf"
-                    className="nav-link flex aic col-g-8 "
+                    className="nav-link light flex aic col-g-8 "
                     download={true}
                   >
                     Téléchargez mon CV
@@ -148,17 +160,17 @@ export default function Header({ lenis }) {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="nav-link no-underline">
+                  <a href="#" className="nav-link light no-underline">
                     Behance
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="nav-link no-underline">
+                  <a href="#" className="nav-link light no-underline">
                     Github
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="nav-link no-underline">
+                  <a href="#" className="nav-link light no-underline">
                     Linkedin
                   </a>
                 </li>
