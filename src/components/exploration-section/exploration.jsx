@@ -64,7 +64,13 @@ export default function Exploration() {
             </div>
             <div className="open" data-index={index}>
               <p className="m-b-32 gc-2-8">
-                {t(`dropDownContent.${index + 1}`)}
+                {t(`dropDownContent.${index + 1}`)}{" "}
+                {index + 1 === 5 ? (
+                  <span className="font-family-lb">
+                    {t(`dropDownContent.5bis`)}
+                  </span>
+                ) : null}
+                {index + 1 === 5 ? t(`dropDownContent.5ter`) : null}
               </p>
               <p className="m-b-48 meta light gc-1-9 js-e">
                 {t(`dropDownEnd.${index + 1}`)}
