@@ -5,3 +5,11 @@
 .as-16-9 {
   max-width: 873px;
 }
+
+.as-538-675 {
+  max-width: 538px;
+}
+
+.parallax {
+  transform: translateY(200px);
+}

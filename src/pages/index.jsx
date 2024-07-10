@@ -63,12 +63,12 @@ export default function Index() {
       <Quote />
       <div ref={explorationRef}>
         <Exploration />
-        <Projects count={2} />
+        <Projects count={2} cta={true} title={true} />
       </div>
       <div ref={galleryRef}>
-        <Gallery />
+        <Gallery cta={true} title={true} />
       </div>
-      <About />
+      <About cta={true} />
       <div ref={footerRef}>
         <Footer />
       </div>

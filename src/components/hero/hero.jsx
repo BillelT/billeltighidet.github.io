@@ -29,7 +29,7 @@ export default function Hero({ page }) {
 
   return (
     <>
-      <section className="hero flex f-d-c padding-container ">
+      <section className="hero flex f-d-c padding-container  m-b-256-512">
         <h1 className="h1 font-family-lb">
           <p className="flex sb col-g-32 ">
             {t(`${page}.h1`)} <span>{t(`${page}.h2`)}</span>

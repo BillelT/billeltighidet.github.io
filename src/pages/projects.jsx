@@ -24,7 +24,7 @@ export default function Projects() {
       "--text-color": "#f9fafb",
       scrollTrigger: {
         trigger: explorationRef.current,
-        start: "top 100%",
+        start: "top 10%",
         end: "bottom top",
         toggleActions: "play reverse play reverse",
       },
@@ -63,7 +63,7 @@ export default function Projects() {
         <Exploration />
       </div>
       <div ref={galleryRef}>
-        <GallerySection />
+        <GallerySection cta={true} title={true} />
       </div>
       <div ref={footerRef}>
         <Footer />

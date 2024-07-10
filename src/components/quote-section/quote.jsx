@@ -36,7 +36,7 @@ export default function Quote() {
     <>
       <section
         ref={quotesRef}
-        className="m-t-256-512 container padding-container .r-g-256-512"
+        className=" container padding-container .r-g-256-512"
         id="quote"
       >
         <article className="flex f-d-c m-b-256-512 quote-container fade-in gc-f-8-13 js-e-s">

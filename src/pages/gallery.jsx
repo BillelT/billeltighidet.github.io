@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
@@ -45,31 +44,13 @@ export default function Gallery() {
     };
   }, []);
 
-  useEffect(() => {
-    const updateHtmlLang = (lang) => {
-      document.documentElement.lang = lang;
-    };
-
-    updateHtmlLang(i18n.language);
-
-    const handleLanguageChange = (lng) => {
-      updateHtmlLang(lng);
-    };
-
-    i18n.on("languageChanged", handleLanguageChange);
-
-    return () => {
-      i18n.off("languageChanged", handleLanguageChange);
-    };
-  }, [i18n]);
-
   return (
     <>
       <Hero page="gallery" />
       <div ref={gallerySectionRef}>
-        <GallerySection />
+        <GallerySection completeGallery={true} />
       </div>
-      <About />
+      <About cta={true} />
       <div ref={footerRef}>
         <Footer />
       </div>
