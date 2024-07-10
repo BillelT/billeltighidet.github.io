@@ -4,7 +4,7 @@ import gsap from "gsap";
 import "./header.css";
 
 export default function Header({ lenis }) {
-  const { t } = useTranslation("header");
+  const { t, i18n } = useTranslation("header");
   const headerRef = useRef(null);
   const navigationRef = useRef(null);
 
@@ -12,6 +12,12 @@ export default function Header({ lenis }) {
 
   const toggleNavigation = () => {
     setIsNavigationVisible((prev) => !prev);
+  };
+
+  const changeLanguage = (lng) => {
+    if (i18n.language !== lng) {
+      i18n.changeLanguage(lng);
+    }
   };
 
   useEffect(() => {
@@ -55,6 +61,19 @@ export default function Header({ lenis }) {
     }
   }, [isNavigationVisible, lenis]);
 
+  useEffect(() => {
+    const langElements = document.querySelectorAll(".actual-lang");
+    langElements.forEach((element) => {
+      if (element.dataset.lang === i18n.language) {
+        element.classList.add("active");
+        console.log("tst");
+      } else {
+        element.classList.remove("active");
+        console.log("tst2");
+      }
+    });
+  }, [i18n.language]);
+
   return (
     <>
       <header
@@ -80,15 +99,33 @@ export default function Header({ lenis }) {
           <span className="font-family-lb index gc-1">BT</span>
           <div className="flex col-g-32-16 gc-13">
             <ul className="flex sb">
-              <li className="p-t-b-4" onClick={toggleNavigation}>
-                <a href="#" className=" p-4-8 actual-lang body light">
+              <li className="p-t-b-4">
+                <p
+                  className={`p-4-8 body pointer light ${
+                    i18n.language.includes("fr") ? "actual-lang" : ""
+                  }`}
+                  data-lang="fr"
+                  onClick={() => {
+                    changeLanguage("fr");
+                    toggleNavigation();
+                  }}
+                >
                   FR
-                </a>
+                </p>
               </li>
-              <li className="p-t-b-4" onClick={toggleNavigation}>
-                <a href="#" className="p-4-8 body light">
+              <li className="p-t-b-4">
+                <p
+                  className={`p-4-8 body pointer  light ${
+                    i18n.language.includes("en") ? "actual-lang" : ""
+                  }`}
+                  data-lang="en"
+                  onClick={() => {
+                    changeLanguage("en");
+                    toggleNavigation();
+                  }}
+                >
                   EN
-                </a>
+                </p>
               </li>
             </ul>
             <span
@@ -108,7 +145,7 @@ export default function Header({ lenis }) {
                   className="no-underline font-family-lb"
                   onClick={toggleNavigation}
                 >
-                  Projets
+                  {t(`h2.1`)}
                 </a>
               </li>
               <li className="h2 ">
@@ -117,7 +154,7 @@ export default function Header({ lenis }) {
                   className="no-underline font-family-lb"
                   onClick={toggleNavigation}
                 >
-                  Galerie
+                  {t(`h2.2`)}
                 </a>
               </li>
               <li className="h2 ">
@@ -126,20 +163,18 @@ export default function Header({ lenis }) {
                   className="no-underline font-family-lb"
                   onClick={toggleNavigation}
                 >
-                  À propos
+                  {t(`h2.3`)}
                 </a>
               </li>
             </ul>
           </nav>
           <div className="grid r-g-32-64 gc-f-7-13 js-e">
             <div>
-              <p className="h5 m-b-16">
-                En recherche d'une alternance de 2 ans, à partir de septembre
-                2024, sur Paris.
-              </p>
+              <p className="h5 m-b-16">{t(`apprenticeship`)}</p>
               <a
                 href="mailto:billel.tighidet@mmibordeaux.com"
                 className="h4 underline-hover-left-right black "
+                target="_blank"
               >
                 <p>billel.tighidet@mmibordeaux.com</p>
               </a>
@@ -152,7 +187,7 @@ export default function Header({ lenis }) {
                     className="nav-link light flex aic col-g-8 "
                     download={true}
                   >
-                    Téléchargez mon CV
+                    {t(`resumeCTA`)}
                     <img
                       src="/img/thin-arrow-white-down.svg"
                       alt="icône flèche vers le bas"
@@ -160,17 +195,29 @@ export default function Header({ lenis }) {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="nav-link light no-underline">
+                  <a
+                    href="https://www.behance.net/billeltighidet"
+                    className="nav-link light no-underline"
+                    target="_blank"
+                  >
                     Behance
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="nav-link light no-underline">
+                  <a
+                    href="https://github.com/BillelT"
+                    className="nav-link light no-underline"
+                    target="_blank"
+                  >
                     Github
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="nav-link light no-underline">
+                  <a
+                    href="https://www.linkedin.com/in/billel-tighidet-76b292234/"
+                    className="nav-link light no-underline"
+                    target="_blank"
+                  >
                     Linkedin
                   </a>
                 </li>

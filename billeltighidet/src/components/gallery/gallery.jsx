@@ -8,7 +8,7 @@ export default function Gallery({ count }) {
 
   return (
     <section className="container padding-container grid m-t-256-512 r-g-128-256">
-      <h2 className="h2 font-family-lb gc-1-13">Galerie</h2>
+      <h2 className="h2 font-family-lb gc-1-13"> {t(`h2`)} </h2>
       <div className="grid r-g-128-256 g-t-c-12 gc-1-13">
         <article className="flex f-d-c aife js-c gc-f-6-10 as-9-16">
           <div className="video-container ">
@@ -48,7 +48,7 @@ export default function Gallery({ count }) {
         </article>
         <button className=" gc-1-13 stable underline-hover-left-right js-c p-12-24">
           <a href="#" className=" stable h4 medium flex col-g-16 aic">
-            <p className="ws-no-w">Voir la galerie complète</p>
+            <p className="ws-no-w"> {t(`CTA`)} </p>
             <svg
               className="rotate--45"
               width="32"

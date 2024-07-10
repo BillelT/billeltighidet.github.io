@@ -2,6 +2,7 @@ import { useEffect, useState, useRef } from "react";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
 import Header from "./components/header/header";
 import Hero from "./components/hero/hero";
 import Quote from "./components/quote-section/quote";
@@ -10,12 +11,14 @@ import Projects from "./components/projects/projects";
 import Gallery from "./components/gallery/gallery";
 import About from "./components/about-section/about";
 import Footer from "./components/footer/footer";
-import "./App.css"; // Assurez-vous que les variables CSS sont définies ici
+import i18n from "./i18n";
+import "./App.css";
 import "./index.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
+  const { i18n } = useTranslation();
   const [lenis, setLenis] = useState(null);
   const explorationRef = useRef(null);
   const galleryRef = useRef(null);
@@ -81,10 +84,28 @@ export default function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const updateHtmlLang = (lang) => {
+      document.documentElement.lang = lang;
+    };
+
+    updateHtmlLang(i18n.language);
+
+    const handleLanguageChange = (lng) => {
+      updateHtmlLang(lng);
+    };
+
+    i18n.on("languageChanged", handleLanguageChange);
+
+    return () => {
+      i18n.off("languageChanged", handleLanguageChange);
+    };
+  }, [i18n]);
+
   return (
     <>
       <Header lenis={lenis} />
-      <Hero />
+      <Hero page="index" />
       <Quote />
       <div ref={explorationRef}>
         <Exploration />

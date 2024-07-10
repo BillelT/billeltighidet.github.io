@@ -1,0 +1,51 @@
+{
+    "h2": "Current explorations",
+    "dropDownTitle": {
+        "1": "Three.js Journey",
+        "2": "I never stop working",
+        "3": "Blender - Photorealism",
+        "4": "UX/UI design",
+        "5": "3D musical experience"
+      },
+      "dropDownMeta": {
+        "1": "5 chapters completed out of 7",
+        "2": "Next 3D experience",
+        "3": "View on Behance",
+        "4": "Internship at Safi App",
+        "5": "3D rendering and experience"
+      },
+      "dropDownContent": {
+        "1": "I am currently taking the Three.js Journey course offered by Bruno Simon. Taking this course is an opportunity to build my first 3D websites to bring my 3D models to life. My knowledge and understanding of the current devices, Blender, and Vanilla JavaScript facilitate my learning. This course also allowed me to discover React and GSAP, essential libraries in the creative web world.",
+        "2": "\"I never stop working\" was born from the reflection of my current daily life. It's an interactive 3D scene that shows me working on numerous projects. Orelsan said, 'It's crazy, I work all the time, but it's vacation in my head,' and that's exactly what I think when I keep taking on projects.",
+        "3": "I started Blender a few months ago, and I haven't stopped. Photorealism is the style I prefer and the one I master the most. I create new visual models whenever I have time.",
+        "4": "I am currently working as a UX/UI designer for Safi App. I also take on the role of art director. You will soon find the brand identity I established on Behance.",
+        "5": "Accompanied by a product animation highlighting an essential musical instrument, this experience will be my first realistic 3D exhibition. Rendering and experience will blend to offer the best immersion along with some",
+        "5bis": "notes",
+        "5ter": "of interactivity."
+      },
+      "dropDownEnd": {
+        "1": "Expected end date: July 20, 2024",
+        "2": "Expected end date: July 26, 2024",
+        "3": "Expected end date: None",
+        "4": "Expected end date: August 2, 2024",
+        "5": "Expected end date: August 10, 2024"
+      },
+      "dropDownCTA": {
+        "1": "Three.js Journey site",
+        "2": "Coming soon",
+        "3": "View the gallery",
+        "4": "Safi App site",
+        "5": "Coming soon"
+      },
+      "links": {
+        "1": "https://threejs-journey.com/#",
+        "2": "#",
+        "3": "#",
+        "4": "https://www.safiapp.fr/",
+        "5": "#"
+      }
+}
+  
+
+  
+

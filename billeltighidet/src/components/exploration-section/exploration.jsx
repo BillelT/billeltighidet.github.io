@@ -43,31 +43,39 @@ export default function Exploration() {
 
   return (
     <section className="container padding-container grid r-g-128-256">
-      <h2 className="h2 font-family-lb gc-1-13">Explorations du moment</h2>
+      <h2 className="h2 font-family-lb gc-1-13">{t(`h2`)}</h2>
       <div className="container r-g-48 jic gc-1-13">
         {[0, 1, 2, 3, 4].map((index) => (
           <article key={index} className="p-b-32 border-bottom gc-f-3-11 w-100">
-            <div className="flex sb aic">
-              <h4 className="h4 medium">Three.js Journey {index + 1}</h4>
-              <p className="body light sm-dn">5 chapitres complétés sur 7</p>
+            <div className="container sb aic">
+              <h4 className="h4 medium gc-f-1-7 ">
+                {t(`dropDownTitle.${index + 1}`)}
+              </h4>
+              <p className="body light sm-dn gc-7-12">
+                {t(`dropDownMeta.${index + 1}`)}
+              </p>
               <img
                 src="/img/chevrons-dropdown-menu.svg"
                 alt="icône de chevrons"
                 onClick={() => handleToggle(index)}
                 style={{ cursor: "pointer" }}
+                className="gc-13"
               />
             </div>
             <div className="open" data-index={index}>
-              <p className="m-b-32 gc-2-9">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                itecto!
+              <p className="m-b-32 gc-2-8">
+                {t(`dropDownContent.${index + 1}`)}
               </p>
               <p className="m-b-48 meta light gc-1-9 js-e">
-                Date de fin prévue : 20 juillet 2024
+                {t(`dropDownEnd.${index + 1}`)}
               </p>
               <button className=" gc-1-9 js-e underline-hover-left-right">
-                <a href="#" className="semi-bold flex col-g-16 p-8-16">
-                  site Three.js Journey {index + 1}
+                <a
+                  href={t(`links.${index + 1}`)}
+                  className="semi-bold flex col-g-16 p-8-16 aic"
+                  target="_blank"
+                >
+                  {t(`dropDownCTA.${index + 1}`)}
                   <img
                     className="rotate--135"
                     src="/img/thin-arrow-white-down.svg"

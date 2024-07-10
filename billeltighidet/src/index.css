@@ -299,6 +299,11 @@ a {
   position: absolute;
   right: 0;
 }
+@media screen and (min-width: 540px) {
+  .space {
+    right: -32px;
+  }
+}
 
 .me {
   font-weight: 300;
@@ -485,6 +490,10 @@ a {
   grid-column: 1/9;
 }
 
+.gc-2-8 {
+  grid-column: 2/8;
+}
+
 .gc-2-9 {
   grid-column: 2/9;
 }
@@ -509,11 +518,19 @@ a {
   grid-column: 7;
 }
 
+.gc-7-12 {
+  grid-column: 7/12;
+}
+
 .gc-f-7-11 {
   grid-column: 1/13;
 }
 
 .gc-f-7-13 {
+  grid-column: 1/13;
+}
+
+.gc-f-1-7 {
   grid-column: 1/13;
 }
 
@@ -535,6 +552,12 @@ a {
 
 .gc-13 {
   grid-column: 13;
+}
+
+@media screen and (min-width: 540px) {
+  .gc-f-1-7 {
+    grid-column: 1/7;
+  }
 }
 
 @media screen and (min-width: 960px) {

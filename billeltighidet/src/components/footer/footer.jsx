@@ -13,14 +13,15 @@ export default function Footer() {
       <footer className="container m-t-256-512 r-g-128-192">
         <article className=" padding-container container gc-1-13 r-g-64 aic">
           <h2 className="h2 font-family-lb gc-f-1-6 ">
-            un projet <br /> en tête
+            {t(`h2.1`)} <br /> {t(`h2.2`)}
           </h2>
           <nav className="gc-f-9-13 js-s-e">
             <ul>
               <li>
                 <a
-                  href="#"
+                  href="https://www.behance.net/billeltighidet"
                   className="flex sb p-8-16 underline-hover-left-right w-280-315 "
+                  target="_blank"
                 >
                   Behance
                   <img
@@ -32,8 +33,9 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://github.com/BillelT"
                   className="flex sb p-8-16 underline-hover-left-right  w-280-315"
+                  target="_blank"
                 >
                   Github
                   <img
@@ -45,8 +47,9 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/in/billel-tighidet-76b292234/"
                   className="flex sb p-8-16 underline-hover-left-right  w-280-315"
+                  target="_blank"
                 >
                   Linkedin
                   <img
@@ -61,14 +64,12 @@ export default function Footer() {
         </article>
         <article className=" padding-container container gc-1-13 r-g-64 aic internship">
           <div className="gc-f-1-6 m">
-            <p className="h5 m-b-32">
-              En recherche d'une alternance de 2 ans, à partir de septembre
-              2024, sur Paris.
-            </p>
-            <p className="h5 m-b-4">Mon profil vous intéresse ?</p>
+            <p className="h5 m-b-32">{t(`apprenticeship.1`)}</p>
+            <p className="h5 m-b-4">{t(`apprenticeship.2`)}</p>
             <a
               href="mailto:billel.tighidet@mmibordeaux.com"
               className="h4 underline-hover-left-right"
+              target="_blank"
             >
               <p>billel.tighidet@mmibordeaux.com</p>
             </a>
@@ -77,7 +78,7 @@ export default function Footer() {
             <img
               src="/img/thin-arrow-up-white.png"
               alt="icône flèche vers le haut - go top"
-              className="go-top"
+              className="go-top mix-blend-diff"
             />
           </a>
         </article>
@@ -93,26 +94,27 @@ export default function Footer() {
                   className="nav-link light flex aic col-g-8 "
                   download={true}
                 >
-                  Téléchargez mon CV
+                  {t(`resumeCTA`)}
                   <img
                     src="/img/thin-arrow-white-down.svg"
                     alt="icône flèche vers le bas"
+                    className="mix-blend-diff"
                   />
                 </a>
               </li>
               <li>
                 <a href="#" className="nav-link">
-                  Behance
+                  {t(`nav.1`)}
                 </a>
               </li>
               <li>
                 <a href="#" className="nav-link">
-                  Github
+                  {t(`nav.2`)}
                 </a>
               </li>
               <li>
                 <a href="#" className="nav-link">
-                  Linkedin
+                  {t(`nav.3`)}
                 </a>
               </li>
             </ul>
@@ -120,14 +122,14 @@ export default function Footer() {
               <img
                 src="/img/thin-arrow-up-white.png"
                 alt="icône flèche vers le haut - go top"
-                className="go-top"
+                className="go-top mix-blend-diff"
               />
             </a>
           </nav>
           <div className="legal meta light gc-1-13">
-            <p>© 2024 Billel Tighidet Tous droits réservés</p>
+            <p>{t(`legal.copyright`)}</p>
             <p>
-              Hosted on{" "}
+              {t(`legal.host`)}
               <a
                 href="https://www.netlify.com/"
                 className="underline"

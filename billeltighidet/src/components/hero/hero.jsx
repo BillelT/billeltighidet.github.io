@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import "./hero.css";
 
-export default function Hero() {
+export default function Hero({ page }) {
   const { t } = useTranslation("hero");
   const scrollLineRef = useRef(null);
 
@@ -31,10 +31,10 @@ export default function Hero() {
     <>
       <section className="hero flex f-d-c padding-container ">
         <h1 className="h1 font-family-lb">
-          <span>Designer </span>
-          <span className="space">& </span>
-          Développeur Créatif
-          <span className="me name">Billel Tighidet</span>
+          <span> {t(`${page}.h1`)} </span>
+          <span className="space"> {t(`${page}.h2`)}</span>
+          {t(`${page}.h3`)}
+          <span className="me name">{t(`${page}.name`)}</span>
         </h1>
         <div className=" animated-scroll-line  asc" ref={scrollLineRef}></div>
       </section>

@@ -12,14 +12,10 @@ export default function About() {
     <>
       <section className="about container padding-container m-t-256-512">
         <div className=" grid gc-1-13 about-text  r-g-64">
-          <p className="me gc-1-13 ">
-            Je me suis toujours intéressé à tout. Quand je découvre un nouveau
-            domaine, je l'explore sans cesse. Je suis passionné par le cinéma,
-            la musique, les jeux vidéos, le sport et bien plus encore.
-          </p>
+          <p className="me gc-1-13 ">{t(`content`)}</p>
           <button className="gc-1-13 underline-hover-left-right js-e p-12-24">
             <a href="#" className=" button medium flex col-g-16 aic">
-              <p className="ws-no-w">En apprendre plus sur moi</p>
+              <p className="ws-no-w">{t(`CTA`)}</p>
               <svg
                 className="rotate--45 mix-blend-diff"
                 width="32"

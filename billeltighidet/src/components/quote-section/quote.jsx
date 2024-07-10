@@ -41,24 +41,22 @@ export default function Quote() {
       >
         <article className="flex f-d-c m-b-256-512 quote-container fade-in gc-f-8-13 js-e-s">
           <p className="quote font-family-lb">
-            “ La créativité, <br />
-            c'est l'intelligence qui s'amuse ”
+            “ {t(`quote1.up`)} <br />
+            {t(`quote1.down`)} ”
           </p>
           <p className="ase meta light">Albert Einstein</p>
         </article>
         <article className="flex f-d-c m-b-256-512 quote-container fade-in gc-f-2-13">
-          <p className="quote font-family-lb">
-            “ La créativité demande du courage ”
-          </p>
+          <p className="quote font-family-lb">“ {t(`quote2.quote`)} ”</p>
           <p className="ase meta light">Henri Matisse</p>
         </article>
         <article className="flex f-d-c m-b-256-512  quote-container ase fade-in gc-f-7-13 js-e-s">
           <p className="quote font-family-lb">
-            Créer me rend heureux. Littéralement, <br />
-            3D art, design, développement, <br />
-            Je partage ma vision avec passion, <br />
-            En veillant à chaque détail avec discrétion. <br /> <br />
-            Rendre chaque expérience mémorable.
+            {t(`tale.rhymeA`)} <br />
+            {t(`tale.rhymeAA`)}, <br />
+            {t(`tale.rhymeB`)} <br />
+            {t(`tale.rhymeBB`)} <br /> <br />
+            {t(`tale.rhymeC`)}
           </p>
           <p className="ase meta light">Billel Tighidet</p>
         </article>
