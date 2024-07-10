@@ -6,13 +6,15 @@
 
 @font-face {
   font-family: "Nunito";
-  src: url("/fonts/nunito/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
+  src: url("/fonts/nunito/Nunito-Italic-VariableFont_wght.ttf")
+    format("truetype");
   font-style: italic;
 }
 
 @font-face {
   font-family: "Libre Baskerville";
-  src: url("/fonts/libre-baskerville/LibreBaskerville-Regular.ttf") format("truetype");
+  src: url("/fonts/libre-baskerville/LibreBaskerville-Regular.ttf")
+    format("truetype");
   font-weight: 400;
 }
 
@@ -293,13 +295,15 @@ a {
 
 .h1 {
   font-size: calc(43px + (100 - 43) * ((100vw - 320px) / (1440 - 320)));
+  width: max-content;
   position: relative;
-  width: min-content;
+  /* width: min-content; */
+  /* display: flex;
+  justify-content: space-between; */
 }
 
-.space {
-  position: absolute;
-  right: 0;
+.w-min-c {
+  width: min-content;
 }
 
 @media screen and (min-width: 540px) {
@@ -609,8 +613,6 @@ a {
     grid-row: 1;
   }
 }
-
-
 
 /* Column gap */
 .col-g-8 {

@@ -4,7 +4,7 @@ import gsap from "gsap";
 import "./hero.css";
 
 export default function Hero({ page }) {
-  const { t } = useTranslation("hero");
+  const { t, i18n } = useTranslation("hero");
   const scrollLineRef = useRef(null);
 
   useEffect(() => {
@@ -31,9 +31,13 @@ export default function Hero({ page }) {
     <>
       <section className="hero flex f-d-c padding-container ">
         <h1 className="h1 font-family-lb">
-          <span> {t(`${page}.h1`)} </span>
-          <span className="space"> {t(`${page}.h2`)}</span>
-          {t(`${page}.h3`)}
+          <p className="flex sb col-g-32 ">
+            {t(`${page}.h1`)} <span>{t(`${page}.h2`)}</span>
+          </p>
+          <p className={`${i18n.language.includes("fr") ? "w-min-c" : ""}`}>
+            {t(`${page}.h3`)}
+          </p>
+          {t(`${page}.h4`)}
           <span className="me name">{t(`${page}.name`)}</span>
         </h1>
         <div className=" animated-scroll-line  asc" ref={scrollLineRef}></div>
