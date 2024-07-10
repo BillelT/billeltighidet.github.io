@@ -6,15 +6,13 @@
 
 @font-face {
   font-family: "Nunito";
-  src: url("/fonts/nunito/Nunito-Italic-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("/fonts/nunito/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
   font-style: italic;
 }
 
 @font-face {
   font-family: "Libre Baskerville";
-  src: url("/fonts/libre-baskerville/LibreBaskerville-Regular.ttf")
-    format("truetype");
+  src: url("/fonts/libre-baskerville/LibreBaskerville-Regular.ttf") format("truetype");
   font-weight: 400;
 }
 
@@ -284,6 +282,10 @@ a {
   color: var(--bg-color);
 }
 
+.stable-white {
+  color: var(--white);
+}
+
 /* Fonts */
 .font-family-lb {
   font-family: "Libre Baskerville", serif;
@@ -299,6 +301,7 @@ a {
   position: absolute;
   right: 0;
 }
+
 @media screen and (min-width: 540px) {
   .space {
     right: -32px;
@@ -576,6 +579,7 @@ a {
   .gc-f-6-10 {
     grid-column: 6/10;
   }
+
   .gc-f-6-13 {
     grid-column: 6/13;
   }
@@ -599,12 +603,14 @@ a {
   .gc-f-9-13 {
     grid-column: 9/13;
   }
+
+  /* Grid row */
+  .ls-gr-1 {
+    grid-row: 1;
+  }
 }
 
-/* Grid row */
-.gr-1 {
-  grid-row: 1;
-}
+
 
 /* Column gap */
 .col-g-8 {
@@ -701,10 +707,18 @@ a {
 
 /* Img-container */
 
-.img-container {
+.img-container,
+.video-container {
   width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.img-container img {
+.img-container img,
+video {
   width: 100%;
+  height: auto;
+  object-fit: cover;
 }

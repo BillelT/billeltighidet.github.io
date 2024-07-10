@@ -1,26 +1,26 @@
 {
-    "index": {
-      "h1": "Creative Designer ",
-      "h2": "&",
-      "h3": "Developer",
-      "name": "Billel Tighidet"
-    },
-    "projects": {
-      "h1": "Discover my projects",
-      "h2": "",
-      "h3": "",
-      "name": "Billel Tighidet"
-    },
-    "gallery": {
-      "h1": "Explore the gallery",
-      "h2": "",
-      "h3": "",
-      "name": "Billel Tighidet"
-    },
-    "about": {
-      "h1": "I am ",
-      "h2": "Billel Tighidet",
-      "h3": "",
-      "name": "Creative Designer & Developer"
-    }
+  "index": {
+    "h1": "Creative Designer ",
+    "h2": "&",
+    "h3": "Developer",
+    "name": "Billel Tighidet"
+  },
+  "projects": {
+    "h1": "Discover my projects",
+    "h2": "",
+    "h3": "",
+    "name": "Billel Tighidet"
+  },
+  "gallery": {
+    "h1": "Explore the gallery",
+    "h2": "",
+    "h3": "",
+    "name": "Billel Tighidet"
+  },
+  "about": {
+    "h1": "I am",
+    "h2": "",
+    "h3": "Billel Tighidet",
+    "name": "Creative Designer & Developer"
   }
+}

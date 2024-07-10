@@ -1,9 +1,8 @@
 import React from "react";
-import gsap from "gsap";
 import { useTranslation } from "react-i18next";
-import "./gallery.css";
+import "./gallery-section.css";
 
-export default function Gallery({ count }) {
+export default function GallerySection({ count }) {
   const { t } = useTranslation("gallery");
 
   return (
@@ -46,11 +45,11 @@ export default function Gallery({ count }) {
           <p className="meta light">Laylow</p>
           <p className="meta light">Mr. Anderson jacket</p>
         </article>
-        <button className=" gc-1-13 stable underline-hover-left-right js-c p-12-24">
-          <a href="#" className=" stable h4 medium flex col-g-16 aic">
+        <button className=" gc-1-13  underline-hover-left-right js-c p-12-24">
+          <a href="/gallery" className="  h4 medium flex col-g-16 aic">
             <p className="ws-no-w"> {t(`CTA`)} </p>
             <svg
-              className="rotate--45"
+              className="rotate--45 mix-blend-diff"
               width="32"
               height="32"
               viewBox="0 0 18 18"
@@ -59,7 +58,7 @@ export default function Gallery({ count }) {
             >
               <path
                 d="M9.15484 0.655273L9.15493 16.345M9.15493 16.345L17 8.49989M9.15493 16.345L1.31 8.5001"
-                stroke="#01010a"
+                stroke="#f9fafb"
               />
             </svg>
           </a>

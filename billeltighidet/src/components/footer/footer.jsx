@@ -103,17 +103,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#" className="nav-link">
+                <a href="/projects" className="nav-link">
                   {t(`nav.1`)}
                 </a>
               </li>
               <li>
-                <a href="#" className="nav-link">
+                <a href="/gallery" className="nav-link">
                   {t(`nav.2`)}
                 </a>
               </li>
               <li>
-                <a href="#" className="nav-link">
+                <a href="/about" className="nav-link">
                   {t(`nav.3`)}
                 </a>
               </li>

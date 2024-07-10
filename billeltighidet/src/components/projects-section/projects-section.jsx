@@ -1,9 +1,8 @@
 import React from "react";
-import gsap from "gsap";
 import { useTranslation } from "react-i18next";
-import "./projects.css";
+import "./projects-section.css";
 
-export default function Projects({ count }) {
+export default function ProjectsSection({ count }) {
   const { t } = useTranslation("projects");
 
   return (
@@ -60,7 +59,7 @@ export default function Projects({ count }) {
             </div>
             <div
               className={`img-container ${
-                index % 2 === 0 ? "gc-f-6-13" : "gc-f-1-8 gr-1"
+                index % 2 === 0 ? "gc-f-6-13" : "gc-f-1-8 ls-gr-1"
               }`}
             >
               <img src={`/img/mockups/${index + 1}.png`} alt="mock up" />
@@ -69,7 +68,7 @@ export default function Projects({ count }) {
         ))}
       </div>
       <button className=" gc-1-13 underline-hover-left-right js-c p-12-24 black">
-        <a href="#" className=" h4 medium flex col-g-16 aic">
+        <a href="/projects" className=" h4 medium flex col-g-16 aic">
           <p className="ws-no-w">Voir plus de projets</p>
           <svg
             className="rotate--45 mix-blend-diff"

@@ -16,7 +16,8 @@
   .name.me {
     position: absolute;
     bottom: 0;
-    right: -100px;
+    left: calc(100% + 32px);
+    transform: translateY(-10px);
   }
 
   .hero {

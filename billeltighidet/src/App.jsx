@@ -1,28 +1,23 @@
 import { useEffect, useState, useRef } from "react";
-import Lenis from "lenis";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Lenis from "lenis";
 import { useTranslation } from "react-i18next";
 import Header from "./components/header/header";
-import Hero from "./components/hero/hero";
-import Quote from "./components/quote-section/quote";
-import Exploration from "./components/exploration-section/exploration";
-import Projects from "./components/projects/projects";
-import Gallery from "./components/gallery/gallery";
-import About from "./components/about-section/about";
-import Footer from "./components/footer/footer";
+import Index from "./pages/index";
+import Projects from "./pages/projects";
+import Gallery from "./pages/gallery";
+import About from "./pages/about";
 import i18n from "./i18n";
 import "./App.css";
 import "./index.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function App() {
+function App() {
   const { i18n } = useTranslation();
   const [lenis, setLenis] = useState(null);
-  const explorationRef = useRef(null);
-  const galleryRef = useRef(null);
-  const footerRef = useRef(null);
 
   useEffect(() => {
     const lenisInstance = new Lenis();
@@ -40,47 +35,6 @@ export default function App() {
     return () => {
       lenisInstance.destroy();
       gsap.ticker.remove(lenisInstance.raf);
-    };
-  }, []);
-
-  useEffect(() => {
-    const tl = gsap.timeline({
-      defaults: { duration: 1.2, ease: "power2.inOut" },
-    });
-
-    tl.to(":root", {
-      "--bg-color": "#01010a",
-      "--text-color": "#f9fafb",
-      scrollTrigger: {
-        trigger: explorationRef.current,
-        start: "top 100%",
-        end: "bottom top",
-        toggleActions: "play reverse play reverse",
-      },
-    })
-      .to(":root", {
-        "--bg-color": "#f9fafb",
-        "--text-color": "#01010a",
-        scrollTrigger: {
-          trigger: galleryRef.current,
-          start: "top 50%",
-          end: "bottom center",
-          toggleActions: "play none none reverse",
-        },
-      })
-      .to(":root", {
-        "--bg-color": "#01010a",
-        "--text-color": "#f9fafb",
-        scrollTrigger: {
-          trigger: footerRef.current,
-          start: "top 80%",
-          end: "bottom top",
-          toggleActions: "play none none reverse",
-        },
-      });
-
-    return () => {
-      tl.kill(); // Clean up the timeline
     };
   }, []);
 
@@ -103,21 +57,16 @@ export default function App() {
   }, [i18n]);
 
   return (
-    <>
+    <Router>
       <Header lenis={lenis} />
-      <Hero page="index" />
-      <Quote />
-      <div ref={explorationRef}>
-        <Exploration />
-        <Projects count={2} />
-      </div>
-      <div ref={galleryRef}>
-        <Gallery />
-      </div>
-      <About />
-      <div ref={footerRef}>
-        <Footer />
-      </div>
-    </>
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/about" element={<About />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
