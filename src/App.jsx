@@ -1,9 +1,15 @@
-import { useEffect, useState, useRef } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import { useTranslation } from "react-i18next";
+import Cursor from "./components/cursor/cursor";
 import Header from "./components/header/header";
 import Index from "./pages/index";
 import Projects from "./pages/projects";
@@ -58,12 +64,14 @@ function App() {
 
   return (
     <Router>
+      {window.innerWidth > 760 && <Cursor></Cursor>}
       <Header lenis={lenis} />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<About />} />
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
   );

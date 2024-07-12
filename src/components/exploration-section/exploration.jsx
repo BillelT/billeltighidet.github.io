@@ -9,6 +9,7 @@ export default function Exploration() {
 
   const handleToggle = (index) => {
     const isOpen = openSections.includes(index);
+    const rafters = document.querySelectorAll(".rafter");
 
     if (isOpen) {
       gsap.to(`.open[data-index="${index}"]`, {
@@ -21,6 +22,7 @@ export default function Exploration() {
           setOpenSections(openSections.filter((i) => i !== index));
         },
       });
+      rafters[index].classList.remove("rafter-open");
     } else {
       setOpenSections([...openSections, index]);
       gsap.fromTo(
@@ -31,13 +33,14 @@ export default function Exploration() {
           marginTop: 0,
         },
         {
-          maxHeight: 500, // Think to update value when text is dynamic
+          maxHeight: 650, // Think to update value when text is dynamic
           opacity: 1,
           marginTop: 64,
           duration: 1.2,
           ease: "power1.inOut",
         }
       );
+      rafters[index].classList.add("rafter-open");
     }
   };
 
@@ -58,8 +61,7 @@ export default function Exploration() {
                 src="/img/chevrons-dropdown-menu.svg"
                 alt="icône de chevrons"
                 onClick={() => handleToggle(index)}
-                style={{ cursor: "pointer" }}
-                className="gc-13"
+                className="gc-13 mix-blend-diff rafter larger-cursor"
               />
             </div>
             <div className="open" data-index={index}>
@@ -79,11 +81,10 @@ export default function Exploration() {
                 <a
                   href={t(`links.${index + 1}`)}
                   className="semi-bold flex col-g-16 p-8-16 aic"
-                  target="_blank"
                 >
                   {t(`dropDownCTA.${index + 1}`)}
                   <img
-                    className="rotate--135"
+                    className="rotate--135 mix-blend-diff"
                     src="/img/thin-arrow-white-down.svg"
                     alt="icône fléche diagonale"
                   />

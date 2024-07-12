@@ -1,11 +1,9 @@
 .open {
-  max-height: 0; /* Cache le contenu */
-  opacity: 0; /* Rend le contenu invisible */
-  padding: 0; /* Réduit le padding */
-  margin: 0; /* Réduit la marge */
-  overflow: hidden; /* Assure que le contenu débordant est caché */
-  /* transition: max-height 0.8s ease, opacity 0.8s ease, padding 0.8s ease,
-    margin 0.8s ease; */
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
 }
 
 .open[data-index] {
@@ -25,4 +23,14 @@
 
 .w-100 {
   width: 100%;
+}
+
+.rafter {
+  will-change: transform;
+  transition: 1s ease-in-out;
+  padding: 10px;
+}
+
+.rafter-open {
+  transform: rotate(-180deg);
 }

@@ -27,7 +27,7 @@ export default function Footer() {
                   <img
                     src="/img/thin-arrow-white-down.svg"
                     alt="icône flèche diagonale"
-                    className="rotate--135"
+                    className="rotate--135 mix-blend-diff"
                   />
                 </a>
               </li>
@@ -41,7 +41,7 @@ export default function Footer() {
                   <img
                     src="/img/thin-arrow-white-down.svg"
                     alt="icône flèche diagonale"
-                    className="rotate--135"
+                    className="rotate--135 mix-blend-diff"
                   />
                 </a>
               </li>
@@ -55,7 +55,7 @@ export default function Footer() {
                   <img
                     src="/img/thin-arrow-white-down.svg"
                     alt="icône flèche diagonale"
-                    className="rotate--135"
+                    className="rotate--135 mix-blend-diff"
                   />
                 </a>
               </li>
@@ -68,7 +68,7 @@ export default function Footer() {
             <p className="h5 m-b-4">{t(`apprenticeship.2`)}</p>
             <a
               href="mailto:billel.tighidet@mmibordeaux.com"
-              className="h4 underline-hover-left-right"
+              className="h4 underline-hover-left-right larger-cursor magnet-element"
               target="_blank"
             >
               <p>billel.tighidet@mmibordeaux.com</p>
@@ -88,7 +88,7 @@ export default function Footer() {
           sb aife ls-ord-2"
           >
             <ul className="flex f-d-c r-g-16 fdc-dr">
-              <li className="underline-hover-left-right infinite">
+              <li className="underline-hover-left-right infinite larger-cursor">
                 <a
                   href="/resume-billel-tighidet.pdf"
                   className="nav-link light flex aic col-g-8 "
@@ -103,17 +103,17 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a href="/projects" className="nav-link">
+                <a href="/projects" className="nav-link hover-underline">
                   {t(`nav.1`)}
                 </a>
               </li>
               <li>
-                <a href="/gallery" className="nav-link">
+                <a href="/gallery" className="nav-link hover-underline ">
                   {t(`nav.2`)}
                 </a>
               </li>
               <li>
-                <a href="/about" className="nav-link">
+                <a href="/about" className="nav-link hover-underline ">
                   {t(`nav.3`)}
                 </a>
               </li>

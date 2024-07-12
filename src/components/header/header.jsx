@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
+import { applyMagnetEffect } from "../magnetEffect/magnetEffect";
 import "./header.css";
 
 export default function Header({ lenis }) {
@@ -23,6 +24,11 @@ export default function Header({ lenis }) {
   useEffect(() => {
     navigationRef.current.style.opacity = "0";
     navigationRef.current.style.visibility = "hidden";
+
+    const magnetElements = document.querySelectorAll(".magnet-element");
+    magnetElements.forEach((element) => {
+      applyMagnetEffect({ current: element });
+    });
   }, []);
 
   useEffect(() => {
@@ -76,13 +82,16 @@ export default function Header({ lenis }) {
     <>
       <header
         ref={headerRef}
-        className="padding-container p-t-20 container flex sb fixed mix-blend-diff aic"
+        className=" container flex sb fixed mix-blend-diff aic"
       >
-        <a href="/" className="stable-white">
+        <a
+          href="/"
+          className="stable-white magnet-element padding-container p-t-20 p-b-16  larger-cursor"
+        >
           <span className="font-family-lb index gc-1">BT</span>
         </a>
         <span
-          className="nav-link light p-4-8 pointer light"
+          className="nav-link light pointer light magnet-element padding-container p-t-20 p-b-16 larger-cursor"
           onClick={toggleNavigation}
         >
           Menu
@@ -96,12 +105,16 @@ export default function Header({ lenis }) {
         ref={navigationRef}
       >
         <div className=" p-t-20  gc-1-13 flex sb aic">
-          <a href="/">
+          <a href="/" className="magnet-element larger-cursor">
             <span className="font-family-lb index gc-1">BT</span>
           </a>
           <div className="flex col-g-32-16 gc-13">
-            <ul className="flex sb">
-              <li className="p-t-b-4">
+            <ul
+              className={`flex sb actual-lang-container ${
+                i18n.language.includes("en") ? "lang-2" : ""
+              } `}
+            >
+              <li className="p-t-b-2">
                 <p
                   className={`p-4-8 body pointer light ${
                     i18n.language.includes("fr") ? "actual-lang" : ""
@@ -115,7 +128,7 @@ export default function Header({ lenis }) {
                   FR
                 </p>
               </li>
-              <li className="p-t-b-4">
+              <li className="p-t-b-2">
                 <p
                   className={`p-4-8 body pointer  light ${
                     i18n.language.includes("en") ? "actual-lang" : ""
@@ -131,7 +144,7 @@ export default function Header({ lenis }) {
               </li>
             </ul>
             <span
-              className="nav-link light p-4-8 pointer light"
+              className="nav-link light p-4-8 pointer light  magnet-element larger-cursor"
               onClick={toggleNavigation}
             >
               Menu
@@ -141,7 +154,7 @@ export default function Header({ lenis }) {
         <div className=" container gc-1-13 r-g-64 m-t-14-rem aife">
           <nav className="gc-f-1-6">
             <ul className="r-g-32 grid">
-              <li className="h2 ">
+              <li className="h2  larger-cursor">
                 <a
                   href="/projects"
                   className="no-underline font-family-lb"
@@ -150,7 +163,7 @@ export default function Header({ lenis }) {
                   {t(`h2.1`)}
                 </a>
               </li>
-              <li className="h2 ">
+              <li className="h2  larger-cursor">
                 <a
                   href="/gallery"
                   className="no-underline font-family-lb"
@@ -159,7 +172,7 @@ export default function Header({ lenis }) {
                   {t(`h2.2`)}
                 </a>
               </li>
-              <li className="h2 ">
+              <li className="h2 larger-cursor ">
                 <a
                   href="/about"
                   className="no-underline font-family-lb"
@@ -175,7 +188,7 @@ export default function Header({ lenis }) {
               <p className="h5 m-b-16">{t(`apprenticeship`)}</p>
               <a
                 href="mailto:billel.tighidet@mmibordeaux.com"
-                className="h4 underline-hover-left-right black "
+                className="h4 underline-hover-left-right black magnet-element larger-cursor"
                 target="_blank"
               >
                 <p>billel.tighidet@mmibordeaux.com</p>
@@ -183,7 +196,7 @@ export default function Header({ lenis }) {
             </div>
             <nav>
               <ul className="grid r-g-8 ms-f-c-g-16 aic">
-                <li className="underline-hover-left-right infinite black">
+                <li className="underline-hover-left-right infinite black larger-cursor">
                   <a
                     href="/resume-billel-tighidet.pdf"
                     className="nav-link light flex aic col-g-8 "
@@ -199,7 +212,7 @@ export default function Header({ lenis }) {
                 <li>
                   <a
                     href="https://www.behance.net/billeltighidet"
-                    className="nav-link light no-underline"
+                    className="nav-link light no-underline hover-underline white-underline "
                     target="_blank"
                   >
                     Behance
@@ -208,7 +221,7 @@ export default function Header({ lenis }) {
                 <li>
                   <a
                     href="https://github.com/BillelT"
-                    className="nav-link light no-underline"
+                    className="nav-link light no-underline hover-underline white-underline "
                     target="_blank"
                   >
                     Github
@@ -217,7 +230,7 @@ export default function Header({ lenis }) {
                 <li>
                   <a
                     href="https://www.linkedin.com/in/billel-tighidet-76b292234/"
-                    className="nav-link light no-underline"
+                    className="nav-link light no-underline hover-underline white-underline "
                     target="_blank"
                   >
                     Linkedin

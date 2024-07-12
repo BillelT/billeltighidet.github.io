@@ -34,6 +34,7 @@
 
 .hover-flying {
   overflow: hidden;
+  mix-blend-mode: difference;
 }
 
 .flying {

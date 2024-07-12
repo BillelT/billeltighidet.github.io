@@ -1,0 +1,35 @@
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: var(--white);
+  pointer-events: none;
+  z-index: 1000;
+  will-change: transform;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .cursor::after {
+  content: "Voir le projet";
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1001;
+  color: white;
+  background-color: black;
+} */
+
+.cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  background-color: var(--white);
+  pointer-events: none;
+  z-index: 1000;
+  will-change: transform;
+}

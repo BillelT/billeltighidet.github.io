@@ -31,7 +31,7 @@ export default function Hero({ page }) {
     <>
       <section className="hero flex f-d-c padding-container  m-b-256-512">
         <h1 className="h1 font-family-lb">
-          <p className="flex sb col-g-32 ">
+          <p className="flex sb col-g-32-16 ">
             {t(`${page}.h1`)} <span>{t(`${page}.h2`)}</span>
           </p>
           <p className={`${i18n.language.includes("fr") ? "w-min-c" : ""}`}>
