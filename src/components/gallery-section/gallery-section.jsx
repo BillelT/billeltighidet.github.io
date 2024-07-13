@@ -45,10 +45,10 @@ export default function GallerySection({ completeGallery, cta, title }) {
       <div className="grid r-g-128-256 g-t-c-12 gc-1-13" ref={parallaxArticle}>
         <article className="flex f-d-c parallax aife js-c gc-f-6-10 as-9-16">
           <div className="video-container ">
-            <video controls muted className="video ">
+            <video controls muted autoPlay className="video ">
               <source
                 src="/img/gallery-element/gameboy-in-nature.webm"
-                type="video/mp4"
+                type="video/webm"
               />
             </video>
           </div>
@@ -57,22 +57,22 @@ export default function GallerySection({ completeGallery, cta, title }) {
         </article>
         <article className="flex f-d-c parallax aife gc-f-1-8 as-16-9">
           <div className="video-container ">
-            <video controls muted className="video ">
+            <video controls muted autoPlay className="video ">
               <source
                 src="/img/gallery-element/kc-blue-smoke.webm"
-                type="video/mp4"
+                type="video/webm"
               />
             </video>
           </div>
           <p className="meta light">Karmine Corp</p>
           <p className="meta light">Blue smoke</p>
         </article>
-        <article className="flex f-d-c parallax aife js-e gc-f-7-11 as-9-16">
+        <article className="flex f-d-c  aife js-e gc-f-7-11 as-9-16">
           <div className="video-container">
-            <video controls muted className="video ">
+            <video controls muted autoPlay className="video ">
               <source
                 src="/img/gallery-element/laylow-mr-anderson.webm"
-                type="video/mp4"
+                type="video/webm"
               />
             </video>
           </div>
@@ -84,7 +84,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
           <>
             <article className="flex f-d-c parallax aife gc-f-1-6  as-538-675">
               <div className="video-container">
-                <video controls muted className="video ">
+                <video controls muted autoPlay className="video ">
                   <source
                     src="/img/gallery-element/lightning-sword.mp4"
                     type="video/mp4"
@@ -96,7 +96,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
             </article>
             <article className="flex f-d-c parallax aife js-e gc-f-8-13 as-538-675 m-t-256-512">
               <div className="video-container">
-                <video controls muted className="video ">
+                <video controls muted autoPlay className="video ">
                   <source
                     src="/img/gallery-element/sword-in-stone.mp4"
                     type="video/mp4"

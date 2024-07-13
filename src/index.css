@@ -775,3 +775,7 @@ video {
   height: auto;
   object-fit: cover;
 }
+
+video {
+  object-fit: contain;
+}
