@@ -47,7 +47,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
           <div className="video-container ">
             <video controls muted className="video ">
               <source
-                src="/img/gallery-element/gameboy-in-nature.mp4"
+                src="/img/gallery-element/gameboy-in-nature.webm"
                 type="video/mp4"
               />
             </video>
@@ -59,7 +59,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
           <div className="video-container ">
             <video controls muted className="video ">
               <source
-                src="/img/gallery-element/kc-blue-smoke.mp4"
+                src="/img/gallery-element/kc-blue-smoke.webm"
                 type="video/mp4"
               />
             </video>
@@ -71,7 +71,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
           <div className="video-container">
             <video controls muted className="video ">
               <source
-                src="/img/gallery-element/laylow-mr-anderson.mp4"
+                src="/img/gallery-element/laylow-mr-anderson.webm"
                 type="video/mp4"
               />
             </video>
