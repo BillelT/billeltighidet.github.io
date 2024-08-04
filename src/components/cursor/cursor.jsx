@@ -31,7 +31,7 @@ export default function Cursor() {
       });
 
       gsap.to(outlineRef.current, {
-        duration: 0.6,
+        duration: 0.4,
         x: x + 7.5,
         y: y + 7.5,
         ease: "power2.out",
@@ -41,14 +41,24 @@ export default function Cursor() {
     const handleMouseEnter = () => {
       gsap.to(cursorRef.current, {
         duration: 0.6,
-        scaleX: 2,
-        scaleY: 2,
+        scaleX: 1.25,
+        scaleY: 1.25,
         ease: "power2.out",
       });
       gsap.to(outlineRef.current, {
         duration: 0.6,
-        scaleX: 2,
-        scaleY: 2,
+        scaleX: 1.25,
+        scaleY: 1.25,
+        ease: "power2.out",
+      });
+      gsap.to(cursorRef.current, {
+        duration: 0.6,
+        backgroundColor: "#f9fafb",
+        ease: "power2.out",
+      });
+      gsap.to(outlineRef.current, {
+        duration: 0.6,
+        backgroundColor: "#f9fafb",
         ease: "power2.out",
       });
     };
@@ -58,6 +68,7 @@ export default function Cursor() {
         duration: 0.6,
         scaleX: 1,
         scaleY: 1,
+        backgroundColor: "transparent",
         ease: "power2.out",
       });
 
@@ -65,6 +76,7 @@ export default function Cursor() {
         duration: 0.6,
         scaleX: 1,
         scaleY: 1,
+        backgroundColor: "transparent",
         ease: "power2.out",
       });
     };

@@ -20,7 +20,7 @@ export default function Footer() {
               <li>
                 <a
                   href="https://www.behance.net/billeltighidet"
-                  className="flex sb p-8-16 underline-hover-left-right w-280-315 "
+                  className="flex sb p-8-16 underline-hover-left-right w-280-315 larger-cursor"
                   target="_blank"
                 >
                   Behance
@@ -34,7 +34,7 @@ export default function Footer() {
               <li>
                 <a
                   href="https://github.com/BillelT"
-                  className="flex sb p-8-16 underline-hover-left-right  w-280-315"
+                  className="flex sb p-8-16 underline-hover-left-right  w-280-315 larger-cursor"
                   target="_blank"
                 >
                   Github
@@ -48,7 +48,7 @@ export default function Footer() {
               <li>
                 <a
                   href="https://www.linkedin.com/in/billel-tighidet-76b292234/"
-                  className="flex sb p-8-16 underline-hover-left-right  w-280-315"
+                  className="flex sb p-8-16 underline-hover-left-right  w-280-315 larger-cursor"
                   target="_blank"
                 >
                   Linkedin
