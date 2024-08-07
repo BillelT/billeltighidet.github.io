@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 
-robots.txt
+/public/robots.txt
