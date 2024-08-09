@@ -49,11 +49,14 @@ export default function Exploration() {
       <h2 className="h2 font-family-lb gc-1-13">{t(`h2`)}</h2>
       <div className="container r-g-48 jic gc-1-13">
         {[0, 1, 2, 3, 4].map((index) => (
-          <article key={index} className="p-b-32 border-bottom gc-f-3-11 w-100">
+          <article
+            key={index}
+            className="p-b-32 border-bottom gc-f-3-11 large w-100"
+          >
             <div className="container sb aic">
-              <h4 className="h4 medium gc-f-1-7 ">
+              <h3 className="h3 medium gc-f-1-7 ">
                 {t(`dropDownTitle.${index + 1}`)}
-              </h4>
+              </h3>
               <p className="body light sm-dn gc-7-12">
                 {t(`dropDownMeta.${index + 1}`)}
               </p>

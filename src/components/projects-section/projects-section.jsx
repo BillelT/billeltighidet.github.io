@@ -29,7 +29,7 @@ export default function ProjectsSection({ count, cta, title }) {
               }`}
             >
               <div className="grid r-g-32">
-                <h4 className="h4">{`/0${index + 1}`}</h4>
+                <p className="h4">{`/0${index + 1}`}</p>
                 <div className="grid r-g-8">
                   <div className="flex sb col-g-8">
                     <h3 className="h3 medium">{t(`h3.${index + 1}`)}</h3>

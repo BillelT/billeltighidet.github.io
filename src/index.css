@@ -618,6 +618,12 @@ a {
   }
 }
 
+@media screen and (min-width: 1220px) {
+  .gc-f-3-11.large {
+    grid-column: 3/11;
+  }
+}
+
 @media screen and (min-width: 960px) {
   .gc-f-1-6 {
     grid-column: 1/6;
@@ -627,7 +633,7 @@ a {
     grid-column: 2/13;
   }
 
-  .gc-f-3-11 {
+  .gc-f-3-11:not(.large) {
     grid-column: 3/11;
   }
 
