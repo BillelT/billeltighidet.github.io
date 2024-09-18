@@ -25,7 +25,7 @@ export default function ProjectsSection({ count, cta, title }) {
           <article key={index} className="project container r-g-64">
             <div
               className={`grid r-g-54 ma-w-500  magnet-container m-p--10 ${
-                index % 2 === 0 ? "gc-f-1-6" : "gc-f-9-13"
+                index % 2 === 1 ? "gc-f-1-6" : "gc-f-9-13"
               }`}
             >
               <div className="grid r-g-32">
@@ -71,7 +71,7 @@ export default function ProjectsSection({ count, cta, title }) {
             </div>
             <div
               className={`img-container ${
-                index % 2 === 0 ? "gc-f-6-13" : "gc-f-1-8 ls-gr-1"
+                index % 2 === 1 ? "gc-f-6-13" : "gc-f-1-8 ls-gr-1"
               }`}
             >
               <a
