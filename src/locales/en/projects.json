@@ -1,67 +1,66 @@
 {
-    "h2":"Projects",
-    "h3": {
-      "1": "Low Poly Style Kame House",
-      "2": "Showcase Site, Visual Identity",
-      "3": "Fluff Event - Designer & Web Developer",
-      "4": "Creating an Engaged Blog",
-      "5": "Calculator"
+  "h2": "Projects",
+  "h3": {
+    "1": "Anto",
+    "2": "Kame House",
+    "3": "Showcase Site, Visual Identity",
+    "4": "Fluff Event - Designer & Web Developer",
+    "5": "Creating an Engaged Blog"
+  },
+  "year": {
+    "1": "2024",
+    "2": "2024",
+    "3": "2023",
+    "4": "2024",
+    "5": "2024"
+  },
+  "typeDuration": {
+    "1": "Personal Project, 3 weeks",
+    "2": "Personal Project, 2 days",
+    "3": "Personal Project, 2 weeks",
+    "4": "Non-profit Project, 2 months",
+    "5": "MMI Project, 2 weeks"
+  },
+  "skills": {
+    "1": {
+      "skill1": "React & R3F",
+      "skill2": "Blender",
+      "skill3": "GSAP"
     },
-    "year": {
-      "1": "2024",
-      "2": "2023",
-      "3": "2024",
-      "4": "2024",
-      "5": "2023"
+    "2": {
+      "skill1": "Three.js",
+      "skill2": "Blender",
+      "skill3": "GSAP"
     },
-    "typeDuration": {
-      "1": "Personal Project, 2 days",
-      "2": "Personal Project, 2 weeks",
-      "3": "Non-profit Project, 2 months",
-      "4": "MMI Project, 2 weeks",
-      "5": "Personal Project, 1 week"
+    "3": {
+      "skill1": "Direction artistique",
+      "skill2": "UX/UI design",
+      "skill3": "HTML / CSS / JavaScript"
     },
-    "skills": {
-      "1": {
-        "skill1": "Three.js",
-        "skill2": "Blender",
-        "skill3": "GSAP"
-      },
-      "2": {
-        "skill1": "Art Direction",
-        "skill2": "UX/UI Design",
-        "skill3": "HTML / CSS / JavaScript"
-      },
-      "3": {
-        "skill1": "Astro",
-        "skill2": "UX/UI Design",
-        "skill3": "Photoshop, Illustrator"
-      },
-      "4": {
-        "skill1": "Art Direction",
-        "skill2": "UX/UI Design",
-        "skill3": "PHP / Bootstrap / JavaScript"
-      },
-      "5": {
-        "skill1": "Development",
-        "skill2": "UX/UI Design",
-        "skill3": ""
-      }
+    "4": {
+      "skill1": "Astro",
+      "skill2": "UX/UI design",
+      "skill3": "Photoshop, Illustrator"
     },
-    "content": {
-      "1": "My first 3D website and my first low poly style scene. I first fully modeled the scene in Blender, optimizing the polygons as much as possible. Then, I integrated the model with Three.js and created some animations with GSAP. This project allowed me to confirm my learning of 5 chapters from the Three.js Journey course and to explore a new style in Blender.",          
-      "2": "This project allowed me to apply numerous integration concepts. I also developed a brand identity, created the logo, harmonized the interfaces to establish visual coherence, and emphasized the user experience. I deeply reflected on the goal and target audience of this project. The answers I obtained guided my design choices.",
-      "3": "The Fluff Event is a charity marathon on Twitch. I had the opportunity to work with many volunteers to successfully complete the 2024 edition. I designed and integrated several web pages, including the one presenting the 2024 edition (in 5 hours!). I also created mockups and visuals for the merchandise. This project was very enriching and I hope to help again in 2025!",
-      "4": "In this project, I applied many design concepts acquired through my previous work. The core of this project is the creation of a dynamic, accessible, and coherent site. I led most of the art direction, particularly in choosing this soft and warm color palette, which helped affirm the nature of the fictional association Bibble's.",
-      "5": "The details in the interactions of this JavaScript calculator ensure a pleasant user experience. I researched how web calculators manage user feedback. The state changes during basic interactions with an element are presented simply here. However, this project allowed me to clearly identify these aspects and better incorporate them into larger-scale projects."
-    },
-    "links": {
-      "1": "https://kame-house-3d.netlify.app/",
-      "2": "https://actifservicesnettoyage.netlify.app/",
-      "3": "https://fluffevent.fr/",
-      "4": "https://mmig6.gwendaljudic.com/",
-      "5": "https://my-lil-calc.netlify.app/"
-    },
-    "CTA":"Discover the project"
-  }
-  
+    "5": {
+      "skill1": "Direction artistique",
+      "skill2": "UX/UI design",
+      "skill3": "PHP / Bootstrap / JavaScript"
+    }
+  },
+  "content": {
+    "1": "My first 3D website and my first low poly style scene. I first fully modeled the scene in Blender, optimizing the polygons as much as possible. Then, I integrated the model with Three.js and created some animations with GSAP. This project allowed me to confirm my learning of 5 chapters from the Three.js Journey course and to explore a new style in Blender.",
+    "2": "My first 3D website and my first low poly style scene. I first fully modeled the scene in Blender, optimizing the polygons as much as possible. Then, I integrated the model with Three.js and created some animations with GSAP. This project allowed me to confirm my learning of 5 chapters from the Three.js Journey course and to explore a new style in Blender.",
+    "3": "This project allowed me to apply numerous integration concepts. I also developed a brand identity, created the logo, harmonized the interfaces to establish visual coherence, and emphasized the user experience. I deeply reflected on the goal and target audience of this project. The answers I obtained guided my design choices.",
+    "4": "The Fluff Event is a charity marathon on Twitch. I had the opportunity to work with many volunteers to successfully complete the 2024 edition. I designed and integrated several web pages, including the one presenting the 2024 edition (in 5 hours!). I also created mockups and visuals for the merchandise. This project was very enriching and I hope to help again in 2025!",
+    "5": "In this project, I applied many design concepts acquired through my previous work. The core of this project is the creation of a dynamic, accessible, and coherent site. I led most of the art direction, particularly in choosing this soft and warm color palette, which helped affirm the nature of the fictional association Bibble's."
+  },
+  "links": {
+    "1": "https://anto-experience.netlify.app/",
+    "2": "https://kame-house-3d.netlify.app/",
+    "3": "https://actifservicesnettoyage.netlify.app/",
+    "4": "https://fluffevent.fr/",
+    "5": "https://mmig6.gwendaljudic.com/"
+  },
+  "CTA": "Discover the project"
+}
