@@ -1,20 +1,20 @@
 {
-    "h2": {
-        "1": "Un projet",
-        "2": "en tête ?"
-    },
-    "apprenticeship": {
-        "1": "En recherche d'une alternance de 2 ans, à partir de septembre 2024, à Paris.",
-        "2": "Mon profil vous intéresse ?"
-    },
-    "legal": {
-        "copyright": "© 2024 Billel Tighidet Tous droits réservés",
-        "host": "Hébergé sur "
-    },
-    "resumeCTA": "Télécharger mon CV",
-    "nav": {
-        "1": "Projets",
-        "2": "Galerie",
-        "3": "À propos"
-    }
+  "h2": {
+    "1": "Un projet",
+    "2": "en tête ?"
+  },
+  "apprenticeship": {
+    "1": "En recherche d'une alternance de 2 ans, à partir de septembre 2024, à Bordeaux.",
+    "2": "Mon profil vous intéresse ?"
+  },
+  "legal": {
+    "copyright": "© 2024 Billel Tighidet Tous droits réservés",
+    "host": "Hébergé sur "
+  },
+  "resumeCTA": "Télécharger mon CV",
+  "nav": {
+    "1": "Projets",
+    "2": "Galerie",
+    "3": "À propos"
+  }
 }
