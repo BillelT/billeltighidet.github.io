@@ -89,7 +89,7 @@ export default function ProjectsSection({ count, cta, title }) {
         <>
           <button className=" gc-1-13 underline-hover-left-right js-c p-12-24 black larger-cursor magnet-element">
             <a href="/projects" className=" h4 medium flex col-g-16 aic ">
-              <p className="ws-no-w">Voir plus de projets</p>
+              <p className="ws-no-w">{t(`More`)}</p>
               <svg
                 className="rotate--45"
                 width="32"
