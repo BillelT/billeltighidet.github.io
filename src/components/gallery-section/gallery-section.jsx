@@ -43,7 +43,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
         </>
       )}
       <div className="grid r-g-128-256 g-t-c-12 gc-1-13" ref={parallaxArticle}>
-        <article className="flex f-d-c parallax aife js-c gc-f-6-10 as-16-9">
+        <article className="flex f-d-c parallax aife js-c gc-f-1-8 as-16-9">
           <div className="video-container ">
             <video controls muted autoPlay className="video ">
               <source
