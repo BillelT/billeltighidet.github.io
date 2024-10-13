@@ -13,6 +13,7 @@ export default function Cursor() {
       scaleX: 1,
       scaleY: 1,
     });
+
     gsap.set(outlineRef.current, {
       xPercent: -50,
       yPercent: -50,
