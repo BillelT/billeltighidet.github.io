@@ -26,6 +26,7 @@ export default function Gallery() {
         trigger: gallerySectionRef.current,
         start: "top 50%",
         end: "bottom center",
+        // markers: true,
         toggleActions: "play none none reverse",
       },
     }).to(":root", {
@@ -35,6 +36,7 @@ export default function Gallery() {
         trigger: footerRef.current,
         start: "top 80%",
         end: "bottom top",
+        // markers: true,
         toggleActions: "play none none reverse",
       },
     });

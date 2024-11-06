@@ -24,6 +24,7 @@ export default function About() {
         trigger: explorationRef.current,
         start: "top 100%",
         end: "bottom top",
+        // markers: true,
         toggleActions: "play reverse play reverse",
       },
     });

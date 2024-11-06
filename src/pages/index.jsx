@@ -26,8 +26,9 @@ export default function Index() {
       "--text-color": "#f9fafb",
       scrollTrigger: {
         trigger: explorationRef.current,
-        start: "top 100%",
+        start: "top 70%",
         end: "bottom top",
+        // markers: true,
         toggleActions: "play reverse play reverse",
       },
     })
@@ -38,6 +39,7 @@ export default function Index() {
           trigger: galleryRef.current,
           start: "top 50%",
           end: "bottom center",
+          // markers: true,
           toggleActions: "play none none reverse",
         },
       })
@@ -48,6 +50,7 @@ export default function Index() {
           trigger: footerRef.current,
           start: "top 80%",
           end: "bottom top",
+          // markers: true,
           toggleActions: "play none none reverse",
         },
       });
