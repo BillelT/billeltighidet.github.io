@@ -63,19 +63,17 @@ function App() {
   }, [i18n]);
 
   return (
-    <StrictMode>
-      <Router>
-        {window.innerWidth > 760 && <Cursor></Cursor>}
-        <Header lenis={lenis} />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<Navigate to="/" />} />
-        </Routes>
-      </Router>
-    </StrictMode>
+    <Router>
+      {window.innerWidth > 760 && <Cursor></Cursor>}
+      <Header lenis={lenis} />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
   );
 }
 
