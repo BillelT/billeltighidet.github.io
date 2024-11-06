@@ -39,18 +39,12 @@ export default function ProjectsSection({ count, cta, title }) {
                   </div>
                   <p>{t(`typeDuration.${index + 1}`)}</p>
                 </div>
-                <ul className="skills flex f-d-c r-g-12">
-                  <li className="p-l-8 p-b-16 border-bottom ma-w-305">
-                    {t(`skills.${index + 1}.skill1`)}
-                  </li>
-                  <li className="p-l-8 p-b-16 border-bottom ma-w-305">
-                    {t(`skills.${index + 1}.skill2`)}
-                  </li>
-                  <li className="p-l-8 p-b-16 border-bottom ma-w-305">
-                    {t(`skills.${index + 1}.skill3`)}
-                  </li>
-                </ul>
                 <p className="body light">{t(`content.${index + 1}`)}</p>
+                <ul className="skills flex f-d-r col-g-32">
+                  <li className="">{t(`skills.${index + 1}.skill1`)}</li>
+                  <li className="">{t(`skills.${index + 1}.skill2`)}</li>
+                  <li className="">{t(`skills.${index + 1}.skill3`)}</li>
+                </ul>
               </div>
               <div className="p-10">
                 <button className="border semi-bold button hover-flying magnet-element">
@@ -61,7 +55,7 @@ export default function ProjectsSection({ count, cta, title }) {
                   >
                     {t(`CTA`)}
                     <img
-                      src="/img/thin-arrow-project-white.png"
+                      src="/img/thin-arrow-project-white.svg"
                       alt="icône flèche diagnole"
                       className=" flying"
                     />

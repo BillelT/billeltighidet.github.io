@@ -32,25 +32,25 @@ export default function Cursor() {
 
       gsap.to(outlineRef.current, {
         duration: 0.4,
-        x: x + 7.5,
-        y: y + 7.5,
+        x: x + 6,
+        y: y + 6,
         ease: "power2.out",
       });
     };
 
     const handleMouseEnter = () => {
-      gsap.to(cursorRef.current, {
-        duration: 0.6,
-        scaleX: 1.25,
-        scaleY: 1.25,
-        ease: "power2.out",
-      });
-      gsap.to(outlineRef.current, {
-        duration: 0.6,
-        scaleX: 1.25,
-        scaleY: 1.25,
-        ease: "power2.out",
-      });
+      // gsap.to(cursorRef.current, {
+      //   duration: 0.6,
+      //   scaleX: 1.25,
+      //   scaleY: 1.25,
+      //   ease: "power2.out",
+      // });
+      // gsap.to(outlineRef.current, {
+      //   duration: 0.6,
+      //   scaleX: 1.25,
+      //   scaleY: 1.25,
+      //   ease: "power2.out",
+      // });
       gsap.to(cursorRef.current, {
         duration: 0.6,
         backgroundColor: "#f9fafb",

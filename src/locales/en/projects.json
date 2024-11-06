@@ -23,9 +23,11 @@
   },
   "skills": {
     "1": {
-      "skill1": "React & R3F",
+      "skill1": "React",
+      "skill3": "React Three",
+      "skill4": "GSAP",
       "skill2": "Blender",
-      "skill3": "GSAP"
+      "skill5": "Art direction"
     },
     "2": {
       "skill1": "Three.js",
@@ -49,7 +51,7 @@
     }
   },
   "content": {
-    "1": "My first 3D website and my first low poly style scene. I first fully modeled the scene in Blender, optimizing the polygons as much as possible. Then, I integrated the model with Three.js and created some animations with GSAP. This project allowed me to confirm my learning of 5 chapters from the Three.js Journey course and to explore a new style in Blender.",
+    "1": "Creation and design of the visual identity for a high-end guitar brand. Production of a 3D product animation in Blender and development of an experiential website designed to enhance Anto's unique identity.",
     "2": "My first 3D website and my first low poly style scene. I first fully modeled the scene in Blender, optimizing the polygons as much as possible. Then, I integrated the model with Three.js and created some animations with GSAP. This project allowed me to confirm my learning of 5 chapters from the Three.js Journey course and to explore a new style in Blender.",
     "3": "This project allowed me to apply numerous integration concepts. I also developed a brand identity, created the logo, harmonized the interfaces to establish visual coherence, and emphasized the user experience. I deeply reflected on the goal and target audience of this project. The answers I obtained guided my design choices.",
     "4": "The Fluff Event is a charity marathon on Twitch. I had the opportunity to work with many volunteers to successfully complete the 2024 edition. I designed and integrated several web pages, including the one presenting the 2024 edition (in 5 hours!). I also created mockups and visuals for the merchandise. This project was very enriching and I hope to help again in 2025!",
