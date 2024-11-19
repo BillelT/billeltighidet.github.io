@@ -1,8 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./gallery-section.css";
+import "./Gallery-section.css";
 
 export default function GallerySection({ completeGallery, cta, title }) {
   const { t } = useTranslation("gallery");

@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import "./quote.css";
+import "./Quote.css";
 
 export default function Quote() {
   const { t } = useTranslation("quote");

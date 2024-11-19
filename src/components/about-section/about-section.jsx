@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import gsap from "gsap";
-import "./about-section.css";
+import "./About-section.css";
 
 export default function AboutSection({ cta }) {
   const { t } = useTranslation("about");

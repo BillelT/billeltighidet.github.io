@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { applyMagnetEffect } from "../magnetEffect/MagnetEffect";
 import gsap from "gsap";
-import { applyMagnetEffect } from "../magnetEffect/magnetEffect";
-import "./header.css";
+import "./Header.css";
 
 export default function Header({ lenis }) {
   const { t, i18n } = useTranslation("header");

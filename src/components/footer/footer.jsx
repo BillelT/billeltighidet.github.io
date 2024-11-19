@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import gsap from "gsap";
-import "./footer.css";
+import "./Footer.css";
 
 export default function Footer() {
   const { t } = useTranslation("footer");

@@ -1,13 +1,14 @@
-import { useEffect, useState, useRef } from "react";
-import gsap from "gsap";
+import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Hero from "../components/hero/hero";
-import Quote from "../components/quote-section/quote";
-import Exploration from "../components/exploration-section/exploration";
-import Projects from "../components/projects-section/projects-section";
-import Gallery from "../components/gallery-section/gallery-section";
-import About from "../components/about-section/about-section";
-import Footer from "../components/footer/footer";
+import gsap from "gsap";
+// Components
+import Hero from "../components/hero/Hero.jsx";
+import Quote from "../components/quote-section/Quote.jsx";
+import Exploration from "../components/exploration-section/Exploration.jsx";
+import Projects from "../components/projects-section/Projects-section.jsx";
+import Gallery from "../components/gallery-section/Gallery-section.jsx";
+import About from "../components/about-section/About-section.jsx";
+import Footer from "../components/footer/Footer.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 

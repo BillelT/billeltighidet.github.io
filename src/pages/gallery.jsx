@@ -1,11 +1,12 @@
-import { useEffect, useState, useRef } from "react";
-import gsap from "gsap";
+import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
-import Hero from "../components/hero/hero";
-import GallerySection from "../components/gallery-section/gallery-section";
-import About from "../components/about-section/about-section";
-import Footer from "../components/footer/footer";
+import gsap from "gsap";
+// Components
+import Hero from "../components/hero/Hero.jsx";
+import GallerySection from "../components/gallery-section/Gallery-section.jsx";
+import About from "../components/about-section/About-section.jsx";
+import Footer from "../components/footer/Footer.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 

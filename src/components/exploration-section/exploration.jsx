@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import gsap from "gsap";
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import "./exploration.css";
+import gsap from "gsap";
+import "./Exploration.css";
 
 export default function Exploration() {
   const { t } = useTranslation("exploration");
