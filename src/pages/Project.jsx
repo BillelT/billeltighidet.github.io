@@ -2,11 +2,11 @@ import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 // Components
-import Hero from "../components/hero/Her.jsx";
-import Exploration from "../components/exploration-section/Exploratio.jsx";
-import ProjectsSection from "../components/projects-section/Projects-sectio.jsx";
-import GallerySection from "../components/gallery-section/Gallery-sectio.jsx";
-import Footer from "../components/footer/Foote.jsx";
+import Hero from "../components/hero/Hero.jsx";
+import Exploration from "../components/exploration-section/Exploration.jsx";
+import ProjectsSection from "../components/projects-section/Projects-section.jsx";
+import GallerySection from "../components/gallery-section/Gallery-section.jsx";
+import Footer from "../components/footer/Footer.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 

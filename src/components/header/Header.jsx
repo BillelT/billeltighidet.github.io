@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { applyMagnetEffect } from "../magnetEffect/MagnetEffec";
+import { applyMagnetEffect } from "../magnetEffect/MagnetEffect";
 import gsap from "gsap";
 import "./Header.css";
 

@@ -10,12 +10,12 @@ import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import Lenis from "lenis";
 // Components
-import Cursor from "./components/cursor/Curso.jsx";
-import Header from "./components/header/Heade.jsx";
-import Index from "./pages/Inde.jsx";
+import Cursor from "./components/cursor/Cursor.jsx";
+import Header from "./components/header/Header.jsx";
+import Index from "./pages/Index.jsx";
 import Projects from "./pages/Project.jsx";
-import Gallery from "./pages/Galler.jsx";
-import About from "./pages/Abou.jsx";
+import Gallery from "./pages/Gallery.jsx";
+import About from "./pages/About.jsx";
 // Stylesheets
 import "./App.css";
 import "./index.css";
