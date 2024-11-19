@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import "./About-section.css";
+import "./About-sectio.css";
 
 export default function AboutSection({ cta }) {
   const { t } = useTranslation("about");

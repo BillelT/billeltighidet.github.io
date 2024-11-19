@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
-import "./Hero.css";
+import "./Her.css";
 
 export default function Hero({ page }) {
   const { t, i18n } = useTranslation("hero");

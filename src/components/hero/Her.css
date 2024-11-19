@@ -12,6 +12,8 @@
   will-change: transform;
 }
 
+/*  */
+
 /* h1 {
   max-width: 100%;
 } */
@@ -20,6 +22,7 @@
   h1 {
     max-width: 50%;
   }
+
   .name.me {
     position: absolute;
     bottom: 0;

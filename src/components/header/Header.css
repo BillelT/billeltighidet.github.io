@@ -7,8 +7,6 @@ header {
   position: fixed;
 }
 
-/*  */
-
 .navigation {
   grid-template-rows: auto 1fr;
   position: fixed;

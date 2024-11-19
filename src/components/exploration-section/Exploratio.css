@@ -6,6 +6,8 @@
   overflow: hidden;
 }
 
+/*  */
+
 .open[data-index] {
   display: grid;
   grid-template-columns: repeat(8, 1fr);

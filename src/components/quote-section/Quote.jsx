@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
-import "./Quote.css";
+import "./Quot.css";
 
 export default function Quote() {
   const { t } = useTranslation("quote");
