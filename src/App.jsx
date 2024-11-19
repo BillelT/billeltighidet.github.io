@@ -10,6 +10,7 @@ import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import Lenis from "lenis";
 // Components
+import Cursor from "./components/cursor/Cursor.jsx";
 import Header from "./components/header/Header.jsx";
 import Index from "./pages/index";
 import Projects from "./pages/projects";
@@ -64,7 +65,7 @@ function App() {
 
   return (
     <Router>
-      {window.innerWidth > 760 && <></>}
+      {window.innerWidth > 760 && <Cursor />}
       <Header lenis={lenis} />
       <Routes>
         <Route path="/" element={<Index />} />
