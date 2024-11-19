@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import "./Cursorr.css";
+import "./Cursor.css";
 
 export default function Cursor() {
   const cursorRef = useRef(null);
