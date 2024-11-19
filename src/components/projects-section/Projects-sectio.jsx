@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { applyMagnetEffect } from "../magnetEffect/MagnetEffect";
+import { applyMagnetEffect } from "../magnetEffect/MagnetEffec";
 import "./Projects-section.css";
 
 export default function ProjectsSection({ count, cta, title }) {

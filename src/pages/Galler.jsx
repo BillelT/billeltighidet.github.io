@@ -3,10 +3,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 // Components
-import Hero from "../components/hero/Hero.jsx";
-import GallerySection from "../components/gallery-section/Gallery-section.jsx";
-import About from "../components/about-section/About-section.jsx";
-import Footer from "../components/footer/Footer.jsx";
+import Hero from "../components/hero/Her.jsx";
+import GallerySection from "../components/gallery-section/Gallery-sectio.jsx";
+import About from "../components/about-section/About-sectio.jsx";
+import Footer from "../components/footer/Foote.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 

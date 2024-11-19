@@ -2,17 +2,15 @@ import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 // Components
-import Hero from "../components/hero/Hero.jsx";
-import Quote from "../components/quote-section/Quote.jsx";
-import Exploration from "../components/exploration-section/Exploration.jsx";
-import Projects from "../components/projects-section/Projects-section.jsx";
-import Gallery from "../components/gallery-section/Gallery-section.jsx";
-import About from "../components/about-section/About-section.jsx";
-import Footer from "../components/footer/Footer.jsx";
+import Hero from "../components/hero/Her.jsx";
+import Exploration from "../components/exploration-section/Exploratio.jsx";
+import ProjectsSection from "../components/projects-section/Projects-sectio.jsx";
+import GallerySection from "../components/gallery-section/Gallery-sectio.jsx";
+import Footer from "../components/footer/Foote.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Index() {
+export default function Projects() {
   const explorationRef = useRef(null);
   const galleryRef = useRef(null);
   const footerRef = useRef(null);
@@ -27,9 +25,8 @@ export default function Index() {
       "--text-color": "#f9fafb",
       scrollTrigger: {
         trigger: explorationRef.current,
-        start: "top 70%",
+        start: "top 10%",
         end: "bottom top",
-        // markers: true,
         toggleActions: "play reverse play reverse",
       },
     })
@@ -40,7 +37,6 @@ export default function Index() {
           trigger: galleryRef.current,
           start: "top 50%",
           end: "bottom center",
-          // markers: true,
           toggleActions: "play none none reverse",
         },
       })
@@ -51,7 +47,6 @@ export default function Index() {
           trigger: footerRef.current,
           start: "top 80%",
           end: "bottom top",
-          // markers: true,
           toggleActions: "play none none reverse",
         },
       });
@@ -63,16 +58,14 @@ export default function Index() {
 
   return (
     <>
-      <Hero page="index" />
-      <Quote />
-      <div ref={explorationRef}>
+      <Hero page="projects" />
+      <div ref={explorationRef} className="r-g-128-256 grid">
+        <ProjectsSection count={5} />
         <Exploration />
-        <Projects count={2} cta={true} title={true} />
       </div>
       <div ref={galleryRef}>
-        <Gallery cta={true} title={true} />
+        <GallerySection cta={true} title={true} />
       </div>
-      <About cta={true} />
       <div ref={footerRef}>
         <Footer />
       </div>

@@ -2,15 +2,17 @@ import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
 // Components
-import Hero from "../components/hero/Hero.jsx";
-import Exploration from "../components/exploration-section/Exploration.jsx";
-import ProjectsSection from "../components/projects-section/Projects-section.jsx";
-import GallerySection from "../components/gallery-section/Gallery-section.jsx";
-import Footer from "../components/footer/Footer.jsx";
+import Hero from "../components/hero/Her.jsx";
+import Quote from "../components/quote-section/Quot.jsx";
+import Exploration from "../components/exploration-section/Exploratio.jsx";
+import Projects from "../components/projects-section/Projects-sectio.jsx";
+import Gallery from "../components/gallery-section/Gallery-sectio.jsx";
+import About from "../components/about-section/About-sectio.jsx";
+import Footer from "../components/footer/Foote.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Projects() {
+export default function Index() {
   const explorationRef = useRef(null);
   const galleryRef = useRef(null);
   const footerRef = useRef(null);
@@ -25,8 +27,9 @@ export default function Projects() {
       "--text-color": "#f9fafb",
       scrollTrigger: {
         trigger: explorationRef.current,
-        start: "top 10%",
+        start: "top 70%",
         end: "bottom top",
+        // markers: true,
         toggleActions: "play reverse play reverse",
       },
     })
@@ -37,6 +40,7 @@ export default function Projects() {
           trigger: galleryRef.current,
           start: "top 50%",
           end: "bottom center",
+          // markers: true,
           toggleActions: "play none none reverse",
         },
       })
@@ -47,6 +51,7 @@ export default function Projects() {
           trigger: footerRef.current,
           start: "top 80%",
           end: "bottom top",
+          // markers: true,
           toggleActions: "play none none reverse",
         },
       });
@@ -58,14 +63,16 @@ export default function Projects() {
 
   return (
     <>
-      <Hero page="projects" />
-      <div ref={explorationRef} className="r-g-128-256 grid">
-        <ProjectsSection count={5} />
+      <Hero page="index" />
+      <Quote />
+      <div ref={explorationRef}>
         <Exploration />
+        <Projects count={2} cta={true} title={true} />
       </div>
       <div ref={galleryRef}>
-        <GallerySection cta={true} title={true} />
+        <Gallery cta={true} title={true} />
       </div>
+      <About cta={true} />
       <div ref={footerRef}>
         <Footer />
       </div>
