@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import Lenis from "lenis";
 // Components
-import Cursor from "./components/cursor/Cursor.jsx";
+import Cursor from "./components/cursor/Test.jsx";
 import Header from "./components/header/Header.jsx";
 import Index from "./pages/index";
 import Projects from "./pages/projects";
