@@ -9,9 +9,9 @@ export default function Footer() {
 
   return (
     <>
-      <footer className="container m-t-256-512 r-g-128-192">
+      <footer className="container m-t-256-512 r-g-128">
         <article className=" padding-container container gc-1-13 r-g-64 aic">
-          <h2 className="h2 font-family-lb gc-f-1-6 ">
+          <h2 className="h2 font-family-zodiak gc-f-1-6 thin">
             {t(`h2.1`)} <br /> {t(`h2.2`)}
           </h2>
           <nav className="gc-f-9-13 js-s-e">

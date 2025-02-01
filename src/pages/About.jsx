@@ -4,14 +4,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Components
 import Hero from "../components/hero/Hero.jsx";
 import AboutSection from "../components/about-section/About-section.jsx";
-import Exploration from "../components/exploration-section/Exploration.jsx";
 import Projects from "../components/projects-section/Projects-section.jsx";
 import Footer from "../components/footer/Footer.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-  const explorationRef = useRef(null);
+  const projects = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -22,7 +21,7 @@ export default function About() {
       "--bg-color": "#01010a",
       "--text-color": "#f9fafb",
       scrollTrigger: {
-        trigger: explorationRef.current,
+        trigger: projects.current,
         start: "top 100%",
         end: "bottom top",
         // markers: true,
@@ -39,8 +38,7 @@ export default function About() {
     <>
       <Hero page="about" />
       <AboutSection />
-      <div ref={explorationRef} className="m-t-256-512">
-        <Exploration />
+      <div ref={projects} className="m-t-256-512">
         <Projects count={2} cta={true} title={true} />
         <Footer />
       </div>

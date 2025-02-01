@@ -17,7 +17,7 @@ export default function ProjectsSection({ count, cta, title }) {
     <section className="container padding-container grid m-t-128-256 r-g-128-256">
       {title && (
         <>
-          <h2 className="h2 font-family-lb gc-1-13">{t(`h2`)}</h2>
+          <h2 className="h2 font-family-zodiak gc-1-13">{t(`h2`)}</h2>
         </>
       )}
       <div className="grid r-g-128-256 gc-1-13">

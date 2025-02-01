@@ -1,8 +1,13 @@
 {
-  "h2": {
-    "1": "Projets",
-    "2": "Galerie",
-    "3": "À propos"
+  "navigationLinks": {
+    "projects": "Projets",
+    "gallery": "Galerie",
+    "about": "À propos"
+  },
+  "socials": {
+    "Behance": "https://www.behance.net/billeltighidet",
+    "Github": "https://github.com/BillelT",
+    "Linkedin": "https://www.linkedin.com/in/billel-tighidet-76b292234/"
   },
   "apprenticeship": "En recherche d'une alternance de 2 ans, à partir de septembre 2024, à Bordeaux.",
   "resumeCTA": "Télécharger mon CV"

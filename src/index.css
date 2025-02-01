@@ -1,21 +1,3 @@
-/* Fonts file */
-@font-face {
-  font-family: "Nunito";
-  src: url("/fonts/nunito/Nunito-VariableFont_wght.ttf") format("truetype");
-}
-
-@font-face {
-  font-family: "Nunito";
-  src: url("/fonts/nunito/Nunito-Italic-VariableFont_wght.ttf") format("truetype");
-  font-style: italic;
-}
-
-@font-face {
-  font-family: "Libre Baskerville";
-  src: url("/fonts/libre-baskerville/LibreBaskerville-Regular.ttf") format("truetype");
-  font-weight: 400;
-}
-
 /* Css variables */
 :root {
   --white: #f9fafb;
@@ -67,7 +49,7 @@ html {
 }
 
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   color: var(--text-color);
   background-color: var(--bg-color);
   overflow-x: hidden;
@@ -104,7 +86,7 @@ button {
 a {
   color: var(--text-color);
   text-decoration: none;
-  font-family: "Nunito", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .underline {
@@ -264,12 +246,24 @@ a {
   display: flex;
 }
 
+
 .f-d-c {
   flex-direction: column;
 }
 
 .f-d-r {
   flex-direction: row;
+}
+
+.f-d-c-sm-f-d-r {
+  flex-direction: column;
+}
+
+
+@media screen and (min-width:940px) {
+  .f-d-c-sm-f-d-r {
+    flex-direction: row;
+  }
 }
 
 .sb {
@@ -292,12 +286,26 @@ a {
   align-items: flex-end;
 }
 
+.aife-sm-ais {
+  align-items: start;
+}
+
+@media screen and (min-width:940px) {
+  .aife-sm-ais {
+    align-items: flex-end;
+  }
+}
+
 .asc {
   align-self: center;
 }
 
 .ase {
   align-self: flex-end;
+}
+
+.display-none {
+  display: none;
 }
 
 .bg-white {
@@ -313,23 +321,31 @@ a {
   color: var(--bg-color);
 }
 
+.black {
+  color: var(--text-color);
+}
+
 .stable-white {
   color: var(--white);
 }
 
 /* Fonts */
-.font-family-lb {
-  font-family: "Libre Baskerville", serif;
+.italic {
+  font-style: italic;
 }
 
-.h1 {
-  font-size: calc(43px + (100 - 43) * ((100vw - 320px) / (1440 - 320)));
-  width: max-content;
-  position: relative;
-  /* width: min-content; */
-  /* display: flex;
-  justify-content: space-between; */
+.font-family-zodiak {
+  font-family: "Zodiak", serif;
 }
+
+/* .h1 {
+  font-size: calc(43px + (100 - 43) * ((100vw - 320px) / (1440 - 320)));
+  width: min-content;
+  position: relative;
+  width: min-content;
+  display: flex;
+  justify-content: space-between;
+} */
 
 .w-min-c {
   width: min-content;
@@ -345,7 +361,7 @@ a {
   font-weight: 300;
   font-size: calc(18px + (26 - 18) * ((100vw - 320px) / (1440 - 320)));
   display: block;
-  font-family: "Nunito";
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .me.name {
@@ -405,6 +421,10 @@ a {
   font-size: calc(16px + (26 - 16) * ((100vw - 320px) / (1440 - 320)));
 }
 
+.thin {
+  font-weight: 100;
+}
+
 .light {
   font-weight: 300;
 }
@@ -442,6 +462,10 @@ a {
 }
 
 /* Margin */
+
+.m-t-128 {
+  margin-top: 128px;
+}
 
 .m-t-128-256 {
   margin-top: 128px;

@@ -1,6 +1,7 @@
 header {
   color: var(--white);
   z-index: 1;
+  width: 100%;
 }
 
 .fixed {
@@ -36,6 +37,8 @@ header {
 .m-t-14-rem {
   margin-top: calc(8rem - 60px);
 }
+
+
 
 @media screen and (min-width: 960px) {
   .m-t-14-rem {

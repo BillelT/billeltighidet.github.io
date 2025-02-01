@@ -3,35 +3,31 @@ import gsap from "gsap";
 import "./Cursor.css";
 
 export default function Cursor() {
-  const cursorRef = useRef(null);
-  const outlineRef = useRef(null);
+  const cursor = useRef(null);
+  const outline = useRef(null);
 
   useEffect(() => {
-    gsap.set(cursorRef.current, {
+    gsap.set(cursor.current, {
       xPercent: -50,
       yPercent: -50,
-      scaleX: 1,
-      scaleY: 1,
     });
 
-    gsap.set(outlineRef.current, {
+    gsap.set(outline.current, {
       xPercent: -50,
       yPercent: -50,
-      scaleX: 1,
-      scaleY: 1,
     });
 
     const moveCursor = (e) => {
       const { clientX: x, clientY: y } = e;
 
-      gsap.to(cursorRef.current, {
+      gsap.to(cursor.current, {
         duration: 0.2,
         x,
         y,
         ease: "power2.out",
       });
 
-      gsap.to(outlineRef.current, {
+      gsap.to(outline.current, {
         duration: 0.4,
         x: x + 6,
         y: y + 6,
@@ -40,49 +36,37 @@ export default function Cursor() {
     };
 
     const handleMouseEnter = () => {
-      // gsap.to(cursorRef.current, {
-      //   duration: 0.6,
-      //   scaleX: 1.25,
-      //   scaleY: 1.25,
-      //   ease: "power2.out",
-      // });
-      // gsap.to(outlineRef.current, {
-      //   duration: 0.6,
-      //   scaleX: 1.25,
-      //   scaleY: 1.25,
-      //   ease: "power2.out",
-      // });
-      gsap.to(cursorRef.current, {
-        duration: 0.6,
-        backgroundColor: "#f9fafb",
-        ease: "power2.out",
+      gsap.set(outline.current, {
+        xPercent: -100,
+        yPercent: -100,
+        scaleX: 1.2,
+        scaleY: 1.2,
       });
-      gsap.to(outlineRef.current, {
-        duration: 0.6,
-        backgroundColor: "#f9fafb",
+
+      gsap.to(outline.current, {
+        duration: 0.4,
+        backgroundColor: "#ffffff",
         ease: "power2.out",
       });
     };
 
     const handleMouseLeave = () => {
-      gsap.to(cursorRef.current, {
-        duration: 0.6,
+      gsap.set(outline.current, {
+        xPercent: -50,
+        yPercent: -50,
         scaleX: 1,
         scaleY: 1,
-        backgroundColor: "transparent",
-        ease: "power2.out",
       });
-
-      gsap.to(outlineRef.current, {
-        duration: 0.6,
-        scaleX: 1,
-        scaleY: 1,
+      gsap.to(outline.current, {
+        duration: 0.4,
         backgroundColor: "transparent",
         ease: "power2.out",
       });
     };
 
     window.addEventListener("mousemove", moveCursor);
+    // window.addEventListener("mousedown", handleMouseEnter);
+    // window.addEventListener("mouseup", handleMouseLeave);
 
     const largers = document.querySelectorAll(".larger-cursor");
 
@@ -102,8 +86,8 @@ export default function Cursor() {
 
   return (
     <>
-      <div ref={cursorRef} className="cursor mix-blend-diff" />
-      <div ref={outlineRef} className="cursor-outline mix-blend-diff" />
+      <div ref={cursor} className="cursor mix-blend-diff" />
+      <div ref={outline} className="cursor-outline mix-blend-diff" />
     </>
   );
 }

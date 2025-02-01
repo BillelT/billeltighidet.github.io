@@ -4,7 +4,6 @@ import gsap from "gsap";
 // Components
 import Hero from "../components/hero/Hero.jsx";
 import Quote from "../components/quote-section/Quote.jsx";
-import Exploration from "../components/exploration-section/Exploration.jsx";
 import Projects from "../components/projects-section/Projects-section.jsx";
 import Gallery from "../components/gallery-section/Gallery-section.jsx";
 import About from "../components/about-section/About-section.jsx";
@@ -13,9 +12,9 @@ import Footer from "../components/footer/Footer.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Index() {
-  const explorationRef = useRef(null);
-  const galleryRef = useRef(null);
-  const footerRef = useRef(null);
+  const projects = useRef();
+  const gallery = useRef();
+  const footer = useRef();
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -26,7 +25,7 @@ export default function Index() {
       "--bg-color": "#01010a",
       "--text-color": "#f9fafb",
       scrollTrigger: {
-        trigger: explorationRef.current,
+        trigger: projects.current,
         start: "top 70%",
         end: "bottom top",
         // markers: true,
@@ -37,7 +36,7 @@ export default function Index() {
         "--bg-color": "#f9fafb",
         "--text-color": "#01010a",
         scrollTrigger: {
-          trigger: galleryRef.current,
+          trigger: gallery.current,
           start: "top 50%",
           end: "bottom center",
           // markers: true,
@@ -48,7 +47,7 @@ export default function Index() {
         "--bg-color": "#01010a",
         "--text-color": "#f9fafb",
         scrollTrigger: {
-          trigger: footerRef.current,
+          trigger: footer.current,
           start: "top 80%",
           end: "bottom top",
           // markers: true,
@@ -63,17 +62,17 @@ export default function Index() {
 
   return (
     <>
+    
       <Hero page="index" />
       <Quote />
-      <div ref={explorationRef}>
-        <Exploration />
+      <div ref={projects}>
         <Projects count={2} cta={true} title={true} />
       </div>
-      <div ref={galleryRef}>
+      <div ref={gallery}>
         <Gallery cta={true} title={true} />
       </div>
       <About cta={true} />
-      <div ref={footerRef}>
+      <div ref={footer}>
         <Footer />
       </div>
     </>

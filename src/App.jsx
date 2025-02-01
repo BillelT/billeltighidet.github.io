@@ -11,11 +11,13 @@ import gsap from "gsap";
 import Lenis from "lenis";
 // Components
 import Cursor from "./components/cursor/Cursor.jsx";
+import Loader from "./components/loader/Loader.jsx";
 import Header from "./components/header/Header.jsx";
 import Index from "./pages/Index.jsx";
 import Projects from "./pages/Project.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import About from "./pages/About.jsx";
+import LegalNotice from "./pages/LegalNotice.jsx";
 // Stylesheets
 import "./App.css";
 import "./index.css";
@@ -66,12 +68,14 @@ function App() {
   return (
     <Router>
       {window.innerWidth > 760 && <Cursor />}
+      {/* <Loader /> */}
       <Header lenis={lenis} />
       <Routes>
         <Route path="/" element={<Index />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<About />} />
+        <Route path="/legal-notice" element={<LegalNotice />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </Router>
