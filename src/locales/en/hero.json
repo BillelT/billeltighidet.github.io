@@ -1,18 +1,26 @@
 {
   "index": {
-    "h1": "Creative\nDesigner&\nDeveloper",
+    "h1-1": "Creative",
+    "h1-2": "Designer &",
+    "h1-3": "Développeur",
     "name": "Billel Tighidet"
   },
   "projects": {
-    "h1": "Discover\nmy projects",
+    "h1-1": "Discover my",
+    "h1-2": "projects",
+    "h1-3": "",
     "name": "Billel Tighidet"
   },
   "gallery": {
-    "h1": "Explore\nthe gallery",
+    "h1-1": "Explore the",
+    "h1-2": "gallery",
+    "h1-3": "",
     "name": "Billel Tighidet"
   },
   "about": {
-    "h1": "Learn more\nAbout me",
+    "h1-1": "Learn ",
+    "h1-2": "more ",
+    "h1-3": "about me",
     "name": "Billel Tighidet"
   }
 }

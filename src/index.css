@@ -219,8 +219,8 @@ a {
 }
 
 .padding-container {
-  padding-left: 6.25%;
-  padding-right: 6.25%;
+  padding-left: 6.25dvw;
+  padding-right: 6.25dvw;
 }
 
 @media screen and (min-width: 960px) {
@@ -246,7 +246,6 @@ a {
   display: flex;
 }
 
-
 .f-d-c {
   flex-direction: column;
 }
@@ -259,8 +258,7 @@ a {
   flex-direction: column;
 }
 
-
-@media screen and (min-width:940px) {
+@media screen and (min-width: 940px) {
   .f-d-c-sm-f-d-r {
     flex-direction: row;
   }
@@ -290,7 +288,7 @@ a {
   align-items: start;
 }
 
-@media screen and (min-width:940px) {
+@media screen and (min-width: 940px) {
   .aife-sm-ais {
     align-items: flex-end;
   }
@@ -362,11 +360,13 @@ a {
   font-size: calc(18px + (26 - 18) * ((100vw - 320px) / (1440 - 320)));
   display: block;
   font-family: "Plus Jakarta Sans", sans-serif;
+  line-height: 42px;
 }
 
 .me.name {
   font-size: 26px;
   width: min-content;
+  line-height: 96px;
 }
 
 .h2 {
@@ -383,7 +383,7 @@ a {
 
 .h5 {
   font-size: calc(16px + (18 - 16) * ((100vw - 320px) / (1440 - 320)));
-  /* line-height: 25.2px; */
+  line-height: 28.8px;
 }
 
 .body {
@@ -403,7 +403,7 @@ a {
   }
 
   .meta {
-    font-size: 14px;
+    font-size: 16px;
     line-height: 19.6px;
   }
 }
@@ -414,7 +414,6 @@ a {
 
 .index {
   font-size: 26px;
-  padding: 4px 2px;
 }
 
 .quote {
@@ -519,10 +518,6 @@ a {
 }
 
 /* Padding */
-.p-t-20 {
-  padding-top: 20px;
-}
-
 .p-t-256 {
   padding-top: 256px;
 }
@@ -530,6 +525,11 @@ a {
 .p-t-b-16 {
   padding-top: 16px;
   padding-bottom: 16px;
+}
+
+.p-t-b-20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .p-b-16 {

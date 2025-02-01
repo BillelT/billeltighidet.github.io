@@ -1,7 +1,6 @@
 // Dependencies
 import { useTranslation } from "react-i18next";
 import { useRef, useEffect } from "react";
-import { applyMagnetEffect } from "../magnetEffect/MagnetEffect.jsx";
 import gsap from "gsap";
 
 export default function Navigation({
@@ -24,18 +23,10 @@ export default function Navigation({
   };
 
   useEffect(() => {
-    // const handleResize = () => setScreenWidth(window.innerWidth);
-    // window.addEventListener("resize", handleResize);
     if (navigation.current) {
       navigation.current.style.opacity = "0";
       navigation.current.style.visibility = "hidden";
     }
-
-    const magnetElements = document.querySelectorAll(".magnet-element");
-    magnetElements.forEach((element) => {
-      applyMagnetEffect({ current: element });
-    });
-    // return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   useEffect(() => {
@@ -89,16 +80,19 @@ export default function Navigation({
 
   return (
     <div
-      className={`container padding-container navigation  ${
+      className={`container navigation  ${
         isNavigationVisible ? "visible" : ""
       }`}
       ref={navigation}
     >
-      <div className=" p-t-20  gc-1-13 flex sb aic">
-        <a href="/" className="magnet-element larger-cursor">
+      <div className="gc-1-13 flex sb aic">
+        <a
+          href="/"
+          className="p-t-b-20 padding-container magnet-element larger-cursor"
+        >
           <span className="font-family-zodiak index gc-1">BT</span>
         </a>
-        <div className="flex col-g-32-16 gc-13">
+        <div className="flex col-g-32-16 aic">
           <ul
             className={`flex sb actual-lang-container ${
               i18n.language.includes("en") ? "lang-2" : ""
@@ -107,11 +101,13 @@ export default function Navigation({
             <li className="p-t-b-2">
               <p
                 className={`p-4-8 body pointer light ${
-                  i18n.language.includes("fr") ? "actual-lang" : ""
+                  i18n.language.includes("fr-FR")
+                    ? "actual-lang "
+                    : "larger-cursor"
                 }`}
-                data-lang="fr"
+                data-lang="fr-FR"
                 onClick={() => {
-                  changeLanguage("fr");
+                  changeLanguage("fr-FR");
                   toggleNavigation();
                 }}
               >
@@ -121,11 +117,13 @@ export default function Navigation({
             <li className="p-t-b-2">
               <p
                 className={`p-4-8 body pointer  light ${
-                  i18n.language.includes("en") ? "actual-lang" : ""
+                  i18n.language.includes("en-EN")
+                    ? "actual-lang"
+                    : "larger-cursor"
                 }`}
-                data-lang="en"
+                data-lang="en-EN"
                 onClick={() => {
-                  changeLanguage("en");
+                  changeLanguage("en-EN");
                   toggleNavigation();
                 }}
               >
@@ -134,16 +132,16 @@ export default function Navigation({
             </li>
           </ul>
           <span
-            className="nav-link light p-4-8 pointer light  magnet-element larger-cursor"
+            className="nav-link padding-container light pointer light p-t-b-20 magnet-element larger-cursor"
             onClick={() => {
               toggleNavigation();
             }}
           >
-            Close
+            {i18n.language.includes("en") ? "Close" : "Fermer"}
           </span>
         </div>
       </div>
-      <div className=" container gc-1-13 r-g-64 m-t-14-rem aife">
+      <div className=" container padding-container gc-1-13 r-g-64 m-t-14-rem aife">
         <nav className="gc-f-1-6">
           <ul className={`r-g-32 grid `}>
             {Object.entries(navigationLinks).map(([key, value]) => (
@@ -153,7 +151,7 @@ export default function Navigation({
                   onClick={() => {
                     toggleNavigation();
                   }}
-                  className="font-family-zodiak light"
+                  className="font-family-zodiak thin"
                 >
                   {value}
                 </a>

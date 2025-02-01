@@ -15,7 +15,10 @@ export default function AboutSection({ cta }) {
           {cta && (
             <>
               <button className="gc-1-13 underline-hover-left-right js-e p-12-24 larger-cursor magnet-element">
-                <a href="/about" className=" button medium flex col-g-16 aic">
+                <a
+                  href="/about"
+                  className=" button medium flex col-g-16 aic h4"
+                >
                   <p className="ws-no-w">{t(`CTA`)}</p>
                   <svg
                     className="rotate--45"

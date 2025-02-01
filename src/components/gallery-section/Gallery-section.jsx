@@ -42,7 +42,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
     >
       {title && (
         <>
-          <h2 className="h2 font-family-zodiak gc-1-13"> {t(`h2`)} </h2>
+          <h2 className="h2 font-family-zodiak gc-1-13 thin"> {t(`h2`)} </h2>
         </>
       )}
       <div className="r-g-128 grid g-t-c-12 gc-1-13" ref={parallaxArticle}>

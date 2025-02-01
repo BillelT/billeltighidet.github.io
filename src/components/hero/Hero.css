@@ -13,7 +13,6 @@
   will-change: transform;
 }
 
-
 .h1 {
   font-size: calc(43px + (100 - 43) * ((100vw - 320px) / (1440 - 320)));
   position: relative;
@@ -25,7 +24,6 @@
   will-change: transform, opacity;
 }
 
-
 @media screen and (min-width: 960px) {
   .hero {
     padding-top: 8rem;
@@ -33,9 +31,11 @@
   }
 }
 
-
 @media screen and (min-width: 1441px) {
   .h1 {
     font-size: 100px;
+  }
+  .hero {
+    padding-top: 12rem;
   }
 }

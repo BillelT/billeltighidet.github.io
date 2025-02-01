@@ -8,6 +8,15 @@ header {
   position: fixed;
 }
 
+.relative {
+  position: relative;
+}
+
+.menu-button {
+  position: absolute;
+  right: 0;
+}
+
 .navigation {
   grid-template-rows: auto 1fr;
   position: fixed;
@@ -38,11 +47,9 @@ header {
   margin-top: calc(8rem - 60px);
 }
 
-
-
 @media screen and (min-width: 960px) {
   .m-t-14-rem {
-    margin-top: calc(14rem - 60px);
+    margin-top: calc(12rem - 60px);
   }
 }
 
