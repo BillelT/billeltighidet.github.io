@@ -510,11 +510,12 @@ a {
   .m-b-256-512 {
     margin-bottom: 512px;
   }
+  
+  .ls-m-l-32 {
+    margin-left: 32px;
+  }
 }
 
-.m-l-32 {
-  margin-left: 32px;
-}
 
 .m-p--10 {
   margin: -10px;
