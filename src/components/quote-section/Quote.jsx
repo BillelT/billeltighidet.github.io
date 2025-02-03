@@ -20,9 +20,10 @@ export default function Quote() {
             y: 0,
             scrollTrigger: {
               trigger: element,
-              start: "top 95%",
-              end: "top 50%",
+              start: "top 100%",
+              end: "bottom 30%",
               scrub: true,
+              // markers: true,
               toggleActions: "play reverse play reverse",
             },
           }
@@ -38,19 +39,8 @@ export default function Quote() {
         className=" container padding-container .r-g-256-512"
         id="quote"
       >
-        <article className="flex f-d-c m-b-256-512 quote-container fade-in gc-f-8-13 js-e-s">
-          <p className="quote font-family-lb">
-            “ {t(`quote1.up`)} <br />
-            {t(`quote1.down`)} ”
-          </p>
-          <p className="ase meta light">Albert Einstein</p>
-        </article>
-        <article className="flex f-d-c m-b-256-512 quote-container fade-in gc-f-2-13">
-          <p className="quote font-family-lb">“ {t(`quote2.quote`)} ”</p>
-          <p className="ase meta light">Henri Matisse</p>
-        </article>
         <article className="flex f-d-c m-b-256-512  quote-container ase fade-in gc-f-7-13 js-e-s">
-          <p className="quote font-family-lb">
+          <p className="quote font-family-zodiak">
             {t(`tale.rhymeA`)} <br />
             {t(`tale.rhymeAA`)}, <br />
             {t(`tale.rhymeB`)} <br />

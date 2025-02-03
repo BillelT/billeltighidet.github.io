@@ -1,8 +1,9 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import glsl from "vite-plugin-glsl";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [react(), glsl()],
   build: {
     outDir: "dist", // Dossier de sortie pour les fichiers construits
     sourcemap: false, // Générer des sourcemaps si nécessaire

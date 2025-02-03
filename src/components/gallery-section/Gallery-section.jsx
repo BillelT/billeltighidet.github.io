@@ -1,11 +1,13 @@
 import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
+import { useLocation } from "react-router-dom";
 import gsap from "gsap";
 import "./Gallery-section.css";
 
 export default function GallerySection({ completeGallery, cta, title }) {
   const { t } = useTranslation("gallery");
   const parallaxArticle = useRef([]);
+  const location = useLocation();
 
   useEffect(() => {
     const parallaxArticles =
@@ -33,15 +35,17 @@ export default function GallerySection({ completeGallery, cta, title }) {
 
   return (
     <section
-      className="container padding-container grid m-t-256-512 r-g-128-256"
+      className={`container padding-container grid r-g-128-256 ${
+        location.pathname === "/gallery" ? "" : "m-t-256-512"
+      }`}
       id="gallery"
     >
       {title && (
         <>
-          <h2 className="h2 font-family-lb gc-1-13"> {t(`h2`)} </h2>
+          <h2 className="h2 font-family-zodiak gc-1-13 thin"> {t(`h2`)} </h2>
         </>
       )}
-      <div className="grid r-g-128-256 g-t-c-12 gc-1-13" ref={parallaxArticle}>
+      <div className="r-g-128 grid g-t-c-12 gc-1-13" ref={parallaxArticle}>
         <article className="flex f-d-c parallax aife js-c gc-f-1-8 as-16-9">
           <div className="video-container ">
             <video controls muted autoPlay className="video ">
@@ -132,7 +136,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
 
         {cta && (
           <>
-            <button className=" gc-1-13  underline-hover-left-right js-c p-12-24 magnet-element larger-cursor">
+            <button className="gc-1-13 underline-hover-left-right js-c p-12-24 magnet-element larger-cursor m-t-128">
               <a href="/gallery" className="  h4 medium flex col-g-16 aic">
                 <p className="ws-no-w"> {t(`CTA`)} </p>
                 <svg

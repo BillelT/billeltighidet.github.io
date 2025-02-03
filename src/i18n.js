@@ -46,22 +46,20 @@ i18n
         footer: frFooter,
       },
     },
-    fallbackLng: "en", // Langue de secours si la langue détectée n'est pas disponible
+    fallbackLng: "en",
     interpolation: {
       escapeValue: false,
     },
     detection: {
-      // Configuration des options de détection
       order: [
-        "navigator",
-        "cookie",
         "localStorage",
+        "navigator",
         "sessionStorage",
         "htmlTag",
         "path",
         "subdomain",
       ],
-      caches: ["localStorage", "cookie"], // Cacher la langue détectée dans le localStorage ou les cookies
+      caches: ["localStorage"],
     },
   });
 

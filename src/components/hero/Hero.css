@@ -1,6 +1,7 @@
 .hero {
   padding-top: 8rem;
-  row-gap: 10rem;
+  row-gap: 4rem;
+  display: flex;
 }
 
 .animated-scroll-line {
@@ -12,23 +13,29 @@
   will-change: transform;
 }
 
-/* h1 {
-  max-width: 100%;
-} */
+.h1 {
+  font-size: calc(43px + (100 - 43) * ((100vw - 320px) / (1440 - 320)));
+  position: relative;
+}
+
+.char {
+  transform: translateY(0);
+  display: inline-block;
+  will-change: transform, opacity;
+}
 
 @media screen and (min-width: 960px) {
-  h1 {
-    max-width: 50%;
-  }
-
-  .name.me {
-    position: absolute;
-    bottom: 0;
-    left: 100%;
-  }
-
   .hero {
-    padding-top: 14rem;
-    row-gap: 10rem;
+    padding-top: 8rem;
+    row-gap: 8rem;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .h1 {
+    font-size: 100px;
+  }
+  .hero {
+    padding-top: 12rem;
   }
 }

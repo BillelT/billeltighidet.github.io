@@ -1,23 +1,14 @@
-import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { applyMagnetEffect } from "../magnetEffect/MagnetEffect";
 import "./Projects-section.css";
 
 export default function ProjectsSection({ count, cta, title }) {
   const { t } = useTranslation("projects");
 
-  useEffect(() => {
-    const magnetElements = document.querySelectorAll(".magnet-element");
-    magnetElements.forEach((element) => {
-      applyMagnetEffect({ current: element });
-    });
-  }, []);
-
   return (
     <section className="container padding-container grid m-t-128-256 r-g-128-256">
       {title && (
         <>
-          <h2 className="h2 font-family-lb gc-1-13">{t(`h2`)}</h2>
+          <h2 className="h2 font-family-zodiak gc-1-13 thin">{t(`h2`)}</h2>
         </>
       )}
       <div className="grid r-g-128-256 gc-1-13">
@@ -32,24 +23,28 @@ export default function ProjectsSection({ count, cta, title }) {
                 <p className="h4">{`/0${index + 1}`}</p>
                 <div className="grid r-g-8">
                   <div className="flex sb col-g-8">
-                    <h3 className="h3 medium">{t(`h3.${index + 1}`)}</h3>
+                    <h3 className="h3 medium">
+                      {t(`project-${index + 1}.title`)}
+                    </h3>
                     <p className="year bg-white body light">
-                      {t(`year.${index + 1}`)}
+                      {t(`project-${index + 1}.year`)}
                     </p>
                   </div>
-                  <p>{t(`typeDuration.${index + 1}`)}</p>
+                  <p>{t(`project-${index + 1}.typeAndDuration`)}</p>
                 </div>
-                <p className="body light">{t(`content.${index + 1}`)}</p>
+                <p className="body light">
+                  {t(`project-${index + 1}.content`)}
+                </p>
                 <ul className="skills flex f-d-r col-g-32">
-                  <li className="">{t(`skills.${index + 1}.skill1`)}</li>
-                  <li className="">{t(`skills.${index + 1}.skill2`)}</li>
-                  <li className="">{t(`skills.${index + 1}.skill3`)}</li>
+                  <li className="">{t(`project-${index + 1}.skills.1`)}</li>
+                  <li className="">{t(`project-${index + 1}.skills.2`)}</li>
+                  <li className="">{t(`project-${index + 1}.skills.3`)}</li>
                 </ul>
               </div>
               <div className="p-10">
                 <button className="border semi-bold button hover-flying magnet-element">
                   <a
-                    href={t(`links.${index + 1}`)}
+                    href={t(`project-${index + 1}.link`)}
                     className="medium flex col-g-16 p-8-16 aic"
                     target="_blank"
                   >
@@ -65,11 +60,11 @@ export default function ProjectsSection({ count, cta, title }) {
             </div>
             <div
               className={`img-container ${
-                index % 2 === 1 ? "gc-f-6-13" : "gc-f-1-8 ls-gr-1"
+                index % 2 === 1 ? "gc-f-6-13 m-l-32" : "gc-f-1-8 ls-gr-1"
               }`}
             >
               <a
-                href={t(`links.${index + 1}`)}
+                href={t(`project-${index + 1}.link`)}
                 target="_blank"
                 className="larger-cursor"
               >

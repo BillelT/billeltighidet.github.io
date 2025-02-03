@@ -1,68 +1,44 @@
 {
-  "h2": "Projets",
-  "h3": {
-    "1": "Anto",
-    "2": "Kame House",
-    "3": "Site vitrine, identité visuelle",
-    "4": "Fluff Event - Designer & développeur web",
-    "5": "Création d'un blog engagé"
-  },
-  "year": {
-    "1": "2024",
-    "2": "2024",
-    "3": "2023",
-    "4": "2024",
-    "5": "2024"
-  },
-  "typeDuration": {
-    "1": "Projet personnel, 3 semaines",
-    "2": "Projet personnel, 2 jours",
-    "3": "Projet personnel, 2 semaines",
-    "4": "Projet associatif, 2 mois",
-    "5": "Projet MMI, 2 semaines"
-  },
-  "skills": {
-    "1": {
-      "skill1": "React",
-      "skill3": "React Three",
-      "skill4": "GSAP",
-      "skill2": "Blender",
-      "skill5": "Direction artistique"
+  "h2": "Projects",
+  "projects": {
+    "project-1": {
+      "title": "Anto",
+      "year": "2024",
+      "typeAndDuration": "Projet personnel, 3 semaines",
+      "skills": {
+        "1": "React",
+        "2": "Blender",
+        "3": "React Three",
+        "4": "GSAP",
+        "5": "Direction artistique"
+      },
+      "content": "Création et conception de l'identité visuelle d'une marque de guitares haut de gamme. Réalisation d'une animation produit en 3D sur Blender et développement d'un site expérientiel conçu pour renforcer l'identité unique d'Anto.",
+      "link": "https://anto-experience.netlify.app/"
     },
-    "2": {
-      "skill1": "Three.js",
-      "skill2": "Blender",
-      "skill3": "GSAP"
+    "project-2": {
+      "title": "Kame House",
+      "year": "2024",
+      "typeAndDuration": "Projet personnel, 3 jours",
+      "skills": {
+        "1": "Three.js",
+        "2": "Blender",
+        "3": "GSAP"
+      },
+      "content": "Mon premier site en 3D et ma première scène en style low poly. J'ai d'abord entièrement modélisé la scène sur Blender en optimisant au maximum les polygones. Ensuite, j'ai intégré le modèle avec Three.js et réalisé quelques animations avec GSAP. Ce projet m'a permis de valider l'apprentissage de 5 chapitres de la formation Three.js Journey et d'explorer un nouveau style sur Blender.",
+      "link": "https://kame-house-3d.netlify.app/"
     },
-    "3": {
-      "skill1": "Direction artistique",
-      "skill2": "UX/UI design",
-      "skill3": "HTML / CSS / JavaScript"
-    },
-    "4": {
-      "skill1": "Astro",
-      "skill2": "UX/UI design",
-      "skill3": "Photoshop, Illustrator"
-    },
-    "5": {
-      "skill1": "Direction artistique",
-      "skill2": "UX/UI design",
-      "skill3": "PHP / Bootstrap / JavaScript"
+    "project-3": {
+      "title": "Site vitrine, identité visuelle",
+      "year": "2023",
+      "typeAndDuration": "Projet personnel, 2 semaines",
+      "skills": {
+        "1": "Direction artistique",
+        "2": "UX/UI design",
+        "3": "HTML / CSS / JavaScript"
+      },
+      "content": "Ce projet m'a permis de mettre en pratique de nombreuses notions d'intégration. J'ai également conçu une identité de marque, créé le logo, harmonisé les interfaces pour établir une cohérence visuelle, et mis en avant l'expérience utilisateur. J'ai réfléchi profondément sur l'objectif et la cible de cette réalisation. Les réponses obtenues ont orienté mes choix de conception.",
+      "link": "https://actifservicesnettoyage.netlify.app/"
     }
-  },
-  "content": {
-    "1": "Création et conception de l’identité visuelle d’une marque de guitares haut de gamme. Réalisation d’une animation produit en 3D sur Blender et développement d’un site expérientiel conçu pour renforcer l’identité unique d’Anto.",
-    "2": "Mon premier site en 3D et ma première scène en style low poly. J'ai d'abord entièrement modélisé la scène sur Blender en optimisant au maximum les polygones. Ensuite, j'ai intégré le modèle avec Three.js et réalisé quelques animations avec GSAP. Ce projet m'a permis de valider l'apprentissage de 5 chapitres de la formation Three.js Journey et d'explorer un nouveau style sur Blender.",
-    "3": "Ce projet m'a permis de mettre en pratique de nombreuses notions d'intégration. J'ai également conçu une identité de marque, créé le logo, harmonisé les interfaces pour établir une cohérence visuelle, et mis en avant l'expérience utilisateur. J'ai réfléchi profondément sur l'objectif et la cible de cette réalisation. Les réponses obtenues ont orienté mes choix de conception.",
-    "4": "Le Fluff Event est un marathon caritatif sur Twitch. J'ai eu l'occasion de travailler avec de nombreux bénévoles pour mener à bien l'édition 2024. J'ai designé et intégré plusieurs pages web, dont celle qui présente l'édition 2024 (en 5 heures !). J'ai également réalisé des maquettes et des visuels pour le merch. Ce projet a été très enrichissant et j'espère pouvoir aider à nouveau en 2025 !",
-    "5": "Dans ce projet, j'ai appliqué de nombreuses notions de design acquises au cours de mes réalisations précédentes. Le cœur de ce projet est la création d'un site dynamique, accessible et cohérent. J'ai dirigé la majeure partie de la direction artistique, notamment en choisissant cette palette de couleurs douces et chaleureuses, ce qui a contribué à affirmer la nature de l'association fictive Bibble's."
-  },
-  "links": {
-    "1": "https://anto-experience.netlify.app/",
-    "2": "https://kame-house-3d.netlify.app/",
-    "3": "https://actifservicesnettoyage.netlify.app/",
-    "4": "https://fluffevent.fr/",
-    "5": "https://mmig6.gwendaljudic.com/"
   },
   "CTA": "Découvrir le projet",
   "More": "Voir plus de projets"

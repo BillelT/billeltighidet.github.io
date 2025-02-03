@@ -12,8 +12,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function Gallery() {
   const { i18n } = useTranslation();
-  const gallerySectionRef = useRef(null);
-  const footerRef = useRef(null);
+  const gallery = useRef(null);
+  const footer = useRef(null);
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -24,7 +24,7 @@ export default function Gallery() {
       "--bg-color": "#f9fafb",
       "--text-color": "#01010a",
       scrollTrigger: {
-        trigger: gallerySectionRef.current,
+        trigger: gallery.current,
         start: "top 50%",
         end: "bottom center",
         // markers: true,
@@ -34,7 +34,7 @@ export default function Gallery() {
       "--bg-color": "#01010a",
       "--text-color": "#f9fafb",
       scrollTrigger: {
-        trigger: footerRef.current,
+        trigger: footer.current,
         start: "top 80%",
         end: "bottom top",
         // markers: true,
@@ -50,11 +50,11 @@ export default function Gallery() {
   return (
     <>
       <Hero page="gallery" />
-      <div ref={gallerySectionRef}>
+      <div ref={gallery}>
         <GallerySection completeGallery={true} />
       </div>
       <About cta={true} />
-      <div ref={footerRef}>
+      <div ref={footer}>
         <Footer />
       </div>
     </>
