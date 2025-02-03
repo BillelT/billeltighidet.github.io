@@ -60,7 +60,7 @@ export default function ProjectsSection({ count, cta, title }) {
             </div>
             <div
               className={`img-container ${
-                index % 2 === 1 ? "gc-f-6-13" : "gc-f-1-8 ls-gr-1"
+                index % 2 === 1 ? "gc-f-6-13 m-l-32" : "gc-f-1-8 ls-gr-1"
               }`}
             >
               <a

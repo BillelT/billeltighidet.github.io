@@ -62,10 +62,13 @@ export default function Projects() {
     <>
       <Hero page="projects" />
       <div ref={projects} className="r-g-128-256 grid">
-        <ProjectsSection count={3} />
+        <ProjectsSection count={2} />
       </div>
       <div ref={gallery}>
-        <GallerySection cta={true} title={true} />
+        <GallerySection
+          // cta={true}
+          title={true}
+        />
       </div>
       <div ref={footer}>
         <Footer />

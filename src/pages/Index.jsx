@@ -67,7 +67,7 @@ export default function Index() {
       <Experience />
       <Quote />
       <div ref={projects}>
-        <Projects count={3} cta={true} title={true} />
+        <Projects count={2} cta={true} title={true} />
       </div>
       <div ref={gallery}>
         <Gallery cta={true} title={true} />
