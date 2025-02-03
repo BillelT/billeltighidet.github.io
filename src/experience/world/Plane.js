@@ -8,7 +8,7 @@ export default class Plane {
     this.scene = scene;
 
     this.videoTexture = new VideoTexture(
-      "https://www.w3schools.com/html/mov_bbb.mp4"
+      "/img/gallery-element/sword-in-stone.mp4"
     );
 
     const geometry = new THREE.PlaneGeometry(16, 9);

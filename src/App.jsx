@@ -1,11 +1,6 @@
 // Dependencies
 import { useEffect, useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useTranslation } from "react-i18next";
 import gsap from "gsap";
@@ -99,7 +94,7 @@ function App() {
   }, [isLargeScreen]);
 
   return (
-    <Router>
+    <>
       {isLargeScreen && <Cursor />}
       {/* <Loader /> */}
       <Header lenis={lenis} isLargeScreen={isLargeScreen} />
@@ -111,7 +106,7 @@ function App() {
         <Route path="/legal-notice" element={<LegalNotice />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
-    </Router>
+    </>
   );
 }
 

@@ -18,14 +18,15 @@ export default function Projects() {
     const tl = gsap.timeline({
       defaults: { duration: 1.2, ease: "power2.inOut" },
     });
-    
+
     tl.to(":root", {
       "--bg-color": "#01010a",
       "--text-color": "#f9fafb",
       scrollTrigger: {
         trigger: projects.current,
-        start: "top 10%",
-        end: "bottom top",
+        start: "top 60%",
+        end: "bottom 10%",
+        // markers: true,
         toggleActions: "play reverse play reverse",
       },
     })
@@ -34,9 +35,10 @@ export default function Projects() {
         "--text-color": "#01010a",
         scrollTrigger: {
           trigger: gallery.current,
-          start: "top 50%",
+          start: "top 60%",
           end: "bottom center",
-          toggleActions: "play none none reverse",
+          // markers: true,
+          toggleActions: "play none none none",
         },
       })
       .to(":root", {
@@ -44,8 +46,9 @@ export default function Projects() {
         "--text-color": "#f9fafb",
         scrollTrigger: {
           trigger: footer.current,
-          start: "top 80%",
+          start: "top 60%",
           end: "bottom top",
+          // markers: true,
           toggleActions: "play none none reverse",
         },
       });
@@ -59,7 +62,7 @@ export default function Projects() {
     <>
       <Hero page="projects" />
       <div ref={projects} className="r-g-128-256 grid">
-        <ProjectsSection count={5} />
+        <ProjectsSection count={3} />
       </div>
       <div ref={gallery}>
         <GallerySection cta={true} title={true} />

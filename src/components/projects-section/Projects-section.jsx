@@ -23,24 +23,28 @@ export default function ProjectsSection({ count, cta, title }) {
                 <p className="h4">{`/0${index + 1}`}</p>
                 <div className="grid r-g-8">
                   <div className="flex sb col-g-8">
-                    <h3 className="h3 medium">{t(`h3.${index + 1}`)}</h3>
+                    <h3 className="h3 medium">
+                      {t(`project-${index + 1}.title`)}
+                    </h3>
                     <p className="year bg-white body light">
-                      {t(`year.${index + 1}`)}
+                      {t(`project-${index + 1}.year`)}
                     </p>
                   </div>
-                  <p>{t(`typeDuration.${index + 1}`)}</p>
+                  <p>{t(`project-${index + 1}.typeAndDuration`)}</p>
                 </div>
-                <p className="body light">{t(`content.${index + 1}`)}</p>
+                <p className="body light">
+                  {t(`project-${index + 1}.content`)}
+                </p>
                 <ul className="skills flex f-d-r col-g-32">
-                  <li className="">{t(`skills.${index + 1}.skill1`)}</li>
-                  <li className="">{t(`skills.${index + 1}.skill2`)}</li>
-                  <li className="">{t(`skills.${index + 1}.skill3`)}</li>
+                  <li className="">{t(`project-${index + 1}.skills.1`)}</li>
+                  <li className="">{t(`project-${index + 1}.skills.2`)}</li>
+                  <li className="">{t(`project-${index + 1}.skills.3`)}</li>
                 </ul>
               </div>
               <div className="p-10">
                 <button className="border semi-bold button hover-flying magnet-element">
                   <a
-                    href={t(`links.${index + 1}`)}
+                    href={t(`project-${index + 1}.link`)}
                     className="medium flex col-g-16 p-8-16 aic"
                     target="_blank"
                   >
@@ -60,7 +64,7 @@ export default function ProjectsSection({ count, cta, title }) {
               }`}
             >
               <a
-                href={t(`links.${index + 1}`)}
+                href={t(`project-${index + 1}.link`)}
                 target="_blank"
                 className="larger-cursor"
               >

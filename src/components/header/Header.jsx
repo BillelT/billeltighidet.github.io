@@ -44,9 +44,10 @@ export default function Header({ lenis, isLargeScreen }) {
       if (isLargeScreen) {
         gsap.fromTo(
           menuButton.current,
-          { opacity: 0 },
+          { opacity: 0, x: -75 },
           {
             opacity: 1,
+            x: 0,
             ...navAnimationSetup,
             onStart: () => {
               menuButton.current.classList.remove("display-none");
@@ -63,7 +64,7 @@ export default function Header({ lenis, isLargeScreen }) {
             { opacity: 1, x: 0 },
             {
               opacity: 0,
-              x: 200 / (index + 1),
+              x: 100 / (index + 1),
               ...navAnimationSetup,
             }
           );

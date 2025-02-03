@@ -8,5 +8,5 @@ export default function Experience() {
     return () => world.dispose(); // Nettoyage
   }, []);
 
-  return <div id="three-container" />;
+  return <canvas id="three-container" className="webgl" />;
 }

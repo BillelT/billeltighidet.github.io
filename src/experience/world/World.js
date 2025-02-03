@@ -15,7 +15,7 @@ export default class World {
     this.renderer = new THREE.WebGLRenderer({ antialias: true });
     this.renderer.setSize(window.innerWidth, window.innerHeight);
     document
-      .getElementById("three-container")
+      .querySelector(".webgl")
       .appendChild(this.renderer.domElement);
 
     this.plane = new Plane(this.scene);
