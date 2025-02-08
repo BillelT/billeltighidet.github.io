@@ -64,7 +64,7 @@ export default function Index() {
   return (
     <>
       <Hero page="index" />
-      <Experience />
+      {/* <Experience /> */}
       <Quote />
       <div ref={projects}>
         <Projects count={2} cta={true} title={true} />

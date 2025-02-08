@@ -815,6 +815,7 @@ video {
 
 video {
   object-fit: contain;
+  /* opacity: 0; */
 }
 
 .webgl {
@@ -822,4 +823,5 @@ video {
   top: 0;
   left: 0;
   outline: none;
+  z-index: -1;
 }
