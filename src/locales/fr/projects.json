@@ -1,16 +1,30 @@
 {
-  "h2": "Projects",
-  "projects": {
+  "h2": "Projets",
     "project-1": {
       "title": "Anto",
       "year": "2024",
       "typeAndDuration": "Projet personnel, 3 semaines",
       "skills": {
-        "1": "React",
-        "2": "Blender",
-        "3": "React Three",
-        "4": "GSAP",
-        "5": "Direction artistique"
+        "1": {
+          "skill": "React",
+          "category":"development"
+        },
+        "2": {
+          "skill": "Blender",
+          "category":"software"
+        },
+        "3": {
+          "skill": "React Three",
+          "category":"development"
+        },
+        "4": {
+          "skill": "GSAP",
+          "category":"development"
+        },
+        "5": {
+          "skill": "Direction artistique",
+          "category":"art-direction"
+        }
       },
       "content": "Création et conception de l'identité visuelle d'une marque de guitares haut de gamme. Réalisation d'une animation produit en 3D sur Blender et développement d'un site expérientiel conçu pour renforcer l'identité unique d'Anto.",
       "link": "https://anto-experience.netlify.app/"
@@ -20,9 +34,18 @@
       "year": "2024",
       "typeAndDuration": "Projet personnel, 3 jours",
       "skills": {
-        "1": "Three.js",
-        "2": "Blender",
-        "3": "GSAP"
+        "1": {
+          "skill": "Three.js",
+          "category":"development"
+        },
+        "2": {
+          "skill": "Blender",
+          "category":"software"
+        },
+        "3": {
+          "skill": "GSAP",
+          "category":"development"
+        }
       },
       "content": "Mon premier site en 3D et ma première scène en style low poly. J'ai d'abord entièrement modélisé la scène sur Blender en optimisant au maximum les polygones. Ensuite, j'ai intégré le modèle avec Three.js et réalisé quelques animations avec GSAP. Ce projet m'a permis de valider l'apprentissage de 5 chapitres de la formation Three.js Journey et d'explorer un nouveau style sur Blender.",
       "link": "https://kame-house-3d.netlify.app/"
@@ -32,13 +55,21 @@
       "year": "2023",
       "typeAndDuration": "Projet personnel, 2 semaines",
       "skills": {
-        "1": "Direction artistique",
-        "2": "UX/UI design",
-        "3": "HTML / CSS / JavaScript"
+        "1": {
+          "skill": "Direction artistique",
+          "category":"art-direction"
+        },
+        "2": {
+          "skill": "UX/UI design",
+          "category":"design"
+        },
+        "3": {
+          "skill": "HTML / CSS / JavaScript",
+          "category":"development"
+        }
       },
       "content": "Ce projet m'a permis de mettre en pratique de nombreuses notions d'intégration. J'ai également conçu une identité de marque, créé le logo, harmonisé les interfaces pour établir une cohérence visuelle, et mis en avant l'expérience utilisateur. J'ai réfléchi profondément sur l'objectif et la cible de cette réalisation. Les réponses obtenues ont orienté mes choix de conception.",
       "link": "https://actifservicesnettoyage.netlify.app/"
-    }
   },
   "CTA": "Découvrir le projet",
   "More": "Voir plus de projets"

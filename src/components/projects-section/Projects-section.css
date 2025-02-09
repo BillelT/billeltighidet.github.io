@@ -67,3 +67,32 @@
 .project-img {
   opacity: 0;
 }
+
+.skill-tag {
+  position: relative;
+  padding-left: 8px;
+}
+
+.skill-tag::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+}
+
+.skill-tag.art-direction::before {
+  background: var(--art-direction);
+}
+.skill-tag.development::before {
+  background: var(--development);
+}
+.skill-tag.software::before {
+  background: var(--software);
+}
+.skill-tag.design::before {
+  background: var(--design);
+}

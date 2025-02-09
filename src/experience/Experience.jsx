@@ -2,9 +2,8 @@
 import * as THREE from "three";
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
-import { log } from "three/src/nodes/TSL.js";
-// import vertexShader from "./shaders/vertex.glsl";
-// import fragmentShader from "./shaders/fragment.glsl";
+import vertexShader from "./shaders/vertex.glsl";
+import fragmentShader from "./shaders/fragment.glsl";
 
 export default function Experience({ isProjectPage }) {
   const [isScreenLarger960, handleIsScreenLarger960] = useState(
@@ -22,6 +21,32 @@ export default function Experience({ isProjectPage }) {
   const planes = useRef([]);
 
   const textureLoader = new THREE.TextureLoader();
+
+  const handleMouseMove = (event) => {
+    easeFactor = 0.02;
+    let rect = imageContainer.getBoundingClientRect();
+    prevPosition = { ...targetMousePosition };
+
+    targetMousePosition.x = (event.clientX - rect.left) / rect.width;
+    targetMousePosition.y = (event.clientY - rect.top) / rect.height;
+
+    aberrationIntensity = 1;
+  };
+
+  const handleMouseEnter = (event) => {
+    easeFactor = 0.02;
+    let rect = imageContainer.getBoundingClientRect();
+
+    mousePosition.x = targetMousePosition.x =
+      (event.clientX - rect.left) / rect.width;
+    mousePosition.y = targetMousePosition.y =
+      (event.clientY - rect.top) / rect.height;
+  };
+
+  const handleMouseLeave = () => {
+    easeFactor = 0.05;
+    targetMousePosition = { ...prevPosition };
+  };
 
   const updatePlanesSizeAndPosition = () => {
     handleIsScreenLarger960(window.innerWidth > 960);
@@ -96,18 +121,46 @@ export default function Experience({ isProjectPage }) {
     // World
     const planeGeometry = new THREE.PlaneGeometry(1.6, 0.9);
 
+    const materials = [
+      new THREE.ShaderMaterial({
+        uniforms: {
+          uTime: { value: 0 },
+          uTexture: { type: "sampler2D", value: null },
+        },
+        vertexShader: vertexShader,
+        fragmentShader: fragmentShader,
+      }),
+      new THREE.ShaderMaterial({
+        uniforms: {
+          uTime: { value: 0 },
+          uTexture: { type: "sampler2D", value: null },
+        },
+        vertexShader: vertexShader,
+        fragmentShader: fragmentShader,
+      }),
+      new THREE.ShaderMaterial({
+        uniforms: {
+          uTime: { type: "float", value: 0 },
+          uMouse: { type: "vec2", value: new THREE.Vector2() },
+          uIntensity: {
+            type: "float",
+            value: null,
+          },
+          uTexture: { type: "sampler2D", value: null },
+        },
+        vertexShader: vertexShader,
+        fragmentShader: fragmentShader,
+      }),
+    ];
+
     htmlElements.forEach((htmlElement, index) => {
-      const texture = textureLoader.load(`/img/mockups/1.png`);
-      // const texture = textureLoader.load(`/img/mockups/${index + 1}.png`);
+      const texture = textureLoader.load(`/img/mockups/${index + 1}.png`);
       texture.minFilter = THREE.LinearFilter;
       texture.magFilter = THREE.LinearFilter;
-      texture.colorSpace = THREE.SRGBColorSpace;
 
-      const planeMaterial = new THREE.MeshBasicMaterial({
-        map: texture,
-        transparent: true,
-      });
-      const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+      materials[index].uniforms.uTexture.value = texture;
+
+      const plane = new THREE.Mesh(planeGeometry, materials[index]);
 
       projectsGroup.current.add(plane);
       planes.current[index] = { plane, htmlElement, index };
@@ -141,7 +194,7 @@ export default function Experience({ isProjectPage }) {
         trigger: "#projects",
         start: isProjectPage ? "-15% bottom" : "top 85%",
         end: isProjectPage ? "115% top" : "150% top",
-        markers: true,
+        // markers: true,
         toggleActions: "play none reverse none",
         onUpdate: (self) => {
           camera.current.position.y = -self.progress * 15;
@@ -153,6 +206,8 @@ export default function Experience({ isProjectPage }) {
      * Animate
      */
     const tick = () => {
+      // Uniforms
+
       // Render
       renderer.current.render(scene, camera.current);
 

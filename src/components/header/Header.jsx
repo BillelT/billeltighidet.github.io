@@ -86,7 +86,7 @@ export default function Header({ lenis, isLargeScreen }) {
 
       <nav className="flex aic relative">
         <ul
-          className={`flex col-g-8 ${
+          className={`flex col-g-32 ${
             !isLargeScreen ? "display-none" : "padding-container"
           } `}
         >

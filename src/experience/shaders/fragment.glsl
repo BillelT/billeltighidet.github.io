@@ -1,14 +1,15 @@
-uniform sampler2D uTexture;
 uniform float uTime;
+uniform sampler2D uTexture;
+
 varying vec2 vUv;
 
   void main() {
-    vec2 newUV = vUv;
 
-    // float dist = distance(uMouse, vUv);
-    // newUV.x += sin(uTime * 2.0 + dist * 10.0) * 0.02;
-    // newUV.y += cos(uTime * 2.0 + dist * 10.0) * 0.02;
+    vec2 uv = vUv;
 
-    vec4 videoColor = texture2D(uTexture, newUV);
-    gl_FragColor = videoColor;
+    vec4 baseState = texture2D(uTexture, vUv);
+
+    float wave = sin(uv.x * 10.0  + uTime * 0.5);
+
+    gl_FragColor = baseState;
   }

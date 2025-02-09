@@ -4,10 +4,10 @@
   --black: #01010a;
   --bg-color: #f9fafb;
   --text-color: #01010a;
-  --ad-green: #83b47e;
-  --ux-ui-blue: #8fb1bd;
-  --adobe-purple: #c59fc6;
-  --dev-orange: #c8a489;
+  --art-direction: #83b47e;
+  --design: #8fb1bd;
+  --software: #c59fc6;
+  --development: #c8a489;
 }
 
 /* Global elements */

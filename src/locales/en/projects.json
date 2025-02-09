@@ -5,11 +5,26 @@
     "year": "2024",
     "typeAndDuration": "Personal Project, 3 weeks",
     "skills": {
-      "1": "React",
-      "2": "Blender",
-      "3": "React Three",
-      "4": "GSAP",
-      "5": "Art direction"
+      "1": {
+        "skill": "React",
+        "category":"development"
+      },
+      "2": {
+        "skill": "Blender",
+        "category":"software"
+      },
+      "3": {
+        "skill": "React Three",
+        "category":"development"
+      },
+      "4": {
+        "skill": "GSAP",
+        "category":"development"
+      },
+      "5": {
+        "skill": "Art direction",
+        "category":"art-direction"
+      }
     },
     "content": "Creation and design of the visual identity for a high-end guitar brand. Production of a 3D product animation in Blender and development of an experiential website designed to enhance Anto's unique identity.",
     "link": "https://anto-experience.netlify.app/"
@@ -18,10 +33,19 @@
     "title": "Kame House",
     "year": "2024",
     "typeAndDuration": "Personal Project, 3 days",
-    "skills": {
-      "1": "Three.js",
-      "2": "Blender",
-      "3": "GSAP"
+        "skills": {
+      "1": {
+        "skill": "Three.js",
+        "category":"development"
+      },
+      "2": {
+        "skill": "Blender",
+        "category":"software"
+      },
+      "3": {
+        "skill": "GSAP",
+        "category":"development"
+      }
     },
     "content": "My first 3D website and my first low poly style scene. I first fully modeled the scene in Blender, optimizing the polygons as much as possible. Then, I integrated the model with Three.js and created some animations with GSAP. This project allowed me to confirm my learning of 5 chapters from the Three.js Journey course and to explore a new style in Blender.",
     "link": "https://kame-house-3d.netlify.app/"
@@ -30,10 +54,19 @@
     "title": "Showcase Site, Visual Identity",
     "year": "2023",
     "typeAndDuration": "Personal Project, 2 weeks",
-    "skills": {
-      "1": "Art direction",
-      "2": "UX/UI design",
-      "3": "HTML / CSS / JavaScript"
+      "skills": {
+      "1": {
+        "skill": "Art direction",
+        "category":"art-direction"
+      },
+      "2": {
+        "skill": "UX/UI design",
+        "category":"design"
+      },
+      "3": {
+        "skill": "HTML / CSS / JavaScript",
+        "category":"development"
+      }
     },
     "content": "This project allowed me to apply numerous integration concepts. I also developed a brand identity, created the logo, harmonized the interfaces to establish visual coherence, and emphasized the user experience. I deeply reflected on the goal and target audience of this project. The answers I obtained guided my design choices.",
     "link": "https://actifservicesnettoyage.netlify.app/"

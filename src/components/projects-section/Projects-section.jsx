@@ -39,16 +39,34 @@ export default function ProjectsSection({ count, cta, title }) {
                   {t(`project-${index + 1}.content`)}
                 </p>
                 <ul className="skills flex f-d-r col-g-32">
-                  <li className="">{t(`project-${index + 1}.skills.1`)}</li>
-                  <li className="">{t(`project-${index + 1}.skills.2`)}</li>
-                  <li className="">{t(`project-${index + 1}.skills.3`)}</li>
+                  <li
+                    className={`skill-tag ${t(
+                      `project-${index + 1}.skills.1.category`
+                    )}`}
+                  >
+                    {t(`project-${index + 1}.skills.1.skill`)}
+                  </li>
+                  <li
+                    className={`skill-tag ${t(
+                      `project-${index + 1}.skills.2.category`
+                    )}`}
+                  >
+                    {t(`project-${index + 1}.skills.2.skill`)}
+                  </li>
+                  <li
+                    className={`skill-tag ${t(
+                      `project-${index + 1}.skills.3.category`
+                    )}`}
+                  >
+                    {t(`project-${index + 1}.skills.3.skill`)}
+                  </li>
                 </ul>
               </div>
               <div className="p-10">
                 <button className="border semi-bold button hover-flying magnet-element">
                   <a
                     href={t(`project-${index + 1}.link`)}
-                    className="medium flex col-g-16 p-8-16 aic"
+                    className="medium flex col-g-16 p-8-16 aic larger-cursor"
                     target="_blank"
                   >
                     {t(`CTA`)}
