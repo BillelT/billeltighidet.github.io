@@ -1,11 +1,15 @@
 // Depedencies
 import * as THREE from "three";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
+import { log } from "three/src/nodes/TSL.js";
 // import vertexShader from "./shaders/vertex.glsl";
 // import fragmentShader from "./shaders/fragment.glsl";
 
 export default function Experience({ isProjectPage }) {
+  const [isScreenLarger960, handleIsScreenLarger960] = useState(
+    window.innerWidth > 960
+  );
   const canvas = useRef(null);
   const renderer = useRef(null);
   const camera = useRef(null);
@@ -15,74 +19,64 @@ export default function Experience({ isProjectPage }) {
     height: window.innerHeight,
     aspect: window.innerWidth / window.innerHeight,
   });
-  const planes = useRef([]); // Stocker les plans pour les mettre à jour plus facilement
+  const planes = useRef([]);
 
   const textureLoader = new THREE.TextureLoader();
 
   const updatePlanesSizeAndPosition = () => {
+    handleIsScreenLarger960(window.innerWidth > 960);
+
     sizes.current.width = window.innerWidth;
     sizes.current.height = window.innerHeight;
     sizes.current.aspect = sizes.current.width / sizes.current.height;
 
     // Met à jour l'orthographic camera
-    camera.current.left = -2 * sizes.current.aspect;
-    camera.current.right = 2 * sizes.current.aspect;
+    camera.current.aspect = sizes.current.aspect;
     camera.current.updateProjectionMatrix();
 
-    renderer.current.setSize(sizes.current.width, sizes.current.height);
-    renderer.current.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-    // Met à jour le scale et la position des plans pour qu'ils s'ajustent au viewport
     planes.current.forEach(({ plane, htmlElement, index }) => {
       if (!htmlElement) return;
 
-      const boundingBox = htmlElement.getBoundingClientRect();
+      const distance = 6 - 0; // Position du plan
+      const height = 2 * Math.tan((35 * Math.PI) / 360) * distance;
+      const width = height * sizes.current.aspect;
 
-      // Position normalisée (-1 à 1)
-      const normalizedX =
-        index % 2 === 0
-          ? ((boundingBox.left + boundingBox.right) / 2 / window.innerWidth) *
-              2 -
-            2.7
-          : ((boundingBox.left + boundingBox.right) / 2 / window.innerWidth) *
-              2 +
-            0.8;
+      // Adapter la taille du Plane pour qu'il ne dépasse pas
 
-      const normalizedY =
-        index % 2 === 0
-          ? (-(boundingBox.top + boundingBox.bottom) / 2 / window.innerHeight) *
-              2 +
-            0.5
-          : (-(boundingBox.top + boundingBox.bottom) / 2 / window.innerHeight) *
-              2 +
-            2 -
-            2.75;
+      if (isScreenLarger960) plane.scale.setScalar(width * 0.325);
 
-      // Convertir en coordonnées 3D
-      const vector = new THREE.Vector3(normalizedX, normalizedY, 0);
-      vector.unproject(camera.current);
+      if (!isScreenLarger960) plane.scale.setScalar(width * 0.5);
 
-      // Mettre à jour la position du plane
-      plane.position.set(normalizedX, normalizedY, 0);
+      if (isScreenLarger960)
+        plane.position.x =
+          index % 2 === 0
+            ? -width / 2 + plane.scale.x * 1
+            : width / 2 - plane.scale.x * 0.95;
 
-      // Mettre à jour la taille du plane en fonction du HTML
-      const planeWidth =
-        (boundingBox.width / sizes.current.width) * 130 * sizes.current.aspect;
-
-      console.log(boundingBox.width);
-
-      plane.scale.setScalar(planeWidth);
+      // Handle position depending on isScreenLarger960 state because of the media queries
+      if (!isScreenLarger960) plane.position.x = 0;
     });
+
+    renderer.current.setSize(sizes.current.width, sizes.current.height);
+    renderer.current.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   };
 
   useEffect(() => {
+    if (!isScreenLarger960 === null) return;
     window.addEventListener("resize", updatePlanesSizeAndPosition);
     return () =>
       window.removeEventListener("resize", updatePlanesSizeAndPosition);
-  }, []);
+  }, [isScreenLarger960]);
 
   useEffect(() => {
     const scene = new THREE.Scene();
+
+    projectsGroup.current.clear();
+    planes.current.forEach(({ plane }) => {
+      plane.geometry.dispose();
+      plane.material.dispose();
+    });
+    planes.current = [];
 
     const htmlElements = [
       document.querySelector("#project1"),
@@ -105,54 +99,24 @@ export default function Experience({ isProjectPage }) {
       });
       const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 
+      if (isScreenLarger960) plane.position.y = index % 2 === 0 ? -3.75 : -6.8;
+      if (!isScreenLarger960) plane.position.y = index % 2 === 0 ? -4.15 : -7.9;
+
       projectsGroup.current.add(plane);
       planes.current[index] = { plane, htmlElement, index };
     });
 
-    // Mockups Texture
-    // const mockup1 = textureLoader.load("/img/mockups/1.png");
-    // mockup1.minFilter = THREE.LinearFilter;
-    // mockup1.magFilter = THREE.LinearFilter;
-    // mockup1.colorSpace = THREE.SRGBColorSpace;
-
-    // const mockup2 = textureLoader.load("/img/mockups/2.png");
-    // mockup2.minFilter = THREE.LinearFilter;
-    // mockup2.magFilter = THREE.LinearFilter;
-    // mockup2.colorSpace = THREE.SRGBColorSpace;
-
-    // const planeMaterial = new THREE.MeshBasicMaterial({ map: mockup1 });
-    // const planeMaterial2 = new THREE.MeshBasicMaterial({ map: mockup2 });
-
-    // const plane = new THREE.Mesh(planeGeometryPaysage, planeMaterial);
-
-    // const plane2 = new THREE.Mesh(planeGeometryPaysage, planeMaterial2);
-
-    // plane.position.x = -1.45;
-    // plane.position.y = isProjectPage ? -2 : -2;
-    // plane.name = "plane 1";
-    // plane2.position.x = 1.45;
-    // plane2.position.y = isProjectPage ? -15.85 : -5.5;
-    // plane2.name = "plane 2";
-
-    // plane.scale.setScalar(sizes.current.width / 7000);
-    // plane2.scale.setScalar(sizes.current.width / 7000);
-    // projectsGroup.current.position.y = -1.1 / (sizes.current.width / 7000);
-
-    // projectsGroup.current.add(plane, plane2);
-
     scene.add(projectsGroup.current);
 
     // Camera
-    camera.current = new THREE.OrthographicCamera(
-      -2 * sizes.current.aspect,
-      2 * sizes.current.aspect,
-      2,
-      -2,
+    camera.current = new THREE.PerspectiveCamera(
+      35,
+      sizes.current.aspect,
       0.01,
       10
     );
 
-    camera.current.position.z = 3;
+    camera.current.position.z = 6;
     scene.add(camera.current);
 
     // Renderer
@@ -165,15 +129,16 @@ export default function Experience({ isProjectPage }) {
     renderer.current.setSize(sizes.current.width, sizes.current.height);
     renderer.current.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    gsap.to(projectsGroup.current.position, {
-      y: isProjectPage ? 13 : 13,
+    gsap.to(camera.current, {
       scrollTrigger: {
         trigger: "#projects",
         start: isProjectPage ? "-10% bottom" : "top 85%",
         end: isProjectPage ? "200% top" : "150% top",
-        scrub: true,
-        markers: true,
+        // markers: true,
         toggleActions: "play none reverse none",
+        onUpdate: (self) => {
+          camera.current.position.y = -self.progress * 15;
+        },
       },
     });
 
@@ -181,9 +146,6 @@ export default function Experience({ isProjectPage }) {
      * Animate
      */
     const tick = () => {
-      // Update controls
-      // controls.update();
-
       // Render
       renderer.current.render(scene, camera.current);
 
@@ -220,24 +182,4 @@ export default function Experience({ isProjectPage }) {
       <canvas ref={canvas} className="webgl" />
     </>
   );
-}
-
-{
-  /* <button
-style={{
-  position: "fixed",
-  bottom: "64px",
-  right: "64px",
-  zIndex: 100,
-  background: "darkgrey",
-  color: "white",
-  cursor: "pointer",
-}}
-onClick={() => {
-  camera.current.position.y--;
-  console.log(camera.current.position.y);
-}}
->
-Descend
-</button> */
 }
