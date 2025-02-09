@@ -52,7 +52,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
           {
             src: "/img/gallery-element/Anto Animation.mp4",
             text1: "Anto",
-            text2: "Guitar Animation",
+            text2: "product Animation",
             uniqueClasses: "js-c gc-f-1-8 as-16-9",
             videoType: "video/mp4",
             isPresent: true,

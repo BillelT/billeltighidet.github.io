@@ -6,6 +6,7 @@ import Hero from "../components/hero/Hero.jsx";
 import ProjectsSection from "../components/projects-section/Projects-section.jsx";
 import GallerySection from "../components/gallery-section/Gallery-section.jsx";
 import Footer from "../components/footer/Footer.jsx";
+import Experience from "../experience/Experience.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -24,7 +25,7 @@ export default function Projects() {
       "--text-color": "#f9fafb",
       scrollTrigger: {
         trigger: projects.current,
-        start: "top 60%",
+        start: "top 85%",
         end: "bottom 10%",
         // markers: true,
         toggleActions: "play reverse play reverse",
@@ -61,14 +62,12 @@ export default function Projects() {
   return (
     <>
       <Hero page="projects" />
+      <Experience isProjectPage={true} />
       <div ref={projects} className="r-g-128-256 grid">
-        <ProjectsSection count={2} />
+        <ProjectsSection count={3} />
       </div>
       <div ref={gallery}>
-        <GallerySection
-          // cta={true}
-          title={true}
-        />
+        <GallerySection cta={true} title={true} />
       </div>
       <div ref={footer}>
         <Footer />

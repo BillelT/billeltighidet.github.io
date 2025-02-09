@@ -101,8 +101,21 @@ export default function Cursor() {
     });
 
     return () => {
+      // Supprime les animations GSAP associées aux éléments
+      gsap.killTweensOf(cursor.current);
+      gsap.killTweensOf(outline.current);
+
+      // Supprime l'observateur des mutations
+      if (observer.current) observer.current.disconnect();
+
+      // Supprime l'écouteur de mouvement de souris
       window.removeEventListener("mousemove", moveCursor);
-      observer.current.disconnect();
+
+      // Supprime les écouteurs d'événements des éléments avec .larger-cursor
+      document.querySelectorAll(".larger-cursor").forEach((element) => {
+        element.removeEventListener("mouseenter", handleMouseEnter);
+        element.removeEventListener("mouseleave", handleMouseLeave);
+      });
     };
   }, []);
 

@@ -5,7 +5,10 @@ export default function ProjectsSection({ count, cta, title }) {
   const { t } = useTranslation("projects");
 
   return (
-    <section className="container padding-container grid m-t-128-256 r-g-128-256">
+    <section
+      id="projects"
+      className="container padding-container grid m-t-128-256 r-g-128-256"
+    >
       {title && (
         <>
           <h2 className="h2 font-family-zodiak gc-1-13 thin">{t(`h2`)}</h2>
@@ -50,6 +53,7 @@ export default function ProjectsSection({ count, cta, title }) {
                   >
                     {t(`CTA`)}
                     <img
+                      id={`project${index + 1}`}
                       src="/img/thin-arrow-project-white.svg"
                       alt="icône flèche diagnole"
                       className=" flying"
@@ -66,7 +70,7 @@ export default function ProjectsSection({ count, cta, title }) {
               <a
                 href={t(`project-${index + 1}.link`)}
                 target="_blank"
-                className="larger-cursor"
+                className="larger-cursor project-img"
               >
                 <img src={`/img/mockups/${index + 1}.png`} alt="mock up" />
               </a>
