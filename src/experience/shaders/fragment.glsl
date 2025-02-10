@@ -4,7 +4,7 @@
     uniform float uAberrationIntensity;
 
     varying vec2 vUv;
-    
+
     void main() {
         vec2 gridUV = floor(vUv * vec2(200.0, 200.0)) / vec2(200.0, 200.0);
         vec2 centerOfPixel = gridUV + vec2(1.0/200.0, 1.0/200.0);
@@ -13,7 +13,7 @@
         
         vec2 pixelToMouseDirection = centerOfPixel - uMouse;
         float pixelDistanceToMouse = length(pixelToMouseDirection);
-        float strength = smoothstep(0.8, 0.0, pixelDistanceToMouse);
+        float strength = smoothstep(0.3, 0.0, pixelDistanceToMouse);
  
         vec2 uvOffset = strength * - mouseDirection * 0.2;
         vec2 uv = vUv - uvOffset;
