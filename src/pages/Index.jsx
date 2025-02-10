@@ -29,7 +29,7 @@ export default function Index({ isLargeScreen }) {
         trigger: projects.current,
         start: "top 70%",
         end: "bottom top",
-        // markers: true,
+        markers: true,
         toggleActions: "play reverse play reverse",
       },
     })

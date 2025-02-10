@@ -22,31 +22,22 @@ export default function Experience({ isProjectPage }) {
 
   const textureLoader = new THREE.TextureLoader();
 
-  const handleMouseMove = (event) => {
-    easeFactor = 0.02;
-    let rect = imageContainer.getBoundingClientRect();
-    prevPosition = { ...targetMousePosition };
+  let aberrationIntensity = 0;
+  let easeFactor = 0;
 
-    targetMousePosition.x = (event.clientX - rect.left) / rect.width;
-    targetMousePosition.y = (event.clientY - rect.top) / rect.height;
+  const displacement = {};
+
+  displacement.raycaster = new THREE.Raycaster();
+  displacement.screenCursor = new THREE.Vector2(9999, 9999);
+
+  window.addEventListener("pointermove", (event) => {
+    easeFactor = 0.5;
+    displacement.screenCursor.x = (event.clientX / sizes.current.width) * 2 - 1;
+    displacement.screenCursor.y =
+      -(event.clientY / sizes.current.height) * 2 + 1;
 
     aberrationIntensity = 1;
-  };
-
-  const handleMouseEnter = (event) => {
-    easeFactor = 0.02;
-    let rect = imageContainer.getBoundingClientRect();
-
-    mousePosition.x = targetMousePosition.x =
-      (event.clientX - rect.left) / rect.width;
-    mousePosition.y = targetMousePosition.y =
-      (event.clientY - rect.top) / rect.height;
-  };
-
-  const handleMouseLeave = () => {
-    easeFactor = 0.05;
-    targetMousePosition = { ...prevPosition };
-  };
+  });
 
   const updatePlanesSizeAndPosition = () => {
     handleIsScreenLarger960(window.innerWidth > 960);
@@ -126,6 +117,12 @@ export default function Experience({ isProjectPage }) {
         uniforms: {
           uTime: { value: 0 },
           uTexture: { type: "sampler2D", value: null },
+          uMouse: { type: "vec2", value: new THREE.Vector2() },
+          uPrevMouse: { type: "vec2", value: new THREE.Vector2() },
+          uAberrationIntensity: {
+            type: "float",
+            value: null,
+          },
         },
         vertexShader: vertexShader,
         fragmentShader: fragmentShader,
@@ -134,6 +131,12 @@ export default function Experience({ isProjectPage }) {
         uniforms: {
           uTime: { value: 0 },
           uTexture: { type: "sampler2D", value: null },
+          uMouse: { type: "vec2", value: new THREE.Vector2() },
+          uPrevMouse: { type: "vec2", value: new THREE.Vector2() },
+          uAberrationIntensity: {
+            type: "float",
+            value: null,
+          },
         },
         vertexShader: vertexShader,
         fragmentShader: fragmentShader,
@@ -141,12 +144,13 @@ export default function Experience({ isProjectPage }) {
       new THREE.ShaderMaterial({
         uniforms: {
           uTime: { type: "float", value: 0 },
+          uTexture: { type: "sampler2D", value: null },
           uMouse: { type: "vec2", value: new THREE.Vector2() },
-          uIntensity: {
+          uPrevMouse: { type: "vec2", value: new THREE.Vector2() },
+          uAberrationIntensity: {
             type: "float",
             value: null,
           },
-          uTexture: { type: "sampler2D", value: null },
         },
         vertexShader: vertexShader,
         fragmentShader: fragmentShader,
@@ -206,7 +210,41 @@ export default function Experience({ isProjectPage }) {
      * Animate
      */
     const tick = () => {
-      // Uniforms
+      /**
+       * Raycaster
+       **/
+      displacement.raycaster.setFromCamera(
+        displacement.screenCursor,
+        camera.current
+      );
+
+      const intersections = displacement.raycaster.intersectObjects(
+        planes.current.map(({ plane }) => plane)
+      );
+
+      if (intersections.length) {
+        const intersection = intersections[0]; // Premier élément touché
+        const uv = intersection.uv; // Coordonnées UV du point touché
+
+        if (uv) {
+          // Mise à jour de l'uniform uMouse du shader de l'objet touché
+          intersection.object.material.uniforms.uMouse.value.set(uv.x, uv.y);
+          // intersection.object.material.uniforms.uPrevMouse.value.set(
+          //   prevPosition.x,
+          //   1.0 - prevPosition.y
+          // );
+
+          // Intensité décroissante
+          aberrationIntensity = Math.max(0.0, aberrationIntensity - 0.05);
+          intersection.object.material.uniforms.uAberrationIntensity.value =
+            aberrationIntensity;
+        }
+      } else {
+        planes.current[0].plane.material.uniforms.uMouse.value.set(0, 0);
+        planes.current[1].plane.material.uniforms.uMouse.value.set(0, 0);
+        if (planes.current.length === 3)
+          planes.current[2].plane.material.uniforms.uMouse.value.set(0, 0);
+      }
 
       // Render
       renderer.current.render(scene, camera.current);
@@ -245,3 +283,29 @@ export default function Experience({ isProjectPage }) {
     </>
   );
 }
+
+// const handleMouseMove = (event) => {
+//   easeFactor = 0.02;
+//   let rect = imageContainer.getBoundingClientRect();
+//   prevPosition = { ...targetMousePosition };
+
+//   targetMousePosition.x = (event.clientX - rect.left) / rect.width;
+//   targetMousePosition.y = (event.clientY - rect.top) / rect.height;
+
+//   aberrationIntensity = 1;
+// };
+
+// const handleMouseEnter = (event) => {
+//   easeFactor = 0.02;
+//   let rect = imageContainer.getBoundingClientRect();
+
+//   mousePosition.x = targetMousePosition.x =
+//     (event.clientX - rect.left) / rect.width;
+//   mousePosition.y = targetMousePosition.y =
+//     (event.clientY - rect.top) / rect.height;
+// };
+
+// const handleMouseLeave = () => {
+//   easeFactor = 0.05;
+//   targetMousePosition = { ...prevPosition };
+// };
