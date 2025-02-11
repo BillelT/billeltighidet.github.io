@@ -34,16 +34,20 @@ export default function Experience({ isProjectPage }) {
   displacement.aberrationIntensity = 0.0;
   displacement.easeFactor = 0.0;
   displacement.displacementIntensity = 0.0;
+  displacement.displacementIntensity2 = 0.0;
+  displacement.displacementIntensity3 = 0.0;
 
   window.addEventListener("pointermove", (event) => {
-    displacement.easeFactor = 0.02;
-
     displacement.screenCursor.set(
       (event.clientX / sizes.current.width) * 2 - 1,
       -(event.clientY / sizes.current.height) * 2 + 1
     );
 
-    if (displacement.currentIntersect) displacement.aberrationIntensity = 1.0;
+    if (displacement.currentIntersect)
+      displacement.aberrationIntensity = Math.min(
+        1.0,
+        displacement.aberrationIntensity + 0.2
+      );
   });
 
   const updatePlanesSizeAndPosition = () => {
@@ -241,7 +245,7 @@ export default function Experience({ isProjectPage }) {
           );
 
           displacement.targetMousePosition.set(uv.x, uv.y);
-          displacement.displacementIntensity = 10.0;
+
           displacement.mousePosition.x +=
             (displacement.targetMousePosition.x -
               displacement.mousePosition.x) *
@@ -256,8 +260,35 @@ export default function Experience({ isProjectPage }) {
             displacement.mousePosition.y
           );
 
-          intersections[0].object.material.uniforms.uDisplacementIntensity.value =
-            displacement.displacementIntensity;
+          if (intersections[0].object === planes.current[0].plane) {
+            displacement.displacementIntensity = Math.min(
+              10.0,
+              displacement.displacementIntensity + 0.5
+            );
+            planes.current[0].plane.material.uniforms.uDisplacementIntensity.value =
+              displacement.displacementIntensity;
+          }
+
+          if (intersections[0].object === planes.current[1].plane) {
+            displacement.displacementIntensity2 = Math.min(
+              10.0,
+              displacement.displacementIntensity2 + 0.5
+            );
+            planes.current[1].plane.material.uniforms.uDisplacementIntensity.value =
+              displacement.displacementIntensity2;
+          }
+
+          if (
+            planes.current.length === 3 &&
+            intersections[0].object === planes.current[2].plane
+          ) {
+            displacement.displacementIntensity3 = Math.min(
+              10.0,
+              displacement.displacementIntensity3 + 0.5
+            );
+            planes.current[2].plane.material.uniforms.uDisplacementIntensity.value =
+              displacement.displacementIntensity3;
+          }
 
           intersections[0].object.material.uniforms.uPrevMouse.value.set(
             displacement.prevMousePosition.x,
@@ -270,10 +301,22 @@ export default function Experience({ isProjectPage }) {
 
         if (!displacement.currentIntersect) {
           // console.log("mouseenter");
-          displacement.easeFactor = 0.02;
+          displacement.easeFactor = Math.max(
+            0.02,
+            displacement.easeFactor - 0.005
+          );
 
-          displacement.mousePosition.set(uv.x, uv.y);
           displacement.targetMousePosition.set(uv.x, uv.y);
+
+          displacement.mousePosition.x =
+            uv.x +
+            (displacement.targetMousePosition.x - uv.x) *
+              displacement.easeFactor;
+
+          displacement.mousePosition.y =
+            uv.y +
+            (displacement.targetMousePosition.y - uv.y) *
+              displacement.easeFactor;
         }
 
         displacement.currentIntersect = intersections[0];
@@ -281,6 +324,16 @@ export default function Experience({ isProjectPage }) {
         displacement.displacementIntensity = Math.max(
           0.0,
           displacement.displacementIntensity - 0.05
+        );
+
+        displacement.displacementIntensity2 = Math.max(
+          0.0,
+          displacement.displacementIntensity2 - 0.05
+        );
+
+        displacement.displacementIntensity3 = Math.max(
+          0.0,
+          displacement.displacementIntensity3 - 0.05
         );
 
         displacement.aberrationIntensity = Math.max(
@@ -294,6 +347,8 @@ export default function Experience({ isProjectPage }) {
             displacement.prevMousePosition.x,
             displacement.prevMousePosition.y
           );
+
+          displacement.easeFactor = 0.05;
         }
 
         // Intensité de l'aberration décroissante
@@ -305,14 +360,31 @@ export default function Experience({ isProjectPage }) {
         // Intensité du displacement décroissante
         displacement.displacementIntensity = Math.max(
           0.0,
-          displacement.displacementIntensity - 0.1
+          displacement.displacementIntensity - 0.25
+        );
+        displacement.displacementIntensity2 = Math.max(
+          0.0,
+          displacement.displacementIntensity2 - 0.25
+        );
+        displacement.displacementIntensity3 = Math.max(
+          0.0,
+          displacement.displacementIntensity3 - 0.25
         );
 
         displacement.currentIntersect = null;
       }
 
-      displacement.lastPlane.object.material.uniforms.uDisplacementIntensity.value =
+      planes.current[0].plane.material.uniforms.uDisplacementIntensity.value =
         displacement.displacementIntensity;
+
+      planes.current[1].plane.material.uniforms.uDisplacementIntensity.value =
+        displacement.displacementIntensity2;
+
+      if (planes.current.length === 3) {
+        planes.current[2].plane.material.uniforms.uDisplacementIntensity.value =
+          displacement.displacementIntensity3;
+      }
+
       displacement.lastPlane.object.material.uniforms.uAberrationIntensity.value =
         displacement.aberrationIntensity;
 
