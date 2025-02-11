@@ -26,11 +26,14 @@ export default function Experience({ isProjectPage }) {
 
   displacement.raycaster = new THREE.Raycaster();
   displacement.screenCursor = new THREE.Vector2(9999, 9999);
+  displacement.mousePosition = new THREE.Vector2(9999, 9999);
   displacement.prevMousePosition = new THREE.Vector2(0.5, 0.5);
   displacement.targetMousePosition = new THREE.Vector2(9999, 9999);
   displacement.currentIntersect = null;
+  displacement.lastPlane = null;
   displacement.aberrationIntensity = 0;
   displacement.easeFactor = 0;
+  displacement.displacementIntensity = 0;
 
   window.addEventListener("pointermove", (event) => {
     displacement.easeFactor = 0.02;
@@ -49,7 +52,7 @@ export default function Experience({ isProjectPage }) {
       -(event.clientY / sizes.current.height) * 2 + 1
     );
 
-    displacement.aberrationIntensity = 1.0;
+    if (displacement.currentIntersect) displacement.aberrationIntensity = 1.0;
   });
 
   const updatePlanesSizeAndPosition = () => {
@@ -77,10 +80,9 @@ export default function Experience({ isProjectPage }) {
 
         plane.position.x = 0;
 
-        plane.position.y = index === 0 ? -4.15 : index === 1 ? -7.9 : -11.65;
+        plane.position.y = index === 0 ? -4.75 : index === 1 ? -8.25 : -11.75;
 
-        if (isProjectPage)
-          plane.position.y = index === 0 ? -4.75 : index === 1 ? -7.75 : -10.75;
+       
       }
 
       if (isScreenLarger960) {
@@ -91,7 +93,7 @@ export default function Experience({ isProjectPage }) {
             ? -width / 2 + plane.scale.x * 1
             : width / 2 - plane.scale.x * 0.95;
 
-        plane.position.y = index === 0 ? -3.75 : index === 1 ? -6.8 : -9.85;
+        plane.position.y = index === 0 ? -3.75 : index === 1 ? -6.8 : -10.5;
       }
     });
 
@@ -131,6 +133,7 @@ export default function Experience({ isProjectPage }) {
           uTime: { type: "float", value: 0 },
           uTexture: { type: "sampler2D", value: null },
           uMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
+          uDisplacementIntensity: { type: "float", value: 1.0 },
           uPrevMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
           uAberrationIntensity: {
             type: "float",
@@ -145,6 +148,7 @@ export default function Experience({ isProjectPage }) {
           uTime: { type: "float", value: 0 },
           uTexture: { type: "sampler2D", value: null },
           uMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
+          uDisplacementIntensity: { type: "float", value: 1.0 },
           uPrevMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
           uAberrationIntensity: {
             type: "float",
@@ -159,6 +163,7 @@ export default function Experience({ isProjectPage }) {
           uTime: { type: "float", value: 0 },
           uTexture: { type: "sampler2D", value: null },
           uMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
+          uDisplacementIntensity: { type: "float", value: 1.0 },
           uPrevMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
           uAberrationIntensity: {
             type: "float",
@@ -238,59 +243,90 @@ export default function Experience({ isProjectPage }) {
 
       if (intersections.length) {
         const uv = intersections[0].uv;
+        displacement.lastPlane = intersections[0];
 
         if (uv) {
-          uv.x +=
-            (displacement.targetMousePosition.x - uv.x) *
+          displacement.prevMousePosition.set(
+            displacement.targetMousePosition.x,
+            displacement.targetMousePosition.y
+          );
+
+          displacement.targetMousePosition.set(uv.x, uv.y);
+          displacement.displacementIntensity = 10.0;
+
+          displacement.mousePosition.x +=
+            (displacement.targetMousePosition.x -
+              displacement.mousePosition.x) *
             displacement.easeFactor;
-          uv.y +=
-            (displacement.targetMousePosition.y - uv.y) *
+          displacement.mousePosition.y +=
+            (displacement.targetMousePosition.y -
+              displacement.mousePosition.y) *
             displacement.easeFactor;
 
           intersections[0].object.material.uniforms.uMouse.value.set(
-            uv.x,
-            uv.y
+            displacement.mousePosition.x,
+            displacement.mousePosition.y
           );
+
+          intersections[0].object.material.uniforms.uDisplacementIntensity.value =
+            displacement.displacementIntensity;
 
           intersections[0].object.material.uniforms.uPrevMouse.value.set(
             displacement.prevMousePosition.x,
             displacement.prevMousePosition.y
           );
+
+          intersections[0].object.material.uniforms.uAberrationIntensity.value =
+            displacement.aberrationIntensity;
         }
 
         if (!displacement.currentIntersect) {
           // console.log("mouseenter");
           displacement.easeFactor = 0.02;
 
+          displacement.mousePosition.set(uv.x, uv.y);
           displacement.targetMousePosition.set(uv.x, uv.y);
         }
+
         displacement.currentIntersect = intersections[0];
+
+        displacement.displacementIntensity = Math.max(
+          0.0,
+          displacement.displacementIntensity - 0.05
+        );
+
+        displacement.aberrationIntensity = Math.max(
+          0.0,
+          displacement.aberrationIntensity - 0.05
+        );
       } else {
         if (displacement.currentIntersect) {
           // console.log("mouseleave");
-
-          displacement.easeFactor = 0.05;
-
           displacement.targetMousePosition.set(
             displacement.prevMousePosition.x,
             displacement.prevMousePosition.y
           );
         }
-        displacement.currentIntersect = null;
 
-        // Intensité décroissante
+        // Intensité de l'aberration décroissante
         displacement.aberrationIntensity = Math.max(
           0.0,
-          displacement.aberrationIntensity - 0.005
+          displacement.aberrationIntensity - 0.05
         );
+
+        // Intensité du displacement décroissante
+        displacement.displacementIntensity = Math.max(
+          0.0,
+          displacement.displacementIntensity - 0.1
+        );
+
+        displacement.currentIntersect = null;
       }
 
-      planes.current.forEach(({ plane }) => {
-        if (plane.material.uniforms.uMouse) {
-          plane.material.uniforms.uAberrationIntensity.value =
-            displacement.aberrationIntensity;
-        }
-      });
+      displacement.lastPlane.object.material.uniforms.uDisplacementIntensity.value =
+        displacement.displacementIntensity;
+      displacement.lastPlane.object.material.uniforms.uAberrationIntensity.value =
+        displacement.aberrationIntensity;
 
       // Render
       renderer.current.render(scene, camera.current);

@@ -1,7 +1,6 @@
 uniform float uTime;
 
 varying vec2 vUv;
-varying float vTime;
 
   
   void main() {
@@ -10,5 +9,4 @@ varying float vTime;
     
     vUv = uv;
 
-    vTime = uTime;
   }
