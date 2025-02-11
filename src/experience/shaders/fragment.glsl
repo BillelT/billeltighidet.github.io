@@ -1,3 +1,5 @@
+   precision mediump float;
+
     uniform sampler2D uTexture;    
     uniform vec2 uMouse;
     uniform vec2 uPrevMouse;
@@ -7,10 +9,10 @@
     varying vec2 vUv;
 
     void main() {
-        vec2 gridUV = floor(vUv * vec2(150.0, 150.0)) / vec2(150.0, 150.0);
-        vec2 centerOfPixel = gridUV + vec2(1.0/150.0, 1.0/150.0);
+        vec2 gridUV = floor(vUv * vec2(200.0, 200.0)) / vec2(200.0, 200.0);
+        vec2 centerOfPixel = gridUV + vec2(1.0/200.0, 1.0/200.0);
         
-        vec2 mouseDirection = (uMouse - uPrevMouse) * uDisplacementIntensity ;
+        vec2 mouseDirection = (uMouse - uPrevMouse) * uDisplacementIntensity;
         
         vec2 pixelToMouseDirection = centerOfPixel - uMouse;
         float pixelDistanceToMouse = length(pixelToMouseDirection);
