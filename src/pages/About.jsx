@@ -39,7 +39,6 @@ export default function About() {
       <Hero page="about" />
       <AboutSection />
       <div ref={projects} className="m-t-256-512">
-        <Projects count={2} cta={true} title={true} />
         <Footer />
       </div>
     </>

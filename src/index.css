@@ -4,10 +4,10 @@
   --black: #01010a;
   --bg-color: #f9fafb;
   --text-color: #01010a;
-  --ad-green: #83b47e;
-  --ux-ui-blue: #8fb1bd;
-  --adobe-purple: #c59fc6;
-  --dev-orange: #c8a489;
+  --art-direction: #83b47e;
+  --design: #8fb1bd;
+  --software: #c59fc6;
+  --development: #c8a489;
 }
 
 /* Global elements */
@@ -510,10 +510,10 @@ a {
   .m-b-256-512 {
     margin-bottom: 512px;
   }
-}
 
-.m-l-32 {
-  margin-left: 32px;
+  .ls-m-l-32 {
+    margin-left: 32px;
+  }
 }
 
 .m-p--10 {
@@ -821,4 +821,5 @@ video {
   top: 0;
   left: 0;
   outline: none;
+  z-index: -1;
 }

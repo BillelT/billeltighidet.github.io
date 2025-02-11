@@ -1,44 +1,75 @@
 {
-  "h2": "Projects",
-  "projects": {
-    "project-1": {
-      "title": "Anto",
-      "year": "2024",
-      "typeAndDuration": "Projet personnel, 3 semaines",
-      "skills": {
-        "1": "React",
-        "2": "Blender",
-        "3": "React Three",
-        "4": "GSAP",
-        "5": "Direction artistique"
+  "h2": "Projets",
+  "project-1": {
+    "title": "Anto",
+    "year": "2024",
+    "typeAndDuration": "Projet personnel, 3 semaines",
+    "skills": {
+      "1": {
+        "skill": "React",
+        "category": "development"
       },
-      "content": "Création et conception de l'identité visuelle d'une marque de guitares haut de gamme. Réalisation d'une animation produit en 3D sur Blender et développement d'un site expérientiel conçu pour renforcer l'identité unique d'Anto.",
-      "link": "https://anto-experience.netlify.app/"
+      "2": {
+        "skill": "Blender",
+        "category": "software"
+      },
+      "3": {
+        "skill": "React Three",
+        "category": "development"
+      },
+      "4": {
+        "skill": "GSAP",
+        "category": "development"
+      },
+      "5": {
+        "skill": "Direction artistique",
+        "category": "art-direction"
+      }
     },
-    "project-2": {
-      "title": "Kame House",
-      "year": "2024",
-      "typeAndDuration": "Projet personnel, 3 jours",
-      "skills": {
-        "1": "Three.js",
-        "2": "Blender",
-        "3": "GSAP"
+    "content": "Création et conception de l'identité visuelle d'une marque de guitares haut de gamme. Réalisation d'une animation produit en 3D sur Blender et développement d'un site expérientiel conçu pour renforcer l'identité unique d'Anto.",
+    "link": "https://anto-experience.netlify.app/"
+  },
+  "project-2": {
+    "title": "Kame House",
+    "year": "2024",
+    "typeAndDuration": "Projet personnel, 3 jours",
+    "skills": {
+      "1": {
+        "skill": "Three.js",
+        "category": "development"
       },
-      "content": "Mon premier site en 3D et ma première scène en style low poly. J'ai d'abord entièrement modélisé la scène sur Blender en optimisant au maximum les polygones. Ensuite, j'ai intégré le modèle avec Three.js et réalisé quelques animations avec GSAP. Ce projet m'a permis de valider l'apprentissage de 5 chapitres de la formation Three.js Journey et d'explorer un nouveau style sur Blender.",
-      "link": "https://kame-house-3d.netlify.app/"
+      "2": {
+        "skill": "Blender",
+        "category": "software"
+      },
+      "3": {
+        "skill": "GSAP",
+        "category": "development"
+      }
     },
-    "project-3": {
-      "title": "Site vitrine, identité visuelle",
-      "year": "2023",
-      "typeAndDuration": "Projet personnel, 2 semaines",
-      "skills": {
-        "1": "Direction artistique",
-        "2": "UX/UI design",
-        "3": "HTML / CSS / JavaScript"
+    "content": "Mon premier site en 3D et ma première scène en style low poly. J'ai d'abord entièrement modélisé la scène sur Blender en optimisant au maximum les polygones. Ensuite, j'ai intégré le modèle avec Three.js et réalisé quelques animations avec GSAP. Ce projet m'a permis de valider l'apprentissage de 5 chapitres de la formation Three.js Journey et d'explorer un nouveau style sur Blender.",
+    "link": "https://kame-house-3d.netlify.app/"
+  },
+  "project-3": {
+    "title": "Fresque Virtu'Aile",
+    "year": "2025",
+    "typeAndDuration": "Projet étudiant, 2 semaines",
+    "skills": {
+      "1": {
+        "skill": "React Three",
+        "category": "development"
       },
-      "content": "Ce projet m'a permis de mettre en pratique de nombreuses notions d'intégration. J'ai également conçu une identité de marque, créé le logo, harmonisé les interfaces pour établir une cohérence visuelle, et mis en avant l'expérience utilisateur. J'ai réfléchi profondément sur l'objectif et la cible de cette réalisation. Les réponses obtenues ont orienté mes choix de conception.",
-      "link": "https://actifservicesnettoyage.netlify.app/"
-    }
+      "2": {
+        "skill": "Direction artistique",
+        "category": "art-direction"
+      },
+      "3": {
+        "skill": "Blender",
+        "category": "software"
+      }
+    },
+    "content": "Imaginez-vous architecte muséographe et créez votre propre salle de musée ! À l'occasion de la 10ᵉ édition de la Bacchanight au Musée des Beaux-Arts de Bordeaux, j'ai conçu une expérience 3D immersive où chaque utilisateur compose sa salle en laissant libre cours à son imagination. Lors de la Bacchanight, une fresque collaborative sera générée en direct en assemblant toutes les salles créées. Cette fresque formera la nouvelle aile virtuelle du MusBA : Virtu'Aile.",
+    "link": "https://bacchanight-room.vercel.app/"
   },
   "CTA": "Découvrir le projet",
   "More": "Voir plus de projets"

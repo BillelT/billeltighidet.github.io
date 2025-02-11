@@ -5,7 +5,10 @@ export default function ProjectsSection({ count, cta, title }) {
   const { t } = useTranslation("projects");
 
   return (
-    <section className="container padding-container grid m-t-128-256 r-g-128-256">
+    <section
+      id="projects"
+      className="container padding-container grid m-t-128-256 r-g-128-256"
+    >
       {title && (
         <>
           <h2 className="h2 font-family-zodiak gc-1-13 thin">{t(`h2`)}</h2>
@@ -36,20 +39,39 @@ export default function ProjectsSection({ count, cta, title }) {
                   {t(`project-${index + 1}.content`)}
                 </p>
                 <ul className="skills flex f-d-r col-g-32">
-                  <li className="">{t(`project-${index + 1}.skills.1`)}</li>
-                  <li className="">{t(`project-${index + 1}.skills.2`)}</li>
-                  <li className="">{t(`project-${index + 1}.skills.3`)}</li>
+                  <li
+                    className={`skill-tag ${t(
+                      `project-${index + 1}.skills.1.category`
+                    )}`}
+                  >
+                    {t(`project-${index + 1}.skills.1.skill`)}
+                  </li>
+                  <li
+                    className={`skill-tag ${t(
+                      `project-${index + 1}.skills.2.category`
+                    )}`}
+                  >
+                    {t(`project-${index + 1}.skills.2.skill`)}
+                  </li>
+                  <li
+                    className={`skill-tag ${t(
+                      `project-${index + 1}.skills.3.category`
+                    )}`}
+                  >
+                    {t(`project-${index + 1}.skills.3.skill`)}
+                  </li>
                 </ul>
               </div>
               <div className="p-10">
                 <button className="border semi-bold button hover-flying magnet-element">
                   <a
                     href={t(`project-${index + 1}.link`)}
-                    className="medium flex col-g-16 p-8-16 aic"
+                    className="medium flex col-g-16 p-8-16 aic larger-cursor"
                     target="_blank"
                   >
                     {t(`CTA`)}
                     <img
+                      id={`project${index + 1}`}
                       src="/img/thin-arrow-project-white.svg"
                       alt="icône flèche diagnole"
                       className=" flying"
@@ -60,13 +82,13 @@ export default function ProjectsSection({ count, cta, title }) {
             </div>
             <div
               className={`img-container ${
-                index % 2 === 1 ? "gc-f-6-13 m-l-32" : "gc-f-1-8 ls-gr-1"
+                index % 2 === 1 ? "gc-f-6-13 ls-m-l-32" : "gc-f-1-8 ls-gr-1"
               }`}
             >
               <a
                 href={t(`project-${index + 1}.link`)}
                 target="_blank"
-                className="larger-cursor"
+                className="larger-cursor project-img"
               >
                 <img src={`/img/mockups/${index + 1}.png`} alt="mock up" />
               </a>
