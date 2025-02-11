@@ -7,23 +7,23 @@
     "skills": {
       "1": {
         "skill": "React",
-        "category":"development"
+        "category": "development"
       },
       "2": {
         "skill": "Blender",
-        "category":"software"
+        "category": "software"
       },
       "3": {
         "skill": "React Three",
-        "category":"development"
+        "category": "development"
       },
       "4": {
         "skill": "GSAP",
-        "category":"development"
+        "category": "development"
       },
       "5": {
         "skill": "Art direction",
-        "category":"art-direction"
+        "category": "art-direction"
       }
     },
     "content": "Creation and design of the visual identity for a high-end guitar brand. Production of a 3D product animation in Blender and development of an experiential website designed to enhance Anto's unique identity.",
@@ -33,18 +33,18 @@
     "title": "Kame House",
     "year": "2024",
     "typeAndDuration": "Personal Project, 3 days",
-        "skills": {
+    "skills": {
       "1": {
         "skill": "Three.js",
-        "category":"development"
+        "category": "development"
       },
       "2": {
         "skill": "Blender",
-        "category":"software"
+        "category": "software"
       },
       "3": {
         "skill": "GSAP",
-        "category":"development"
+        "category": "development"
       }
     },
     "content": "My first 3D website and my first low poly style scene. I first fully modeled the scene in Blender, optimizing the polygons as much as possible. Then, I integrated the model with Three.js and created some animations with GSAP. This project allowed me to confirm my learning of 5 chapters from the Three.js Journey course and to explore a new style in Blender.",
@@ -54,22 +54,22 @@
     "title": "Showcase Site, Visual Identity",
     "year": "2023",
     "typeAndDuration": "Personal Project, 2 weeks",
-      "skills": {
+    "skills": {
       "1": {
-        "skill": "Art direction",
-        "category":"art-direction"
+        "skill": "React Three",
+        "category": "development"
       },
       "2": {
-        "skill": "UX/UI design",
-        "category":"design"
+        "skill": "Art direction",
+        "category": "art-direction"
       },
       "3": {
-        "skill": "HTML / CSS / JavaScript",
-        "category":"development"
+        "skill": "Blender",
+        "category": "software"
       }
     },
-    "content": "This project allowed me to apply numerous integration concepts. I also developed a brand identity, created the logo, harmonized the interfaces to establish visual coherence, and emphasized the user experience. I deeply reflected on the goal and target audience of this project. The answers I obtained guided my design choices.",
-    "link": "https://actifservicesnettoyage.netlify.app/"
+    "content": "Imagine yourself as a museum architect and create your own exhibition room! For the 10th edition of Bacchanight at the Musée des Beaux-Arts de Bordeaux, I designed an immersive 3D experience where each user creates their own space, letting their imagination run free. During Bacchanight, a collaborative fresco will be generated live by assembling all the user-created rooms. This fresco will form the new virtual wing of the MusBA: Virtu'Aile.",
+    "link": "https://bacchanight-room.vercel.app/"
   },
   "CTA": "Discover the project",
   "More": "See more projects"
