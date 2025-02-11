@@ -31,23 +31,14 @@ export default function Experience({ isProjectPage }) {
   displacement.targetMousePosition = new THREE.Vector2(9999, 9999);
   displacement.currentIntersect = null;
   displacement.lastPlane = null;
-  displacement.aberrationIntensity = 0;
-  displacement.easeFactor = 0;
-  displacement.displacementIntensity = 0;
+  displacement.aberrationIntensity = 0.0;
+  displacement.easeFactor = 0.0;
+  displacement.displacementIntensity = 0.0;
 
   window.addEventListener("pointermove", (event) => {
     displacement.easeFactor = 0.02;
 
-    displacement.prevMousePosition.set(
-      displacement.targetMousePosition.x,
-      displacement.targetMousePosition.y
-    );
-
     displacement.screenCursor.set(
-      (event.clientX / sizes.current.width) * 2 - 1,
-      -(event.clientY / sizes.current.height) * 2 + 1
-    );
-    displacement.targetMousePosition.set(
       (event.clientX / sizes.current.width) * 2 - 1,
       -(event.clientY / sizes.current.height) * 2 + 1
     );
@@ -81,8 +72,6 @@ export default function Experience({ isProjectPage }) {
         plane.position.x = 0;
 
         plane.position.y = index === 0 ? -4.75 : index === 1 ? -8.25 : -11.75;
-
-       
       }
 
       if (isScreenLarger960) {
@@ -133,7 +122,7 @@ export default function Experience({ isProjectPage }) {
           uTime: { type: "float", value: 0 },
           uTexture: { type: "sampler2D", value: null },
           uMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
-          uDisplacementIntensity: { type: "float", value: 1.0 },
+          uDisplacementIntensity: { type: "float", value: 0.0 },
           uPrevMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
           uAberrationIntensity: {
             type: "float",
@@ -148,7 +137,7 @@ export default function Experience({ isProjectPage }) {
           uTime: { type: "float", value: 0 },
           uTexture: { type: "sampler2D", value: null },
           uMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
-          uDisplacementIntensity: { type: "float", value: 1.0 },
+          uDisplacementIntensity: { type: "float", value: 0.0 },
           uPrevMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
           uAberrationIntensity: {
             type: "float",
@@ -163,7 +152,7 @@ export default function Experience({ isProjectPage }) {
           uTime: { type: "float", value: 0 },
           uTexture: { type: "sampler2D", value: null },
           uMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
-          uDisplacementIntensity: { type: "float", value: 1.0 },
+          uDisplacementIntensity: { type: "float", value: 0.0 },
           uPrevMouse: { type: "vec2", value: new THREE.Vector2(999, 999) },
           uAberrationIntensity: {
             type: "float",
@@ -253,7 +242,6 @@ export default function Experience({ isProjectPage }) {
 
           displacement.targetMousePosition.set(uv.x, uv.y);
           displacement.displacementIntensity = 10.0;
-
           displacement.mousePosition.x +=
             (displacement.targetMousePosition.x -
               displacement.mousePosition.x) *
