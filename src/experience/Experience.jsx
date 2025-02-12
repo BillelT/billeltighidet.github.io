@@ -278,7 +278,7 @@ export default function Experience({ isProjectPage }) {
               10.0,
               displacement.displacementIntensity2 + 0.5
             );
-            displacement.aberrationIntensity = Math.min(
+            displacement.aberrationIntensity2 = Math.min(
               1.0,
               displacement.aberrationIntensity2 + 0.2
             );
@@ -421,7 +421,6 @@ export default function Experience({ isProjectPage }) {
         planes.current[2].plane.material.uniforms.uAberrationIntensity.value =
           displacement.aberrationIntensity3;
       }
-
 
       // Render
       renderer.current.render(scene, camera.current);
