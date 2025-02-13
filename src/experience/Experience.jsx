@@ -15,8 +15,8 @@ export default function Experience({ isProjectPage }) {
   const projectsGroup = useRef(new THREE.Group());
   const sizes = useRef({
     width: window.innerWidth,
-    height: window.innerHeight,
-    aspect: window.innerWidth / window.innerHeight,
+    height: window.outerHeight,
+    aspect: window.innerWidth / window.outerHeight,
   });
   const planes = useRef([]);
 
@@ -50,7 +50,7 @@ export default function Experience({ isProjectPage }) {
     handleIsScreenLarger960(window.innerWidth > 960);
 
     sizes.current.width = window.innerWidth;
-    sizes.current.height = window.innerHeight;
+    sizes.current.height = window.outerHeight;
     sizes.current.aspect = sizes.current.width / sizes.current.height;
 
     // Met à jour l'orthographic camera
