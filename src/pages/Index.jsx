@@ -9,7 +9,6 @@ import Gallery from "../components/gallery-section/Gallery-section.jsx";
 import About from "../components/about-section/About-section.jsx";
 import Footer from "../components/footer/Footer.jsx";
 import Experience from "../experience/Experience.jsx";
-import Experience2 from "../experience/test.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -65,7 +64,7 @@ export default function Index({ isLargeScreen }) {
   return (
     <>
       <Hero page="index" />
-      <Experience2 isLargeScreen={isLargeScreen} />
+      <Experience isLargeScreen={isLargeScreen} />
       <Quote />
       <div ref={projects}>
         <Projects count={2} cta={true} title={true} />

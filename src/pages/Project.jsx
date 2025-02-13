@@ -7,7 +7,6 @@ import ProjectsSection from "../components/projects-section/Projects-section.jsx
 import GallerySection from "../components/gallery-section/Gallery-section.jsx";
 import Footer from "../components/footer/Footer.jsx";
 import Experience from "../experience/Experience.jsx";
-import Experience2 from "../experience/test.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -63,7 +62,7 @@ export default function Projects() {
   return (
     <>
       <Hero page="projects" />
-      <Experience2 isProjectPage={true} />
+      <Experience isProjectPage={true} />
       <div ref={projects} className="r-g-128-256 grid">
         <ProjectsSection count={3} />
       </div>
