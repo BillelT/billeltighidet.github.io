@@ -5,7 +5,7 @@ import gsap from "gsap";
 import vertexShader from "./shaders/vertex.glsl";
 import fragmentShader from "./shaders/fragment.glsl";
 
-export default function Experience({ isProjectPage }) {
+export default function Experience2({ isProjectPage }) {
   const [isScreenLarger960, handleIsScreenLarger960] = useState(
     window.innerWidth > 960
   );
@@ -22,8 +22,10 @@ export default function Experience({ isProjectPage }) {
 
   const textureLoader = new THREE.TextureLoader();
 
-  const displacement = {};
+  const fov = 35;
 
+  // Displasment parameters
+  const displacement = {};
   displacement.raycaster = new THREE.Raycaster();
   displacement.screenCursor = new THREE.Vector2(9999, 9999);
   displacement.mousePosition = new THREE.Vector2(9999, 9999);
@@ -34,7 +36,7 @@ export default function Experience({ isProjectPage }) {
   displacement.aberrationIntensity = 0.0;
   displacement.aberrationIntensity2 = 0.0;
   displacement.aberrationIntensity3 = 0.0;
-  displacement.easeFactor = 0.0;
+  displacement.easeFactor = 0.02;
   displacement.displacementIntensity = 0.0;
   displacement.displacementIntensity2 = 0.0;
   displacement.displacementIntensity3 = 0.0;
@@ -45,57 +47,6 @@ export default function Experience({ isProjectPage }) {
       -(event.clientY / sizes.current.height) * 2 + 1
     );
   });
-
-  const updatePlanesSizeAndPosition = () => {
-    handleIsScreenLarger960(window.innerWidth > 960);
-
-    sizes.current.width = window.innerWidth;
-    sizes.current.height = window.innerHeight;
-    sizes.current.aspect = sizes.current.width / sizes.current.height;
-
-    // Met à jour l'orthographic camera
-    camera.current.aspect = sizes.current.aspect;
-    camera.current.updateProjectionMatrix();
-
-    planes.current.forEach(({ plane, htmlElement, index }) => {
-      if (!htmlElement) return;
-
-      const distance = 6 - 0; // Position du plan
-      const height = 2 * Math.tan((35 * Math.PI) / 360) * distance;
-      const width = height * sizes.current.aspect;
-
-      // Adapter la taille du Plane pour qu'il ne dépasse pas
-
-      if (!isScreenLarger960) {
-        plane.scale.setScalar(width * 0.5);
-
-        plane.position.x = 0;
-
-        plane.position.y = index === 0 ? -4.75 : index === 1 ? -8.25 : -11.75;
-      }
-
-      if (isScreenLarger960) {
-        plane.scale.setScalar(width * 0.325);
-
-        plane.position.x =
-          index % 2 === 0
-            ? -width / 2 + plane.scale.x * 1
-            : width / 2 - plane.scale.x * 0.95;
-
-        plane.position.y = index === 0 ? -3.75 : index === 1 ? -6.8 : -10.5;
-      }
-    });
-
-    renderer.current.setSize(sizes.current.width, sizes.current.height);
-    renderer.current.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  };
-
-  useEffect(() => {
-    if (!isScreenLarger960 === null) return;
-    window.addEventListener("resize", updatePlanesSizeAndPosition);
-    return () =>
-      window.removeEventListener("resize", updatePlanesSizeAndPosition);
-  }, [isScreenLarger960]);
 
   useEffect(() => {
     const scene = new THREE.Scene();
@@ -114,7 +65,7 @@ export default function Experience({ isProjectPage }) {
     ].filter(Boolean);
 
     // World
-    const planeGeometry = new THREE.PlaneGeometry(1.6, 0.9);
+    const planeGeometry = new THREE.PlaneGeometry(1, 1);
 
     const materials = [
       new THREE.ShaderMaterial({
@@ -181,13 +132,14 @@ export default function Experience({ isProjectPage }) {
 
     // Camera
     camera.current = new THREE.PerspectiveCamera(
-      35,
+      fov,
       sizes.current.aspect,
       0.01,
       10
     );
+    camera.current.position.z = 5;
+    console.log(camera.current.position.z);
 
-    camera.current.position.z = 6;
     scene.add(camera.current);
 
     // Renderer
@@ -202,13 +154,13 @@ export default function Experience({ isProjectPage }) {
 
     gsap.to(camera.current, {
       scrollTrigger: {
-        trigger: "#projects",
-        start: isProjectPage ? "-15% bottom" : "top 85%",
-        end: isProjectPage ? "115% top" : "150% top",
+        trigger: "#root",
+        start: isProjectPage ? "top top" : "top top",
+        end: isProjectPage ? "bottom bottom" : "bottom bottom",
         // markers: true,
         toggleActions: "play none reverse none",
         onUpdate: (self) => {
-          camera.current.position.y = -self.progress * 15;
+          camera.current.position.y = -self.progress * 42;
         },
       },
     });
@@ -233,6 +185,7 @@ export default function Experience({ isProjectPage }) {
       if (intersections.length) {
         const uv = intersections[0].uv;
         displacement.lastPlane = intersections[0];
+        console.log(intersections[0]);
 
         if (uv) {
           displacement.prevMousePosition.set(
@@ -316,10 +269,7 @@ export default function Experience({ isProjectPage }) {
 
         if (!displacement.currentIntersect) {
           // console.log("mouseenter");
-          displacement.easeFactor = Math.max(
-            0.02,
-            displacement.easeFactor - 0.005
-          );
+          displacement.easeFactor = 0.02;
 
           displacement.targetMousePosition.set(uv.x, uv.y);
 
@@ -365,27 +315,27 @@ export default function Experience({ isProjectPage }) {
         displacement.currentIntersect = intersections[0];
       } else {
         if (displacement.currentIntersect) {
-          // console.log("mouseleave");
+          //   console.log("mouseleave");
           displacement.targetMousePosition.set(
             displacement.prevMousePosition.x,
             displacement.prevMousePosition.y
           );
 
-          displacement.easeFactor = 0.05;
+          displacement.easeFactor = 0.002;
         }
 
         // Intensité du displacement décroissante
         displacement.displacementIntensity = Math.max(
           0.0,
-          displacement.displacementIntensity - 0.15
+          displacement.displacementIntensity - 0.2
         );
         displacement.displacementIntensity2 = Math.max(
           0.0,
-          displacement.displacementIntensity2 - 0.15
+          displacement.displacementIntensity2 - 0.2
         );
         displacement.displacementIntensity3 = Math.max(
           0.0,
-          displacement.displacementIntensity3 - 0.15
+          displacement.displacementIntensity3 - 0.2
         );
 
         // Intensité de l'aberration décroissante
@@ -431,8 +381,6 @@ export default function Experience({ isProjectPage }) {
 
     tick();
 
-    updatePlanesSizeAndPosition();
-
     return () => {
       // Traverse the whole scene
       scene.traverse((child) => {
@@ -453,6 +401,59 @@ export default function Experience({ isProjectPage }) {
     };
   }, []);
 
+  const updatePlanesSizeAndPosition = () => {
+    handleIsScreenLarger960(window.innerWidth > 960);
+
+    sizes.current.width = window.innerWidth;
+    sizes.current.height = window.innerHeight;
+    sizes.current.aspect = sizes.current.width / sizes.current.height;
+
+    // Met à jour l'orthographic camera
+    camera.current.aspect = sizes.current.aspect;
+    camera.current.updateProjectionMatrix();
+
+    planes.current.forEach(({ plane, htmlElement, index }) => {
+      if (!htmlElement) return;
+
+      const height =
+        2 * Math.tan((fov * Math.PI) / 360) * camera.current.position.z;
+      const width = height * sizes.current.aspect;
+
+      const rect = htmlElement.getBoundingClientRect();
+
+      // Conversion de la position de l'image en coordonnées Three.js
+      const planeX =
+        ((rect.left + rect.width / 2 - sizes.current.width / 2) /
+          sizes.current.width) *
+        width;
+      const planeY =
+        (-(rect.top + rect.height / 2 - sizes.current.height / 2) /
+          sizes.current.height) *
+          height +
+        camera.current.position.y;
+
+      // Taille du plane
+      const planeWidth = (rect.width / sizes.current.width) * width;
+      const planeHeight = (rect.height / sizes.current.height) * height;
+
+      plane.position.set(planeX, planeY, 0);
+      plane.scale.set(planeWidth, planeHeight, 0);
+    });
+
+    renderer.current.setSize(sizes.current.width, sizes.current.height);
+    renderer.current.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  };
+
+  useEffect(() => {
+    if (!isScreenLarger960 === null) return;
+    window.addEventListener("resize", updatePlanesSizeAndPosition);
+    return () =>
+      window.removeEventListener("resize", updatePlanesSizeAndPosition);
+  }, [isScreenLarger960]);
+
+  useEffect(() => {
+    updatePlanesSizeAndPosition();
+  }, []);
   return (
     <>
       <canvas ref={canvas} className="webgl" />
