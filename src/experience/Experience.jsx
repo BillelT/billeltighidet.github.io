@@ -374,6 +374,20 @@ export default function Experience({ isProjectPage }) {
           displacement.easeFactor = 0.05;
         }
 
+        // Intensité du displacement décroissante
+        displacement.displacementIntensity = Math.max(
+          0.0,
+          displacement.displacementIntensity - 0.15
+        );
+        displacement.displacementIntensity2 = Math.max(
+          0.0,
+          displacement.displacementIntensity2 - 0.15
+        );
+        displacement.displacementIntensity3 = Math.max(
+          0.0,
+          displacement.displacementIntensity3 - 0.15
+        );
+
         // Intensité de l'aberration décroissante
         displacement.aberrationIntensity = Math.max(
           0.0,
@@ -386,20 +400,6 @@ export default function Experience({ isProjectPage }) {
         displacement.aberrationIntensity3 = Math.max(
           0.0,
           displacement.aberrationIntensity3 - 0.005
-        );
-
-        // Intensité du displacement décroissante
-        displacement.displacementIntensity = Math.max(
-          0.0,
-          displacement.displacementIntensity - 0.05
-        );
-        displacement.displacementIntensity2 = Math.max(
-          0.0,
-          displacement.displacementIntensity2 - 0.05
-        );
-        displacement.displacementIntensity3 = Math.max(
-          0.0,
-          displacement.displacementIntensity3 - 0.05
         );
 
         displacement.currentIntersect = null;

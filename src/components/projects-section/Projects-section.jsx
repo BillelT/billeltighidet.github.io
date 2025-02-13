@@ -71,7 +71,6 @@ export default function ProjectsSection({ count, cta, title }) {
                   >
                     {t(`CTA`)}
                     <img
-                      id={`project${index + 1}`}
                       src="/img/thin-arrow-project-white.svg"
                       alt="icône flèche diagnole"
                       className=" flying"
@@ -90,7 +89,11 @@ export default function ProjectsSection({ count, cta, title }) {
                 target="_blank"
                 className="larger-cursor project-img"
               >
-                <img src={`/img/mockups/${index + 1}.png`} alt="mock up" />
+                <img
+                  id={`project${index + 1}`}
+                  src={`/img/mockups/${index + 1}.png`}
+                  alt="mock up"
+                />
               </a>
             </div>
           </article>
