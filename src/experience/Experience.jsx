@@ -44,6 +44,21 @@ export default function Experience({ isProjectPage }) {
       (event.clientX / sizes.current.width) * 2 - 1,
       -(event.clientY / sizes.current.height) * 2 + 1
     );
+
+    if (displacement.currentIntersect) {
+      displacement.aberrationIntensity = Math.min(
+        1.0,
+        displacement.aberrationIntensity + 0.2
+      );
+      displacement.aberrationIntensity2 = Math.min(
+        1.0,
+        displacement.aberrationIntensity2 + 0.2
+      );
+      displacement.aberrationIntensity3 = Math.min(
+        1.0,
+        displacement.aberrationIntensity3 + 0.2
+      );
+    }
   });
 
   const updatePlanesSizeAndPosition = () => {
@@ -261,10 +276,6 @@ export default function Experience({ isProjectPage }) {
               10.0,
               displacement.displacementIntensity + 0.5
             );
-            displacement.aberrationIntensity = Math.min(
-              1.0,
-              displacement.aberrationIntensity + 0.2
-            );
 
             planes.current[0].plane.material.uniforms.uDisplacementIntensity.value =
               displacement.displacementIntensity;
@@ -278,10 +289,7 @@ export default function Experience({ isProjectPage }) {
               10.0,
               displacement.displacementIntensity2 + 0.5
             );
-            displacement.aberrationIntensity2 = Math.min(
-              1.0,
-              displacement.aberrationIntensity2 + 0.2
-            );
+
             planes.current[1].plane.material.uniforms.uDisplacementIntensity.value =
               displacement.displacementIntensity2;
 
@@ -297,10 +305,7 @@ export default function Experience({ isProjectPage }) {
               10.0,
               displacement.displacementIntensity3 + 0.5
             );
-            displacement.aberrationIntensity3 = Math.min(
-              1.0,
-              displacement.aberrationIntensity3 + 0.2
-            );
+
             planes.current[2].plane.material.uniforms.uDisplacementIntensity.value =
               displacement.displacementIntensity3;
 

@@ -92,6 +92,8 @@ export default function ProjectsSection({ count, cta, title }) {
                 <img
                   id={`project${index + 1}`}
                   src={`/img/mockups/${index + 1}.png`}
+                  width={1920}
+                  height={1080}
                   alt="mock up"
                 />
               </a>
