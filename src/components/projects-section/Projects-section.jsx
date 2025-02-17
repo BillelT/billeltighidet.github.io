@@ -63,20 +63,20 @@ export default function ProjectsSection({ count, cta, title }) {
                 </ul>
               </div>
               <div className="p-10">
-                <button className="border semi-bold button hover-flying magnet-element">
-                  <a
-                    href={t(`project-${index + 1}.link`)}
-                    className="medium flex col-g-16 p-8-16 aic larger-cursor"
-                    target="_blank"
-                  >
-                    {t(`CTA`)}
-                    <img
-                      src="/img/thin-arrow-project-white.svg"
-                      alt="icône flèche diagnole"
-                      className=" flying"
-                    />
-                  </a>
-                </button>
+                <a
+                  href={t(`project-${index + 1}.link`)}
+                  className="border semi-bold button hover-flying magnet-element medium col-g-16 p-16-32 aic larger-cursor w-fit-c flex"
+                  target="_blank"
+                >
+                  {t(`CTA`)}
+                  <img
+                    src="/img/thin-arrow-project-white.svg"
+                    alt="icône flèche diagnole"
+                    className=" flying"
+                    width={15}
+                    height={15}
+                  />
+                </a>
               </div>
             </div>
             <div
@@ -91,7 +91,7 @@ export default function ProjectsSection({ count, cta, title }) {
               >
                 <img
                   id={`project${index + 1}`}
-                  src={`/img/mockups/${index + 1}.png`}
+                  src={`/img/mockups/${index + 1}.webp`}
                   width={1920}
                   height={1080}
                   alt="mock up"
@@ -103,24 +103,25 @@ export default function ProjectsSection({ count, cta, title }) {
       </div>
       {cta && (
         <>
-          <button className=" gc-1-13 underline-hover-left-right js-c p-12-24 black larger-cursor magnet-element">
-            <a href="/projects" className=" h4 medium flex col-g-16 aic ">
-              <p className="ws-no-w">{t(`More`)}</p>
-              <svg
-                className="rotate--45"
-                width="32"
-                height="32"
-                viewBox="0 0 18 18"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M9.15484 0.655273L9.15493 16.345M9.15493 16.345L17 8.49989M9.15493 16.345L1.31 8.5001"
-                  stroke="var(--text-color)"
-                />
-              </svg>
-            </a>
-          </button>
+          <a
+            href="/projects"
+            className=" gc-1-13 underline-hover-left-right js-c  black larger-cursor magnet-element h4 medium flex col-g-16 p-16-32 aic "
+          >
+            <p className="ws-no-w">{t(`More`)}</p>
+            <svg
+              className="rotate--45"
+              width="32"
+              height="32"
+              viewBox="0 0 18 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.15484 0.655273L9.15493 16.345M9.15493 16.345L17 8.49989M9.15493 16.345L1.31 8.5001"
+                stroke="var(--text-color)"
+              />
+            </svg>
+          </a>
         </>
       )}
     </section>

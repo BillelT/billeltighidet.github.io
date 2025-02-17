@@ -183,6 +183,8 @@ export default function Navigation({
                   <img
                     src="/img/thin-arrow-white-down.svg"
                     alt="icône flèche vers le bas"
+                    width={18}
+                    height={18}
                   />
                 </a>
               </li>
