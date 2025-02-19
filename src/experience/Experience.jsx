@@ -180,7 +180,7 @@ export default function Experience({ isProjectPage }) {
     ];
 
     htmlElements.forEach((htmlElement, index) => {
-      const texture = textureLoader.load(`/img/mockups/${index + 1}.png`);
+      const texture = textureLoader.load(`/img/mockups/${index + 1}.webp`);
       texture.minFilter = THREE.LinearFilter;
       texture.magFilter = THREE.LinearFilter;
 

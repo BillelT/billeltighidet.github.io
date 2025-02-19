@@ -27,6 +27,8 @@ export default function Footer() {
                     src="/img/thin-arrow-white-down.svg"
                     alt="icône flèche diagonale"
                     className="rotate--135 mix-blend-diff"
+                    width={18}
+                    height={18}
                   />
                 </a>
               </li>
@@ -41,6 +43,8 @@ export default function Footer() {
                     src="/img/thin-arrow-white-down.svg"
                     alt="icône flèche diagonale"
                     className="rotate--135 mix-blend-diff"
+                    width={18}
+                    height={18}
                   />
                 </a>
               </li>
@@ -55,6 +59,8 @@ export default function Footer() {
                     src="/img/thin-arrow-white-down.svg"
                     alt="icône flèche diagonale"
                     className="rotate--135 mix-blend-diff"
+                    width={18}
+                    height={18}
                   />
                 </a>
               </li>
@@ -78,6 +84,8 @@ export default function Footer() {
               src="/img/thin-arrow-up-white.png"
               alt="icône flèche vers le haut - go top"
               className="go-top mix-blend-diff"
+              width={18}
+              height={18}
             />
           </a>
         </article>
@@ -98,6 +106,8 @@ export default function Footer() {
                     src="/img/thin-arrow-white-down.svg"
                     alt="icône flèche vers le bas"
                     className="mix-blend-diff"
+                    width={18}
+                    height={18}
                   />
                 </a>
               </li>
