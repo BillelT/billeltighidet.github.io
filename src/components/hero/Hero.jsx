@@ -80,7 +80,7 @@ export default function Hero({ page }) {
         <div className="f-d-c-sm-f-d-r flex aife-sm-ais col-g-16">
           <h1 className="h1 font-family-zodiak thin" ref={title}>
             <p>{splitText(t(`${page}.h1-1`), "char")}</p>
-            <p className="medium">{splitText(t(`${page}.h1-2`), "char")}</p>
+            <p className="regular">{splitText(t(`${page}.h1-2`), "char")}</p>
             <p className="italic">{splitText(t(`${page}.h1-3`), "char")}</p>
           </h1>
           <span ref={name} className="me name">
