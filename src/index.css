@@ -432,6 +432,10 @@ a {
   font-weight: 300;
 }
 
+.regular {
+  font-weight: 400;
+}
+
 .medium {
   font-weight: 500;
 }

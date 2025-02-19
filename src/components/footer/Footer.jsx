@@ -50,7 +50,7 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/billel-tighidet-76b292234/"
+                  href="https://www.linkedin.com/in/billel-tighidet/"
                   className="flex sb p-8-16 underline-hover-left-right  w-280-315 larger-cursor"
                   target="_blank"
                 >
