@@ -10,7 +10,7 @@ import Experience from "../experience/Experience.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Projects() {
+export default function Projects({ progress, setProgress }) {
   const projects = useRef(null);
   const gallery = useRef(null);
   const footer = useRef(null);
@@ -62,7 +62,7 @@ export default function Projects() {
   return (
     <>
       <Hero page="projects" />
-      <Experience isProjectPage={true} />
+      <Experience setProgress={setProgress} isProjectPage={true} />
       <div ref={projects} className="r-g-128-256 grid">
         <ProjectsSection count={3} />
       </div>

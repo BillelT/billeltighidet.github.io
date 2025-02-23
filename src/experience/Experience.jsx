@@ -8,7 +8,7 @@ import Plane from "./world/Plane.js";
 import { updatePlanesSizeAndPosition } from "./utils/updatePlanesSizeAndPosition.js";
 import { handleDisplacement } from "./utils/handleDisplacement.js";
 
-export default function Experience({ isProjectPage }) {
+export default function Experience({ isProjectPage, setProgress }) {
   const [isScreenLarger960, handleIsScreenLarger960] = useState(
     window.innerWidth > 960
   );
@@ -77,6 +77,13 @@ export default function Experience({ isProjectPage }) {
   useEffect(() => {
     const scene = new THREE.Scene();
 
+    const manager = new THREE.LoadingManager();
+
+    manager.onProgress = (url, loaded, total) => {
+      const progression = (loaded / total) * 100;
+      setProgress(progression);
+    };
+
     projectsGroup.current.clear();
     planes.current.forEach(({ plane }) => {
       plane.geometry.dispose();
@@ -90,7 +97,7 @@ export default function Experience({ isProjectPage }) {
       isProjectPage ? document.querySelector("#project3") : null,
     ].filter(Boolean);
 
-    planes.current = new Plane(htmlElements, projectsGroup, scene);
+    planes.current = new Plane(htmlElements, projectsGroup, scene, manager);
 
     scene.add(projectsGroup.current);
 

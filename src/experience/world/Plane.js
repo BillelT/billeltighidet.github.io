@@ -2,8 +2,8 @@ import * as THREE from "three";
 import vertexShader from "../shaders/vertex.glsl";
 import fragmentShader from "../shaders/fragment.glsl";
 
-export default function Planes(htmlElements, projectsGroup, scene) {
-  const textureLoader = new THREE.TextureLoader();
+export default function Planes(htmlElements, projectsGroup, scene, manager) {
+  const textureLoader = new THREE.TextureLoader(manager);
   const planeGeometry = new THREE.PlaneGeometry(1.6, 0.9);
 
   const planes = htmlElements.map((htmlElement, index) => {

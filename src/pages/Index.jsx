@@ -12,7 +12,7 @@ import Experience from "../experience/Experience.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Index({ isLargeScreen }) {
+export default function Index({ isLargeScreen, setProgress, isLoaded }) {
   const projects = useRef();
   const gallery = useRef();
   const footer = useRef();
@@ -63,8 +63,8 @@ export default function Index({ isLargeScreen }) {
 
   return (
     <>
-      <Hero page="index" />
-      <Experience isLargeScreen={isLargeScreen} />
+      <Hero page="index" isLoaded={isLoaded} />
+      <Experience setProgress={setProgress} />
       <Quote />
       <div ref={projects}>
         <Projects count={2} cta={true} title={true} />

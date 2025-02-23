@@ -21,14 +21,12 @@
 .char {
   transform: translateY(0);
   display: inline-block;
+  opacity: 0;
   will-change: transform, opacity;
 }
 
-@media screen and (min-width: 960px) {
-  .hero {
-    padding-top: 8rem;
-    row-gap: 8rem;
-  }
+.name-char {
+  opacity: 0;
 }
 
 @media screen and (min-width: 1441px) {

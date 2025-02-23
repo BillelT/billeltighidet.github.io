@@ -336,15 +336,6 @@ a {
   font-family: "Zodiak", serif;
 }
 
-/* .h1 {
-  font-size: calc(43px + (100 - 43) * ((100vw - 320px) / (1440 - 320)));
-  width: min-content;
-  position: relative;
-  width: min-content;
-  display: flex;
-  justify-content: space-between;
-} */
-
 .w-min-c {
   width: min-content;
 }
@@ -638,6 +629,10 @@ a {
   grid-column: 1/13;
 }
 
+.gc-f-8-10 {
+  grid-column: 1/13;
+}
+
 .gc-f-8-13 {
   grid-column: 1/13;
 }
@@ -697,6 +692,10 @@ a {
 
   .gc-f-1-8 {
     grid-column: 1/8;
+  }
+
+  .gc-f-8-10 {
+    grid-column: 8/10;
   }
 
   .gc-f-8-13 {

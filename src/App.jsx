@@ -8,7 +8,7 @@ import Lenis from "lenis";
 
 // Components
 import Cursor from "./components/cursor/Cursor.jsx";
-// import Loader from "./components/loader/Loader.jsx";
+import Loader from "./components/loader/Loader.jsx";
 import Header from "./components/header/Header.jsx";
 import Index from "./pages/Index.jsx";
 import Projects from "./pages/Project.jsx";
@@ -30,6 +30,9 @@ function App() {
   const [lenis, setLenis] = useState(null);
 
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 760);
+
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [progress, setProgress] = useState(0);
 
   const handleSetIsLargeScreen = () => {
     setIsLargeScreen(window.innerWidth > 760);
@@ -93,14 +96,32 @@ function App() {
     };
   }, [isLargeScreen]);
 
+  useEffect(() => {
+    console.log(progress);
+  }, [progress]);
+
   return (
     <>
       {isLargeScreen && <Cursor />}
-      {/* <Loader /> */}
+      {!isLoaded && (
+        <Loader progress={progress} lenis={lenis} setIsLoaded={setIsLoaded} />
+      )}
       <Header lenis={lenis} isLargeScreen={isLargeScreen} />
       <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/projects" element={<Projects />} />
+        <Route
+          path="/"
+          element={
+            <Index
+              progress={progress}
+              setProgress={setProgress}
+              isLoaded={isLoaded}
+            />
+          }
+        />
+        <Route
+          path="/projects"
+          element={<Projects progress={progress} setProgress={setProgress} />}
+        />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/about" element={<About />} />
         <Route path="/legal-notice" element={<LegalNotice />} />
