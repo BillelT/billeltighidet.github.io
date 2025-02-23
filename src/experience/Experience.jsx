@@ -169,9 +169,9 @@ export default function Experience({ isProjectPage }) {
               10.0,
               displacement.displacementIntensity[planeIndex] + 0.5
             );
-            displacement.aberrationIntensity[planeIndex] = Math.min(
-              1.0,
-              displacement.aberrationIntensity[planeIndex] + 0.05
+            displacement.aberrationIntensity[planeIndex] = Math.max(
+              0.0,
+              displacement.aberrationIntensity[planeIndex] - 0.005
             );
             intersections[0].object.material.uniforms.uDisplacementIntensity.value =
               displacement.displacementIntensity[planeIndex];
@@ -183,7 +183,7 @@ export default function Experience({ isProjectPage }) {
         if (!displacement.currentIntersect) {
           // console.log("mouseenter");
 
-          displacement.easeFactor = 0.02;
+          displacement.easeFactor = 0.1;
 
           displacement.targetMousePosition.set(uv.x, uv.y);
 
@@ -218,7 +218,7 @@ export default function Experience({ isProjectPage }) {
           // console.log("mouseleave");
 
           displacement.targetMousePosition.copy(displacement.prevMousePosition);
-          displacement.easeFactor = 0.05;
+          displacement.easeFactor = 0.25;
         }
 
         displacement.displacementIntensity.forEach(
