@@ -1,31 +1,35 @@
 import * as THREE from "three";
-import VideoTexture from "../textures/VideoTexture";
 import vertexShader from "../shaders/vertex.glsl";
 import fragmentShader from "../shaders/fragment.glsl";
 
-export default class Plane {
-  constructor(scene) {
-    this.scene = scene;
+export default function Planes(htmlElements, projectsGroup, scene) {
+  const textureLoader = new THREE.TextureLoader();
+  const planeGeometry = new THREE.PlaneGeometry(1.6, 0.9);
 
-    this.videoTexture = new VideoTexture(
-      "/img/gallery-element/sword-in-stone.mp4"
-    );
+  const planes = htmlElements.map((htmlElement, index) => {
+    const texture = textureLoader.load(`/img/mockups/${index + 1}.webp`);
+    texture.minFilter = THREE.LinearFilter;
+    texture.magFilter = THREE.LinearFilter;
 
-    const geometry = new THREE.PlaneGeometry(16, 9);
     const material = new THREE.ShaderMaterial({
       uniforms: {
-        uVideoTexture: { value: this.videoTexture.texture },
-        uTime: { value: 0.0 },
+        uTime: { value: 0 },
+        uTexture: { value: texture },
+        uMouse: { value: new THREE.Vector2(999, 999) },
+        uDisplacementIntensity: { value: 0.0 },
+        uPrevMouse: { value: new THREE.Vector2(999, 999) },
+        uAberrationIntensity: { value: null },
       },
-      vertexShader: vertexShader,
-      fragmentShader: fragmentShader,
+      vertexShader,
+      fragmentShader,
     });
 
-    this.mesh = new THREE.Mesh(geometry, material);
-    this.scene.add(this.mesh);
-  }
+    const plane = new THREE.Mesh(planeGeometry, material);
+    projectsGroup.current.add(plane);
 
-  update() {
-    this.mesh.material.uniforms.uTime.value += 0.02;
-  }
+    return { plane, htmlElement, index };
+  });
+
+  scene.add(projectsGroup.current);
+  return planes;
 }
