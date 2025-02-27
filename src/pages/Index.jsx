@@ -12,10 +12,19 @@ import Experience from "../experience/Experience.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Index({ isLargeScreen, setProgress, isLoaded }) {
+export default function Index({
+  setProgress,
+  isLoaded,
+  isExperiencePage,
+  setIsExperiencePage,
+}) {
   const projects = useRef();
   const gallery = useRef();
   const footer = useRef();
+
+  useEffect(() => {
+    setIsExperiencePage(true);
+  }, []);
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -63,7 +72,11 @@ export default function Index({ isLargeScreen, setProgress, isLoaded }) {
 
   return (
     <>
-      <Hero page="index" isLoaded={isLoaded} />
+      <Hero
+        page="index"
+        isLoaded={isLoaded}
+        isExperiencePage={isExperiencePage}
+      />
       <Experience setProgress={setProgress} />
       <Quote />
       <div ref={projects}>

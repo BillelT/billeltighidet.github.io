@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import gsap from "gsap";
 import "./Hero.css";
 
-export default function Hero({ page, isLoaded }) {
+export default function Hero({ page, isLoaded, isExperiencePage }) {
   const { t, i18n } = useTranslation("hero");
   const title = useRef(null);
   const name = useRef(null);
@@ -45,7 +45,10 @@ export default function Hero({ page, isLoaded }) {
   }, [scrollLine]);
 
   useEffect(() => {
-    if (!isLoaded) return;
+    console.log(isExperiencePage);
+
+    if (!isLoaded && isExperiencePage) return;
+
     const titleChars = title.current.querySelectorAll(".char");
     const nameChars = name.current.querySelectorAll(".name-char");
 
@@ -63,7 +66,7 @@ export default function Hero({ page, isLoaded }) {
       ease: "power1.inOut",
       stagger: 0.04,
     });
-  }, [name, isLoaded]);
+  }, [name, isLoaded, isExperiencePage]);
 
   return (
     <>

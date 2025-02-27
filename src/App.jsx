@@ -14,7 +14,6 @@ import Index from "./pages/Index.jsx";
 import Projects from "./pages/Project.jsx";
 import Gallery from "./pages/Gallery.jsx";
 import About from "./pages/About.jsx";
-import LegalNotice from "./pages/LegalNotice.jsx";
 
 // Utils
 import { applyMagnetEffect } from "./components/magnetEffect/MagnetEffect.jsx";
@@ -33,6 +32,8 @@ function App() {
 
   const [isLoaded, setIsLoaded] = useState(false);
   const [progress, setProgress] = useState(0);
+
+  const [isExperiencePage, setIsExperiencePage] = useState(true);
 
   const handleSetIsLargeScreen = () => {
     setIsLargeScreen(window.innerWidth > 760);
@@ -97,34 +98,57 @@ function App() {
   }, [isLargeScreen]);
 
   useEffect(() => {
-    console.log(progress);
-  }, [progress]);
+    if (!isExperiencePage) return;
+
+    if (!lenis) return;
+
+    if (lenis) {
+      lenis.stop();
+    }
+
+    if (lenis && isLoaded) {
+      lenis.start();
+    }
+  }, [isLoaded, lenis, isExperiencePage]);
 
   return (
     <>
       {isLargeScreen && <Cursor />}
-      {!isLoaded && (
+      {!isLoaded && isExperiencePage && (
         <Loader progress={progress} lenis={lenis} setIsLoaded={setIsLoaded} />
       )}
-      <Header lenis={lenis} isLargeScreen={isLargeScreen} />
+      <Header lenis={lenis} isLargeScreen={isLargeScreen} isLoaded={isLoaded} />
       <Routes>
         <Route
           path="/"
           element={
             <Index
-              progress={progress}
               setProgress={setProgress}
               isLoaded={isLoaded}
+              isExperiencePage={isExperiencePage}
+              setIsExperiencePage={setIsExperiencePage}
             />
           }
         />
         <Route
           path="/projects"
-          element={<Projects progress={progress} setProgress={setProgress} />}
+          element={
+            <Projects
+              setProgress={setProgress}
+              isLoaded={isLoaded}
+              isExperiencePage={isExperiencePage}
+              setIsExperiencePage={setIsExperiencePage}
+            />
+          }
         />
-        <Route path="/gallery" element={<Gallery />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/legal-notice" element={<LegalNotice />} />
+        <Route
+          path="/gallery"
+          element={<Gallery setIsExperiencePage={setIsExperiencePage} />}
+        />
+        <Route
+          path="/about"
+          element={<About setIsExperiencePage={setIsExperiencePage} />}
+        />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </>

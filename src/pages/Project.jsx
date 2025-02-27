@@ -10,10 +10,19 @@ import Experience from "../experience/Experience.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Projects({ progress, setProgress }) {
+export default function Projects({
+  setProgress,
+  isLoaded,
+  isExperiencePage,
+  setIsExperiencePage,
+}) {
   const projects = useRef(null);
   const gallery = useRef(null);
   const footer = useRef(null);
+
+  useEffect(() => {
+    setIsExperiencePage(true);
+  }, []);
 
   useEffect(() => {
     const tl = gsap.timeline({
@@ -61,7 +70,11 @@ export default function Projects({ progress, setProgress }) {
 
   return (
     <>
-      <Hero page="projects" />
+      <Hero
+        page="projects"
+        isLoaded={isLoaded}
+        isExperiencePage={isExperiencePage}
+      />
       <Experience setProgress={setProgress} isProjectPage={true} />
       <div ref={projects} className="r-g-128-256 grid">
         <ProjectsSection count={3} />

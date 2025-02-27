@@ -7,6 +7,7 @@ export default function Navigation({
   isNavigationVisible,
   toggleNavigation,
   lenis,
+  isLoaded,
 }) {
   // Translation Objects
   const { t, i18n } = useTranslation("header");
@@ -30,42 +31,39 @@ export default function Navigation({
   }, []);
 
   useEffect(() => {
+    if (!isLoaded) return;
+
     if (isNavigationVisible) {
-      gsap.fromTo(
-        navigation.current,
-        { clipPath: "inset(100% 0% 0% 0%)" },
-        {
-          clipPath: "inset(0% 0% 0% 0%)",
-          duration: 1,
-          ease: "power2.inOut",
-          onStart: () => {
-            navigation.current.style.visibility = "visible";
-            navigation.current.style.opacity = "1";
-            navigation.current.style.zIndex = "10";
-          },
-          onComplete: () => {
-            if (lenis) lenis.stop();
-          },
-        }
-      );
+      gsap.set(navigation.current, {
+        clipPath: "inset(100% 0% 0% 0%)",
+      });
+      gsap.to(navigation.current, {
+        clipPath: "inset(0% 0% 0% 0%)",
+        duration: 1,
+        ease: "power2.inOut",
+        onStart: () => {
+          navigation.current.style.visibility = "visible";
+          navigation.current.style.opacity = "1";
+          navigation.current.style.zIndex = "10";
+        },
+        onComplete: () => {
+          if (lenis) lenis.stop();
+        },
+      });
     } else {
-      gsap.fromTo(
-        navigation.current,
-        { clipPath: "inset(0% 0% 0% 0%)" },
-        {
-          clipPath: "inset(0% 0% 100% 0%)",
-          duration: 1,
-          ease: "power2.inOut",
-          onComplete: () => {
-            navigation.current.style.opacity = "0";
-            navigation.current.style.visibility = "hidden";
-            navigation.current.style.zIndex = "-1";
-            if (lenis) lenis.start();
-          },
-        }
-      );
+      gsap.to(navigation.current, {
+        clipPath: "inset(0% 0% 100% 0%)",
+        duration: 1,
+        ease: "power2.inOut",
+        onComplete: () => {
+          navigation.current.style.opacity = "0";
+          navigation.current.style.visibility = "hidden";
+          navigation.current.style.zIndex = "-1";
+          if (lenis) lenis.start();
+        },
+      });
     }
-  }, [isNavigationVisible, lenis]);
+  }, [isNavigationVisible, lenis, isLoaded]);
 
   useEffect(() => {
     const langElements = document.querySelectorAll(".actual-lang");

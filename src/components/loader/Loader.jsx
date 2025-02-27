@@ -2,7 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import "./Loader.css";
 
-export default function Loader({ progress, setIsLoaded }) {
+export default function Loader({ progress, setIsLoaded, lenis }) {
   const loader = useRef(null);
   const progressBar = useRef(null);
 
@@ -24,6 +24,7 @@ export default function Loader({ progress, setIsLoaded }) {
         ease: "power2.inOut",
         onComplete: () => {
           setIsLoaded(true);
+          console.log("Loaded");
         },
       });
     }

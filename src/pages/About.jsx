@@ -9,8 +9,12 @@ import Footer from "../components/footer/Footer.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function About() {
+export default function About({ setIsExperiencePage }) {
   const projects = useRef(null);
+
+  useEffect(() => {
+    setIsExperiencePage(false);
+  }, []);
 
   useEffect(() => {
     const tl = gsap.timeline({

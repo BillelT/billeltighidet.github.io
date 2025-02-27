@@ -10,10 +10,14 @@ import Footer from "../components/footer/Footer.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 
-export default function Gallery() {
+export default function Gallery({ setIsExperiencePage }) {
   const { i18n } = useTranslation();
   const gallery = useRef(null);
   const footer = useRef(null);
+
+  useEffect(() => {
+    setIsExperiencePage(false);
+  }, []);
 
   useEffect(() => {
     const tl = gsap.timeline({
