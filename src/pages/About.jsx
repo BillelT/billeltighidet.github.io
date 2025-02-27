@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
-import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useTranslation } from "react-i18next";
+import gsap from "gsap";
 // Components
 import Hero from "../components/hero/Hero.jsx";
 import AboutSection from "../components/about-section/About-section.jsx";
@@ -9,6 +10,8 @@ import Footer from "../components/footer/Footer.jsx";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About({ setIsExperiencePage }) {
+  const { t } = useTranslation("about");
+
   const projects = useRef(null);
 
   useEffect(() => {
@@ -41,6 +44,11 @@ export default function About({ setIsExperiencePage }) {
     <>
       <Hero page="about" />
       <AboutSection />
+      <section className="container padding-container m-t-256-512 m-b-256-512">
+        <h2 className="gc-1-13 h3 semi-bold" style={{ textAlign: "center" }}>
+          {t(`teasing`)}
+        </h2>
+      </section>
       <div ref={projects} className="m-t-256-512">
         <Footer />
       </div>

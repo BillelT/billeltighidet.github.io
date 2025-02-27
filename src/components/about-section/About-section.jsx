@@ -34,11 +34,6 @@ export default function AboutSection({ cta }) {
           )}
         </div>
       </section>
-      <section className="container padding-container m-t-256-512 m-b-256-512">
-        <h2 className="gc-1-13 h3 semi-bold" style={{ textAlign: "center" }}>
-          {t(`teasing`)}
-        </h2>
-      </section>
     </>
   );
 }
