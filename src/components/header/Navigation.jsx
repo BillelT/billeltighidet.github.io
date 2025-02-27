@@ -8,6 +8,7 @@ export default function Navigation({
   toggleNavigation,
   lenis,
   isLoaded,
+  isExperiencePage,
 }) {
   // Translation Objects
   const { t, i18n } = useTranslation("header");
@@ -31,7 +32,7 @@ export default function Navigation({
   }, []);
 
   useEffect(() => {
-    if (!isLoaded) return;
+    if (!isLoaded && isExperiencePage) return;
 
     if (isNavigationVisible) {
       gsap.set(navigation.current, {

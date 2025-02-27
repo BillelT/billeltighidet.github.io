@@ -9,7 +9,12 @@ import Navigation from "./Navigation.jsx";
 // Styles
 import "./Header.css";
 
-export default function Header({ lenis, isLargeScreen, isLoaded }) {
+export default function Header({
+  lenis,
+  isLargeScreen,
+  isLoaded,
+  isExperiencePage,
+}) {
   // Translations Objects
   const { t, i18n } = useTranslation("header");
   const navigationLinks = t("navigationLinks", { returnObjects: true });

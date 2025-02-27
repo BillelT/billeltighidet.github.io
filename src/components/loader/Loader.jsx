@@ -24,7 +24,6 @@ export default function Loader({ progress, setIsLoaded, lenis }) {
         ease: "power2.inOut",
         onComplete: () => {
           setIsLoaded(true);
-          console.log("Loaded");
         },
       });
     }

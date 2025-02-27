@@ -117,7 +117,12 @@ function App() {
       {!isLoaded && isExperiencePage && (
         <Loader progress={progress} lenis={lenis} setIsLoaded={setIsLoaded} />
       )}
-      <Header lenis={lenis} isLargeScreen={isLargeScreen} isLoaded={isLoaded} />
+      <Header
+        lenis={lenis}
+        isLargeScreen={isLargeScreen}
+        isLoaded={isLoaded}
+        isExperiencePage={isExperiencePage}
+      />
       <Routes>
         <Route
           path="/"

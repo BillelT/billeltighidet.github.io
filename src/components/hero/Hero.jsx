@@ -45,8 +45,6 @@ export default function Hero({ page, isLoaded, isExperiencePage }) {
   }, [scrollLine]);
 
   useEffect(() => {
-    console.log(isExperiencePage);
-
     if (!isLoaded && isExperiencePage) return;
 
     const titleChars = title.current.querySelectorAll(".char");

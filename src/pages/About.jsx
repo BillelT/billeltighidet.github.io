@@ -4,7 +4,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 // Components
 import Hero from "../components/hero/Hero.jsx";
 import AboutSection from "../components/about-section/About-section.jsx";
-import Projects from "../components/projects-section/Projects-section.jsx";
 import Footer from "../components/footer/Footer.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
