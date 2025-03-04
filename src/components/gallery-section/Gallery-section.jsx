@@ -116,12 +116,13 @@ export default function GallerySection({ completeGallery, cta, title }) {
                 {item.videoType && (
                   <div className="video-container">
                     <video
-                      controls
                       muted
                       autoPlay
-                      className="video"
                       loop
-                      // preload="none"
+                      // controls
+                      playsInline
+                      preload="none"
+                      className="video"
                     >
                       <source src={item.src} type={item.videoType} />
                     </video>
