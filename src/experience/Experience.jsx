@@ -53,15 +53,13 @@ export default function Experience({ isProjectPage, setProgress }) {
     );
 
     if (planeIndex !== -1) {
-      console.log(planes.current[planeIndex].link);
       window.open(planes.current[planeIndex].link, "_blank");
     }
   };
 
   useEffect(() => {
-    window.addEventListener("pointerdown", handleProjectOpening);
-    return () =>
-      window.removeEventListener("pointerdown", handleProjectOpening);
+    window.addEventListener("click", handleProjectOpening);
+    return () => window.removeEventListener("click", handleProjectOpening);
   }, []);
 
   useEffect(() => {

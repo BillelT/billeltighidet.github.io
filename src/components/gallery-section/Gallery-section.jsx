@@ -121,7 +121,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
                       autoPlay
                       className="video"
                       loop
-                      preload="none"
+                      // preload="none"
                     >
                       <source src={item.src} type={item.videoType} />
                     </video>
