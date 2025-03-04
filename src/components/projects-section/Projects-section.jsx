@@ -84,19 +84,15 @@ export default function ProjectsSection({ count, cta, title }) {
                 index % 2 === 1 ? "gc-f-6-13 ls-m-l-32" : "gc-f-1-8 ls-gr-1"
               }`}
             >
-              <a
-                href={t(`project-${index + 1}.link`)}
-                target="_blank"
+              <img
+                id={`project${index + 1}`}
+                src={`/img/mockups/${index + 1}.webp`}
+                width={1920}
+                height={1080}
+                data-url={t(`project-${index + 1}.link`)}
+                alt="mock up"
                 className="larger-cursor project-img"
-              >
-                <img
-                  id={`project${index + 1}`}
-                  src={`/img/mockups/${index + 1}.webp`}
-                  width={1920}
-                  height={1080}
-                  alt="mock up"
-                />
-              </a>
+              />
             </div>
           </article>
         ))}

@@ -47,6 +47,23 @@ export default function Experience({ isProjectPage, setProgress }) {
       );
   }, [isScreenLarger960]);
 
+  const handleProjectOpening = () => {
+    const planeIndex = planes.current.findIndex(
+      ({ plane }) => plane === displacement.currentIntersect.object
+    );
+
+    if (planeIndex !== -1) {
+      console.log(planes.current[planeIndex].link);
+      window.open(planes.current[planeIndex].link, "_blank");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("pointerdown", handleProjectOpening);
+    return () =>
+      window.removeEventListener("pointerdown", handleProjectOpening);
+  }, []);
+
   useEffect(() => {
     if (!isScreenLarger960 === null) return;
     window.addEventListener("resize", () =>
@@ -171,6 +188,7 @@ export default function Experience({ isProjectPage, setProgress }) {
           const planeIndex = planes.current.findIndex(
             ({ plane }) => plane === intersections[0].object
           );
+
           if (planeIndex !== -1) {
             displacement.displacementIntensity[planeIndex] = Math.min(
               10.0,
@@ -180,6 +198,7 @@ export default function Experience({ isProjectPage, setProgress }) {
               0.0,
               displacement.aberrationIntensity[planeIndex] - 0.005
             );
+            // console.log(planes.current[planeIndex].link);
             intersections[0].object.material.uniforms.uDisplacementIntensity.value =
               displacement.displacementIntensity[planeIndex];
             intersections[0].object.material.uniforms.uAberrationIntensity.value =

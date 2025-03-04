@@ -10,6 +10,7 @@ export default function Planes(htmlElements, projectsGroup, scene, manager) {
     const texture = textureLoader.load(`/img/mockups/${index + 1}.webp`);
     texture.minFilter = THREE.LinearFilter;
     texture.magFilter = THREE.LinearFilter;
+    const link = htmlElement.dataset.url;
 
     const material = new THREE.ShaderMaterial({
       uniforms: {
@@ -27,7 +28,7 @@ export default function Planes(htmlElements, projectsGroup, scene, manager) {
     const plane = new THREE.Mesh(planeGeometry, material);
     projectsGroup.current.add(plane);
 
-    return { plane, htmlElement, index };
+    return { plane, htmlElement, index, link };
   });
 
   scene.add(projectsGroup.current);
