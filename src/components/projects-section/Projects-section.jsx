@@ -92,6 +92,7 @@ export default function ProjectsSection({ count, cta, title }) {
                 data-url={t(`project-${index + 1}.link`)}
                 alt="mock up"
                 className="larger-cursor project-img"
+                loading="lazy"
               />
             </div>
           </article>
