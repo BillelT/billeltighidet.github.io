@@ -120,9 +120,13 @@ export default function GallerySection({ completeGallery, cta, title }) {
                       autoPlay
                       loop
                       // controls
-                      // playsInline
+                      playsInline
                       preload="none"
                       className="video"
+                      onClick={(e) => {
+                        e.target.muted = !e.target.muted;
+                        console.log(e.target.muted);
+                      }}
                     >
                       <source src={item.src} type={item.videoType} />
                     </video>

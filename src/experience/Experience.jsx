@@ -48,12 +48,13 @@ export default function Experience({ isProjectPage, setProgress }) {
   }, [isScreenLarger960]);
 
   const handleProjectOpening = () => {
-    const planeIndex = planes.current.findIndex(
-      ({ plane }) => plane === displacement.currentIntersect.object
-    );
-
-    if (planeIndex !== -1) {
-      window.open(planes.current[planeIndex].link, "_blank");
+    if (displacement.currentIntersect) {
+      const planeIndex = planes.current.findIndex(
+        ({ plane }) => plane === displacement.currentIntersect.object
+      );
+      if (planeIndex !== -1) {
+        window.open(planes.current[planeIndex].link, "_blank");
+      }
     }
   };
 
