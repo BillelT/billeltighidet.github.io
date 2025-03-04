@@ -86,7 +86,7 @@ export default function ProjectsSection({ count, cta, title }) {
             >
               <picture>
                 <source
-                  srcSet={`/img/mockups/${index + 1}_512.png`}
+                  srcSet={`/img/mockups/${index + 1}_256.webp`}
                   media="(max-width: 586px)"
                   type="image/webp"
                 />
