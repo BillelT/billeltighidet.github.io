@@ -810,7 +810,11 @@ a {
   white-space: nowrap;
 }
 
-/* Img-container */
+/* Images & Img-container */
+
+picture {
+  width: 100%;
+}
 
 .img-container,
 .video-container {
