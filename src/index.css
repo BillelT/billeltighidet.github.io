@@ -11,10 +11,10 @@
 }
 
 /* Global elements */
-* {
+/* * {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-}
+} */
 
 *,
 ::before,
