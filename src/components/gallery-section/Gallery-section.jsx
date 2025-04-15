@@ -147,7 +147,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
           <>
             <a
               href="/gallery"
-              className=" gc-1-13 underline-hover-left-right js-c  magnet-element larger-cursor m-t-128 h4 medium flex p-16-32 col-g-16 aic"
+              className=" gc-1-13 underline-hover-left-right js-c magnet-element larger-cursor h4 medium flex p-16-32 col-g-16 aic"
             >
               <p className="ws-no-w"> {t(`CTA`)} </p>
               <svg

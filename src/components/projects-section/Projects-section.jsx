@@ -7,7 +7,7 @@ export default function ProjectsSection({ count, cta, title }) {
   return (
     <section
       id="projects"
-      className="container padding-container grid m-t-128-256 r-g-128-256"
+      className="container padding-container grid r-g-128-256"
     >
       {title && (
         <>

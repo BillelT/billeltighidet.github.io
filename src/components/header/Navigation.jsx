@@ -140,9 +140,9 @@ export default function Navigation({
           </span>
         </div>
       </div>
-      <div className=" container padding-container gc-1-13 r-g-64 m-t-14-rem aife">
+      <div className=" container padding-container gc-1-13 m-t-4-rem r-g-64 aife">
         <nav className="gc-f-1-6">
-          <ul className={`r-g-32 grid `}>
+          <ul className={`r-g-16 grid `}>
             {Object.entries(navigationLinks).map(([key, value]) => (
               <li key={key} className="h2 no-underline larger-cursor">
                 <a

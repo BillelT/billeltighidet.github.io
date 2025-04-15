@@ -13,7 +13,6 @@ export default function Header({
   lenis,
   isLargeScreen,
   isLoaded,
-  isExperiencePage,
 }) {
   // Translations Objects
   const { t, i18n } = useTranslation("header");

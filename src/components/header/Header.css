@@ -43,14 +43,8 @@ header {
   height: min-content;
 }
 
-.m-t-14-rem {
-  margin-top: calc(8rem - 60px);
-}
-
-@media screen and (min-width: 960px) {
-  .m-t-14-rem {
-    margin-top: calc(12rem - 60px);
-  }
+.m-t-4-rem {
+  margin-top: calc(4rem - 60px);
 }
 
 @media screen and (min-width: 540px) {

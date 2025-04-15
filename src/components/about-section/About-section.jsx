@@ -13,7 +13,7 @@ export default function AboutSection({ cta }) {
             <>
               <a
                 href="/about"
-                className=" gc-1-13 underline-hover-left-right js-e  button medium flex p-16-32 col-g-16 aic h4 larger-cursor magnet-element"
+                className=" gc-1-13 underline-hover-left-right js-e button medium flex p-16-32 col-g-16 aic h4 larger-cursor magnet-element"
               >
                 <p className="ws-no-w">{t(`CTA`)}</p>
                 <svg
