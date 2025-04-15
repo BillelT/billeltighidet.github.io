@@ -60,6 +60,11 @@ body {
   transition: all 0.8s ease-in-out;
 }
 
+#root{
+  height: 100dvh;
+  overflow-y: scroll;
+}
+
 button {
   border: none;
   font-size: 16px;
