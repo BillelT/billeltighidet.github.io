@@ -32,7 +32,7 @@ export const updatePlanesSizeAndPosition = ({
       plane.position.x = 0;
 
       if (!isProjectPage) {
-        plane.position.y = index === 0 ? -5 : index === 1 ? -8.25 : -11.75;
+        plane.position.y = index === 0 ? -4.5 : index === 1 ? -8 : -11.75;
       } else {
         plane.position.y = index === 0 ? -5 : index === 1 ? -8.25 : -11.5;
       }
