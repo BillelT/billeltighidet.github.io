@@ -131,7 +131,7 @@ export default function Experience({ isProjectPage, setProgress }) {
     // Renderer
     renderer.current = new THREE.WebGLRenderer({
       canvas: canvas.current,
-      antialias: true,
+      // antialias: true,
       alpha: true,
     });
 
