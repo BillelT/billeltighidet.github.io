@@ -131,23 +131,25 @@ export default function Experience({ isProjectPage, setProgress }) {
     // Renderer
     renderer.current = new THREE.WebGLRenderer({
       canvas: canvas.current,
-      // antialias: true,
+      antialias: true,
       alpha: true,
+      powerPreference: "high-performance",
+      preserveDrawingBuffer: true,
     });
 
     renderer.current.setSize(sizes.current.width, sizes.current.height);
     renderer.current.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    gsap.to(camera.current, {
+    gsap.to(camera.current.position, {
+      y: -15,
+      ease: "none",
       scrollTrigger: {
         trigger: "#projects",
         start: isProjectPage ? "-15% bottom" : "top 85%",
         end: isProjectPage ? "115% top" : "150% top",
+        scrub: true,
         // markers: true,
         toggleActions: "play none reverse none",
-        onUpdate: (self) => {
-          camera.current.position.y = -self.progress * 15;
-        },
       },
     });
 
@@ -197,7 +199,6 @@ export default function Experience({ isProjectPage, setProgress }) {
               0.0,
               displacement.aberrationIntensity[planeIndex] - 0.005
             );
-            // console.log(planes.current[planeIndex].link);
             intersections[0].object.material.uniforms.uDisplacementIntensity.value =
               displacement.displacementIntensity[planeIndex];
             intersections[0].object.material.uniforms.uAberrationIntensity.value =
@@ -271,7 +272,9 @@ export default function Experience({ isProjectPage, setProgress }) {
       });
 
       renderer.current.render(scene, camera.current);
-      window.requestAnimationFrame(tick);
+      const frameId = window.requestAnimationFrame(tick);
+
+      return () => cancelAnimationFrame(frameId);
     };
 
     tick();

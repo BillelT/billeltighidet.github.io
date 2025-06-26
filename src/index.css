@@ -843,3 +843,7 @@ video {
   outline: none;
   z-index: -1;
 }
+
+.will-change-transform {
+  will-change: transform;
+}

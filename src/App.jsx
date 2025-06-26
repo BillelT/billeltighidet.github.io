@@ -46,6 +46,19 @@ function App() {
     });
   }, []);
 
+useEffect(() => {  
+  // Animer progress de 0 à 100 sur 3 secondes
+  gsap.to({}, {
+    duration: 2, // Durée en secondes
+    onUpdate: function() {
+      // this.progress() retourne une valeur entre 0 et 1
+      const currentProgress = this.progress() * 100;
+      setProgress(currentProgress);
+    },
+    ease: "power1.out" // Courbe d'animation
+  });
+}, []);
+
   useEffect(() => {
     const lenisInstance = new Lenis();
 

@@ -21,7 +21,7 @@ export default function GallerySection({ completeGallery, cta, title }) {
           trigger: element,
           start: "top bottom",
           end: "bottom top",
-          scrub: true,
+          scrub: 0.3,
           // markers: true,
           toggleActions: "play none none reverse",
         },
@@ -30,7 +30,6 @@ export default function GallerySection({ completeGallery, cta, title }) {
 
     return () => {
       animations.forEach((animation) => animation.kill());
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
@@ -116,13 +115,15 @@ export default function GallerySection({ completeGallery, cta, title }) {
                 {item.videoType && (
                   <div className="video-container">
                     <video
-                      muted
-                      autoPlay
-                      loop
-                      // controls
+                      preload="auto"
                       playsInline
-                      preload="none"
-                      className="video"
+                      muted
+                      loop
+                      autoPlay
+                      // disablePictureInPicture
+                      // disableRemotePlayback
+                      // loading="lazy"
+                      className="video will-change-transform"
                       onClick={(e) => {
                         e.target.muted = !e.target.muted;
                         console.log(e.target.muted);

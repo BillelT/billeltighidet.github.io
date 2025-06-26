@@ -7,7 +7,7 @@ export default function Planes(htmlElements, projectsGroup, scene, manager) {
   const planeGeometry = new THREE.PlaneGeometry(1.6, 0.9);
 
   const planes = htmlElements.map((htmlElement, index) => {
-    const img = htmlElement.src;
+    const img = htmlElement.dataset.src;
     const texture = textureLoader.load(img);
     texture.minFilter = THREE.LinearFilter;
     texture.magFilter = THREE.LinearFilter;

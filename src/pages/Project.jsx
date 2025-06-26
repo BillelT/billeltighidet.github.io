@@ -75,7 +75,7 @@ export default function Projects({
         isLoaded={isLoaded}
         isExperiencePage={isExperiencePage}
       />
-      <Experience setProgress={setProgress} isProjectPage={true} />
+      {/* <Experience setProgress={setProgress} isProjectPage={true} /> */}
       <div ref={projects} className="r-g-128-256 grid">
         <ProjectsSection count={3} />
       </div>

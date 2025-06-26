@@ -64,12 +64,9 @@
   }
 }
 
-.project-img {
+ /* .project-img {
   opacity: 0;
-}
-.project-img img {
-  visibility: hidden;
-}
+}  */
 
 .skill-tag {
   position: relative;
