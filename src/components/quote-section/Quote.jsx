@@ -42,7 +42,7 @@ export default function Quote() {
         <article className="flex f-d-c m-b-256-512  quote-container ase fade-in gc-f-7-13 js-e-s">
           <p className="quote font-family-zodiak">
             {t(`tale.rhymeA`)} <br />
-            {t(`tale.rhymeAA`)}, <br />
+            {t(`tale.rhymeAA`)} <br />
             {t(`tale.rhymeB`)} <br />
             {t(`tale.rhymeBB`)} <br /> <br />
             {t(`tale.rhymeC`)}
