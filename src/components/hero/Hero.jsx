@@ -53,34 +53,32 @@ export default function Hero({ page, isLoaded, isExperiencePage }) {
     gsap.to(titleChars, {
       opacity: 1,
       y: 0,
-      duration: 0.5,
       ease: "power1.inOut",
       stagger: 0.025,
     });
     gsap.to(nameChars, {
       opacity: 1,
       y: 0,
-      duration: 0.5,
       ease: "power1.inOut",
       stagger: 0.04,
     });
-  }, [name, isLoaded, isExperiencePage]);
+  }, [isLoaded, isExperiencePage]);
 
   return (
     <>
       <section className="hero flex f-d-c padding-container m-b-256-512">
         <div className="f-d-c-sm-f-d-r grid g-t-c-12 aife-sm-ais col-g-16">
           <h1 className="h1 font-family-zodiak thin gc-f-1-8" ref={title}>
-            <p className="ws-no-w">{splitText(t(`${page}.h1-1`), "char")}</p>
+            <p className="ws-no-w">{splitText(t(`${page}.h1-1`), "none")}</p>
             <p className="regular ws-no-w">
-              {splitText(t(`${page}.h1-2`), "char")}
+              {splitText(t(`${page}.h1-2`), "none")}
             </p>
             <p className="italic ws-no-w">
-              {splitText(t(`${page}.h1-3`), "char")}
+              {splitText(t(`${page}.h1-3`), "none")}
             </p>
           </h1>
           <span ref={name} className="me name gc-f-8-10">
-            {splitText(t(`${page}.name`), "name-char")}
+            {splitText(t(`${page}.name`), "name-none")}
           </span>
         </div>
         <div ref={scrollLine} className="animated-scroll-line asc"></div>
