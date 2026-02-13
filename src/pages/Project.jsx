@@ -30,8 +30,8 @@ export default function Projects({
     });
 
     tl.to(":root", {
-      "--bg-color": "#01010a",
-      "--text-color": "#f9fafb",
+      "--bg-color": "#0E0F14",
+      "--text-color": "#F2EEE8",
       scrollTrigger: {
         trigger: projects.current,
         start: "top 85%",
@@ -41,8 +41,8 @@ export default function Projects({
       },
     })
       .to(":root", {
-        "--bg-color": "#f9fafb",
-        "--text-color": "#01010a",
+        "--bg-color": "#F2EEE8",
+        "--text-color": "#0E0F14",
         scrollTrigger: {
           trigger: gallery.current,
           start: "top 60%",
@@ -52,8 +52,8 @@ export default function Projects({
         },
       })
       .to(":root", {
-        "--bg-color": "#01010a",
-        "--text-color": "#f9fafb",
+        "--bg-color": "#0E0F14",
+        "--text-color": "#F2EEE8",
         scrollTrigger: {
           trigger: footer.current,
           start: "top 60%",

@@ -3,7 +3,8 @@
 /* Zodiak */
 @font-face {
   font-family: "Zodiak";
-  src: url("/fonts/Zodiak/Zodiak-Variable.woff2") format("woff2"),
+  src:
+    url("/fonts/Zodiak/Zodiak-Variable.woff2") format("woff2"),
     url("/fonts/Zodiak/Zodiak-Variable.woff") format("woff");
   font-weight: 100 900;
   font-display: swap;
@@ -12,30 +13,26 @@
 
 @font-face {
   font-family: "Zodiak";
-  src: url("/fonts/Zodiak/Zodiak-VariableItalic.woff2") format("woff2"),
+  src:
+    url("/fonts/Zodiak/Zodiak-VariableItalic.woff2") format("woff2"),
     url("/fonts/Zodiak/Zodiak-VariableItalic.woff") format("woff");
   font-weight: 100 900;
   font-display: swap;
   font-style: italic;
 }
 
-/* Plus Jakarta Sans */
+/* Switzer */
 @font-face {
-  font-family: "Plus Jakarta Sans";
-  src: url("/fonts/Plus Jakarta Sans/PlusJakartaSans-Variable.woff2")
-      format("woff2"),
-    url("/fonts/Plus Jakarta Sans/PlusJakartaSans-Variable.woff") format("woff");
+  font-family: "Switzer";
+  src: url("/fonts/Switzer/Switzer-Variable.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Plus Jakarta Sans";
-  src: url("/fonts/Plus Jakarta Sans/PlusJakartaSans-VariableItalic.woff2")
-      format("woff2"),
-    url("/fonts/Plus Jakarta Sans/PlusJakartaSans-VariableItalic.woff")
-      format("woff");
+  font-family: "Switzer";
+  src: url("/fonts/Switzer/Switzer-VariableItalic.woff2") format("woff2");
   font-weight: 100 900;
   font-display: swap;
   font-style: italic;

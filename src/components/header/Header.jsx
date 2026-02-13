@@ -9,11 +9,7 @@ import Navigation from "./Navigation.jsx";
 // Styles
 import "./Header.css";
 
-export default function Header({
-  lenis,
-  isLargeScreen,
-  isLoaded,
-}) {
+export default function Header({ lenis, isLargeScreen, isLoaded }) {
   // Translations Objects
   const { t, i18n } = useTranslation("header");
   const navigationLinks = t("navigationLinks", { returnObjects: true });
@@ -59,7 +55,7 @@ export default function Header({
             onReverseComplete: () => {
               menuButton.current.classList.add("display-none");
             },
-          }
+          },
         );
 
         fadeHeroScrolled.current.forEach((element, index) => {
@@ -70,7 +66,7 @@ export default function Header({
               opacity: 0,
               x: 100 / (index + 1),
               ...navAnimationSetup,
-            }
+            },
           );
         });
       }

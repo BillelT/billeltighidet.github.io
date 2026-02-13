@@ -1,9 +1,9 @@
 /* Css variables */
 :root {
-  --white: #f9fafb;
-  --black: #01010a;
-  --bg-color: #f9fafb;
-  --text-color: #01010a;
+  --white: #f2eee8;
+  --black: #0e0f14;
+  --bg-color: #f2eee8;
+  --text-color: #0e0f14;
   --art-direction: #83b47e;
   --design: #8fb1bd;
   --software: #c59fc6;
@@ -54,7 +54,7 @@ html {
 }
 
 body {
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Switzer", sans-serif;
   color: var(--text-color);
   background-color: var(--bg-color);
   overflow-x: hidden;
@@ -91,7 +91,7 @@ button {
 a {
   color: var(--text-color);
   text-decoration: none;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Switzer", sans-serif;
 }
 
 .underline {
@@ -359,7 +359,7 @@ a {
   font-weight: 300;
   font-size: calc(18px + (26 - 18) * ((100vw - 320px) / (1440 - 320)));
   display: block;
-  font-family: "Plus Jakarta Sans", sans-serif;
+  font-family: "Switzer", sans-serif;
   line-height: 42px;
 }
 

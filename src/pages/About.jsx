@@ -24,8 +24,8 @@ export default function About({ setIsExperiencePage }) {
     });
 
     tl.to(":root", {
-      "--bg-color": "#01010a",
-      "--text-color": "#f9fafb",
+      "--bg-color": "#0E0F14",
+      "--text-color": "#F2EEE8",
       scrollTrigger: {
         trigger: projects.current,
         start: "top 100%",
