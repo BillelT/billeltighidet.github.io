@@ -6,7 +6,7 @@ import Hero from "../components/hero/Hero.jsx";
 import ProjectsSection from "../components/projects-section/Projects-section.jsx";
 import GallerySection from "../components/gallery-section/Gallery-section.jsx";
 import Footer from "../components/footer/Footer.jsx";
-import Experience from "../experience/Experience.jsx";
+// import Experience from "../experience/Experience.jsx";
 
 gsap.registerPlugin(ScrollTrigger);
 

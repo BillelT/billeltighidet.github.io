@@ -10,7 +10,7 @@ import { handleDisplacement } from "./utils/handleDisplacement.js";
 
 export default function Experience({ isProjectPage, setProgress }) {
   const [isScreenLarger960, handleIsScreenLarger960] = useState(
-    window.innerWidth > 960
+    window.innerWidth > 960,
   );
 
   const canvas = useRef(null);
@@ -39,18 +39,18 @@ export default function Experience({ isProjectPage, setProgress }) {
 
   useEffect(() => {
     window.addEventListener("pointermove", (event) =>
-      handleDisplacement(event, displacement, sizes, planes, isProjectPage)
+      handleDisplacement(event, displacement, sizes, planes, isProjectPage),
     );
     return () =>
       window.removeEventListener("pointermove", (event) =>
-        handleDisplacement(event, displacement, sizes, planes, isProjectPage)
+        handleDisplacement(event, displacement, sizes, planes, isProjectPage),
       );
   }, [isScreenLarger960]);
 
   const handleProjectOpening = () => {
     if (displacement.currentIntersect) {
       const planeIndex = planes.current.findIndex(
-        ({ plane }) => plane === displacement.currentIntersect.object
+        ({ plane }) => plane === displacement.currentIntersect.object,
       );
       if (planeIndex !== -1) {
         window.open(planes.current[planeIndex].link, "_blank");
@@ -74,7 +74,7 @@ export default function Experience({ isProjectPage, setProgress }) {
         planes,
         renderer,
         isProjectPage,
-      })
+      }),
     );
     return () =>
       window.removeEventListener("resize", () =>
@@ -86,7 +86,7 @@ export default function Experience({ isProjectPage, setProgress }) {
           planes,
           renderer,
           isProjectPage,
-        })
+        }),
       );
   }, [isScreenLarger960]);
 
@@ -122,7 +122,7 @@ export default function Experience({ isProjectPage, setProgress }) {
       35,
       sizes.current.aspect,
       0.01,
-      10
+      10,
     );
 
     camera.current.position.z = 6;
@@ -160,10 +160,10 @@ export default function Experience({ isProjectPage, setProgress }) {
     const tick = () => {
       displacement.raycaster.setFromCamera(
         displacement.screenCursor,
-        camera.current
+        camera.current,
       );
       const intersections = displacement.raycaster.intersectObjects(
-        planes.current.map(({ plane }) => plane)
+        planes.current.map(({ plane }) => plane),
       );
 
       if (intersections.length) {
@@ -176,28 +176,28 @@ export default function Experience({ isProjectPage, setProgress }) {
 
           displacement.mousePosition.lerp(
             displacement.targetMousePosition,
-            displacement.easeFactor
+            displacement.easeFactor,
           );
 
           intersections[0].object.material.uniforms.uMouse.value.copy(
-            displacement.mousePosition
+            displacement.mousePosition,
           );
           intersections[0].object.material.uniforms.uPrevMouse.value.copy(
-            displacement.prevMousePosition
+            displacement.prevMousePosition,
           );
 
           const planeIndex = planes.current.findIndex(
-            ({ plane }) => plane === intersections[0].object
+            ({ plane }) => plane === intersections[0].object,
           );
 
           if (planeIndex !== -1) {
             displacement.displacementIntensity[planeIndex] = Math.min(
               10.0,
-              displacement.displacementIntensity[planeIndex] + 0.5
+              displacement.displacementIntensity[planeIndex] + 0.5,
             );
             displacement.aberrationIntensity[planeIndex] = Math.max(
               0.0,
-              displacement.aberrationIntensity[planeIndex] - 0.005
+              displacement.aberrationIntensity[planeIndex] - 0.005,
             );
             intersections[0].object.material.uniforms.uDisplacementIntensity.value =
               displacement.displacementIntensity[planeIndex];
@@ -228,15 +228,15 @@ export default function Experience({ isProjectPage, setProgress }) {
           (_, i) =>
             (displacement.displacementIntensity[i] = Math.max(
               0.0,
-              displacement.displacementIntensity[i] - 0.05
-            ))
+              displacement.displacementIntensity[i] - 0.05,
+            )),
         );
         displacement.aberrationIntensity.forEach(
           (_, i) =>
             (displacement.aberrationIntensity[i] = Math.max(
               0.0,
-              displacement.aberrationIntensity[i] - 0.005
-            ))
+              displacement.aberrationIntensity[i] - 0.005,
+            )),
         );
         displacement.currentIntersect = intersections[0];
       } else {
@@ -251,15 +251,15 @@ export default function Experience({ isProjectPage, setProgress }) {
           (_, i) =>
             (displacement.displacementIntensity[i] = Math.max(
               0.0,
-              displacement.displacementIntensity[i] - 0.15
-            ))
+              displacement.displacementIntensity[i] - 0.15,
+            )),
         );
         displacement.aberrationIntensity.forEach(
           (_, i) =>
             (displacement.aberrationIntensity[i] = Math.max(
               0.0,
-              displacement.aberrationIntensity[i] - 0.005
-            ))
+              displacement.aberrationIntensity[i] - 0.005,
+            )),
         );
         displacement.currentIntersect = null;
       }
